@@ -7,7 +7,10 @@ const env = {
     // Can be kept default
     PORT: process.env.PORT || 3000, // Should not provide port directly since this is taken care of by NGINX
     MONGO_PORT: process.env.MONGO_PORT || 27017,    // Should just keep default port for MongoD
-    MONGO_IP: process.env.MONGO_IP || "database"    // Using DNS to resolve service IP address
+    MONGO_IP: process.env.MONGO_IP || "database",   // Using DNS to resolve service IP address
+
+    // S3 Endpoint
+    S3_ENDPOINT: "https://finder-tutor.sgp1.digitaloceanspaces.com"
 }
 
 export default env
