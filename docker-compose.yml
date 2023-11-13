@@ -1,0 +1,23 @@
+version: "3"
+services:
+  node-app:
+    build:
+      context: .
+    image: mastermobo/tutor-finder
+    environment:
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    # volumes:
+    #   - .:/app
+
+  database:
+    image: mongo
+    volumes:
+      - mongo-db:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=foo
+      - MONGO_INITDB_ROOT_PASSWORD=bar
+
+volumes:
+  mongo-db:
