@@ -1,0 +1,23 @@
+version: '3'
+services:
+  node-app:
+    build: 
+      context: .
+      args:
+        - NODE_ENV=development
+    volumes:
+      - ./src:/app/src:ro
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - MONGO_DB_NAME=test
+    command: npm run dev
+
+  database:
+  # This is for MongoDB Compass during Development
+    ports:
+      - "27017:27017"
+
+  load-balancer:
+    ports:
+      - "3000:80"

@@ -25,6 +25,6 @@ app.use(errorHandler)
 
 const start = async () => {
     // TODO: Add DB Connection
-    app.listen(env.PORT, () => console.log(`Listening on port ${env.PORT}`))
+    app.listen(env.PORT, () => console.log(`Listening on port ${env.PORT}!`))
 }
 start()
