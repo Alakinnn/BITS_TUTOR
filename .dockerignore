@@ -10,5 +10,3 @@ tsconfig
 Dockerfile
 .dockerignore
 docker-compose*
-
-.aws
