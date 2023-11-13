@@ -11,6 +11,7 @@ import tutorRouter from './routes/tutorRoutes'
 import studentRouter from './routes/studentRoutes'
 import reviewRouter from './routes/reviewRoutes'
 import errorHandler from './middlewares/errorHandler'
+import { connectDB } from './db/connect'
 
 app.use(cors())
 app.use(express.json())
@@ -24,7 +25,7 @@ app.use("/api/v1/review", reviewRouter)
 app.use(errorHandler)
 
 const start = async () => {
-    // TODO: Add DB Connection
+    await connectDB();
     app.listen(env.PORT, () => console.log(`Listening on port ${env.PORT}!`))
 }
 start()

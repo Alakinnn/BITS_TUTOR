@@ -7,7 +7,7 @@ interface APIError extends Error{
 const errorHandler: ErrorRequestHandler = (err: APIError, req: Request, res: Response, next: NextFunction) => {
     const customError = {
         statusCode: err.statusCode || 500,
-        message: err.message || "Something went wr" 
+        message: err.message || "Something went wrong, please try again later" 
     }
 
     res.status(customError.statusCode).json({message: customError.message})
