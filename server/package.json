@@ -1,5 +1,6 @@
 {
     "dependencies": {
+        "@aws-sdk/credential-providers": "^3.450.0",
         "aws-sdk": "^2.1494.0",
         "cors": "^2.8.5",
         "dot-env": "^0.0.1",
