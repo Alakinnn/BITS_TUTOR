@@ -12,7 +12,9 @@ const env = {
     // S3
     DO_S3_REGION: process.env.DO_REGION || "SGP1",
     DO_S3_ENDPOINT: process.env.DO_ENDPOINT || "https://finder-tutor.sgp1.digitaloceanspaces.com",
-    DO_S3_NAME: process.env.DO_NAME || "finder-tutor"
+    DO_S3_NAME: process.env.DO_NAME || "finder-tutor",
+    AWS_ACCESS_KEY: process.env.AWS_ACCESS_KEY_ID || 'HELLO',
+    AWS_SECRET_KEY: process.env.AWS_SECRET_ACCESS_KEY
 }
 
 export default env
