@@ -1,36 +1,42 @@
-import { ErrorRequestHandler, Request, Response, NextFunction } from "express"
-import multer from "multer"
+import { ErrorRequestHandler, Request, Response, NextFunction } from "express";
+import multer, { MulterError } from "multer";
 
-interface APIError extends Error{
-    statusCode: number,
-}
+import APIError from "../errors/APIError";
 
-const errorHandler: ErrorRequestHandler = (err: APIError, req: Request, res: Response, next: NextFunction) => {
-    if(err instanceof multer.MulterError) {
-        if (err.code === "LIMIT_FILE_SIZE") {
-            return res.status(400).json({
-              message: "file is too large",
-            });
-          }
-      
-          if (err.code === "LIMIT_FILE_COUNT") {
-            return res.status(400).json({
-              message: "File limit reached",
-            });
-          }
-      
-          if (err.code === "LIMIT_UNEXPECTED_FILE") {
-            return res.status(400).json({
-              message: "File must be an image",
-            });
-    }
-    const customError = {
-        statusCode: err.statusCode || 500,
-        message: err.message || "Something went wrong, please try again later" 
+const errorHandler: ErrorRequestHandler = (
+  err: Error | APIError,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  if (err instanceof APIError) {
+    return res.status(err.statusCode).json({ message: err.message });
+  }
+
+  const customError = {
+    name: err.name || "Error",
+    message: err.message || "Something went wrong, please try again later",
+    statusCode: 500,
+  };
+
+  if (err instanceof MulterError) {
+    if (err.code === "LIMIT_FILE_SIZE") {
+      customError.statusCode = 400;
+      customError.message = "File is too large";
     }
 
-    res.status(customError.statusCode).json({message: customError.message})
+    if (err.code === "LIMIT_FILE_COUNT") {
+      customError.statusCode = 400;
+      customError.message = "File limit reached";
     }
-}
 
-export default errorHandler
+    if (err.code === "LIMIT_UNEXPECTED_FILE") {
+      customError.statusCode = 400;
+      customError.message = "File must be an image";
+    }
+  }
+
+  res.status(customError.statusCode).json({ message: customError.message });
+};
+
+export default errorHandler;
