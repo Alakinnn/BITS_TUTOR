@@ -53,3 +53,43 @@ const getZoomInitData = async (req: Request, res: Response) => {
     )
   }
 }
+
+// I MADE THIS FOR FRONTEND, IT SHOULD NOT BELONG HERE
+// import axios from 'axios';
+
+// const userId = 'yourUserId'; // Replace with the actual user ID
+
+// // Make an HTTP request to the server to fetch Zoom data
+// axios.get(`http://localhost:3000/getZoomInitData/${sessionId}`)
+//   .then((response) => {
+//     const zoomData = response.data;
+
+//     // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
+//     // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
+
+//     ZoomMtg.init({
+//       leaveUrl: leaveUrl,
+//       success: (success) => {
+//         ZoomMtg.join({
+//           sdkKey: sdkKey,
+//           signature: zoomData.signature,
+//           meetingNumber: zoomData.meetingNumber,
+//           passWord: zoomData.passWord,
+//           userName: zoomData.userName,
+//           zak: zoomData.zakToken,
+//           success: (success) => {
+//             console.log(success);
+//           },
+//           error: (error) => {
+//             console.log(error);
+//           },
+//         });
+//       },
+//       error: (error) => {
+//         console.log(error);
+//       },
+//     });
+//   })
+//   .catch((error) => {
+//     console.error('Error fetching Zoom data:', error);
+//   });
