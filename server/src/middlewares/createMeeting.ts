@@ -5,6 +5,7 @@ import { Response, Request } from 'express';
 const clientID=ZOOM_S2S_CLIENT_ID
 const secretID=ZOOM_S2S_CLIENT_SECRET
 const accountID=ZOOM_S2S_ACCOUNT_ID
+const zoomAppAccount="hoang2504.rmit@gmail.com"
 const credentials = `${clientID}:${secretID}`
 const base64Credentials = Buffer.from(credentials).toString("base64")
 
@@ -31,7 +32,7 @@ const createMeeting = async (req: Request, res: Response) => {
     Authorization: `Bearer ${accessToken}`
   };
   try {
-    const response= await axios.post(`https://api.zoom.us/v2/users/me/meetings`, req.body, { headers });
+    const response= await axios.post(`https://api.zoom.us/v2/users/${zoomAppAccount}/meetings`, req.body, { headers });
     res.status(201).json({
       message: "Created successfully",
       data: response.data
