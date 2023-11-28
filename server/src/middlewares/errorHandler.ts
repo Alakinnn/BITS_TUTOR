@@ -1,5 +1,5 @@
 import { ErrorRequestHandler, Request, Response, NextFunction } from "express";
-import multer, { MulterError } from "multer";
+import { MulterError } from "multer";
 
 import APIError from "../errors/APIError";
 
@@ -20,23 +20,30 @@ const errorHandler: ErrorRequestHandler = (
   };
 
   if (err instanceof MulterError) {
-    if (err.code === "LIMIT_FILE_SIZE") {
-      customError.statusCode = 400;
-      customError.message = "File is too large";
-    }
+    switch (err.code) {
+      case "LIMIT_FILE_SIZE":
+        customError.statusCode = 400;
+        customError.message = "File is too large";
+        break;
 
-    if (err.code === "LIMIT_FILE_COUNT") {
-      customError.statusCode = 400;
-      customError.message = "File limit reached";
-    }
+      case "LIMIT_FILE_COUNT":
+        customError.statusCode = 400;
+        customError.message = "File limit reached";
+        break;
 
-    if (err.code === "LIMIT_UNEXPECTED_FILE") {
-      customError.statusCode = 400;
-      customError.message = "File must be an image";
+      case "LIMIT_UNEXPECTED_FILE":
+        customError.statusCode = 400;
+        customError.message = "File must be an image";
+        break;
+
+      default:
+        break;
     }
   }
 
-  res.status(customError.statusCode).json({ message: customError.message });
+  return res
+    .status(customError.statusCode)
+    .json({ message: customError.message });
 };
 
 export default errorHandler;
