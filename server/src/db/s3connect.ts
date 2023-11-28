@@ -1,8 +1,6 @@
-import multer from "multer";
 import multerS3 from "multer-s3";
 import env from "../config/env";
 import { S3Client} from "@aws-sdk/client-s3";
-const { defaultProvider } = require("@aws-sdk/credential-provider-node");
 import { v4 as uuid } from "uuid";
 const {
   DO_S3_REGION,
