@@ -7,7 +7,10 @@
     "dev": "nodemon --legacy-watch ./src/index.ts",
     "build": "npx tsc",
     "up": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d",
-    "down": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml down"
+    "down": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml down",
+    "dc build": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml build",
+    "dc push": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml push node-app",
+    "dc pull": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml pull node-app"
   },
   "keywords": [],
   "author": "",
