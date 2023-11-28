@@ -1,5 +1,5 @@
 import { ErrorRequestHandler, Request, Response, NextFunction } from "express";
-import { MulterError } from "multer";
+import multer, { MulterError } from "multer";
 
 import APIError from "../errors/APIError";
 
