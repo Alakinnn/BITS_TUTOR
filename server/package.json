@@ -18,7 +18,9 @@
   "description": "",
   "dependencies": {
     "@aws-sdk/credential-providers": "^3.450.0",
+    "@types/axios": "^0.14.0",
     "aws-sdk": "^2.1494.0",
+    "axios": "^1.6.2",
     "cors": "^2.8.5",
     "dot-env": "^0.0.1",
     "express": "^4.18.2",
