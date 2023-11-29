@@ -1,8 +1,5 @@
 import "express-async-errors";
-
 import express from "express";
-const app = express();
-
 import cors from "cors";
 
 import env from "./config/env";
@@ -12,10 +9,10 @@ import {
     studentRouter,
     reviewRouter,
 } from "./routes/index";
-
 import { errorHandler } from "./middlewares/index";
-
 import { connectMongoDB } from "./db/connect";
+
+const app = express();
 
 app.enable("trust proxy");
 
