@@ -7,10 +7,10 @@ import cors from "cors";
 
 import env from "./config/env";
 import {
-  authRouter,
-  tutorRouter,
-  studentRouter,
-  reviewRouter,
+    authRouter,
+    tutorRouter,
+    studentRouter,
+    reviewRouter,
 } from "./routes/index";
 
 import { errorHandler } from "./middlewares/index";
@@ -31,7 +31,13 @@ app.use("/api/v1/review", reviewRouter);
 app.use(errorHandler);
 
 const start = async () => {
-  await connectMongoDB();
-  app.listen(env.PORT, () => console.log(`Listening on port ${env.PORT}!`));
+    try {
+        await connectMongoDB();
+        app.listen(env.PORT, () =>
+            console.log(`Listening on port ${env.PORT}!`)
+        );
+    } catch (e) {
+        console.log(e);
+    }
 };
 start();
