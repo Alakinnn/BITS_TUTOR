@@ -1,7 +1,6 @@
 // import {SessionModel} from "../schema/sessionSchema" => I'm just going to assume there exists such model
 import axios from "axios";
 import { Request, Response } from "express";
-import { Session } from "inspector";
 import { NotFoundError } from "../errors";
 
 const startSession = async (req: Request, res: Response) => {
@@ -118,3 +117,5 @@ const getZoomInitData = async (req: Request, res: Response) => {
 //   .catch((error) => {
 //     console.error('Error fetching Zoom data:', error);
 //   });
+
+export { startSession, joinSession };
