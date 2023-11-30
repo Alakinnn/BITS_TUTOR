@@ -11,7 +11,9 @@ const studentSchema = new Schema ({
     },
     username: {
         type: String,
-        trim: true
+        trim: true,
+        maxLength: 20,
+        minLength: 8
     },
     password:{
         type: String,
