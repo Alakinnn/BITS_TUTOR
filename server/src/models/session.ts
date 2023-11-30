@@ -34,9 +34,9 @@ const sessionSchema = new Schema({
     endTime: { type: Date },
     status: {
     type: String,
-    enum: ['Active', 'Inactive', 'Completed', 'Cancelled'],
+    enum: ['active', 'inactive', 'completed', 'cancelled'],
     required: true,
-    default: 'Active'
+    default: 'inactive'
     }
 })
 
