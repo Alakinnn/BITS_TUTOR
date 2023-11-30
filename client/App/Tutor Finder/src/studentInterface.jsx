@@ -48,12 +48,12 @@ const studentInterface = () => {
                 leaveUrl: leaveUrl,
                 success: (success) => {
                     ZoomMtg.join({
-                        sdkKey: sdkKey,
-                        signature: zoomData.signature,
-                        meetingNumber: zoomData.meetingNumber,
-                        passWord: zoomData.passWord,
-                        userName: zoomData.userName,
-                        zak: zoomData.zakToken,
+                        sdkKey: "dJObZ1nDSZOgiGhBcKbpuA",
+                        signature: 1,
+                        meetingNumber: "81577862191",
+                        passWord: "6n1nnC",
+                        userName: "Mi Tom Thanh Long",
+                        zak: "Kxcjkumxv48SrhxVuSf1XCWN_QqYjNOB5WPLy8dVlZg.AG.jbAfonIxtgGDfNlpGh_t3LpBeTOwMHiXsuPWzJhuo2tDwy4uBqgZkfpInUY6afbDDhJ81gwc2PzExzU_lv8558QJ1XZiFnTfS2uhyOKRBM6JE5qIwVhBWWuem1kbmfeGCuRLIerxWMXnGKGa8sCUU7XCqjmUVpNzdOVw_k6YAZFdWaWSwbrEarInt6Wy0dYeoITlCQ.aOv3WKO_SPL7DnfpREpm5A.8spKCNdW548lQX7W",
                         success: (success) => {
                             console.log(success);
                         },
@@ -112,7 +112,7 @@ const studentInterface = () => {
         ) : (
             <div className='joinSession'>
                 <h4 id='message'>Session has not started yet</h4>
-                <button onClick={test}>Join Session</button>
+                <button onClick={joinSession}>Join Session</button>
             </div> 
         )
         }
