@@ -30,7 +30,7 @@ app.use(errorHandler);
 
 const start = async () => {
     try {
-        // await connectMongoDB();
+        await connectMongoDB();
         app.listen(env.PORT, () =>
             console.log(`Listening on port ${env.PORT}!`)
         );
