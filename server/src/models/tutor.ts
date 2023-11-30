@@ -2,15 +2,13 @@ import mongoose, { Schema } from  'mongoose';
 
 
 const tutorSchema = new Schema({
-    id: {
-        type: String,
-        required: true,
-        trim: true
-    },
     email: {
         type: String,
+        trim: true,
+        lowercase: true,
+        unique: true,
         required: true,
-        trim: true
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
     username: {
         type: String,
@@ -20,10 +18,9 @@ const tutorSchema = new Schema({
         type: String,
         required: true,
         trim: true
-    },
-    sessions: [{ type: mongoose.Schema.Types.ObjectId }]
+    }
 })
 
 const Tutor = mongoose.model('Tutor', tutorSchema);
 
-export { Tutor }
+export default Tutor 

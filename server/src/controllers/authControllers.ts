@@ -9,3 +9,4 @@ const registerUser = (req: Request, res: Response) => {
 }
 
 export {loginUser, registerUser}
+

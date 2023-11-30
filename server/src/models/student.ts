@@ -1,15 +1,13 @@
 import mongoose, { Schema } from  'mongoose';
 
 const studentSchema = new Schema ({
-    id: {
-        type: String,
-        required: true,
-        trim: true
-    },
     email: {
         type: String,
+        trim: true,
+        lowercase: true,
+        unique: true,
         required: true,
-        trim: true
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
     username: {
         type: String,
@@ -24,4 +22,4 @@ const studentSchema = new Schema ({
 
 const Student = mongoose.model('Student', studentSchema);
 
-export { Student }
+export default Student 

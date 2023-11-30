@@ -2,11 +2,6 @@ import mongoose, { Schema } from  'mongoose';
 
 
 const sessionSchema = new Schema({
-    meetingId: {
-        type: String,
-        required: true,
-        trim: true
-    },
     codeURL: {
         type: String,
         required: true,
@@ -14,16 +9,21 @@ const sessionSchema = new Schema({
     },
     tutorId: { 
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'Tutor',
         required: true
     },
     studentId: { 
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'Student',
         required: true
     },
     hostEmail: {
         type: String,
+        trim: true,
+        lowercase: true,
+        unique: true,
         required: true,
-        trim: true
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
     accessToken: {
         type: String,
@@ -33,13 +33,14 @@ const sessionSchema = new Schema({
     startTime: { type: Date },
     endTime: { type: Date },
     status: {
-    type: String,
-    enum: ['active', 'inactive', 'completed', 'cancelled'],
-    required: true,
-    default: 'inactive'
+        type: String,
+        enum: ['active', 'inactive', 'completed', 'cancelled'],
+        required: true,
+        default: 'inactive'
     }
+    
 })
 
 const Session = mongoose.model('Session', sessionSchema);
 
-export { Session }
+export default Session
