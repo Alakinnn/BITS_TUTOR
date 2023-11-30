@@ -14,8 +14,7 @@ const startSession = async (req: Request, res: Response) => {
             liveShareUrl,
             status: "active",
         },
-        { new: true },
-        
+        { new: true }
     );
 
     if (!session) {
@@ -23,18 +22,18 @@ const startSession = async (req: Request, res: Response) => {
     }
 
     // Generate Zoom Access Token
-    const accessToken = await generateAccess()
+    const accessToken = await generateAccess();
     const headers = {
-        Authorization: `Bearer ${accessToken}`
+        Authorization: `Bearer ${accessToken}`,
     };
     const response = await axios.get(
-        `https://api.zoom.us/v2/users/${session.hostEmail}/meetings`, { headers }
+        `https://api.zoom.us/v2/users/${session.hostEmail}/meetings`,
+        { headers }
     );
     const { token } = response.data.token;
 
     session.zak = token;
     await session.save();
-
 
     res.status(200).json(session);
 };
@@ -65,4 +64,48 @@ const endSession = async (req: Request, res: Response) => {
     res.status(200).json(session);
 };
 
-export { startSession, joinSession, endSession };
+const getTutorSessions = async (req: Request, res: Response) => {
+    const { tutorId } = req.params;
+    const sessions = await Session.find({ tutorId });
+
+    return res.status(200).json(sessions);
+};
+
+const getStudentSessions = async (req: Request, res: Response) => {
+    const { studentId } = req.params;
+    const sessions = await Session.find({ studentId });
+
+    return res.status(200).json(sessions);
+};
+
+const getSessions = async (req: Request, res: Response) => {
+    const sessions = await Session.find({});
+
+    return res.status(200).json(sessions);
+};
+
+const createSession = async (req: Request, res: Response) => {
+    // TODO: Implement this
+};
+
+const getSessionById = async (req: Request, res: Response) => {
+    const { sessionId } = req.params;
+    const session = await Session.findById(sessionId);
+
+    if (!session) {
+        throw new NotFoundError("Session not found");
+    }
+
+    return res.status(200).json(session);
+};
+
+export {
+    getSessions,
+    createSession,
+    getSessionById,
+    startSession,
+    joinSession,
+    endSession,
+    getTutorSessions,
+    getStudentSessions,
+};
