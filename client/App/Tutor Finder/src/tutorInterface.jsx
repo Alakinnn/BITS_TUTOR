@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import studentInterface from "./studentInterface";
 import axios from "axios";
 
-const mySessionID = "123" // This is a fake ID, will have to implement scheduling feature
+const sessionID = "123" // This is a fake ID, will have to implement scheduling feature
 
 
 // TUTOR
@@ -13,7 +13,7 @@ const tutorInterface = () => {
 
         // declare the data fetching function
         const fetchData = async () => {
-            const response = await axios.get(`http://localhost:3000/api/v1/session/${mySessionID}`);
+            const response = await axios.get(`http://localhost:3000/api/v1/session/${sessionID}`);
             console.log(response.data);
             setSession(response.data)
         }
@@ -41,8 +41,7 @@ const tutorInterface = () => {
         setInputUrl("");
         //  Send update request to backend
         // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
-        const response = await axios.patch(`http://localhost:3000/api/v1/session/${mySessionID}`, {
-            status: 'ongoing', 
+        const response = await axios.post(`http://localhost:3000/api/v1/session/${sessionID}/start`, {
             liveShareUrl: lastInputUrl
         });
         window.location.href = "/tutor";
@@ -54,7 +53,7 @@ const tutorInterface = () => {
         let lastInputUrl = ("");
         //  Send update request to backend
         // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
-        const response = await axios.patch(`http://localhost:3000/api/v1/session/${mySessionID}`, {
+        const response = await axios.patch(`http://localhost:3000/api/v1/session/${sessionID}`, {
             status: 'inactive', 
             liveShareUrl: lastInputUrl
         });
