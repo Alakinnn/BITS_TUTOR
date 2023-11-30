@@ -118,7 +118,7 @@ const createSession = async (req: Request, res: Response) => {
       {
         // Since codeURL is required, I have to put this here. 
         // Is there a way to tell the function that with an empty string codeURL, the session can't start? Or is it implement already?
-        codeURL: "", 
+        liveShareUrl: "", 
         tutorId: tutor?._id,
         studentId: student?._id,
         meetingNumber: response.data.id,
