@@ -11,8 +11,7 @@ import {
 } from "../controllers/sessionControllers";
 const sessionRouter = Router();
 
-sessionRouter.route("/").get(getSessions);
-sessionRouter.route("/").post(createSession);
+sessionRouter.route("/").get(getSessions).post(createSession);
 
 sessionRouter.route("/:sessionId").get(getSessionById);
 

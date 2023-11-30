@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const sessionSchema = new Schema({
-    codeURL: {
+    liveShareUrl: {
         type: String,
         required: true,
         trim: true,
