@@ -1,12 +1,27 @@
 import mongoose, { Schema } from  'mongoose';
 
 const studentSchema = new Schema ({
-    id: String,
-    email: String,
-    username: String,
-    password: String
+    id: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    email: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    username: {
+        type: String,
+        trim: true
+    },
+    password:{
+        type: String,
+        required: true,
+        trim: true
+    }
 })
 
-const student = mongoose.model('Student', studentSchema);
+const Student = mongoose.model('Student', studentSchema);
 
-export { student }
+export { Student }

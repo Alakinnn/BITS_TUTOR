@@ -1,8 +1,5 @@
 import mongoose, { Schema } from  'mongoose';
 
-enum Status {
-    Active, Inactive
-}
 
 const sessionSchema = new Schema({
     meetingId: {
@@ -36,12 +33,13 @@ const sessionSchema = new Schema({
     startTime: { type: Date },
     endTime: { type: Date },
     status: {
-    type: Status,
+    type: String,
+    enum: ['Active', 'Inactive', 'Completed', 'Cancelled'],
     required: true,
-    default: Status.Active
+    default: 'Active'
     }
 })
 
-const session = mongoose.model('Session', sessionSchema);
+const Session = mongoose.model('Session', sessionSchema);
 
-export { session }
+export { Session }
