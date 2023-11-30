@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import tutorInterface from "./tutorInterface";
 import axios from 'axios';
 
-const mySessionID = "123" // This is a fake ID, will have to implement scheduling feature
+const sessionID = "123" // This is a fake ID, will have to implement scheduling feature
 
 // STUDENT
 const studentInterface = () => {
@@ -16,7 +16,7 @@ const studentInterface = () => {
 
         // declare the data fetching function
         const fetchData = async () => {
-            const response = await axios.get(`http://localhost:3000/api/v1/session/${mySessionID}`);
+            const response = await axios.get(`http://localhost:3000/api/v1/session/${sessionID}`);
             console.log(response.data);
             setSession(response.data)
         }
@@ -28,13 +28,48 @@ const studentInterface = () => {
     }, []);
 
     // GET({sID: '123'})
+
     
     const joinSession = async () => {
         if (session.liveShareUrl) {
             // Redirect to live share URL
-            window.location.href = session.liveShareUrl;
+            window.open(session.liveShareUrl, '_blank');
+;
         }  
-        
+
+        axios.get(`http://localhost:3000/getZoomInitData/${sessionID}`)
+        .then((response) => {
+            const zoomData = response.data;
+    
+            // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
+            // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
+    
+            ZoomMtg.init({
+                leaveUrl: leaveUrl,
+                success: (success) => {
+                    ZoomMtg.join({
+                        sdkKey: sdkKey,
+                        signature: zoomData.signature,
+                        meetingNumber: zoomData.meetingNumber,
+                        passWord: zoomData.passWord,
+                        userName: zoomData.userName,
+                        zak: zoomData.zakToken,
+                        success: (success) => {
+                            console.log(success);
+                        },
+                        error: (error) => {
+                            console.log(error);
+                        },
+                    });
+                },
+                error: (error) => {
+                    console.log(error);
+                },
+                });
+            })
+            .catch((error) => {
+                console.error('Error fetching Zoom data:', error);
+            });
     }
 
 
@@ -77,7 +112,7 @@ const studentInterface = () => {
         ) : (
             <div className='joinSession'>
                 <h4 id='message'>Session has not started yet</h4>
-                <button onClick={joinSession}>Join Session</button>
+                <button onClick={test}>Join Session</button>
             </div> 
         )
         }
