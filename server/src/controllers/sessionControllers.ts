@@ -1,6 +1,8 @@
 import Session from "../models/session";
+import Tutor from "../models/tutor";
+import Student from "../models/student";
 import axios from "axios";
-import { generateAccess } from "../middlewares/createMeeting";
+import { generateAccess } from "../middlewares/getAccessToken";
 import { Request, Response } from "express";
 import { NotFoundError } from "../errors";
 
@@ -80,13 +82,55 @@ const getStudentSessions = async (req: Request, res: Response) => {
 
 const getSessions = async (req: Request, res: Response) => {
     const sessions = await Session.find({});
-
     return res.status(200).json(sessions);
 };
 
 const createSession = async (req: Request, res: Response) => {
-    // TODO: Implement this
-};
+    const accessToken = await generateAccess()
+    const { hostEmail, topic, startTime, timezone, duration, studentEmail } = req.body
+    const headers = {
+      Authorization: `Bearer ${accessToken}`
+    };
+  
+    const response= await axios.post(`https://api.zoom.us/v2/users/${hostEmail}/meetings`, 
+    {
+      topic: topic,
+      type: 2,
+      start_time: startTime,
+      timezone: timezone,
+      duration: duration,
+      join_before_host: true,
+      schedule_for: hostEmail,
+      settings : {
+        join_before_host: true,
+        private_meeting: true,
+        meeting_invitees: [{"email": studentEmail}]
+      }
+    }, { headers });
+  
+    const tutor = await Tutor.findOne({
+      email: hostEmail
+    })
+    const student = await Student.findOne({ email: studentEmail });
+  
+  
+    await Session.create(
+      {
+        // Since codeURL is required, I have to put this here. 
+        // Is there a way to tell the function that with an empty string codeURL, the session can't start? Or is it implement already?
+        codeURL: "", 
+        tutorId: tutor?._id,
+        studentId: student?._id,
+        meetingNumber: response.data.id,
+        hostEmail: hostEmail,
+        startTime: startTime,
+        zak: ""
+      }
+    )
+    res.status(201).json({
+      message: "Created successfully",
+    })
+  }
 
 const getSessionById = async (req: Request, res: Response) => {
     const { sessionId } = req.params;
