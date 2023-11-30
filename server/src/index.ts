@@ -26,12 +26,11 @@ app.use("/api/v1/session", sessionRouter);
 app.use("/api/v1/tutor", tutorRouter);
 app.use("/api/v1/student", studentRouter);
 app.use("/api/v1/review", reviewRouter);
-
 app.use(errorHandler);
 
 const start = async () => {
     try {
-        await connectMongoDB();
+        // await connectMongoDB();
         app.listen(env.PORT, () =>
             console.log(`Listening on port ${env.PORT}!`)
         );
