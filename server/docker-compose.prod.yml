@@ -1,0 +1,45 @@
+version: '3'
+services:
+  node-app:
+    build: 
+      context: .
+      args:
+        - NODE_ENV=production
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: any
+      update_config:
+        parallelism: 1
+        delay: 15s
+    environment:
+      - MONGO_USERNAME=${MONGO_USERNAME}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_DB_NAME=${MONGO_DB_NAME}
+
+      - PORT=${PORT}
+      - MONGO_PORT=${MONGO_PORT}
+      - MONGO_IP=${MONGO_IP}
+      - DO_S3_REGION=${DO_S3_REGION}
+      - DO_S3_ENDPOINT=${DO_S3_ENDPOINT}
+      - DO_S3_NAME=${DO_S3_NAME}
+
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY=${AWS_SECRET_KEY}
+
+      - ZOOM_MEETING_SDK_KEY=${ZOOM_MEETING_SDK_KEY}
+      - ZOOM_MEETING_SDK_SECRET=${ZOOM_MEETING_SDK_SECRET}
+      - ZOOM_S2S_ACCOUNT_ID=${ZOOM_S2S_ACCOUNT_ID}
+      - ZOOM_S2S_CLIENT_ID=d${ZOOM_S2S_CLIENT_ID}
+      - ZOOM_S2S_CLIENT_SECRET=${ZOOM_S2S_CLIENT_SECRET}
+      - ZOOM_OWNER_EMAIL=${ZOOM_OWNER_EMAIL}
+    command: npm start
+
+  database:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+
+  load-balancer:
+    ports:
+      - "80:80"

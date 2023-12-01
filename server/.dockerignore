@@ -1,0 +1,12 @@
+node_modules
+.env
+*.md
+tsconfig
+
+.git
+.github
+.gitignore
+
+Dockerfile
+.dockerignore
+docker-compose*
