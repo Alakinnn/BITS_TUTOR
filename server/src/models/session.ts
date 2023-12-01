@@ -20,15 +20,10 @@ const sessionSchema = new Schema({
         required: true,
         trim: true,
     },
-    hostEmail: {
+    meetingPassword: {
         type: String,
-        trim: true,
-        lowercase: true,
         required: true,
-        match: [
-            /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-            "Please fill a valid email address",
-        ],
+        trim: true,
     },
     zak: {
         type: String,
