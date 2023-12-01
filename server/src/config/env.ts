@@ -1,13 +1,8 @@
 const env = {
-    // Need to be supplied when deployed to production
-    MONGO_USERNAME: process.env.MONGO_USERNAME || "foo",
-    MONGO_PASSWORD: process.env.MONGO_PASSWORD || "bar",
-    MONGO_DB_NAME: process.env.MONGO_DB_NAME || "test",
-
-    // Can be kept default
-    PORT: process.env.PORT || 3000, // Should not provide port directly since this is taken care of by NGINX
-    MONGO_PORT: process.env.MONGO_PORT || 27017, // Should just keep default port for MongoD
-    MONGO_IP: process.env.MONGO_IP || "database", // Using DNS to resolve service IP address
+    // Need to be supplied
+    MONGO_USERNAME: process.env.MONGO_USERNAME,
+    MONGO_PASSWORD: process.env.MONGO_PASSWORD,
+    MONGO_DB_NAME: process.env.MONGO_DB_NAME,
 
     // S3
     DO_S3_REGION: process.env.DO_REGION || "SGP1",
@@ -20,13 +15,19 @@ const env = {
 
     // Zoom
     // This is Zoom SDK credentials
-    ZOOM_MEETING_SDK_KEY: "dJObZ1nDSZOgiGhBcKbpuA",
-    ZOOM_MEETING_SDK_SECRET: "ijiipg0EauNewHmVlltYzAK8QBrr83mf",
+    ZOOM_MEETING_SDK_KEY: process.env.ZOOM_MEETING_SDK_KEY,
+    ZOOM_MEETING_SDK_SECRET: process.env.ZOOM_MEETING_SDK_SECRET,
+
     // This is API credentials
-    ZOOM_S2S_ACCOUNT_ID: "B89OOvy9RgOpLa2cj1Ftfw",
-    ZOOM_S2S_CLIENT_ID: "dw39YWWnQoKQPvPJCfc3uQ",
-    ZOOM_S2S_CLIENT_SECRET: "7F0org613ZVlquOhw26LGcS7esOhg3gU",
-    ZOOM_OWNER_EMAIL: "hoang2504.rmit@gmail.com",
+    ZOOM_S2S_ACCOUNT_ID: process.env.ZOOM_S2S_ACCOUNT_ID,
+    ZOOM_S2S_CLIENT_ID: process.env.ZOOM_S2S_CLIENT_ID,
+    ZOOM_S2S_CLIENT_SECRET: process.env.ZOOM_S2S_CLIENT_SECRET,
+    ZOOM_OWNER_EMAIL: process.env.ZOOM_OWNER_EMAIL,
+
+    // Can be kept default
+    PORT: process.env.PORT || 3000, // Should not provide port directly since this is taken care of by NGINX
+    MONGO_PORT: process.env.MONGO_PORT || 27017, // Should just keep default port for MongoD
+    MONGO_IP: process.env.MONGO_IP || "database", // Using DNS to resolve service IP address
 };
 
 export default env;
