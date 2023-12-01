@@ -120,7 +120,7 @@ const createSession = async (req: Request, res: Response) => {
         { headers }
     );
 
-    await Session.create({
+    const session = await Session.create({
         tutorId,
         studentId,
         meetingNumber: response.data.id,
@@ -129,6 +129,7 @@ const createSession = async (req: Request, res: Response) => {
     });
     res.status(201).json({
         message: "Created successfully",
+        session,
     });
 };
 
