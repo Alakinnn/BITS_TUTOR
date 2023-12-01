@@ -8,9 +8,8 @@ services:
     volumes:
       - ./src:/app/src:ro
       - /app/node_modules
-    environment:
-      - NODE_ENV=development
-      - MONGO_DB_NAME=test
+    env_file:
+      - .env
     command: npm run dev
 
   database:

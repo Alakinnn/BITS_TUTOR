@@ -1,121 +1,181 @@
-// import {SessionModel} from "../schema/sessionSchema" => I'm just going to assume there exists such model
+import Session from "../models/session";
+import Tutor from "../models/tutor";
+import Student from "../models/student";
 import axios from "axios";
+import { generateAccess } from "../middlewares/getAccessToken";
 import { Request, Response } from "express";
 import { NotFoundError } from "../errors";
+import env from "../config/env";
+import { Document } from "mongoose";
+const { ZOOM_OWNER_EMAIL } = env;
+
+interface MongoResult extends Document {
+    _doc: any;
+    zak?: string;
+}
 
 const startSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
     const { liveShareUrl } = req.body;
 
-    // TODO: Implement this after data modeling
+    let session: MongoResult | null = await Session.findByIdAndUpdate(
+        sessionId,
+        {
+            liveShareUrl,
+            status: "active",
+        },
+        { new: true }
+    );
 
-    // Update the session model with the liveShareUrl
-    // const session = await Session.findOneAndUpdate({liveShareUrl}, {new: true});
-    // if (!session) {
-    // throw new NotFoundError("Session not found");
-    // }
+    if (!session) {
+        throw new NotFoundError("Session not found");
+    }
 
-    // res.status(200).json(session)
+    // Generate Zoom Access Token
+    const accessToken = await generateAccess();
+    const headers = {
+        Authorization: `Bearer ${accessToken}`,
+    };
+    const response = await axios.get(
+        `https://api.zoom.us/v2/users/${ZOOM_OWNER_EMAIL}/token`,
+        { headers }
+    );
+    const { token } = response.data;
+
+    session = await Session.findByIdAndUpdate(
+        sessionId,
+        {
+            zak: token,
+        },
+        { new: true }
+    );
+
+    if (!session) {
+        throw new NotFoundError("Session not found");
+    }
+
+    const responseSession = {
+        ...session._doc,
+        hostEmail: ZOOM_OWNER_EMAIL,
+    };
+
+    res.status(200).json(responseSession);
 };
 
 const joinSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
-    // const session = await Session.findOneAndUpdate({liveShareUrl}, {new: true});
-    // if (!session) {
-    // throw new NotFoundError("Session not found");
-    // }
+    const session = await Session.findById(sessionId);
 
-    // res.status(200).json(session)
-};
-
-// NOTE to @Alakin: why do you need to separate the controllers when you can just put them in the same function?
-// Also you don't need to try/catch, just throw the error directly and the errorHandler will catch it
-
-const updateLiveCodingURL = (req: Request, res: Response) => {
-    try {
-        if (req?.params?.id) {
-            res.status(404).json({
-                message: "Session Not Found",
-            });
-        }
-        // const session = await SessionModel.findOne(req.params.id).exec()
-        const session: Object = Error; // Delete this later once there is model
-        if (session) {
-            // session.id = req.body.url
-            // await session.save()
-            res.status(200).json({
-                message: "Live Coding URL submitted successfully",
-            });
-        }
-    } catch (error) {
-        res.status(400).json({ message: error });
+    if (!session) {
+        throw new NotFoundError("Session not found");
     }
+
+    res.status(200).json(session);
 };
 
-const getZoomInitData = async (req: Request, res: Response) => {
-    try {
-        if (req?.params?.id) {
-            res.status(404).json({
-                message: "Session Not Found",
-            });
-        }
-        // const session = await SessionModel.findOne(req.params.id).exec()
-        const session: Object = Error; // Delete this later once there is model
-        if (session) {
-            // const hostEmail = session.owner
-            // const zoomAccessToken = await axios.get(`https://api.zoom.us/v2/users/${hostEmail}/meetings`)
-            // const meetingNumber = session.meetingID
+const endSession = async (req: Request, res: Response) => {
+    const sessionId = req.params.sessionId;
+    const session = await Session.findByIdAndUpdate(
+        sessionId,
+        { status: "completed" },
+        { new: true }
+    );
 
-            const zoomData = {
-                // meetingNumber: meetingNumber,
-                // userName: hostEmail => I just realized that we have username values so may query that instead of using email
-                // zak: zoomAccessToken
-            };
-            res.status(200).json({
-                zoomData,
-            });
-        }
-    } catch (error) {
-        res.status(400).json({ message: error });
+    if (!session) {
+        throw new NotFoundError("Session not found");
     }
+
+    res.status(200).json(session);
 };
 
-// I MADE THIS FOR FRONTEND, IT SHOULD NOT BELONG HERE
-// import axios from 'axios';
+const getTutorSessions = async (req: Request, res: Response) => {
+    const { tutorId } = req.params;
+    const sessions = await Session.find({ tutorId });
 
-// // Make an HTTP request to the server to fetch Zoom data
-// axios.get(`http://localhost:3000/getZoomInitData/${sessionId}`)
-//   .then((response) => {
-//     const zoomData = response.data;
+    return res.status(200).json(sessions);
+};
 
-//     // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
-//     // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
+const getStudentSessions = async (req: Request, res: Response) => {
+    const { studentId } = req.params;
+    const sessions = await Session.find({ studentId });
 
-//     ZoomMtg.init({
-//       leaveUrl: leaveUrl,
-//       success: (success) => {
-//         ZoomMtg.join({
-//           sdkKey: sdkKey,
-//           signature: zoomData.signature,
-//           meetingNumber: zoomData.meetingNumber,
-//           passWord: zoomData.passWord,
-//           userName: zoomData.userName,
-//           zak: zoomData.zakToken,
-//           success: (success) => {
-//             console.log(success);
-//           },
-//           error: (error) => {
-//             console.log(error);
-//           },
-//         });
-//       },
-//       error: (error) => {
-//         console.log(error);
-//       },
-//     });
-//   })
-//   .catch((error) => {
-//     console.error('Error fetching Zoom data:', error);
-//   });
+    return res.status(200).json(sessions);
+};
 
-export { startSession, joinSession };
+const getSessions = async (req: Request, res: Response) => {
+    const sessions = await Session.find({});
+    return res.status(200).json(sessions);
+};
+
+const createSession = async (req: Request, res: Response) => {
+    const accessToken = await generateAccess();
+    const {
+        tutorId,
+        studentId,
+        tutorEmail,
+        studentEmail,
+        topic,
+        startTime,
+        timezone,
+        duration,
+    } = req.body;
+    const headers = {
+        Authorization: `Bearer ${accessToken}`,
+    };
+
+    const response = await axios.post(
+        `https://api.zoom.us/v2/users/${ZOOM_OWNER_EMAIL}/meetings`,
+        {
+            topic: topic,
+            type: 2,
+            start_time: startTime,
+            timezone: timezone,
+            duration: duration,
+            join_before_host: true,
+            schedule_for: ZOOM_OWNER_EMAIL,
+            settings: {
+                join_before_host: true,
+                private_meeting: true,
+                meeting_invitees: [
+                    { email: studentEmail },
+                    { email: tutorEmail },
+                ],
+            },
+        },
+        { headers }
+    );
+
+    const session = await Session.create({
+        tutorId,
+        studentId,
+        meetingNumber: response.data.id,
+        startTime: startTime,
+        meetingPassword: response.data.password,
+    });
+    res.status(201).json({
+        message: "Created successfully",
+        session,
+    });
+};
+
+const getSessionById = async (req: Request, res: Response) => {
+    const { sessionId } = req.params;
+    const session = await Session.findById(sessionId);
+
+    if (!session) {
+        throw new NotFoundError("Session not found");
+    }
+
+    return res.status(200).json(session);
+};
+
+export {
+    getSessions,
+    createSession,
+    getSessionById,
+    startSession,
+    joinSession,
+    endSession,
+    getTutorSessions,
+    getStudentSessions,
+};
