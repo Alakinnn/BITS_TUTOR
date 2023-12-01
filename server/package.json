@@ -9,8 +9,9 @@
         "up": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d",
         "down": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml down",
         "dcbuild": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml build",
-        "dcpush": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml push",
-        "dcpull": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml pull"
+        "dcbuildp": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml build",
+        "dcpushp": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml push",
+        "dcpullp": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml pull"
     },
     "keywords": [],
     "author": "",
