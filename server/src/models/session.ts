@@ -3,7 +3,6 @@ import mongoose, { Schema } from "mongoose";
 const sessionSchema = new Schema({
     liveShareUrl: {
         type: String,
-        required: true,
         trim: true,
     },
     tutorId: {
@@ -34,7 +33,6 @@ const sessionSchema = new Schema({
     },
     zak: {
         type: String,
-        required: true,
         trim: true,
     },
     startTime: { type: Date },

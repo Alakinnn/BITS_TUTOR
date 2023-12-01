@@ -86,51 +86,51 @@ const getSessions = async (req: Request, res: Response) => {
 };
 
 const createSession = async (req: Request, res: Response) => {
-    const accessToken = await generateAccess()
-    const { hostEmail, topic, startTime, timezone, duration, studentEmail } = req.body
+    const accessToken = await generateAccess();
+    const {
+        tutorId,
+        studentId,
+        hostEmail,
+        studentEmail,
+        topic,
+        startTime,
+        timezone,
+        duration,
+    } = req.body;
     const headers = {
-      Authorization: `Bearer ${accessToken}`
+        Authorization: `Bearer ${accessToken}`,
     };
-  
-    const response= await axios.post(`https://api.zoom.us/v2/users/${hostEmail}/meetings`, 
-    {
-      topic: topic,
-      type: 2,
-      start_time: startTime,
-      timezone: timezone,
-      duration: duration,
-      join_before_host: true,
-      schedule_for: hostEmail,
-      settings : {
-        join_before_host: true,
-        private_meeting: true,
-        meeting_invitees: [{"email": studentEmail}]
-      }
-    }, { headers });
-  
-    const tutor = await Tutor.findOne({
-      email: hostEmail
-    })
-    const student = await Student.findOne({ email: studentEmail });
-  
-  
-    await Session.create(
-      {
-        // Since codeURL is required, I have to put this here. 
-        // Is there a way to tell the function that with an empty string codeURL, the session can't start? Or is it implement already?
-        liveShareUrl: "", 
-        tutorId: tutor?._id,
-        studentId: student?._id,
+
+    const response = await axios.post(
+        `https://api.zoom.us/v2/users/${hostEmail}/meetings`,
+        {
+            topic: topic,
+            type: 2,
+            start_time: startTime,
+            timezone: timezone,
+            duration: duration,
+            join_before_host: true,
+            schedule_for: hostEmail,
+            settings: {
+                join_before_host: true,
+                private_meeting: true,
+                meeting_invitees: [{ email: studentEmail }],
+            },
+        },
+        { headers }
+    );
+
+    await Session.create({
+        tutorId,
+        studentId,
         meetingNumber: response.data.id,
         hostEmail: hostEmail,
         startTime: startTime,
-        zak: ""
-      }
-    )
+    });
     res.status(201).json({
-      message: "Created successfully",
-    })
-  }
+        message: "Created successfully",
+    });
+};
 
 const getSessionById = async (req: Request, res: Response) => {
     const { sessionId } = req.params;
