@@ -1,8 +1,8 @@
 version: '3'
 services:
-  node-app:
+  server:
     build: 
-      context: .
+      context: ./server
       args:
         - NODE_ENV=production
     deploy:
@@ -19,6 +19,23 @@ services:
       - MONGO_DB_NAME=${MONGO_DB_NAME}
     command: npm start
 
+  client:
+    build: 
+      context: "./client/App/Tutor Finder"
+      args:
+        - NODE_ENV=production
+
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: any
+      update_config:
+        parallelism: 1
+        delay: 15s
+    environment:
+      - NODE_ENV=production
+    command: npm run serve
+    
   database:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}

@@ -1,12 +1,20 @@
 version: '3'
 services:
-  node-app:
-    build: .
+  server:
+    build: ./server
     image: mastermobo/tutor-finder
     environment:
       - PORT=3000
     depends_on:
       - database
+  
+  client:
+    build: "./client/App/Tutor Finder"
+    image: mastermobo/tutor-finder-client
+    environment:
+      - PORT=3000
+    depends_on:
+      - server
 
   database:
     image: mongo
