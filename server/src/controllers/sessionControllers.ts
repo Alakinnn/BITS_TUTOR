@@ -1,28 +1,44 @@
 import Session from "../models/session";
-import Tutor from "../models/tutor";
-import Student from "../models/student";
-import axios from "axios";
-import { generateAccess } from "../middlewares/getAccessToken";
 import { Request, Response } from "express";
 import { NotFoundError } from "../errors";
 import env from "../config/env";
-import { Document } from "mongoose";
+import MongoResult from "../interfaces/MongoResult";
+import {
+    createZoomMeeting,
+    ZoomMeetingOptions,
+    generateZak,
+} from "../services/zoomAPI";
 const { ZOOM_OWNER_EMAIL } = env;
-
-interface MongoResult extends Document {
-    _doc: any;
-    zak?: string;
-}
 
 const startSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
     const { liveShareUrl } = req.body;
+    const zak = await generateZak();
+    let session: MongoResult | null
 
-    let session: MongoResult | null = await Session.findByIdAndUpdate(
+    // Checking session in db
+    session = await Session.findById({
+        _id: sessionId
+    })
+    if (!session) {
+        throw new NotFoundError("Session not found");
+    }
+
+    // Checking session status
+    session = await Session.findOne({
+        status: "inactive"
+    })
+    if (!session) {
+        throw new Error("Something went wrong");
+    }
+
+    // Update Session
+    session = await Session.findByIdAndUpdate(
         sessionId,
         {
             liveShareUrl,
             status: "active",
+            zak: zak
         },
         { new: true }
     );
@@ -31,46 +47,26 @@ const startSession = async (req: Request, res: Response) => {
         throw new NotFoundError("Session not found");
     }
 
-    // Generate Zoom Access Token
-    const accessToken = await generateAccess();
-    const headers = {
-        Authorization: `Bearer ${accessToken}`,
-    };
-    const response = await axios.get(
-        `https://api.zoom.us/v2/users/${ZOOM_OWNER_EMAIL}/token`,
-        { headers }
-    );
-    const { token } = response.data;
-
-    session = await Session.findByIdAndUpdate(
-        sessionId,
-        {
-            zak: token,
-        },
-        { new: true }
-    );
-
-    if (!session) {
-        throw new NotFoundError("Session not found");
-    }
-
-    const responseSession = {
-        ...session._doc,
-        hostEmail: ZOOM_OWNER_EMAIL,
-    };
-
-    res.status(200).json(responseSession);
+    res.status(200).json({
+        message: "Session started successfully",
+        session: { ...session._doc, hostEmail: ZOOM_OWNER_EMAIL },
+    });
 };
 
 const joinSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
-    const session = await Session.findById(sessionId);
+    let session: MongoResult | null 
 
+    // Check Session in db
+    session = await Session.findById(sessionId);
     if (!session) {
         throw new NotFoundError("Session not found");
     }
 
-    res.status(200).json(session);
+    res.status(200).json({
+        message: "Session joined successfully",
+        session: { ...session._doc, hostEmail: ZOOM_OWNER_EMAIL },
+    });
 };
 
 const endSession = async (req: Request, res: Response) => {
@@ -85,7 +81,10 @@ const endSession = async (req: Request, res: Response) => {
         throw new NotFoundError("Session not found");
     }
 
-    res.status(200).json(session);
+    res.status(200).json({
+        message: "Session ended successfully",
+        session,
+    });
 };
 
 const getTutorSessions = async (req: Request, res: Response) => {
@@ -108,52 +107,21 @@ const getSessions = async (req: Request, res: Response) => {
 };
 
 const createSession = async (req: Request, res: Response) => {
-    const accessToken = await generateAccess();
-    const {
-        tutorId,
-        studentId,
-        tutorEmail,
-        studentEmail,
-        topic,
-        startTime,
-        timezone,
-        duration,
-    } = req.body;
-    const headers = {
-        Authorization: `Bearer ${accessToken}`,
-    };
+    const { tutorId, studentId, startTime } = req.body;
+    const options: ZoomMeetingOptions = req.body;
 
-    const response = await axios.post(
-        `https://api.zoom.us/v2/users/${ZOOM_OWNER_EMAIL}/meetings`,
-        {
-            topic: topic,
-            type: 2,
-            start_time: startTime,
-            timezone: timezone,
-            duration: duration,
-            join_before_host: true,
-            schedule_for: ZOOM_OWNER_EMAIL,
-            settings: {
-                join_before_host: true,
-                private_meeting: true,
-                meeting_invitees: [
-                    { email: studentEmail },
-                    { email: tutorEmail },
-                ],
-            },
-        },
-        { headers }
-    );
+    const zoomMeeting = await createZoomMeeting(options);
 
     const session = await Session.create({
         tutorId,
         studentId,
-        meetingNumber: response.data.id,
-        startTime: startTime,
-        meetingPassword: response.data.password,
+        meetingNumber: zoomMeeting.id,
+        startTime,
+        meetingPassword: zoomMeeting.password,
     });
+
     res.status(201).json({
-        message: "Created successfully",
+        message: "Session created successfully",
         session,
     });
 };
