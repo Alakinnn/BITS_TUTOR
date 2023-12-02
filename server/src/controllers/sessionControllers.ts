@@ -13,26 +13,32 @@ const { ZOOM_OWNER_EMAIL } = env;
 const startSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
     const { liveShareUrl } = req.body;
+    const zak = await generateZak();
+    let session: MongoResult | null
 
-    let session: MongoResult | null = await Session.findByIdAndUpdate(
-        sessionId,
-        {
-            liveShareUrl,
-            status: "active",
-        },
-        { new: true }
-    );
-
+    // Checking session in db
+    session = await Session.findById({
+        _id: sessionId
+    })
     if (!session) {
         throw new NotFoundError("Session not found");
     }
 
-    const zak = await generateZak();
+    // Checking session status
+    session = await Session.findOne({
+        status: "inactive"
+    })
+    if (!session) {
+        throw new Error("Something went wrong");
+    }
 
+    // Update Session
     session = await Session.findByIdAndUpdate(
         sessionId,
         {
-            zak,
+            liveShareUrl,
+            status: "active",
+            zak: zak
         },
         { new: true }
     );
@@ -49,8 +55,10 @@ const startSession = async (req: Request, res: Response) => {
 
 const joinSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
-    const session: MongoResult | null = await Session.findById(sessionId);
+    let session: MongoResult | null 
 
+    // Check Session in db
+    session = await Session.findById(sessionId);
     if (!session) {
         throw new NotFoundError("Session not found");
     }
