@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
-import Footer from "./footer";
+import Footer from "./Footer";
 import './footer.css';
 import StudentInterface from './studentInterface';
 import TutorInterface from './tutorInterface';
