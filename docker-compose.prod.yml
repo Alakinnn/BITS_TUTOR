@@ -3,8 +3,7 @@ services:
   server:
     build: 
       context: ./server
-      args:
-        - NODE_ENV=production
+      dockerfile: Dockerfile.prod
     deploy:
       replicas: 3
       restart_policy:
@@ -21,7 +20,7 @@ services:
 
   client:
     build: 
-      context: "./client/App/Tutor Finder"
+      context: ./client
       args:
         - NODE_ENV=production
 

@@ -9,7 +9,7 @@ services:
       - database
   
   client:
-    build: "./client/App/Tutor Finder"
+    build: ./client
     image: mastermobo/tutor-finder-client
     environment:
       - PORT=3000
