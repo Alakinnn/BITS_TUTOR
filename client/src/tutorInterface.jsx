@@ -1,19 +1,26 @@
 import React, {useState, useEffect} from "react";
-import studentInterface from "./studentInterface";
+import StudentInterface from "./studentInterface";
 import axios from "axios";
 
-const sessionID = "123" // This is a fake ID, will have to implement scheduling feature
+const sessionId = "6569a1f8c3f228b8ee4b6de0" // This is a fake ID, will have to implement scheduling feature
 
 
 // TUTOR
 const tutorInterface = () => {
+
+    // const createSession = async () => {
+    //   const response = await axios.get('http://139.59.105.114/api/v1/session');
+    //   console.log(response.data); 
+    // }
+    // createSession().catch(console.error);
+
     const [session, setSession] = useState({});
     useEffect(() => {
 
 
         // declare the data fetching function
         const fetchData = async () => {
-            const response = await axios.get(`http://localhost:3000/api/v1/session/${sessionID}`);
+            const response = await axios.get(`http://139.59.105.114/api/v1/session/${sessionId}`);
             console.log(response.data);
             setSession(response.data)
         }
@@ -41,23 +48,61 @@ const tutorInterface = () => {
         setInputUrl("");
         //  Send update request to backend
         // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
-        const response = await axios.post(`http://localhost:3000/api/v1/session/${sessionID}/start`, {
+        const response = await axios.post(`http://139.59.105.114/api/v1/session/${sessionId}/start`, {
             liveShareUrl: lastInputUrl
         });
-        window.location.href = "/tutor";
+        // window.location.href = "/tutor";
         console.log(response);
-    }   
+
+       
+
+        // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
+        // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
+      axios
+        .get(`http://139.59.105.114/api/v1/session/${sessionId}`)
+        .then((response) => {
+          
+
+          // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
+          // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
+
+          ZoomMtg.init({
+            leaveUrl: "/tutor",
+            success: (success) => {
+              ZoomMtg.join({
+                sdkKey: "dJObZ1nDSZOgiGhBcKbpuA",
+                signature: 1,
+                meetingNumber: response.data.meetingNumber,
+                passWord: response.data.meetingPassword,
+                userName: "Mi Tom Thanh Long",
+                zak: response.data.zak,
+                success: (success) => {
+                  console.log(success);
+                },
+                error: (error) => {
+                  console.log(error);
+                },
+              });
+            },
+            error: (error) => {
+              console.log(error);
+            },
+          });
+        })
+        .catch((error) => {
+          console.error("Error fetching Zoom data:", error);
+        });
+
+
+        
+      }
 
     const endSession = async () => {
         // Set URL
         let lastInputUrl = ("");
         //  Send update request to backend
         // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
-        const response = await axios.patch(`http://localhost:3000/api/v1/session/${sessionID}`, {
-            status: 'inactive', 
-            liveShareUrl: lastInputUrl
-        });
-        
+        const response = await axios.post(`http://139.59.105.114/api/v1/session/${sessionId}/end`, {});
         console.log(response);
         window.location.href = "/tutor";
     }    
@@ -68,14 +113,14 @@ const tutorInterface = () => {
           <div className="headTitle">
             <div className="container">
             <div className="opacity"></div>
-              <img className="hinddenPic" src={hidden} alt="" />
+              <img className="hinddenPic" src="" alt="" />
               <h2>Meeting 68757</h2>
             </div>
   
             <div className="imgBox">
               <div className="student">
                 <a href="/student">
-                  <img className="studentImg" src={stuImg} alt="student" />
+                  <img className="studentImg" src="" alt="student" />
                 </a>
                 <p>Name</p>
               </div>
@@ -108,21 +153,23 @@ const tutorInterface = () => {
             <h3 className="text">2am PCT</h3>
           </div>
   
-          <h4 id="message">To start the meeting, enter Live Share URL</h4>
-  
-          {session.status === "ongoing" ? (
+          {session.status === "active" ? (
             <div className="endSession">
               <button onClick={endSession}>End Session</button>
             </div>
           ) : (
-            <div className="startSession">
-              <input
-                type="url"
-                placeholder="Live Share URL"
-                onChange={handleChange}
-              />
-              <button onClick={startSession}>Start Session</button>
+            <div>
+              <h4 id="message">To start the meeting, enter Live Share URL</h4>
+              <div className="startSession">
+                <input
+                  type="url"
+                  placeholder="Live Share URL"
+                  onChange={handleChange}
+                />
+                <button onClick={startSession}>Start Session</button>
+              </div>
             </div>
+            
           )}
         </div>
   

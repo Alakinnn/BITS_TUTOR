@@ -99,7 +99,7 @@
  margin-top: 10px;
 }
 
-.startSession button{
+.startSession button, .endSession button{
   font-size: 12px;
   height: 35px;
   margin-top: 7.5px;
