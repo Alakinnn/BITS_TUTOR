@@ -1,6 +1,12 @@
 import mongoose, { Schema } from  'mongoose';
 
-const studentSchema = new Schema ({
+interface Student {
+    email: string;
+    username: string;
+    password: string;
+}
+
+const studentSchema = new Schema<Student> ({
     email: {
         type: String,
         trim: true,
@@ -12,6 +18,7 @@ const studentSchema = new Schema ({
     username: {
         type: String,
         trim: true,
+        required: true,
         maxLength: 20,
         minLength: 8
     },
