@@ -16,37 +16,18 @@ const startSession = async (req: Request, res: Response) => {
     const zak = await generateZak();
     let session: MongoResult | null
 
-    // Checking session in db
-    session = await Session.findById({
-        _id: sessionId
-    })
-    if (!session) {
-        throw new NotFoundError("Session not found");
-    }
-
-    // Checking session status
-    session = await Session.findOne({
-        status: "inactive"
-    })
-    if (!session) {
-        throw new Error("Something went wrong");
-    }
-
-    // Update Session
-    session = await Session.findByIdAndUpdate(
-        sessionId,
-        {
-            liveShareUrl,
-            status: "active",
-            zak: zak
-        },
+    // Checking session if exists and is inactive, updating session
+    // I am not so sure if this is the best practice, please refractor if needed.
+    session = await Session.findOneAndUpdate(
+        { _id: sessionId, status: "inactive" },
+        { liveShareUrl, status: "active", zak: await generateZak() },
         { new: true }
     );
 
     if (!session) {
         throw new NotFoundError("Session not found");
     }
-
+    
     res.status(200).json({
         message: "Session started successfully",
         session: { ...session._doc, hostEmail: ZOOM_OWNER_EMAIL },
@@ -57,8 +38,11 @@ const joinSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
     let session: MongoResult | null 
 
-    // Check Session in db
-    session = await Session.findById(sessionId);
+    // Check Session if exists and is active
+    // I am not so sure if this is the best practice, please refractor if needed.
+    session = await Session.findOne(
+        { _id: sessionId, status: "active" });
+
     if (!session) {
         throw new NotFoundError("Session not found");
     }
@@ -71,11 +55,13 @@ const joinSession = async (req: Request, res: Response) => {
 
 const endSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
-    const session = await Session.findByIdAndUpdate(
-        sessionId,
-        { status: "completed" },
-        { new: true }
-    );
+
+    // Check Session if exists and is active
+    // I am not so sure if this is the best practice, please refractor if needed.
+    const session = await Session.findOneAndUpdate(
+        { _id: sessionId, status: "active" },
+        { status: "completed"}
+        );
 
     if (!session) {
         throw new NotFoundError("Session not found");
@@ -109,7 +95,6 @@ const getSessions = async (req: Request, res: Response) => {
 const createSession = async (req: Request, res: Response) => {
     const { tutorId, studentId, startTime } = req.body;
     const options: ZoomMeetingOptions = req.body;
-
     const zoomMeeting = await createZoomMeeting(options);
 
     const session = await Session.create({
