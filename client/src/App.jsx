@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 
 import Footer from "./footer";
-import './footer.css';
+import './Footer.css';
 import StudentInterface from './studentInterface';
-import TutorInterface from './tutorInterface';
-import './interface.css';
+import TutorInterface from './TutorInterface';
+import './Interface.css';
 import Navbar from "./Navbar";
-import './navbar.css';
+import './Navbar.css';
 
 
 
