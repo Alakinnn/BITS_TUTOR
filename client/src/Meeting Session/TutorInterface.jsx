@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import ZoomMtgEmbedded from "@zoomus/websdk/embedded"
 const client = ZoomMtgEmbedded.createClient()
-const sessionId = "6569a1f8c3f228b8ee4b6de0" // This is a fake ID, will have to implement scheduling feature
+const sessionId = "656db707dedcd0cd9235983e" // This is a fake ID, will have to implement scheduling feature
 
 
 // TUTOR
@@ -86,10 +86,12 @@ const TutorInterface = () => {
         .get(`http://139.59.105.114/api/v1/session/${sessionId}`)
         .then((response) => {
           const zoomData = response.data
+          console.log(zoomData);
           const key = "dJObZ1nDSZOgiGhBcKbpuA"
-          const secret = "ijiipg0EauNewHmVlltYzAK8QBrr83mf"
+          const secret = "uDfxfEz8HEmLSis0a8G6kImVlLgB8dTS"
 
           const signature = generateSignature(key, secret, zoomData.meetingNumber, 0)
+          console.log(signature);
           // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
           // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
   
@@ -99,9 +101,8 @@ const TutorInterface = () => {
             sdkKey: key, // Use environment variable
             signature: signature,
             meetingNumber: zoomData.meetingNumber,
-            password: zoomData.password,
-            userName: zoomData.userName,
-            zak: zoomData.zak
+            password: zoomData.meetingPassword,
+            userName: "hoang"
          })
         })
         .catch((error) => {
