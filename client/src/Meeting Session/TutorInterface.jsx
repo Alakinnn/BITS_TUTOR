@@ -44,18 +44,14 @@ const TutorInterface = () => {
 
     const startSession = async () => {
         // Set URL
+        // TODO: change this name convention, what does this even mean?
         let lastInputUrl = inputUrl;
-
-
         setInputUrl("");
         //  Send update request to backend
         // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
         const response = await axios.post(`http://139.59.105.114/api/v1/session/${sessionId}/start`, {
             liveShareUrl: lastInputUrl
         });
-        // window.location.href = "/tutor";
-        console.log(response);
-
         // TODO: place this function elsewhere, this file is large
         // TODO: the "key" & "secret" should be environment variable, not stored here
       function generateSignature(key, secret, meetingNumber, role) {
@@ -77,21 +73,13 @@ const TutorInterface = () => {
         const sdkJWT = KJUR.jws.JWS.sign('HS256', sHeader, sPayload, secret)
         return sdkJWT
       }
-        
-       
-
         // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
         // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
-      axios
-        .get(`http://139.59.105.114/api/v1/session/${sessionId}`)
-        .then((response) => {
           const zoomData = response.data
-          console.log(zoomData);
           const key = "dJObZ1nDSZOgiGhBcKbpuA"
           const secret = "uDfxfEz8HEmLSis0a8G6kImVlLgB8dTS"
 
           const signature = generateSignature(key, secret, zoomData.meetingNumber, 0)
-          console.log(signature);
           // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
           // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
   
@@ -102,15 +90,8 @@ const TutorInterface = () => {
             signature: signature,
             meetingNumber: zoomData.meetingNumber,
             password: zoomData.meetingPassword,
-            userName: "hoang"
+            userName: "hoangs"
          })
-        })
-        .catch((error) => {
-          console.error("Error fetching Zoom data:", error);
-        });
-
-
-        
       }
 
     const endSession = async () => {
