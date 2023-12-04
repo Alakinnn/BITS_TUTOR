@@ -1,47 +1,44 @@
-import mongoose, { Schema } from  'mongoose';
-
-enum Status {
-    Active, Inactive
-}
+import mongoose, { Schema } from "mongoose";
 
 const sessionSchema = new Schema({
-    meetingId: {
+    liveShareUrl: {
         type: String,
-        required: true,
-        trim: true
+        trim: true,
     },
-    codeURL: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    tutorId: { 
+    tutorId: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true
+        ref: "Tutor",
+        required: true,
     },
-    studentId: { 
+    studentId: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true
+        ref: "Student",
+        required: true,
     },
-    hostEmail: {
+    meetingNumber: {
+        type: Number,
+        required: true,
+        trim: true,
+    },
+    meetingPassword: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
     },
-    accessToken: {
+    zak: {
         type: String,
-        required: true,
-        trim: true
+        trim: true,
     },
     startTime: { type: Date },
     endTime: { type: Date },
     status: {
-    type: Status,
-    required: true,
-    default: Status.Active
-    }
-})
+        type: String,
+        enum: ["active", "inactive", "completed", "cancelled"],
+        required: true,
+        default: "inactive",
+    },
+});
 
-const session = mongoose.model('Session', sessionSchema);
+const Session = mongoose.model("Session", sessionSchema);
 
-export { session }
+export default Session;
