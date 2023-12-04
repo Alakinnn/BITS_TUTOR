@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from "react";
-import StudentInterface from "./studentInterface";
+import {useState, useEffect} from "react";
+// import StudentInterface from "./studentInterface";
 import axios from "axios";
-
+import ZoomMtgEmbedded from "@zoomus/websdk/embedded"
+const client = ZoomMtgEmbedded.createClient()
 const sessionId = "6569a1f8c3f228b8ee4b6de0" // This is a fake ID, will have to implement scheduling feature
 
 
 // TUTOR
-const tutorInterface = () => {
+const TutorInterface = () => {
 
     // const createSession = async () => {
     //   const response = await axios.get('http://139.59.105.114/api/v1/session');
@@ -60,34 +61,21 @@ const tutorInterface = () => {
         // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
       axios
         .get(`http://139.59.105.114/api/v1/session/${sessionId}`)
-        .then((response) => {
+        .then(() => {
           
 
           // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
           // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
 
-          ZoomMtg.init({
-            leaveUrl: "/tutor",
-            success: (success) => {
-              ZoomMtg.join({
-                sdkKey: "dJObZ1nDSZOgiGhBcKbpuA",
-                signature: 1,
-                meetingNumber: response.data.meetingNumber,
-                passWord: response.data.meetingPassword,
-                userName: "Mi Tom Thanh Long",
-                zak: response.data.zak,
-                success: (success) => {
-                  console.log(success);
-                },
-                error: (error) => {
-                  console.log(error);
-                },
-              });
-            },
-            error: (error) => {
-              console.log(error);
-            },
-          });
+         let meetingSDKElement = document.getElementById('meetingSDKElement')
+        client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US' })
+        client.join({
+          sdkKey: "sdkKey",
+          signature: 1,
+          meetingNumber: 1,
+          password: "password",
+          userName: "userName"
+       })
         })
         .catch((error) => {
           console.error("Error fetching Zoom data:", error);
@@ -99,7 +87,7 @@ const tutorInterface = () => {
 
     const endSession = async () => {
         // Set URL
-        let lastInputUrl = ("");
+        // let lastInputUrl = ("");
         //  Send update request to backend
         // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
         const response = await axios.post(`http://139.59.105.114/api/v1/session/${sessionId}/end`, {});
@@ -130,7 +118,7 @@ const tutorInterface = () => {
                     className="tutorImg"
                     src={"src/assets/footer/linkIn.svg"}
                     alt="tutor"
-                    onClick={tutorInterface}
+                    onClick={TutorInterface}
                   />
                 </a>
                 <p>Name</p>
@@ -239,6 +227,6 @@ const tutorInterface = () => {
     // </>
     )  
 }
-export default tutorInterface
+export default TutorInterface
 
 

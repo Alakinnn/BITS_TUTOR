@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import tutorInterface from "./TutorInterface";
 import axios from "axios";
-
-
+import ZoomMtgEmbedded from "@zoomus/websdk/embedded"
+const client = ZoomMtgEmbedded.createClient()
 const sessionId = "6569a1f8c3f228b8ee4b6de0"; // This is a fake ID, will have to implement scheduling feature
 
 // STUDENT
-const studentInterface = () => {
+const StudentInterface = () => {
   // Only enable when time comes
   // request session data from backend
 
@@ -48,20 +48,14 @@ const studentInterface = () => {
 
         ZoomMtg.init({
           leaveUrl: "/tutor",
-          success: (success) => {
+          success: () => {
             ZoomMtg.join({
               sdkKey: "dJObZ1nDSZOgiGhBcKbpuA",
               signature: 1,
               meetingNumber: response.data.meetingNumber,
               passWord: response.data.meetingPassword,
               userName: "Mi Tom Thanh Long",
-              zak: response.data.zak,
-              success: (success) => {
-                console.log(success);
-              },
-              error: (error) => {
-                console.log(error);
-              },
+              zak: response.data.zak
             });
           },
           error: (error) => {
@@ -116,7 +110,9 @@ const studentInterface = () => {
           <h3 className="title">Start Time: </h3>
           <h3 className="text">12am PCT</h3>
         </div>
-
+        <div id="meetingSDKElement">
+          
+        </div>
         {session.status === "active" ? (
           <div>
             <div className="infoEnd">
@@ -191,4 +187,4 @@ const studentInterface = () => {
     // </>
   );
 };
-export default studentInterface;
+export default StudentInterface;
