@@ -1,21 +1,21 @@
-import startSession from "./sessionControllers/startSession"
-import createSession from "./sessionControllers/createSession"
-import endSession from "./sessionControllers/endSession"
-import joinSession from "./sessionControllers/joinSession"
+import startSession from "./session/startSession";
+import createSession from "./session/createSession";
+import endSession from "./session/endSession";
+import joinSession from "./session/joinSession";
 import {
-  getSessionById, 
-  getSessions, 
-  getTutorSessions, 
-  getStudentSessions
-} from "./sessionControllers/getSession"
+    getSessionById,
+    getSessions,
+    getTutorSessions,
+    getStudentSessions,
+} from "./session/getSession";
 
 export {
-  startSession, 
-  createSession, 
-  endSession, 
-  joinSession, 
-  getSessionById, 
-  getSessions, 
-  getTutorSessions, 
-  getStudentSessions
-}
+    startSession,
+    createSession,
+    endSession,
+    joinSession,
+    getSessionById,
+    getSessions,
+    getTutorSessions,
+    getStudentSessions,
+};
