@@ -41,27 +41,21 @@ const StudentInterface = () => {
     axios
       .get(`http://139.59.105.114/api/v1/session/${sessionId}`)
       .then((response) => {
-        
+        const zoomData = response.data
 
         // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
         // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
 
-        ZoomMtg.init({
-          leaveUrl: "/tutor",
-          success: () => {
-            ZoomMtg.join({
-              sdkKey: "dJObZ1nDSZOgiGhBcKbpuA",
-              signature: 1,
-              meetingNumber: response.data.meetingNumber,
-              passWord: response.data.meetingPassword,
-              userName: "Mi Tom Thanh Long",
-              zak: response.data.zak
-            });
-          },
-          error: (error) => {
-            console.log(error);
-          },
-        });
+        let meetingSDKElement = document.getElementById('meetingSDKElement')
+        client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US' })
+        client.join({
+          sdkKey: "sdkKey", // Use environment variable
+          signature: 1,
+          meetingNumber: zoomData.meetingNumber,
+          password: zoomData.password,
+          userName: zoomData.userName,
+          zak: zoomData.zak
+       })
       })
       .catch((error) => {
         console.error("Error fetching Zoom data:", error);

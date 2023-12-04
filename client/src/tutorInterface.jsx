@@ -61,21 +61,22 @@ const TutorInterface = () => {
         // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
       axios
         .get(`http://139.59.105.114/api/v1/session/${sessionId}`)
-        .then(() => {
-          
-
+        .then((response) => {
+          const zoomData = response.data
+  
           // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
           // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
-
-         let meetingSDKElement = document.getElementById('meetingSDKElement')
-        client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US' })
-        client.join({
-          sdkKey: "sdkKey",
-          signature: 1,
-          meetingNumber: 1,
-          password: "password",
-          userName: "userName"
-       })
+  
+          let meetingSDKElement = document.getElementById('meetingSDKElement')
+          client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US' })
+          client.join({
+            sdkKey: "sdkKey", // Use environment variable
+            signature: 1,
+            meetingNumber: zoomData.meetingNumber,
+            password: zoomData.password,
+            userName: zoomData.userName,
+            zak: zoomData.zak
+         })
         })
         .catch((error) => {
           console.error("Error fetching Zoom data:", error);
@@ -140,7 +141,9 @@ const TutorInterface = () => {
             <h3 className="title">End Time :</h3>
             <h3 className="text">2am PCT</h3>
           </div>
-  
+          <div id="meetingSDKElement">
+          
+        </div>
           {session.status === "active" ? (
             <div className="endSession">
               <button onClick={endSession}>End Session</button>
