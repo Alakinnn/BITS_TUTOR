@@ -15,8 +15,7 @@ services:
   client:
     build: 
       context: ./client
-      args:
-        - NODE_ENV=development
+      dockerfile: Dockerfile.dev
     volumes:
       - ./client/src:/app/src:ro
       - /app/node_modules

@@ -2,7 +2,7 @@ version: '3'
 services:
   server:
     build: ./server
-    image: mastermobo/tutor-finder
+    image: mastermobo/tutor-finder:server-latest
     environment:
       - PORT=3000
     depends_on:
@@ -10,7 +10,7 @@ services:
   
   client:
     build: ./client
-    image: mastermobo/tutor-finder-client
+    image: mastermobo/tutor-finder:client-latest
     environment:
       - PORT=3000
     depends_on:

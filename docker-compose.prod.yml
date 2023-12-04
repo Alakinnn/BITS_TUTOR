@@ -21,8 +21,7 @@ services:
   client:
     build: 
       context: ./client
-      args:
-        - NODE_ENV=production
+      dockerfile: Dockerfile.prod
 
     deploy:
       replicas: 3
