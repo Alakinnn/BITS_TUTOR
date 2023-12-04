@@ -1,3 +1,4 @@
+import { KJUR } from "jsrsasign";
 import {useState, useEffect} from "react";
 // import StudentInterface from "./studentInterface";
 import axios from "axios";
@@ -55,6 +56,28 @@ const TutorInterface = () => {
         // window.location.href = "/tutor";
         console.log(response);
 
+        // TODO: place this function elsewhere, this file is large
+        // TODO: the "key" & "secret" should be environment variable, not stored here
+      function generateSignature(key, secret, meetingNumber, role) {
+        const iat = Math.round(new Date().getTime() / 1000) - 30
+        const exp = iat + 60 * 60 * 2
+        const oHeader = { alg: 'HS256', typ: 'JWT' }
+      
+        const oPayload = {
+          sdkKey: key,
+          mn: meetingNumber,
+          role: role,
+          iat: iat,
+          exp: exp,
+          tokenExp: exp
+        }
+      
+        const sHeader = JSON.stringify(oHeader)
+        const sPayload = JSON.stringify(oPayload)
+        const sdkJWT = KJUR.jws.JWS.sign('HS256', sHeader, sPayload, secret)
+        return sdkJWT
+      }
+        
        
 
         // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
@@ -63,16 +86,18 @@ const TutorInterface = () => {
         .get(`http://139.59.105.114/api/v1/session/${sessionId}`)
         .then((response) => {
           const zoomData = response.data
-          
-  
+          const key = "dJObZ1nDSZOgiGhBcKbpuA"
+          const secret = "ijiipg0EauNewHmVlltYzAK8QBrr83mf"
+
+          const signature = generateSignature(key, secret, zoomData.meetingNumber, 0)
           // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
           // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
   
           let meetingSDKElement = document.getElementById('meetingSDKElement')
           client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US' })
           client.join({
-            sdkKey: "dJObZ1nDSZOgiGhBcKbpuA", // Use environment variable
-            signature: 0,
+            sdkKey: key, // Use environment variable
+            signature: signature,
             meetingNumber: zoomData.meetingNumber,
             password: zoomData.password,
             userName: zoomData.userName,
