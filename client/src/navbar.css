@@ -1,0 +1,21 @@
+nav { 
+
+    font-size: 20px;
+    background-color: #2fa73733;
+    width: 100%;
+    position: relative;
+    height: 50px;
+    display: flex;
+    color: rgb(238, 24, 60);
+}
+ul{
+    display: flex;
+    margin-left: 70rem;
+    text-decoration: none;
+}
+
+ul li{
+    list-style-type: none;
+    margin:  0 10px;
+    
+}

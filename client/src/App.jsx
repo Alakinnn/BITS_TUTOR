@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { useNavigate } from "react-router-dom";
-import './App.css'
-import axios from 'axios';
-import logo from './images/address.png'
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import StudentInterface from './studentInterface'
-import TutorInterface from './tutorInterface'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import './App.css';
+
+import Footer from "./footer";
+import './Footer.css';
+import StudentInterface from './studentInterface';
+import TutorInterface from './TutorInterface';
+import './Interface.css';
+import Navbar from "./Navbar";
+import './Navbar.css';
+
+
 
 
 const mySessionID = "123" // This is a fake ID, will have to implement scheduling feature
@@ -19,9 +21,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<StudentInterface />} />
+      <Route path="/" element={<Navbar />} />
+        {/* This is the test route for dev the footer */}
+        
+        <Route path="/footerTest" element={<Footer />} />
         <Route path="/student" element={<StudentInterface />} />
         <Route path="/tutor" element={<TutorInterface />} />
+        
       </Routes>
     </BrowserRouter>
   )
