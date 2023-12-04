@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import InitZoom from "./InitZoom";
 import InfoInterface from "./InfoInterface";
+import "../css/MeetingSession.css";
 
 const sessionId = "6569a1f8c3f228b8ee4b6de0"; // This is a fake ID, will have to implement scheduling feature
 

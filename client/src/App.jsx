@@ -6,7 +6,6 @@ import Footer from "./Footer/Footer";
 import './css/Footer.css';
 import StudentMeetingSession from './MeetingSession/StudentMeetingSession';
 import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
-import './css/Interface.css';
 import Navbar from "./Header/Navbar";
 import './css/Navbar.css';
 
