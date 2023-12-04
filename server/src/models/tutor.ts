@@ -1,7 +1,13 @@
 import mongoose, { Schema } from  'mongoose';
 
+interface Tutor {
+    email: string;
+    username: string;
+    password: string;
+}
 
-const tutorSchema = new Schema({
+
+const tutorSchema = new Schema<Tutor>({
     email: {
         type: String,
         trim: true,
@@ -13,6 +19,7 @@ const tutorSchema = new Schema({
     username: {
         type: String,
         trim: true,
+        required: true,
         maxLength: 20,
         minLength: 8
     },
