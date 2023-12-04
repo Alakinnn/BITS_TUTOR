@@ -63,6 +63,7 @@ const TutorInterface = () => {
         .get(`http://139.59.105.114/api/v1/session/${sessionId}`)
         .then((response) => {
           const zoomData = response.data
+          
   
           // Now you can use zoomData.meetingNumber, zoomData.zakToken, etc.
           // to pass values to your ZoomMtg.init and ZoomMtg.join functions.
@@ -70,8 +71,8 @@ const TutorInterface = () => {
           let meetingSDKElement = document.getElementById('meetingSDKElement')
           client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US' })
           client.join({
-            sdkKey: "sdkKey", // Use environment variable
-            signature: 1,
+            sdkKey: "dJObZ1nDSZOgiGhBcKbpuA", // Use environment variable
+            signature: 0,
             meetingNumber: zoomData.meetingNumber,
             password: zoomData.password,
             userName: zoomData.userName,

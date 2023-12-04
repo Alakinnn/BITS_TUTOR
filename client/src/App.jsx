@@ -2,13 +2,13 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 
-import Footer from "./footer";
-import './Footer.css';
-import StudentInterface from './studentInterface';
-import TutorInterface from './TutorInterface';
-import './Interface.css';
-import Navbar from "./Navbar";
-import './Navbar.css';
+import Footer from "./Footer/Footer";
+import './css/Footer.css';
+import StudentInterface from './Meeting Session/StudentInterface';
+import TutorInterface from './Meeting Session/TutorInterface';
+import './css/Interface.css';
+import Navbar from "./Header/Navbar";
+import './css/Navbar.css';
 
 
 
