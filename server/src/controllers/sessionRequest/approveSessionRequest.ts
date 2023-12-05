@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import SessionRequest, { SessionRequestDoc } from "../../models/sessionRequest";
 import { BadRequestError, NotFoundError } from "../../errors";
 
-const approveSessionRequest = async (req: Request, res: Response) => {
+const approveSessionRequest = async (req: Request, res: Response, next: NextFunction) => {
   const requestId = req.params.id
   let sessionRequest: SessionRequestDoc | null = await SessionRequest.findById(requestId)
 

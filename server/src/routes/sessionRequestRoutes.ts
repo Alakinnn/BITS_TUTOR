@@ -1,3 +1,4 @@
+import { createSession} from "../controllers/sessionControllers";
 import { 
   approveSessionRequest, 
   denySessionRequest, 
@@ -7,7 +8,8 @@ import { Router } from "express";
 
 const sessionRequestRouter = Router()
 
-sessionRequestRouter.route("/:id").post(denySessionRequest).post(approveSessionRequest)
+sessionRequestRouter.route("/:id/deny").post(denySessionRequest)
+sessionRequestRouter.route("/:id/approve").post(approveSessionRequest)
 sessionRequestRouter.route("/").post(createSessionRequest)
 
 export default sessionRequestRouter

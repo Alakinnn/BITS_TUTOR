@@ -6,8 +6,14 @@ interface SessionRequestDoc extends MongoResult{
   endTime: Date,
   tutorId: mongoose.Schema.Types.ObjectId,
   studentId: mongoose.Schema.Types.ObjectId,
-  status: string
+  status: string,
+  title: string,
+  description: string
 }
+
+// I have modified the sessioRequest schema to include title and description.
+// This is to when approving the session, response object will also include
+// attributes for the session in createSession controoler
 
 const sessionRequestSchema = new Schema<SessionRequestDoc>({
   startTime: {
@@ -33,6 +39,17 @@ const sessionRequestSchema = new Schema<SessionRequestDoc>({
       enum: ["approved", "denied", "pending"],
       required: true,
       default: "pending"
+  },
+  title: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: 200,
+  },
+  description: {
+      type: String,
+      trim: true,
+      maxlength: 1000,
   }
 })
 
