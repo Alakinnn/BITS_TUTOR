@@ -26,16 +26,16 @@ jobs:
       - name: Build and Push Server Images
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./server/Dockerfile.prod
+          context: ./server
+          file: Dockerfile.prod
           push: true
           tags: mastermobo/tutor-finder:server-latest
 
       - name: Build and Push Client Images
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./client/Dockerfile.prod
+          context: ./client
+          file: Dockerfile.prod
           push: true
           tags: mastermobo/tutor-finder:client-latest
 
