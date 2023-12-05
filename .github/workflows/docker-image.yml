@@ -46,12 +46,6 @@ jobs:
       - name: Install SSH client and sshpass
         run: sudo apt-get install -y openssh-client sshpass
 
-      - name: SSH into DigitalOcean Droplet
-        run: sshpass -p ${{ secrets.ROOT_SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no root@${{ secrets.DO_DROPLET_IP }}
-          
-      - name: Deploy Docker Stack
+      - name: Deploy Docker Stack 
         run: |
-            cd ~/app
-            git checkout main
-            git pull origin main
-            docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml mam
+          sshpass -p ${{ secrets.ROOT_SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no root@${{ secrets.DO_DROPLET_IP }} 'cd ~/app && git checkout main && git pull origin main && docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml mam'      
