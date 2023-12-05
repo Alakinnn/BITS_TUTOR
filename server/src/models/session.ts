@@ -1,6 +1,5 @@
 import mongoose, { Date, Schema } from "mongoose";
 import MongoResult from "../interfaces/MongoResult";
-import { SessionExpirationDurationInSeconds } from "aws-sdk/clients/sagemaker";
 
 interface SessionDoc extends MongoResult {
     liveShareUrl: string;
@@ -14,7 +13,7 @@ interface SessionDoc extends MongoResult {
     status: string;
 }
 
-const sessionSchema = new Schema<SessionExpirationDurationInSeconds>({
+const sessionSchema = new Schema<SessionDoc>({
     liveShareUrl: {
         type: String,
         trim: true,
