@@ -51,7 +51,7 @@ jobs:
           
       - name: Deploy Docker Stack
         run: |
-            cd ./app
+            cd ~/app
             git checkout main
             git pull origin main
             docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml mam
