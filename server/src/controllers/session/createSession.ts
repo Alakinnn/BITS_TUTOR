@@ -1,10 +1,6 @@
-import Session, { SessionDoc } from "../../models/session";
+import Session from "../../models/session";
 import { Request, Response } from "express";
-import { NotFoundError, BadRequestError } from "../../errors";
-import env from "../../config/env";
-import MongoResult from "../../interfaces/MongoResult";
 import { createZoomMeeting, ZoomMeetingOptions } from "../../services/zoomAPI";
-const { ZOOM_OWNER_EMAIL } = env;
 
 const createSession = async (req: Request, res: Response) => {
     const { tutorId, studentId, startTime } = req.body;

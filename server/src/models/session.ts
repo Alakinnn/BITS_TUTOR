@@ -14,7 +14,7 @@ interface SessionDoc extends MongoResult {
     status: string;
 }
 
-const sessionSchema = new Schema<SessionExpirationDurationInSeconds>({
+const sessionSchema = new Schema<SessionDoc>({
     liveShareUrl: {
         type: String,
         trim: true,
@@ -56,4 +56,4 @@ const sessionSchema = new Schema<SessionExpirationDurationInSeconds>({
 const Session = mongoose.model("Session", sessionSchema);
 
 export default Session;
-export { SessionDoc }
+export { SessionDoc };
