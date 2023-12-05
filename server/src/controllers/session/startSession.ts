@@ -1,4 +1,4 @@
-import Session, { SessionDoc } from "../../models/Session";
+import Session, { SessionDoc } from "../../models/session";
 import { Request, Response } from "express";
 import { NotFoundError, BadRequestError } from "../../errors";
 import env from "../../config/env";
@@ -15,12 +15,12 @@ const startSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
     const { liveShareUrl } = req.body;
     const session: SessionDoc | null = await Session.findById(sessionId);
-    
+
     // Checking session if exists and is inactive, then update session
     if (!session) {
         throw new NotFoundError("Session not found");
     }
-    
+
     if (session.status !== "inactive") {
         throw new BadRequestError(`Can not start ${session.status} session`);
     }
@@ -36,4 +36,4 @@ const startSession = async (req: Request, res: Response) => {
     });
 };
 
-export default startSession
+export default startSession;
