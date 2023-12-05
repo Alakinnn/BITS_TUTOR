@@ -9,6 +9,7 @@ import {
     studentRouter,
     reviewRouter,
     sessionRouter,
+    sessionRequestRouter
 } from "./routes/index";
 import { errorHandler } from "./middlewares/index";
 import { connectMongoDB } from "./db/connect";
@@ -26,6 +27,7 @@ app.use("/api/v1/session", sessionRouter);
 app.use("/api/v1/tutor", tutorRouter);
 app.use("/api/v1/student", studentRouter);
 app.use("/api/v1/review", reviewRouter);
+app.use("/api/v1/request", sessionRequestRouter)
 app.use(errorHandler);
 
 const start = async () => {
