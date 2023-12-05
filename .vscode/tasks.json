@@ -1,0 +1,48 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Deploy Dev Containers",
+            "type": "shell",
+            "command": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Tear Down Dev Containers",
+            "type": "shell",
+            "command": "docker-compose down",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Build Dev Images",
+            "type": "shell",
+            "command": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml build",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Build Prod Images",
+            "type": "shell",
+            "command": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml build",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Push Images to Docker Hub",
+            "type": "shell",
+            "command": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml push",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Build & Push Prod Images to Docker Hub",
+            "type": "shell",
+            "command": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml build && docker-compose -f docker-compose.yml -f docker-compose.prod.yml push",
+            "problemMatcher": []
+        }
+    ]
+}

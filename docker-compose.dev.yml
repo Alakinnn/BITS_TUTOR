@@ -1,0 +1,35 @@
+version: '3'
+services:
+  server:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./server/src:/app/src:ro
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - MONGO_USERNAME=foo
+      - MONGO_PASSWORD=bar
+      - MONGO_DB_NAME=test
+    command: npm run dev
+
+  client:
+    build: 
+      context: ./client
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./client/src:/app/src:ro
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+
+  database:
+  # This is for MongoDB Compass during Development
+    ports:
+      - "27017:27017"
+
+  load-balancer:
+    ports:
+      - "3000:80"

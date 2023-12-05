@@ -1,0 +1,35 @@
+version: '3'
+services:
+  server:
+    build: ./server
+    image: mastermobo/tutor-finder:server-latest
+    environment:
+      - PORT=3000
+    depends_on:
+      - database
+  
+  client:
+    build: ./client
+    image: mastermobo/tutor-finder:client-latest
+    environment:
+      - PORT=3000
+    depends_on:
+      - server
+
+  database:
+    image: mongo
+    volumes:
+      - mongo-db:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=foo
+      - MONGO_INITDB_ROOT_PASSWORD=bar
+
+  load-balancer:
+    image: nginx:stable-alpine
+    ports:
+      - "3000:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
+volumes:
+  mongo-db:
