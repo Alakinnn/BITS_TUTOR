@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./server
-          file: Dockerfile.prod
+          file: ./server/Dockerfile.prod
           push: true
           tags: mastermobo/tutor-finder:server-latest
 
@@ -35,7 +35,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./client
-          file: Dockerfile.prod
+          file: ./client/Dockerfile.prod
           push: true
           tags: mastermobo/tutor-finder:client-latest
 
