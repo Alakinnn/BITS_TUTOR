@@ -15,6 +15,7 @@ const createSession = async (req: Request, res: Response) => {
         studentId,
         meetingNumber: zoomMeeting.id,
         startTime,
+        status: "inactive",
         meetingPassword: zoomMeeting.password,
     });
 
