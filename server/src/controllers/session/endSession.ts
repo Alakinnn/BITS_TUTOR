@@ -15,6 +15,7 @@ const endSession = async (req: Request, res: Response) => {
         throw new BadRequestError(`Can not end ${session.status} session`);
     }
     session.status = "completed";
+    await session.save();
 
     return res.status(200).json({
         message: "Session ended successfully",
