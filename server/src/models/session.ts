@@ -1,8 +1,9 @@
 import mongoose, { Date, Schema } from "mongoose";
 import MongoResult from "../interfaces/MongoResult";
-import { SessionExpirationDurationInSeconds } from "aws-sdk/clients/sagemaker";
 
 interface SessionDoc extends MongoResult {
+    title: string;
+    description: string;
     liveShareUrl: string;
     tutorId: mongoose.Schema.Types.ObjectId;
     studentId: mongoose.Schema.Types.ObjectId;
@@ -14,10 +15,21 @@ interface SessionDoc extends MongoResult {
     status: string;
 }
 
-const sessionSchema = new Schema<SessionExpirationDurationInSeconds>({
+const sessionSchema = new Schema<SessionDoc>({
     liveShareUrl: {
         type: String,
         trim: true,
+    },
+    title: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 200,
+    },
+    description: {
+        type: String,
+        trim: true,
+        maxlength: 1000,
     },
     tutorId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -56,4 +68,4 @@ const sessionSchema = new Schema<SessionExpirationDurationInSeconds>({
 const Session = mongoose.model("Session", sessionSchema);
 
 export default Session;
-export { SessionDoc }
+export { SessionDoc };
