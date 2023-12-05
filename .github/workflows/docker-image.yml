@@ -40,4 +40,4 @@ jobs:
 
       - name: Deploy Docker Stack 
         run: |
-          sshpass -p ${{ secrets.ROOT_SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no root@${{ secrets.DO_DROPLET_IP }} 'cd ~/app && git checkout main && git pull origin main && docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml mam'      
+          sshpass -p ${{ secrets.ROOT_SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no root@${{ secrets.DO_DROPLET_IP }} 'cd ~/app && git checkout main && git pull origin main && docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml --prune mam'      
