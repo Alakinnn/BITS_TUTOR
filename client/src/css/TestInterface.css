@@ -1,0 +1,46 @@
+.meetingSession {
+    width: 100%;
+    display: flex;
+}
+
+
+/* Meeting Info Styling: */
+.meetingInfo {
+    margin-top: 10.7%;
+    margin-left: 3.1%;
+    padding: 5.8%;
+    width: 69%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+}
+
+.line {
+    display: flex;
+    gap: 14.4%;
+}
+
+.buttons {
+    display: flex;
+    gap: 15%;
+    place-items: center;
+    width: 100%;
+}
+
+
+/* Participants Styling:  */
+.meetingParticipants {
+    margin-top: 10.7%;
+    margin-left: 2.5%;
+    padding: 3%;
+    width: 22.6%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+}
+
+.participant {
+    margin-top: 10%;
+    display: flex;
+    gap: 20%;
+}

@@ -5,7 +5,7 @@ import InitZoom from "./InitZoom";
 import InfoInterface from "./InfoInterface";
 import "../css/MeetingSession.css";
 
-const sessionId = "656db707dedcd0cd9235983e" // This is a fake ID, will have to implement scheduling feature
+const sessionId = "656f3380e1a8c77f64944fb7" // This is a fake ID, will have to implement scheduling feature
 
 
 // TUTOR
@@ -57,7 +57,7 @@ const TutorMeetingSession = () => {
         // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
         const response = await axios.post(`http://139.59.105.114/api/v1/session/${sessionId}/end`, {});
         console.log(response);
-        window.location.href = "/tutor";
+        setSessionActive(false);
     }    
 
     return (
