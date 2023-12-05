@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>website design</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="header">
+      <nav id="topNav">
+        <img src="images/1681038325chatgpt-logo-transparent.png" class="logo" />
+        <ul class="ulNav">
+          <li class="liNav"><a href="#">Find tutor</a></li>
+          <li class="liNav"><a href="#">My learning</a></li>
+          <li class="liNav"><a href="#">Schedules</a></li>
+        </ul>
+      </nav>
+      <div class="container">
+        <div class="header-text">
+          <h1>Online tutor<br />for private<br />lessons</h1>
+          <span class="square"></span>
+          <p>Looking for a private online tutor? Contact us !!!</p>
+          <button class="common-btn">Get started</button>
+          <div class="line">
+            <span class="line-1"></span><br />
+            <span class="line-2"></span><br />
+            <span class="line-3"></span><br />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav id="sideNav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Free sources</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </nav>
+    <img
+      src="images/Menu_black_rounded_square_interface_button.png"
+      id="menuBtn"
+    />
+
+    <!--about -->
+    <section id="about">
+      <div class="about-left-col">
+        <img src="images/billboard-202101-intro.png" />
+      </div>
+      <div class="about-right-col">
+        <div class="about-text">
+          <h2>Our Tutors Selection</h2>
+          <p>
+            Introducing our private courses with experienced experts around the
+            world.
+          </p>
+          <a href="#" class="see-more-btn">See More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- courses -->
+    <section class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col-6">
+          <h1>What services we served for you</h1>
+        </div>
+        <div class="col mt-5">
+          <p>Find out more subjects that we can serve you</p>
+        </div>
+        <div class="col mt-4">
+          <button type="button" class="learnmorebtn">Learn more</button>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-4">
+          <img src="/web edited/images/marketing.png" alt="" />
+          <h3>Marketing</h3>
+          <p>
+            Marketing courses teach strategies for influencing customer behavior
+            throughout the customer lifecycle.
+          </p>
+        </div>
+        <div class="col-4">
+          <img src="/web edited/images/illustration.png" alt="" />
+          <h3>Illustration</h3>
+          <p>
+            For those pursuing professional advancement, skill acquisition, or
+            even a new career path, these Illustration courses can be a valuable
+            resource.
+          </p>
+        </div>
+        <div class="col-4">
+          <img src="/web edited/images/science.png" alt="" />
+          <h3>Science</h3>
+          <p>
+            Learn about anatomy, biochemistry, biology, immunology, genetics,
+            neurobiology,and more.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- features -->
+    <section class="features">
+      <div class="container features-row">
+        <div class="features-left-col">
+          <div class="features-text">
+            <h1>Our tutor<br />selection</h1>
+            <span class="square"></span>
+            <p>
+              Introducing our private courses with experienced experts around
+              the world.
+            </p>
+            <div class="line">
+              <span class="line-1"></span><br />
+              <span class="line-2"></span><br />
+              <span class="line-3"></span><br />
+            </div>
+          </div>
+        </div>
+        <div class="features-right-col">
+          <img id="features-img" src="/web edited/images/64406da60366f007ba279995_Education Tech.png" />
+        </div>
+      </div>
+    </section>
+
+    <!-- free sources -->
+
+    <section class="free-sources">
+      <div class="container features-row">
+        <div class="features-right-col">
+          <img id="features-img" src="/web edited/images/apple-classroom.png" />
+        </div>
+        <div class="free-sources-left-col">
+          <div class="free-sources-text">
+            <h1>Free Sources</h1>
+            <span class="square"></span>
+            <p>
+                Explore free online courses from the world's top universities and companies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact us -->
+    <div>
+      <div class="contact">
+        <h2 class="contact-title">Get the best offer from us for you</h2>
+        <p class="contact-text">
+          We're committed to your privacy. Our uses the information you provide
+          to us to contact you about our relevant content, products, and
+          services. You may unsubscribe from these communications at any time.
+          For more information, check out our privacy policy.
+        </p>
+        <div>
+          <form method="post" action="/" id="form">
+            <div class="form-field">
+              <input type="text" placeholder="Your Email Address" class="contact-input"/>
+            </div>
+            <button class="contact-btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var menuBtn = document.getElementById("menuBtn");
+      var sideNav = document.getElementById("sideNav");
+
+      sideNav.style.right = "-250px";
+      menuBtn.onclick = function () {
+        if (sideNav.style.right == "-250px") {
+          sideNav.style.right = "0";
+        } else {
+          sideNav.style.right = "-250px";
+        }
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h4>Officially</h4>
+          <ul class="footer-ul">
+            <li><a href="#">Find tutors</a></li>
+            <li><a href="#">My learning</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a <href="#">>Schedules</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>News</h4>
+          <ul class="footer-ul">
+            <li><a href="#">Promo</a></li>
+            <li><a href="#">50% coupon</a></li>
+            <li><a href="#">Free trial</a></li>
+            <li><a href="#">Free sources</a></li>
+            <li><a href="#">Offering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About us</h4>
+          <ul class="footer-ul">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Tutors</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>
