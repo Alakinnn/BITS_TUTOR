@@ -1,14 +1,15 @@
 import mongoose, {Schema} from "mongoose";
-import Session from "./session";
+import MongoResult from "../interfaces/MongoResult";
 
-interface SessionRequest {
+interface SessionRequestDoc extends MongoResult{
   startTime: Date,
   endTime: Date,
   tutorId: mongoose.Schema.Types.ObjectId,
-  studentId: mongoose.Schema.Types.ObjectId
+  studentId: mongoose.Schema.Types.ObjectId,
+  status: string
 }
 
-const sessionRequestSchema = new Schema<SessionRequest>({
+const sessionRequestSchema = new Schema<SessionRequestDoc>({
   startTime: {
     type: Date,
     required: [true, "starting time must be defined"]
@@ -27,8 +28,15 @@ const sessionRequestSchema = new Schema<SessionRequest>({
       ref: "Student",
       required: true,
   },
+  status: {
+      type: String,
+      enum: ["approved", "denied", "pending"],
+      required: true,
+      default: "pending"
+  }
 })
 
 const SessionRequest = mongoose.model("SessionRequest", sessionRequestSchema)
 
 export default SessionRequest
+export {SessionRequestDoc} 

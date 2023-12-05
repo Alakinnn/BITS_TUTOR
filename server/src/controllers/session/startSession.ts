@@ -2,11 +2,8 @@ import Session, { SessionDoc } from "../../models/session";
 import { Request, Response } from "express";
 import { NotFoundError, BadRequestError } from "../../errors";
 import env from "../../config/env";
-import MongoResult from "../../interfaces/MongoResult";
 import {
-    createZoomMeeting,
-    ZoomMeetingOptions,
-    generateZak,
+    generateZak
 } from "../../services/zoomAPI";
 const { ZOOM_OWNER_EMAIL } = env;
 
