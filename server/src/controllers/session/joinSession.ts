@@ -1,19 +1,16 @@
-import Session, { SessionDoc } from "../../models/Session";
+import Session, { SessionDoc } from "../../models/session";
 import { Request, Response } from "express";
 import { NotFoundError, BadRequestError } from "../../errors";
 import env from "../../config/env";
 import MongoResult from "../../interfaces/MongoResult";
-import {
-    createZoomMeeting,
-    ZoomMeetingOptions,
-} from "../../services/zoomAPI";
+import { createZoomMeeting, ZoomMeetingOptions } from "../../services/zoomAPI";
 const { ZOOM_OWNER_EMAIL } = env;
 
 const joinSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
 
     // Check Session if exists and is active
-    const session: SessionDoc | null = await Session.findById(sessionId)
+    const session: SessionDoc | null = await Session.findById(sessionId);
 
     if (!session) {
         throw new NotFoundError("Session not found");
@@ -33,4 +30,4 @@ const joinSession = async (req: Request, res: Response) => {
     });
 };
 
-export default joinSession
+export default joinSession;
