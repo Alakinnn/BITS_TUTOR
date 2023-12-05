@@ -1,14 +1,13 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import './App.css';
+import './css/App.css';
 
-import Footer from "./footer";
-import './Footer.css';
-import StudentInterface from './studentInterface';
-import TutorInterface from './TutorInterface';
-import './Interface.css';
-import Navbar from "./Navbar";
-import './Navbar.css';
+import Footer from "./Footer/Footer";
+import './css/Footer.css';
+import StudentMeetingSession from './MeetingSession/StudentMeetingSession';
+import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
+import Navbar from "./Header/Navbar";
+import './css/Navbar.css';
 
 
 
@@ -25,8 +24,8 @@ function App() {
         {/* This is the test route for dev the footer */}
         
         <Route path="/footerTest" element={<Footer />} />
-        <Route path="/student" element={<StudentInterface />} />
-        <Route path="/tutor" element={<TutorInterface />} />
+        <Route path="/student" element={<StudentMeetingSession />} />
+        <Route path="/tutor" element={<TutorMeetingSession />} />
         
       </Routes>
     </BrowserRouter>
