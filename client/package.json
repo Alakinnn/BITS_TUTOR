@@ -10,6 +10,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.10",
+    "@fullcalendar/daygrid": "^6.1.10",
+    "@fullcalendar/react": "^6.1.10",
+    "@fullcalendar/timegrid": "^6.1.10",
     "@zoomus/websdk": "^2.18.2",
     "axios": "^1.6.2",
     "jsrsasign": "^10.9.0",
