@@ -1,4 +1,4 @@
-import Session, { SessionDoc } from "../../models/Session";
+import Session, { SessionDoc } from "../../models/session";
 import { Request, Response } from "express";
 import { NotFoundError, BadRequestError } from "../../errors";
 import env from "../../config/env";
@@ -40,6 +40,4 @@ const getStudentSessions = async (req: Request, res: Response) => {
     return res.status(200).json(sessions);
 };
 
-
-
-export {getSessionById, getSessions, getTutorSessions, getStudentSessions}
+export { getSessionById, getSessions, getTutorSessions, getStudentSessions };
