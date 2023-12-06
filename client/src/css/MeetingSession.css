@@ -121,3 +121,18 @@
   
 }
 
+.buttons input{
+  width: 150px;
+  height: 25px;
+  border-style: groove;
+  border-radius: 3px;
+}
+
+#blueButton{
+  width: 135px;
+  height: 30px;
+  padding-top: 0;
+  padding-bottom: 10px;
+
+}
+
