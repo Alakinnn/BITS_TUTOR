@@ -29,12 +29,12 @@ function TestInterface() {
           {/* <ButtonsSessions/> */}
 
 
-          <div className="buttons">
+          {/* <div className="buttons">
             <input type="url" placeholder="Live Share URL" />
             <button id="blueButton">Start Session</button>
-          </div>
+          </div> */}
 
-          {/* <EndSession/> */}
+          <EndSession/>
 
 
         </div>
