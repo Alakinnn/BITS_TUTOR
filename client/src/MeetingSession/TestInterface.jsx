@@ -4,6 +4,7 @@ import testImg from "/src/assets/footer/circle.svg";
 import testImg1 from "/src/assets/footer/circle-small.svg";
 import user from "/src/assets/footer/circle-user.svg";
 import ButtonsSessions from "./ButtonsSessions";
+import EndSession from "./EndSession";
 function TestInterface() {
 
   return (
@@ -32,6 +33,10 @@ function TestInterface() {
             <input type="url" placeholder="Live Share URL" />
             <button id="blueButton">Start Session</button>
           </div> */}
+
+          {/* <EndSession/> */}
+
+
         </div>
       </div>
       <div className="meetingParticipants">

@@ -81,6 +81,22 @@
     margin-left: 10px;
 }
 
+/*Sessions has not started yet*/
+.buttons .textNotice{
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* End Button */
+
+.buttons .endSession {
+    width: 150px;
+    height: 28px;
+    padding-bottom: 10px;
+    padding-top: 0;
+    margin-left: 10px;
+    background-color: red;
+    color: black ;
+}
 
 
 /* Participants Styling:  */

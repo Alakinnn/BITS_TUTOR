@@ -3,8 +3,7 @@ const ButtonsSessions = () => {
     <div className="buttons">
       <button className="joinMeeting">Join Meeting</button>
       <button className="liveCoding">Live Coding</button>
-      {/* <div className="joinMeeting">Join Meeting</div>
-      <div className="liveCoding">Live Coding</div> */}
+      {/* <h4 className="textNotice">Sessions has not started yet</h4> */}
     </div>
   )
 }
