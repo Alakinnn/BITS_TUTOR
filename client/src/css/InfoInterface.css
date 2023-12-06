@@ -6,22 +6,22 @@
 /* Meeting Info Styling: */
 .meetingInfo {
   margin-top: 10.7%;
-  margin-left: 3.1%;
-  padding: 5.8%;
-  width: 69%;
+  margin-left: 9.5%;
+  padding: 5%;
+  width: 55%;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
+  border-radius: 15px;
+  background-color: #d9d9d9;
   line-height: 1.5;
 }
 
 .line {
   display: flex;
-  gap: 14.4%;
+  gap: 12%;
 }
 
 .title {
-  margin-bottom: 5%;
+  margin-bottom: 4%;
 }
 
 .time {
@@ -36,19 +36,27 @@
 
 .buttons {
   display: flex;
-  gap: 2%;
+  gap: 5%;
   place-items: center;
   width: 100%;
-
 }
 
-#blueButton{
-    width: 25%;
-    height: 75%;
+button {
+    padding: 10%;
+    text-align: center;
+}
+
+.blueButton{
+    background-color: #6AB3E8;
+}
+
+.blueButton:hover{
+    background-color: #5A9CD6;
 }
 
 .buttons input {
   width: 30%;
+  padding: 2%;
 }
 
 .buttons input::placeholder {
@@ -63,18 +71,6 @@
 
 /* Start Buttons */
 
-.buttons .joinMeeting {
-    width: 25%;
-    height: 75%;
-    padding-top: 0;
-}
-
-.buttons .liveCoding {
-    width: 25%;
-    height: 75%;
-    padding-top: 0;
-    margin-left: 2%;
-}
 
 /*Sessions has not started yet*/
 .buttons .textNotice{
@@ -84,37 +80,39 @@
 /* End Button */
 
 .buttons .endSession {
-    width: 25%;
-    height: 75%;
-    padding-top: 0;
-    margin-left: 3%;
-    background-color: red;
-    color: black ;
+    background-color: #FB6868;
+}
+
+.buttons .endSession:hover {
+    background-color: #E85A5A;
 }
 
 
 /* Participants Styling:  */
 .meetingParticipants {
   margin-top: 10.7%;
-  margin-left: 2.5%;
+  margin-left: 5%;
   padding: 3%;
-  width: 22.6%;
+  width: 20%;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
+  border-radius: 5%;
+  background-color: #d9d9d9;
 }
 
 .participant {
-  margin-top: 10%;
+  margin-top: 8%;
   display: flex;
-  gap: 20%;
+  gap: 15%;
+  max-width: 80%;
 }
 
 .meetingParticipants h2 {
-  margin-top: 20%;
+  margin-top: 8%;
+  text-align: center;
+  margin-bottom: 10%;
 }
 
 .participant img {
-    width: 10%;
+    width: 14%;
     margin-bottom: 5%;
 }
