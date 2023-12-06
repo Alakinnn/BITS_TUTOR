@@ -1,14 +1,14 @@
 version: '3'
 services:
   server:
+    depends_on:
+      - database
     build: 
       context: ./server
       dockerfile: Dockerfile.dev
     volumes:
       - ./server/src:/app/src:ro
       - /app/node_modules
-    environment:
-      - NODE_ENV=development
     env_file:
       - ./server/.env
     command: npm run dev
