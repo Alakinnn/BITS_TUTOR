@@ -26,13 +26,13 @@ function TestInterface() {
           <img className="pictureTitle" src={testImg1} alt="circle" />
          
          
-          <ButtonsSessions/>
+          {/* <ButtonsSessions/> */}
 
 
-          {/* <div className="buttons">
+          <div className="buttons">
             <input type="url" placeholder="Live Share URL" />
             <button id="blueButton">Start Session</button>
-          </div> */}
+          </div>
 
           {/* <EndSession/> */}
 
