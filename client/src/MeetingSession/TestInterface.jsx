@@ -3,7 +3,9 @@ import "../css/TestInterface.css";
 import testImg from "/src/assets/footer/circle.svg";
 import testImg1 from "/src/assets/footer/circle-small.svg";
 import user from "/src/assets/footer/circle-user.svg";
+import ButtonsSessions from "./ButtonsSessions";
 function TestInterface() {
+
   return (
     <div className="meetingSession">
       <div className="meetingInfo">
@@ -21,18 +23,27 @@ function TestInterface() {
         </div>
         <div className="line accessToURLs">
           <img className="pictureTitle" src={testImg1} alt="circle" />
-          <div className="buttons">
+         
+         
+          <ButtonsSessions/>
+
+
+          {/* <div className="buttons">
             <input type="url" placeholder="Live Share URL" />
             <button id="blueButton">Start Session</button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="meetingParticipants">
         <h2>Participants:</h2>
-        <div className="participant">
+        <div className="participant student">
           <img className="pictureTitle" src={user} alt="circle" />
           <h4>Participant 1</h4>
         </div>
+        <div className="participant tutor">
+          <img className="pictureTitle" src={user} alt="circle" />
+          <h4>Participant 1</h4>
+        </div> 
       </div>
     </div>
   );

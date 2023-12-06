@@ -1,72 +1,110 @@
- .meetingSession {
-    width: 100%;
-    display: flex;
+.meetingSession {
+  width: 100%;
+  display: flex;
 }
-
 
 /* Meeting Info Styling: */
 .meetingInfo {
-    margin-top: 10.7%;
-    margin-left: 3.1%;
-    padding: 5.8%;
-    width: 69%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-    line-height: 1.5;
+  margin-top: 10.7%;
+  margin-left: 3.1%;
+  padding: 5.8%;
+  width: 69%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  line-height: 1.5;
 }
 
 .line {
-    display: flex;
-    gap: 14.4%;
-
+  display: flex;
+  gap: 14.4%;
 }
 
-.title{
-    margin-bottom: 40px;
+.title {
+  margin-bottom: 40px;
 }
 
-.time{
-    margin-bottom: 10px;
+.time {
+  margin-bottom: 10px;
 }
 
-.pictureTitle{
-    margin-top: 3px;
-    width: 17px;
-}
+/* input url */
 
+.pictureTitle {
+  margin-top: 3px;
+  width: 17px;
+}
 
 .buttons {
-    display: flex;
-    gap: 15%;
-    margin-top: 6px;
-    place-items: center;
-    width: 100%;
+  display: flex;
+  gap: 2%;
+  place-items: center;
+  width: 100%;
+
 }
+
+#blueButton{
+    width: 150px;
+    height: 27px;
+}
+
+.buttons input {
+  width: 12rem;
+}
+
+.buttons input::placeholder {
+  padding-left: 5px;
+  font-size: 11px;
+}
+
+.accessToURLs {
+  margin-top: 20px;
+}
+
+
+
+
+/* Start Buttons */
+
+.buttons .joinMeeting {
+    width: 150px;
+    height: 28px;
+    padding-bottom: 10px;
+    padding-top: 0;
+}
+
+.buttons .liveCoding {
+    width: 150px;
+    height: 28px;
+    padding-bottom: 10px;
+    padding-top: 0;
+    margin-left: 10px;
+}
+
 
 
 /* Participants Styling:  */
 .meetingParticipants {
-    margin-top: 10.7%;
-    margin-left: 2.5%;
-    padding: 3%;
-    width: 22.6%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
+  margin-top: 10.7%;
+  margin-left: 2.5%;
+  padding: 3%;
+  width: 22.6%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
 }
 
 .participant {
-    margin-top: 10%;
-    display: flex;
-    gap: 20%;
+  margin-top: 10%;
+  display: flex;
+  gap: 20%;
 }
 
 .meetingParticipants h2 {
-    margin-top: 20%;
+  margin-top: 20%;
 }
 
 .participant img {
-    width: 25px;
-    margin-bottom: 5px;
+  width: 25px;
+  margin-bottom: 5px;
 }
