@@ -1,4 +1,4 @@
-.meetingSession {
+ .meetingSession {
     width: 100%;
     display: flex;
 }
@@ -13,16 +13,33 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f8f8f8;
+    line-height: 1.5;
 }
 
 .line {
     display: flex;
     gap: 14.4%;
+
 }
+
+.title{
+    margin-bottom: 40px;
+}
+
+.time{
+    margin-bottom: 10px;
+}
+
+.pictureTitle{
+    margin-top: 3px;
+    width: 17px;
+}
+
 
 .buttons {
     display: flex;
     gap: 15%;
+    margin-top: 6px;
     place-items: center;
     width: 100%;
 }
@@ -43,4 +60,13 @@
     margin-top: 10%;
     display: flex;
     gap: 20%;
+}
+
+.meetingParticipants h2 {
+    margin-top: 20%;
+}
+
+.participant img {
+    width: 25px;
+    margin-bottom: 5px;
 }
