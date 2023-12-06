@@ -5,13 +5,16 @@ import env from "../../config/env";
 import {
     generateZak
 } from "../../services/zoomAPI";
+import { TutorDoc } from "../../models/tutor";
 const { ZOOM_OWNER_EMAIL } = env;
 
 const startSession = async (req: Request, res: Response) => {
     //Extract data to start session
     const sessionId = req.params.sessionId;
     const { liveShareUrl } = req.body;
-    const session: SessionDoc | null = await Session.findById(sessionId);
+    const session: SessionDoc | null = await Session.findById(sessionId).populate({
+        path: "tutor"
+    });
 
     // Checking session if exists and is inactive, then update session
     if (!session) {
@@ -22,6 +25,7 @@ const startSession = async (req: Request, res: Response) => {
         throw new BadRequestError(`Can not start ${session.status} session`);
     }
 
+    const tutorUsername = session.tutorId.username
     session.status = "active";
     session.liveShareUrl = liveShareUrl;
     session.zak = await generateZak();
@@ -29,7 +33,7 @@ const startSession = async (req: Request, res: Response) => {
 
     return res.status(200).json({
         message: "Session started successfully",
-        session: { ...session._doc, hostEmail: ZOOM_OWNER_EMAIL },
+        session: { ...session._doc, hostEmail: ZOOM_OWNER_EMAIL, tutorUsername },
     });
 };
 
