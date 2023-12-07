@@ -4,7 +4,7 @@ import InitZoom from "./InitZoom";
 import InfoInterface from "./InfoInterface";
 import "../css/MeetingSession.css";
 
-const sessionId = "6570540f7e4a31100b3bca08"; // This is a fake ID, will have to implement scheduling feature
+const sessionId = "6569a1f8c3f228b8ee4b6de0"; // This is a fake ID, will have to implement scheduling feature
 
 // STUDENT
 const StudentMeetingSession = () => {
@@ -34,25 +34,36 @@ const StudentMeetingSession = () => {
   const joinSession = async () => {
     const response = await axios.get(`http://139.59.105.114/api/v1/session/${sessionId}/join`); 
     console.log(response);
-    InitZoom(response.data.session);
-  };
-
-  const joinLiveCoding = () => {
-    if (session.liveShareUrl) {
+    if (response.data.session.liveShareUrl) {
       // Redirect to live share URL
-      window.open(session.liveShareUrl, "_blank");
+      window.open(response.data.session.liveShareUrl, "_blank");
     }
-  }
+    InitZoom(response.data.session);
+    
+  };
 
   return (
     <>
-      {<InfoInterface
-            role = 'student'
-            renderData={session}
-            ssActive = {session.status}
-            joinSessionFunction = {joinSession}
-            joinLiveCodingFunction={joinLiveCoding}
-          />}
+      <div id="boxContains">
+        {<InfoInterface/>}
+        {session.status === "active" ? (
+          <div>
+            <div className="infoEnd">
+              <h3 className="title">End Time: </h3>
+              <h3 className="text">2am PCT</h3>
+            </div>
+            <h4 id="message">Session is ongoing</h4>
+            <div className="joinSession">
+              <button onClick={joinSession}>Join Session</button>
+            </div>
+          </div>
+        ) : (
+          <div className="joinSession">
+            <h4 id="message">Session has not started yet</h4>
+          </div>
+        )}
+        <div id="meetingSDKElement"></div>
+      </div>
     </>
   );
 };

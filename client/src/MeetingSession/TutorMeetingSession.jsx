@@ -4,10 +4,8 @@ import axios from "axios";
 import InitZoom from "./InitZoom";
 import InfoInterface from "./InfoInterface";
 import "../css/MeetingSession.css";
-import PrintAllTutorSessions from "../Login/PrintAllTutorSessions";
 
-const functionResponse = PrintAllTutorSessions();
-const sessionId = "6570540f7e4a31100b3bca08" // This is a fake ID, will have to implement scheduling feature
+const sessionId = "656f3380e1a8c77f64944fb7" // This is a fake ID, will have to implement scheduling feature
 
 
 // TUTOR
@@ -35,7 +33,6 @@ const TutorMeetingSession = () => {
   
     const handleChange = (event) => {
         setInputUrl(event.target.value)
-        console.log('aaa')
     }
 
 
@@ -65,19 +62,27 @@ const TutorMeetingSession = () => {
 
     return (
         <>
-        
-          {<InfoInterface
-            role = 'tutor'
-            renderData = {session}
-            ssActive = {sessionActive}
-            joinSessionFunction = {InitZoom(session)}
-            handleChangeFunction = {handleChange}
-            startSessionFunction = {startSession}
-            endSessionFunction = {endSession}
-          />}
-
-        
+        <div id="boxContains">
+          {<InfoInterface/>}
+          {sessionActive ? (
+            <div className="endSession">
+              <button onClick={endSession}>End Session</button>
+            </div>
+          ) : (
+            <div>
+              <h4 id="message">To start the meeting, enter Live Share URL</h4>
+              <div className="startSession">
+                <input
+                  type="url"
+                  placeholder="Live Share URL"
+                  onChange={handleChange}
+                />
+                <button onClick={startSession}>Start Session</button>
+              </div>
+            </div>
+          )}
           <div id="meetingSDKElement"></div>
+        </div>
       </>
     )  
 }

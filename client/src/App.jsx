@@ -7,8 +7,7 @@ import './css/Footer.css';
 import StudentMeetingSession from './MeetingSession/StudentMeetingSession';
 import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
 import Navbar from "./Header/Navbar";
-import LoginTest from "./Login/LoginTest";
-import PrintAllTutorSessions from "./Login/PrintAllTutorSessions";
+import TestInterface from "./MeetingSession/TestInterface";
 import './css/Navbar.css';
 
 
@@ -22,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<PrintAllTutorSessions />} />
+      <Route path="/" element={<TestInterface />} />
         {/* This is the test route for dev the footer */}
         
         <Route path="/footerTest" element={<Footer />} />
