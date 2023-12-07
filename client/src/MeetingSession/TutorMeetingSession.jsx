@@ -2,12 +2,12 @@ import {useState, useEffect} from "react";
 // import StudentInterface from "./studentInterface";
 import axios from "axios";
 import InitZoom from "./InitZoom";
-import InfoInterface from "./InfoInterface";
+import MeetingSessionContainer from "./MeetingSessionContainer";
 import "../css/MeetingSession.css";
 import PrintAllTutorSessions from "../Login/PrintAllTutorSessions";
 
 const functionResponse = PrintAllTutorSessions();
-const sessionId = "6570540f7e4a31100b3bca08" // This is a fake ID, will have to implement scheduling feature
+const sessionId = "6571efe2da17854f7db59958" // This is a fake ID, will have to implement scheduling feature
 
 
 // TUTOR
@@ -35,7 +35,6 @@ const TutorMeetingSession = () => {
   
     const handleChange = (event) => {
         setInputUrl(event.target.value)
-        console.log('aaa')
     }
 
 
@@ -66,11 +65,11 @@ const TutorMeetingSession = () => {
     return (
         <>
         
-          {<InfoInterface
+          {<MeetingSessionContainer
             role = 'tutor'
             renderData = {session}
             ssActive = {sessionActive}
-            joinSessionFunction = {InitZoom(session)}
+            joinSessionFunction = {() => InitZoom(session)}
             handleChangeFunction = {handleChange}
             startSessionFunction = {startSession}
             endSessionFunction = {endSession}

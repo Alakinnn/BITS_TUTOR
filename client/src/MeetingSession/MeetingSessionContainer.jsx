@@ -6,8 +6,7 @@ import user from "/src/assets/footer/circle-user.svg";
 import ButtonsSessions from "./Buttons/ButtonsSessions";
 import EndSession from "./Buttons/EndSession";
 import InputUrl from "./Buttons/InputUrl";
-function InfoInterface({role, renderData, ssActive, joinSessionFunction, joinLiveCodingFunction, handleChangeFunction, startSessionFunction, endSessionFunction}) {
-  console.log(renderData);
+function MeetingSessionContainer({role, renderData, ssActive, joinSessionFunction, joinLiveCodingFunction, handleChangeFunction, startSessionFunction, endSessionFunction}) {
   return (
     <div className="meetingSession">
       <div className="meetingInfo">
@@ -38,13 +37,13 @@ function InfoInterface({role, renderData, ssActive, joinSessionFunction, joinLiv
               />
             )
           ) : (
-            ssActive ? (
+            ssActive == 'active' ? (
               <ButtonsSessions
                 joinSessionFunction = {joinSessionFunction}
                 joinLiveCodingFunction = {joinLiveCodingFunction}
               />
             ) : (
-              <h4 className="textNotice">Sessions has not started yet</h4>
+                <h4 className="textNotice">Sessions has not started or has been</h4>
             )
           ) 
           }
@@ -75,4 +74,4 @@ function InfoInterface({role, renderData, ssActive, joinSessionFunction, joinLiv
   );
 }
 
-export default InfoInterface;
+export default MeetingSessionContainer;

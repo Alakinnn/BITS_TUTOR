@@ -1,4 +1,4 @@
-const ButtonsSessions = (joinSessionFunction, joinLiveCodingFunction) => {
+const ButtonsSessions = ({joinSessionFunction, joinLiveCodingFunction}) => {
   return (
     <div className="buttons">
       <button className="joinMeeting blueButton" onClick={joinSessionFunction}>Join Meeting</button>

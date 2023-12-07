@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import InitZoom from "./InitZoom";
-import InfoInterface from "./InfoInterface";
+import InfoInterface from "./MeetingSessionContainer";
 import "../css/MeetingSession.css";
 
-const sessionId = "6570540f7e4a31100b3bca08"; // This is a fake ID, will have to implement scheduling feature
+const sessionId = "6571efe2da17854f7db59958"; // This is a fake ID, will have to implement scheduling feature
 
 // STUDENT
 const StudentMeetingSession = () => {
@@ -53,6 +53,8 @@ const StudentMeetingSession = () => {
             joinSessionFunction = {joinSession}
             joinLiveCodingFunction={joinLiveCoding}
           />}
+
+      <div id="meetingSDKElement"></div>
     </>
   );
 };
