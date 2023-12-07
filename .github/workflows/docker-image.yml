@@ -4,6 +4,28 @@ on:
   push:
     branches: [ "main" ]
 
+env:
+  - MONGO_USERNAME=${{ secrets.MONGO_USERNAME }}
+  - MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}
+  - MONGO_DB_NAME=${{ secrets.MONGO_DB_NAME }}
+
+  - PORT=${{ secrets.PORT }}
+  - MONGO_PORT=${{ secrets.MONGO_PORT }}
+  - MONGO_IP=${{ secrets.MONGO_IP }}
+  - DO_S3_REGION=${{ secrets.DO_S3_REGION }}
+  - DO_S3_ENDPOINT=${{ secrets.DO_S3_ENDPOINT }}
+  - DO_S3_NAME=${{ secrets.DO_S3_NAME }}
+
+  - AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }}
+  - AWS_SECRET_KEY=${{ secrets.AWS_SECRET_KEY }}
+
+  - ZOOM_MEETING_SDK_KEY=${{ secrets.ZOOM_MEETING_SDK_KEY }}
+  - ZOOM_MEETING_SDK_SECRET=${{ secrets.ZOOM_MEETING_SDK_SECRET }}
+  - ZOOM_S2S_ACCOUNT_ID=${{ secrets.ZOOM_S2S_ACCOUNT_ID }}
+  - ZOOM_S2S_CLIENT_ID=${{ secrets.ZOOM_S2S_CLIENT_ID }}
+  - ZOOM_S2S_CLIENT_SECRET=${{ secrets.ZOOM_S2S_CLIENT_SECRET }}
+  - ZOOM_OWNER_EMAIL=${{ secrets.ZOOM_OWNER_EMAIL }}
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
