@@ -1,34 +1,64 @@
-import mongoose, {Schema} from "mongoose";
-import Session from "./session";
+import mongoose, { Schema } from "mongoose";
+import MongoResult from "../interfaces/MongoResult";
 
-interface SessionRequest {
-  startTime: Date,
-  endTime: Date,
-  tutorId: mongoose.Schema.Types.ObjectId,
-  studentId: mongoose.Schema.Types.ObjectId
+interface SessionRequestDoc extends MongoResult {
+    title: string;
+    description: string;
+    tutor: mongoose.Schema.Types.ObjectId;
+    student: mongoose.Schema.Types.ObjectId;
+    startTime: Date;
+    endTime: Date;
+    timezone: string;
+    status: string;
 }
 
-const sessionRequestSchema = new Schema<SessionRequest>({
-  startTime: {
-    type: Date,
-    required: [true, "starting time must be defined"]
-  },
-  endTime: {
-    type: Date,
-    required: [true, "ending time must be defined"]
-  },
-  tutorId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Tutor",
-      required: true,
-  },
-  studentId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Student",
-      required: true,
-  },
-})
+// I have modified the sessioRequest schema to include title and description.
+// This is to when approving the session, response object will also include
+// attributes for the session in createSession controoler
 
-const SessionRequest = mongoose.model("SessionRequest", sessionRequestSchema)
+const sessionRequestSchema = new Schema<SessionRequestDoc>({
+    startTime: {
+        type: Date,
+        required: [true, "starting time must be defined"],
+    },
+    endTime: {
+        type: Date,
+        required: [true, "ending time must be defined"],
+    },
+    timezone: {
+        type: String,
+        required: [true, "timezone must be defined"],
+    },
+    tutor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tutor",
+        required: true,
+    },
+    student: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Student",
+        required: true,
+    },
+    status: {
+        type: String,
+        enum: ["approved", "denied", "pending"],
+        required: true,
+        default: "pending",
+    },
+    title: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 200,
+    },
+    description: {
+        type: String,
+        trim: true,
+        maxlength: 1000,
+    },
+});
 
-export default SessionRequest
+const SessionRequest = mongoose.model("SessionRequest", sessionRequestSchema);
+
+export default SessionRequest;
+export { SessionRequestDoc };

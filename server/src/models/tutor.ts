@@ -1,12 +1,12 @@
 import mongoose, { Schema } from "mongoose";
 
-interface Tutor {
+interface TutorDoc {
     email: string;
     username: string;
     password: string;
 }
 
-const tutorSchema = new Schema<Tutor>({
+const tutorSchema = new Schema<TutorDoc>({
     email: {
         type: String,
         trim: true,
@@ -35,3 +35,4 @@ const tutorSchema = new Schema<Tutor>({
 const Tutor = mongoose.model("Tutor", tutorSchema);
 
 export default Tutor;
+export { TutorDoc };

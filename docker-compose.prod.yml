@@ -1,6 +1,8 @@
 version: '3'
 services:
   server:
+    depends_on:
+      - database
     build: 
       context: ./server
       dockerfile: Dockerfile.prod
@@ -33,22 +35,6 @@ services:
       - ZOOM_S2S_CLIENT_SECRET=${ZOOM_S2S_CLIENT_SECRET}
       - ZOOM_OWNER_EMAIL=${ZOOM_OWNER_EMAIL}
     command: npm start
-
-  client:
-    build: 
-      context: ./client
-      dockerfile: Dockerfile.prod
-
-    deploy:
-      replicas: 3
-      restart_policy:
-        condition: any
-      update_config:
-        parallelism: 1
-        delay: 15s
-    environment:
-      - NODE_ENV=production
-    command: npm run serve
     
   database:
     environment:

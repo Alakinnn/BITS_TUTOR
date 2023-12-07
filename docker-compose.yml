@@ -8,14 +8,6 @@ services:
     depends_on:
       - database
   
-  client:
-    build: ./client
-    image: mastermobo/tutor-finder:client-latest
-    environment:
-      - PORT=3000
-    depends_on:
-      - server
-
   database:
     image: mongo
     volumes:

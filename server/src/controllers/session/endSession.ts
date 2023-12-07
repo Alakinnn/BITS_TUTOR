@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { NotFoundError, BadRequestError } from "../../errors";
 import env from "../../config/env";
 import MongoResult from "../../interfaces/MongoResult";
+import populateTutorAndStudent from "../../utils/populate";
 
 const endSession = async (req: Request, res: Response) => {
     const sessionId = req.params.sessionId;
@@ -16,6 +17,8 @@ const endSession = async (req: Request, res: Response) => {
     }
     session.status = "completed";
     await session.save();
+
+    await populateTutorAndStudent(session);
 
     return res.status(200).json({
         message: "Session ended successfully",
