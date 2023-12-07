@@ -1,41 +1,39 @@
-import Session, { SessionDoc } from "../../models/session";
+import Session from "../../models/session";
 import { Request, Response } from "express";
-import { NotFoundError, BadRequestError } from "../../errors";
-import env from "../../config/env";
-import MongoResult from "../../interfaces/MongoResult";
-import {
-    createZoomMeeting,
-    ZoomMeetingOptions,
-    generateZak,
-} from "../../services/zoomAPI";
-const { ZOOM_OWNER_EMAIL } = env;
+import { NotFoundError } from "../../errors";
+import populateTutorAndStudent from "../../utils/populate";
 
 const getSessionById = async (req: Request, res: Response) => {
     const { sessionId } = req.params;
+
     const session = await Session.findById(sessionId);
 
     if (!session) {
         throw new NotFoundError("Session not found");
     }
 
+    await populateTutorAndStudent(session);
+
     return res.status(200).json(session);
 };
 
 const getSessions = async (req: Request, res: Response) => {
-    const sessions = await Session.find({});
+    const { tutor, student } = req.params;
+    const sessions = await Session.find({ tutor, student });
+
     return res.status(200).json(sessions);
 };
 
 const getTutorSessions = async (req: Request, res: Response) => {
     const { tutorId } = req.params;
-    const sessions = await Session.find({ tutorId });
+    const sessions = await Session.find({ tutor: tutorId });
 
     return res.status(200).json(sessions);
 };
 
 const getStudentSessions = async (req: Request, res: Response) => {
     const { studentId } = req.params;
-    const sessions = await Session.find({ studentId });
+    const sessions = await Session.find({ student: studentId });
 
     return res.status(200).json(sessions);
 };

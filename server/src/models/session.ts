@@ -1,12 +1,19 @@
-import mongoose, { Date, Schema } from "mongoose";
+import mongoose, {
+    Date,
+    ObjectId,
+    PopulatedDoc,
+    Schema,
+    Document,
+} from "mongoose";
 import MongoResult from "../interfaces/MongoResult";
+import Tutor from "./tutor";
 
 interface SessionDoc extends MongoResult {
     title: string;
     description: string;
     liveShareUrl: string;
-    tutorId: mongoose.Schema.Types.ObjectId;
-    studentId: mongoose.Schema.Types.ObjectId;
+    tutor: mongoose.Schema.Types.ObjectId;
+    student: mongoose.Schema.Types.ObjectId;
     meetingNumber: number;
     meetingPassword: string;
     zak: string;
@@ -20,23 +27,12 @@ const sessionSchema = new Schema<SessionDoc>({
         type: String,
         trim: true,
     },
-    title: {
-        type: String,
-        required: true,
-        trim: true,
-        maxlength: 200,
-    },
-    description: {
-        type: String,
-        trim: true,
-        maxlength: 1000,
-    },
-    tutorId: {
+    tutor: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Tutor",
         required: true,
     },
-    studentId: {
+    student: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Student",
         required: true,
@@ -62,6 +58,16 @@ const sessionSchema = new Schema<SessionDoc>({
         enum: ["active", "inactive", "completed", "cancelled"],
         required: true,
         default: "inactive",
+    },
+    title: {
+        type: mongoose.Schema.Types.String,
+        ref: "SessionRequest",
+        required: true,
+    },
+    description: {
+        type: mongoose.Schema.Types.String,
+        ref: "SessionRequest",
+        required: true,
     },
 });
 

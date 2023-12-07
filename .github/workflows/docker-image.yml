@@ -23,21 +23,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           
-      - name: Build and Push Server Images
+      - name: Build and Push Docker Images
         uses: docker/build-push-action@v5
         with:
           context: ./server
           file: ./server/Dockerfile.prod
           push: true
           tags: mastermobo/tutor-finder:server-latest
-
-      - name: Build and Push Client Images
-        uses: docker/build-push-action@v5
-        with:
-          context: ./client
-          file: ./client/Dockerfile.prod
-          push: true
-          tags: mastermobo/tutor-finder:client-latest
 
   deploy:
     needs: build-and-push
@@ -48,4 +40,4 @@ jobs:
 
       - name: Deploy Docker Stack 
         run: |
-          sshpass -p ${{ secrets.ROOT_SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no root@${{ secrets.DO_DROPLET_IP }} 'cd ~/app && git checkout main && git pull origin main && docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml mam'      
+          sshpass -p ${{ secrets.ROOT_SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no root@${{ secrets.DO_DROPLET_IP }} 'cd ~/app && git checkout main && git pull origin main && docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml --prune mam'      

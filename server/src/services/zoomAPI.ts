@@ -33,8 +33,6 @@ const getZoomAccessToken = async () => {
 
 interface ZoomMeetingOptions {
     topic: string;
-    tutorId: string;
-    studentId: string;
     tutorEmail: string;
     studentEmail: string;
     startTime: string;

@@ -2,12 +2,9 @@ import Session, { SessionDoc } from "../../models/session";
 import { Request, Response } from "express";
 import { NotFoundError, BadRequestError } from "../../errors";
 import env from "../../config/env";
-import MongoResult from "../../interfaces/MongoResult";
-import {
-    createZoomMeeting,
-    ZoomMeetingOptions,
-    generateZak,
-} from "../../services/zoomAPI";
+import { generateZak } from "../../services/zoomAPI";
+import { TutorDoc } from "../../models/tutor";
+import populateTutorAndStudent from "../../utils/populate";
 const { ZOOM_OWNER_EMAIL } = env;
 
 const startSession = async (req: Request, res: Response) => {
@@ -29,6 +26,8 @@ const startSession = async (req: Request, res: Response) => {
     session.liveShareUrl = liveShareUrl;
     session.zak = await generateZak();
     await session.save();
+
+    await populateTutorAndStudent(session);
 
     return res.status(200).json({
         message: "Session started successfully",
