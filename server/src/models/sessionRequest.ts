@@ -4,8 +4,8 @@ import MongoResult from "../interfaces/MongoResult";
 interface SessionRequestDoc extends MongoResult {
     title: string;
     description: string;
-    tutorId: mongoose.Schema.Types.ObjectId;
-    studentId: mongoose.Schema.Types.ObjectId;
+    tutor: mongoose.Schema.Types.ObjectId;
+    student: mongoose.Schema.Types.ObjectId;
     startTime: Date;
     endTime: Date;
     timezone: string;
@@ -29,12 +29,12 @@ const sessionRequestSchema = new Schema<SessionRequestDoc>({
         type: String,
         required: [true, "timezone must be defined"],
     },
-    tutorId: {
+    tutor: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Tutor",
         required: true,
     },
-    studentId: {
+    student: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Student",
         required: true,

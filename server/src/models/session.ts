@@ -1,4 +1,10 @@
-import mongoose, { Date, ObjectId, PopulatedDoc, Schema, Document} from "mongoose";
+import mongoose, {
+    Date,
+    ObjectId,
+    PopulatedDoc,
+    Schema,
+    Document,
+} from "mongoose";
 import MongoResult from "../interfaces/MongoResult";
 import Tutor from "./tutor";
 
@@ -7,7 +13,7 @@ interface SessionDoc extends MongoResult {
     description: string;
     liveShareUrl: string;
     tutor: mongoose.Schema.Types.ObjectId;
-    studentId: mongoose.Schema.Types.ObjectId;
+    student: mongoose.Schema.Types.ObjectId;
     meetingNumber: number;
     meetingPassword: string;
     zak: string;
@@ -26,7 +32,7 @@ const sessionSchema = new Schema<SessionDoc>({
         ref: "Tutor",
         required: true,
     },
-    studentId: {
+    student: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Student",
         required: true,
@@ -56,13 +62,13 @@ const sessionSchema = new Schema<SessionDoc>({
     title: {
         type: mongoose.Schema.Types.String,
         ref: "SessionRequest",
-        required: true
+        required: true,
     },
     description: {
         type: mongoose.Schema.Types.String,
         ref: "SessionRequest",
-        required: true
-    }
+        required: true,
+    },
 });
 
 const Session = mongoose.model("Session", sessionSchema);

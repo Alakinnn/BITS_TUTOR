@@ -6,9 +6,12 @@ import { calculateDuration } from "../../utils/time";
 import Tutor, { TutorDoc } from "../../models/tutor";
 import Student, { StudentDoc } from "../../models/student";
 import { NotFoundError } from "../../errors";
+import populateTutorAndStudent from "../../utils/populate";
 
 const createSession = async (req: Request, res: Response) => {
-    const session: SessionDoc = await createSessionFromRequest(req.body);
+    const session: SessionDoc | null = await createSessionFromRequest(req.body);
+
+    await populateTutorAndStudent(session);
 
     return res.status(201).json({
         message: "Session created successfully",
@@ -50,8 +53,8 @@ const createSessionFromRequest = async (
     const session: SessionDoc = await Session.create({
         title,
         description,
-        tutorId,
-        studentId,
+        tutor: tutorId,
+        student: studentId,
         meetingNumber: zoomMeeting.id,
         startTime,
         endTime,

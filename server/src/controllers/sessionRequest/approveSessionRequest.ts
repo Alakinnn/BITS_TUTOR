@@ -3,6 +3,7 @@ import SessionRequest, { SessionRequestDoc } from "../../models/sessionRequest";
 import { BadRequestError, NotFoundError } from "../../errors";
 import { createSessionFromRequest } from "../session/createSession";
 import CreateSessionRequestBody from "../../interfaces/CreateSessionRequestBody";
+import populateTutorAndStudent from "../../utils/populate";
 
 const approveSessionRequest = async (req: Request, res: Response) => {
     const requestId = req.params.requestId;
@@ -25,14 +26,17 @@ const approveSessionRequest = async (req: Request, res: Response) => {
     const requestBody: CreateSessionRequestBody = {
         title: sessionRequest.title,
         description: sessionRequest.description,
-        tutorId: sessionRequest.tutorId.toString(),
-        studentId: sessionRequest.studentId.toString(),
+        tutorId: sessionRequest.tutor.toString(),
+        studentId: sessionRequest.student.toString(),
         startTime: sessionRequest.startTime.toISOString(),
         endTime: sessionRequest.endTime.toISOString(),
         timezone: sessionRequest.timezone,
     };
 
     const session = await createSessionFromRequest(requestBody);
+
+    await populateTutorAndStudent(sessionRequest);
+    await populateTutorAndStudent(session);
 
     res.status(200).json({
         message: "Successfully approve session",

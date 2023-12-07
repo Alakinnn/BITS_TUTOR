@@ -4,6 +4,7 @@ import { NotFoundError, BadRequestError } from "../../errors";
 import env from "../../config/env";
 import MongoResult from "../../interfaces/MongoResult";
 import { createZoomMeeting, ZoomMeetingOptions } from "../../services/zoomAPI";
+import populateTutorAndStudent from "../../utils/populate";
 const { ZOOM_OWNER_EMAIL } = env;
 
 const joinSession = async (req: Request, res: Response) => {
@@ -23,6 +24,8 @@ const joinSession = async (req: Request, res: Response) => {
     if (session.status !== "active") {
         throw new BadRequestError(`Can not join ${session.status} session`);
     }
+
+    await populateTutorAndStudent(session);
 
     return res.status(200).json({
         message: "Session joined successfully",

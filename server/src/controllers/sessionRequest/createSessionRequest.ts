@@ -1,14 +1,31 @@
 import { Request, Response } from "express";
-import SessionRequest from "../../models/sessionRequest";
+import SessionRequest, { SessionRequestDoc } from "../../models/sessionRequest";
 import CreateSessionRequestBody from "../../interfaces/CreateSessionRequestBody";
+import populateTutorAndStudent from "../../utils/populate";
 
 const createSessionRequest = async (req: Request, res: Response) => {
-    const requestBody: CreateSessionRequestBody = req.body;
+    const {
+        title,
+        description,
+        tutorId,
+        studentId,
+        startTime,
+        endTime,
+        timezone,
+    }: CreateSessionRequestBody = req.body;
 
-    const sessionRequest = await SessionRequest.create({
-        ...requestBody,
+    const sessionRequest: SessionRequestDoc = await SessionRequest.create({
+        title,
+        description,
+        tutor: tutorId,
+        student: studentId,
+        startTime,
+        endTime,
+        timezone,
         status: "pending",
     });
+
+    await populateTutorAndStudent(sessionRequest);
 
     res.status(200).json({
         message: "Session request successfully created",
