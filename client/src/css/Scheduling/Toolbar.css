@@ -1,7 +1,7 @@
 .toolbar{
     width: 70%;
     height: 100%;
-    font-size: medium;
+    font-size: medium !important;
 }
 
 .toolbar-description{
@@ -17,15 +17,15 @@
 }
 
 .description-user-profile img{
-    width: 7%;
-    height: 7%;
-    margin-top: 2.5%;
+    width: 6%;
+    height: 6%;
+    margin-top: 4%;
     left: 5%;
-    margin-left: 3%;
+    margin-left: 6%;
 }
 
 .student-info{
-    margin-left: 2%;
+    margin-left: 1%;
     width: 95%;
 }
 
@@ -34,6 +34,8 @@
 }
 .student-info .status{
     display: flex;
+    border-top: 1px solid rgb(61, 55, 55);
+    width: 93%
 }
 
 .status .user-name{
@@ -44,7 +46,7 @@
     width: 30%;
     font-size: 60%;
     margin-top: 2%;
-    margin-left: 18%;
+    margin-left: 7%;
 }
 
 .description-time{
@@ -77,10 +79,15 @@
 }
 
 .toolbar-buttons{
-    width: 50%; 
+    width: 55%; 
     height: 32.1%; 
-    margin-left: 6%;
-    
+    margin-left: 5%;
+    font-size: 70%;
+    margin-top: 3%;
+    padding-bottom: 3%;
+}
 
+.decline{
+    margin-left: 86%;
 }
 
