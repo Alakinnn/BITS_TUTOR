@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/Scheduling/SchedulingContainer.css'
 import Toolbar from './Toolbar';
-import ScheduleInterface from './ScheduleView';
+import ScheduleInterface from './ScheduleView/ScheduleView';
 
 function SchedulingContainer() {
   return (
