@@ -58,7 +58,7 @@ function Toolbar() {
             <input className='input-content' type="text" />
                 
                 {/* buttons */}
-                <div className="buttons">
+                <div className="buttons toolbar-buttons">
                     <button className='approve'>Approve</button>
                     <button className='decline'>Decline</button>
                 </div>

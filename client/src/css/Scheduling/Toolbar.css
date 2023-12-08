@@ -1,12 +1,12 @@
 .toolbar{
-    width: 100%;
+    width: 70%;
     height: 100%;
-    font-size: small;
+    font-size: medium;
 }
 
 .toolbar-description{
     width: 32.5%;
-    /* height: 37.7%; */
+    background-color: #999;
 }
 
 .toolbar-description .description-user-profile{
@@ -17,15 +17,15 @@
 }
 
 .description-user-profile img{
-    width: 5%;
-    height: 5%;
+    width: 7%;
+    height: 7%;
     margin-top: 2.5%;
     left: 5%;
     margin-left: 3%;
 }
 
 .student-info{
-    margin-left: 5%;
+    margin-left: 2%;
     width: 95%;
 }
 
@@ -42,13 +42,16 @@
 }
 .status .current-time{
     width: 30%;
-    font-size: 8px;
+    font-size: 60%;
     margin-top: 2%;
+    margin-left: 18%;
 }
 
 .description-time{
     width: 95%; 
     height: 53.2%; 
+    margin-left: 6%;
+    margin-top: 2%;
 }
 
 .description-time .time{
@@ -57,19 +60,27 @@
 
 .time .from{
     display: flex;
+    font-size: 70%;
 }
 
 .time .to{
     display: flex;
+    margin-left: 10%;
+    font-size: 70%;
 }
 
-.description-time .input-content{
-    width: 100%; 
-    height: 100%;
+.input-content{
+    width: 90%; 
+    height: 80px;
+    margin-left: 5%;
+    border-radius: 10px;
 }
 
-.buttons{
-    width: 95%; 
+.toolbar-buttons{
+    width: 50%; 
     height: 32.1%; 
+    margin-left: 6%;
+    
+
 }
 
