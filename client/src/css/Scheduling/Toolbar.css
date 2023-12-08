@@ -5,8 +5,10 @@
 }
 
 .toolbar-description{
+    
     width: 32.5%;
-    background-color: #999;
+    margin-top: 35%;
+    background-color: #FAFAFA;
 }
 
 .toolbar-description .description-user-profile{
@@ -19,7 +21,7 @@
 .description-user-profile img{
     width: 8%;
     height: 8%;
-    margin-top: 5%;
+    margin-top: 6%;
     left: 5%;
     margin-left: 10%;
 }
@@ -30,6 +32,7 @@
 }
 
 .student-info .subject{
+    margin-top: 2%;
     margin-left: 5%;
     
 }
@@ -80,10 +83,10 @@
 }
 
 .toolbar-buttons{
-    width: 55%; 
+    width: 48%; 
     height: 32.1%; 
     margin-left: 5%;
-    font-size: 70%;
+    font-size: 80%;
     margin-top: 3%;
     padding-bottom: 3%;
 }
