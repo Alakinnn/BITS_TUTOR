@@ -3,4 +3,6 @@
     height: 80%;
     margin-top: 10.7%;
     margin-left: 23%;
+    display: flex;
+    flex-direction: column;
 }

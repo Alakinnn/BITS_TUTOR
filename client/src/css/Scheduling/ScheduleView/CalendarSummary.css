@@ -1,0 +1,32 @@
+.calendar-summary {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-info {
+    display: flex;
+}
+
+#summary-title {
+    display: flex;
+    gap: 5%;
+}
+
+#summary-title p {
+    display: flex;
+    min-width: 100%;
+}
+
+#summary-filters {
+    display: flex;
+    gap: 5%;
+    position: absolute;
+    right: 5%;
+    max-width: 50%;
+}
+
+.summary-filter-checker {
+    display: flex;
+    align-items: center;
+}

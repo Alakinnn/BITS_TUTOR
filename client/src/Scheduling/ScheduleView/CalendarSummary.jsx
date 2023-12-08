@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../css/Scheduling/ScheduleView/CalendarSummary.css'
 
 function CalendarSummary() {
   return (
@@ -11,8 +12,8 @@ function CalendarSummary() {
 
         {/* Summart title */}
         <div id="summary-title">
-          <h1></h1>
-          <p></p>
+          <div className="title">Calendar</div>
+          <p className="content">12 Total Enrolled in January</p>
         </div>
 
         {/* Summary filters */}
@@ -37,8 +38,10 @@ function CalendarSummary() {
                 <label for="upcomming">Upcomming</label>
             </div>
         </div>
-        {/* Summary details */}
-        <div id="summary-details"></div>
+      </div>
+      {/* Summary details */}
+      <div id="summary-details">
+          <p className="h">18 - 24 December, 2023</p>
       </div>
    </div>
   

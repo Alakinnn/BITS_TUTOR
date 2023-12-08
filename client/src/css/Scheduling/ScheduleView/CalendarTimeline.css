@@ -17,13 +17,20 @@
     height: 3rem;
 }
 
+/* Timeline grid */
 .fc-theme-standard td, .fc-theme-standard th {
+    border-color: var(--dark-gray);
     border-left: none;
     border-right: none;
 }
 
 .fc-theme-standard .fc-scrollgrid {
     border: none;
+}
+
+/* Date text container */
+.fc .fc-scrollgrid table {
+    border: hidden;
 }
 
 /* Date text element */
@@ -33,30 +40,17 @@
     background-color: var(--light-gray);
     border-radius: 4%;
     width: 40%;
+    padding: 0% 10%;
     text-align: center;
 }
 
-/* Time text element */
+/* Time text container */
 .fc .fc-timegrid-slot-label {
     vertical-align: bottom;
 }
 
-.event-content {
-    display: flex;
-    height: 100%;
-}
-
-.vertical {
-    border-left: 6px solid blue;
-    height: 92%;
-    margin-left: 2%;
-    position: absolute;
-    top: 3%;
-    left: 2%;
-}
-
-.event-description {
-    position: absolute;
-    left: 10%;
+/* Time text element */
+.fc .fc-timegrid-slot-label-cushion {
+    color: var(--dark-gray);
 }
 
