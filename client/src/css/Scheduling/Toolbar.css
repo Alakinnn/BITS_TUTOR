@@ -10,40 +10,62 @@
 }
 
 .toolbar-description .description-user-profile{
-    width: 95%; 
+    width: 100%; 
     height: 14.7%;
     display: flex;
+    
 }
 
 .description-user-profile img{
     width: 5%;
     height: 5%;
     margin-top: 2.5%;
+    left: 5%;
+    margin-left: 3%;
 }
-/* .student-info{
-    display: flex;
-} */
 
+.student-info{
+    margin-left: 5%;
+    width: 95%;
+}
+
+.student-info .subject{
+    margin-left: 5%;
+}
 .student-info .status{
     display: flex;
 }
 
+.status .user-name{
+    width: 70%;
+    margin-left: 5%;
+}
 .status .current-time{
-    margin-left: 0.025%;
+    width: 30%;
+    font-size: 8px;
+    margin-top: 2%;
 }
 
 .description-time{
     width: 95%; 
-    height: 14.7%; 
+    height: 53.2%; 
 }
 
-.description-time .tỉme{
+.description-time .time{
     display: flex;
 }
 
-.toolbar-description input{
-    width: 95%; 
-    height: 38.5%;
+.time .from{
+    display: flex;
+}
+
+.time .to{
+    display: flex;
+}
+
+.description-time .input-content{
+    width: 100%; 
+    height: 100%;
 }
 
 .buttons{
