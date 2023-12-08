@@ -39,12 +39,14 @@
 .student-info .status{
     display: flex;
     border-top: 1px solid rgb(61, 55, 55);
-    width: 93%
+    width: 93%;
+    color: #5A5A5A;
 }
 
 .status .user-name{
     width: 70%;
     margin-left: 5%;
+    font-size: 80%;
 }
 .status .current-time{
     width: 30%;
@@ -67,31 +69,49 @@
 .time .from{
     display: flex;
     font-size: 70%;
+    
 }
 
 .time .to{
     display: flex;
-    margin-left: 10%;
+    margin-left: 27%;
     font-size: 70%;
 }
+
+.text{
+    color: #CAC2FC;
+    margin-left: 10%;
+}
+
 
 .input-content{
     width: 90%; 
     height: 80px;
     margin-left: 5%;
     border-radius: 10px;
+    background-color: #D9D9D9;
+}
+
+.input-content::placeholder{
+    font-size: x-small;
+    margin-left: 20px;
 }
 
 .toolbar-buttons{
-    width: 48%; 
+    width: 42%; 
     height: 32.1%; 
     margin-left: 5%;
-    font-size: 80%;
+    font-size: 90%;
     margin-top: 3%;
-    padding-bottom: 3%;
+    padding-bottom: 5%;
+}
+
+.approve{
+    background-color: #CAC2FC;
 }
 
 .decline{
     margin-left: 86%;
+    background-color: #EAEAEA;
 }
 

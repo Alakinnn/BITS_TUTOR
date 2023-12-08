@@ -45,17 +45,17 @@ function Toolbar() {
                 <div className="time">
                     <div className="from">
                         <p>From:</p>
-                        <p>10:00</p>
+                        <p className='text'>10:00</p>
                     </div>
                 
                     <div className="to">
                         <p>To:</p>
-                        <p>11:00</p>
+                        <p className='text'>11:00</p>
                     </div>
                 </div>
             </div>
             {/* content */}
-            <input className='input-content' type="text" />
+            <input className='input-content' type="text" placeholder='Please approve request' />
                 
                 {/* buttons */}
                 <div className="buttons toolbar-buttons">
