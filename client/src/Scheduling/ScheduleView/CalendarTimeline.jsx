@@ -33,7 +33,7 @@ import Upcoming from './EventBox/Upcoming';
             slotLabelFormat={{ hour: 'numeric', minute: '2-digit', omitZeroMinute: false, meridiem: false }}
             dayHeaderFormat={{ weekday: 'short', day: 'numeric', omitCommas: true }}
  
-            contentHeight={'75vh'}
+            contentHeight={'65vh'}
             slotDuration={'01:00:00'}
             
 

@@ -35,7 +35,7 @@ function RequestDescription() {
                 </div>
             </div>
             {/* content */}
-            <input className='input-content' type="text" placeholder='Please approve request' />
+            <input className='input-content' type="text" placeholder='Please approve request' disabled />
                 
                 {/* buttons */}
                 <div className="buttons toolbar-buttons">
