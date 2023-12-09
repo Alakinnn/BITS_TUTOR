@@ -1,32 +1,12 @@
 import React from 'react'
-import '../css/Scheduling/Toolbar.css'
 import user from "/src/assets/footer/circle-user.svg";
-function Toolbar() {
-  return (
-    <div className='toolbar'>
-        {/* toolbat menu */}
-        <div className="toolbar-menu">
-            <div id="dashboard">
-                <img></img>
-                <p></p>
-            </div>
-            <div id="view-request">
-                <img></img>
-                <p></p>
-            </div>
-        </div>
-        {/* toolbar request */}
-        <div className="toolbar-requests">
-            <div className="request">
-                <img></img>
-                <div className="session-info">
-                    <p></p>
-                </div>
-            </div>
-        </div>
+import '../../css/Scheduling/Toolbar/RequestDescription.css'
 
-        {/* toolbar description */}
-        <div className="toolbar-description">
+function RequestDescription() {
+  return (
+    <>
+    {/* toolbar description */}
+    <div className="toolbar-description">
             <div className="description-user-profile">
                 <img className="picture-user" src={user} alt="circle" />    
                 <div className="student-info">
@@ -63,8 +43,9 @@ function Toolbar() {
                     <button className='decline'>Decline</button>
                 </div>
         </div>
-    </div> 
-  )
+
+    </>
+)
 }
 
-export default Toolbar
+export default RequestDescription

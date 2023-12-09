@@ -1,12 +1,6 @@
-.toolbar{
-    width: 70%;
-    height: 100%;
-    font-size: medium !important;
-}
-
 .toolbar-description{
     
-    width: 32.5%;
+    width: 100%;
     margin-top: 35%;
     background-color: #FAFAFA;
 }
@@ -114,4 +108,3 @@
     margin-left: 86%;
     background-color: #EAEAEA;
 }
-

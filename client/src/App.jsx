@@ -9,8 +9,8 @@ import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
 import Navbar from "./Header/Navbar";
 import LoginTest from "./Login/LoginTest";
 import PrintAllTutorSessions from "./Login/PrintAllTutorSessions";
-import Toolbar from "./Scheduling/Toolbar";
-import ScheduleInterface from "./Scheduling/ScheduleView";
+import Toolbar from "./Scheduling/Toolbar/Toolbar";
+import SchedulingContainer from "./Scheduling/SchedulingContainer";
 import './css/Navbar.css';
 
 
@@ -31,7 +31,7 @@ function App() {
         <Route path="/student" element={<StudentMeetingSession />} />
         <Route path="/tutor" element={<TutorMeetingSession />} />
         <Route path="/toolbar" element={<Toolbar />} />
-        <Route path="/scheduleInterface" element={<ScheduleInterface />} />
+        <Route path="/scheduleInterface" element={<SchedulingContainer />} />
         
       </Routes>
     </BrowserRouter>
