@@ -2,20 +2,31 @@
     max-height: 100%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 5%;
 }
 
 .upper-info {
     display: flex;
+    border-bottom: solid 1px #000000;
 }
 
 #summary-title {
     display: flex;
     gap: 5%;
+    padding-left: 2%;
+   
 }
 
 #summary-title p {
     display: flex;
     min-width: 100%;
+    height: 40%;
+    color: #908C8C;
+    border-left: solid 1px #9999;
+    padding-left: 4%;
+    font-size: 50%;
+    margin-top: 5%;
+    padding-top: 2%;
 }
 
 #summary-filters {
@@ -29,4 +40,14 @@
 .summary-filter-checker {
     display: flex;
     align-items: center;
+}
+
+input#checker{
+   
+}
+
+#summary-details{
+    font-size: large;
+    margin-top: 0.5%;
+    padding-left: 2%;
 }
