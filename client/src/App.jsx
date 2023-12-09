@@ -11,7 +11,6 @@ import LoginTest from "./Login/LoginTest";
 import PrintAllTutorSessions from "./Login/PrintAllTutorSessions";
 import Toolbar from "./Scheduling/Toolbar";
 import ScheduleInterface from "./Scheduling/ScheduleView";
-import './css/Navbar.css';
 
 
 
