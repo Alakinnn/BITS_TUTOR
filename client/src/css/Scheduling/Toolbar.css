@@ -1,117 +1,108 @@
-.toolbar{
-    width: 70%;
-    height: 100%;
-    font-size: medium !important;
+.toolbar {
+  width: 70%;
+  height: 100%;
+  font-size: medium !important;
 }
 
-.toolbar-description{
-    
-    width: 32.5%;
-    margin-top: 35%;
-    background-color: #FAFAFA;
+.toolbar-description {
+  width: 32.5%;
+  margin-top: 35%;
+  background-color: #fafafa;
 }
 
-.toolbar-description .description-user-profile{
-    width: 100%; 
-    height: 14.7%;
-    display: flex;
-    
+.toolbar-description .description-user-profile {
+  width: 100%;
+  height: 14.7%;
+  display: flex;
 }
 
-.description-user-profile img{
-    width: 8%;
-    height: 8%;
-    margin-top: 6%;
-    left: 5%;
-    margin-left: 10%;
+.description-user-profile img {
+  width: 8%;
+  height: 8%;
+  margin-top: 6%;
+  left: 5%;
+  margin-left: 10%;
 }
 
-.student-info{
-    margin-left: 5%;
-    width: 90%;
+.student-info {
+  margin-left: 5%;
+  width: 90%;
 }
 
-.student-info .subject{
-    margin-top: 2%;
-    margin-left: 5%;
-    
+.student-info .subject {
+  margin-top: 2%;
 }
-.student-info .status{
-    display: flex;
-    border-top: 1px solid rgb(61, 55, 55);
-    width: 93%;
-    color: #5A5A5A;
+.student-info .status {
+  display: flex;
+  border-top: 1px solid rgb(61, 55, 55);
+  width: 93%;
+  color: #5a5a5a;
 }
 
-.status .user-name{
-    width: 70%;
-    margin-left: 5%;
-    font-size: 80%;
+.status .user-name {
+  width: 70%;
+  font-size: 80%;
 }
-.status .current-time{
-    width: 30%;
-    font-size: 60%;
-    margin-top: 2%;
-    margin-left: 7%;
-}
-
-.description-time{
-    width: 95%; 
-    height: 53.2%; 
-    margin-left: 6%;
-    margin-top: 2%;
+.status .current-time {
+  width: 30%;
+  font-size: 60%;
+  margin-top: 2%;
+  margin-left: 7%;
 }
 
-.description-time .time{
-    display: flex;
+.description-time {
+  width: 95%;
+  height: 53.2%;
+  margin-left: 6%;
+  margin-top: 2%;
 }
 
-.time .from{
-    display: flex;
-    font-size: 70%;
-    
+.description-time .time {
+  display: flex;
 }
 
-.time .to{
-    display: flex;
-    margin-left: 27%;
-    font-size: 70%;
+.time .from {
+  display: flex;
+  font-size: 70%;
 }
 
-.text{
-    color: #CAC2FC;
-    margin-left: 10%;
+.time .to {
+  display: flex;
+  margin-left: 27%;
+  font-size: 70%;
 }
 
-
-.input-content{
-    width: 90%; 
-    height: 80px;
-    margin-left: 5%;
-    border-radius: 10px;
-    background-color: #D9D9D9;
+.text {
+  color: #cac2fc;
+  margin-left: 10%;
 }
 
-.input-content::placeholder{
-    font-size: x-small;
-    margin-left: 20px;
+.input-content {
+  width: 90%;
+  height: 80px;
+  margin-left: 5%;
+  border-radius: 10px;
+  background-color: #d9d9d9;
 }
 
-.toolbar-buttons{
-    width: 42%; 
-    height: 32.1%; 
-    margin-left: 5%;
-    font-size: 90%;
-    margin-top: 3%;
-    padding-bottom: 5%;
+.input-content::placeholder {
+  font-size: x-small;
 }
 
-.approve{
-    background-color: #CAC2FC;
+.toolbar-buttons {
+  width: 42%;
+  height: 32.1%;
+  margin-left: 5%;
+  font-size: 90%;
+  margin-top: 3%;
+  padding-bottom: 5%;
 }
 
-.decline{
-    margin-left: 86%;
-    background-color: #EAEAEA;
+.approve {
+  background-color: #cac2fc;
 }
 
+.decline {
+  margin-left: 86%;
+  background-color: #eaeaea;
+}
