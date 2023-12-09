@@ -1,0 +1,39 @@
+.completed-event-content {
+    display: flex;
+    height: 100%;
+    padding: 0;
+}
+
+.completed-vertical {
+    border-left: 0.5rem solid #5372E7;
+    height: 100%;
+    margin-left: 2%;
+    position: absolute;
+    top: 0;
+    left: -1.8%;
+    border-radius: 3px 0 0 3px;
+}
+
+.completed-event-description {
+    position: absolute;
+    left: 17%;
+    color: #5372E7;
+}
+
+.completed-event-description h5 {
+    font-weight: 600;
+}
+
+.completed-event-description b h5 {
+    font-weight: 700;
+}
+
+.completed-event-description h6 {
+    font-weight: 450;
+    margin-top: 35%;
+}
+
+.fc-v-event {
+    border: none;
+}
+

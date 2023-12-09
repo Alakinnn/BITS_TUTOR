@@ -1,0 +1,39 @@
+.upcoming-event-content {
+    display: flex;
+    height: 100%;
+    padding: 0;
+}
+
+.upcoming-vertical {
+    border-left: 0.5rem solid #21BDCA;
+    height: 100%;
+    margin-left: 2%;
+    position: absolute;
+    top: 0;
+    left: -1.8%;
+    border-radius: 3px 0 0 3px;
+}
+
+.upcoming-event-description {
+    position: absolute;
+    left: 17%;
+    color: #21BDCA;
+}
+
+.upcoming-event-description h5 {
+    font-weight: 600;
+}
+
+.upcoming-event-description b h5 {
+    font-weight: 700;
+}
+
+.upcoming-event-description h6 {
+    font-weight: 450;
+    margin-top: 35%;
+}
+
+.fc-v-event {
+    border: none;
+}
+
