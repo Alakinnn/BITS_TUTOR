@@ -1,11 +1,13 @@
 .toolbar{
+    position: relative;
     width: 70%;
     height: 100%;
     font-size: medium !important;
 }
 
 .toolbar-description{
-    
+    position: absolute;
+    bottom: 0;
     width: 32.5%;
     margin-top: 35%;
     background-color: #FAFAFA;
@@ -32,28 +34,32 @@
 }
 
 .student-info .subject{
-    margin-top: 2%;
-    margin-left: 5%;
-    
+    /* semi bold font weight */
+    font-weight: 600;    
 }
-.student-info .status{
+
+.student-info .status {
     display: flex;
     border-top: 1px solid rgb(61, 55, 55);
     width: 93%;
     color: #5A5A5A;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
 }
 
 .status .user-name{
+    font-weight: 600;
     width: 70%;
-    margin-left: 5%;
     font-size: 80%;
 }
 .status .current-time{
-    width: 30%;
+    width: 50%;
     font-size: 60%;
-    margin-top: 2%;
-    margin-left: 7%;
+    text-align: right;
 }
+
 
 .description-time{
     width: 95%; 
@@ -64,6 +70,10 @@
 
 .description-time .time{
     display: flex;
+}
+
+.description-time .request-date{
+    font-weight: 500;
 }
 
 .time .from{
@@ -88,7 +98,10 @@
     width: 90%; 
     height: 80px;
     margin-left: 5%;
-    border-radius: 10px;
+    padding-bottom: 20%;
+    padding-left: 3.57%;
+    border: none;
+    border-radius: 4% 4% 4% 4%/ 8% 8% 8% 8%;
     background-color: #D9D9D9;
 }
 
