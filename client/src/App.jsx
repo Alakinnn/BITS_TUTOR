@@ -10,7 +10,7 @@ import Navbar from "./Header/Navbar";
 import LoginTest from "./Login/LoginTest";
 import PrintAllTutorSessions from "./Login/PrintAllTutorSessions";
 import Toolbar from "./Scheduling/Toolbar";
-import ScheduleInterface from "./Scheduling/ScheduleView/ScheduleView";
+import ScheduleInterface from "./Scheduling/ScheduleView";
 import './css/Navbar.css';
 
 
