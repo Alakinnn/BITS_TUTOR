@@ -6,7 +6,6 @@ function CalendarSummary() {
     
     
     <div className="calendar-summary">
-
       {/* Upper info */}
       <div className="upper-info">
 

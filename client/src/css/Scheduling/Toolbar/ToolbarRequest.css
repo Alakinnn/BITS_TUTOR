@@ -1,0 +1,67 @@
+.toolbar-description{
+    width: 100%;
+    margin-top: 35%;
+    background-color: #F4F4F4;
+}
+
+.addingTitle{
+    margin-top: 6%;
+    margin-left: 5%;
+    
+    
+}
+
+.addingTitle input{
+    height: 80%;
+    border: solid 1px #e4e4e4;
+    border-radius: 3px;
+    width: 90%;
+}
+
+.addingTitle input::placeholder{
+    padding-left: 5%;
+}
+
+.settingTime{
+    height: fit-content;
+    font-size: small;
+}
+
+.from{
+    display: flex;
+}
+
+.to{
+    display: flex;
+}
+
+.settingTime input{
+    width: 70%;
+    height: 80%;
+    border: solid 0.5px #e4e4e4;
+    margin-top: 2.5%;
+    margin-left: 5%;
+    border-radius: 3px;
+}
+
+.input-content{
+    margin-top:5%;
+}
+
+.inputContent input{
+    border: solid 1px #e4e4e4;
+    border-radius: 3px;
+    background-color:#ffff ;
+}
+
+
+.bookingSession{
+    background-color: #D4D4D4;
+    font-size: small;
+    width: 50%;
+    margin-top: 2.5%;  
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
