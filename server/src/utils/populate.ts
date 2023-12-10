@@ -18,4 +18,30 @@ const populateTutorAndStudent = async (session: any) => {
     return session;
 };
 
-export default populateTutorAndStudent;
+const populateTutor = async (session: any) => {
+    await session.populate([
+        {
+            path: "tutor",
+            select: "-password",
+        }
+    ]);
+
+    return session;
+};
+
+const populateStudent = async (session: any) => {
+    await session.populate([
+        {
+            path: "Student",
+            select: "-password",
+        }
+    ]);
+
+    return session;
+};
+
+
+export {
+    populateTutorAndStudent, 
+    populateTutor,
+    populateStudent};
