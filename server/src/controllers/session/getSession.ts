@@ -1,7 +1,7 @@
 import Session from "../../models/session";
 import { Request, Response } from "express";
 import { NotFoundError } from "../../errors";
-import { populateTutorAndStudent, populateStudent, populateTutor } from "../../utils/populate";
+import { populateTutorAndStudent} from "../../utils/populate";
 
 
 const getSessionById = async (req: Request, res: Response) => {
@@ -28,7 +28,7 @@ const getSessions = async (req: Request, res: Response) => {
 const getTutorSessions = async (req: Request, res: Response) => {
     const { tutorId } = req.params;
     const sessions = await Session.find({ tutor: tutorId });
-    await populateTutor(sessions)
+    await populateTutorAndStudent(sessions)
 
     return res.status(200).json(sessions);
 };
@@ -36,7 +36,7 @@ const getTutorSessions = async (req: Request, res: Response) => {
 const getStudentSessions = async (req: Request, res: Response) => {
     const { studentId } = req.params;
     const sessions = await Session.find({ student: studentId });
-    await populateStudent(sessions)
+    await populateTutorAndStudent(sessions)
 
     return res.status(200).json(sessions);
 };
