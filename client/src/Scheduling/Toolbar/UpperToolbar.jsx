@@ -1,9 +1,17 @@
 import React from 'react'
-import '../../css/Scheduling/Toolbar/UpperToolbar.css'
+import { useState } from 'react';
+import '../../css/Scheduling/Toolbar/UpperToolbar.css';
 import dashboard from "/public/images/dashboard.png";    
-import user from "/public/images/interview.png";
+import request from "/public/images/interview.png";
+import user from "/src/assets/footer/circle.svg";
+import '@fortawesome/fontawesome-free/css/all.css'; 
 
-function UpperToolbar() {
+const UpperToolbar = (requestList) => {
+    const [removeClass, setRemoveClass] = useState(false);
+    const colapseRequest = () => {
+        setRemoveClass(!removeClass)
+    }
+
   return (
 
         <div className="toolbar-menu">
@@ -18,48 +26,14 @@ function UpperToolbar() {
                 <div className="dropdown">
                     <div className="dropdown_select">
                         <span className="dropdown_selected">
-                            <img className="icon" src={user} alt="View Requests Icon" ></img>
+                            <img className="icon" src={request} alt="View Requests Icon" ></img>
                             View Request
                         </span>    
-                        <i className="fa fa-caret-down dropdown_caret"></i>
+                        <button className='view-request' onClick={colapseRequest}><i className="fas fa-caret-down dropdown_caret"></i></button>
                     </div>
                     {/* <!-- Request notification --> */}
-                    <ul className="dropdown_list">  
-                        <li className="dropdown_item">
-                            <span className="dropdown_text">
-                                <div className="left_column">
-                                    <img src="image/dashboard.png" alt=""></img>
-                                </div>
-                                <div className="right_column">
-                                    <div className="student_name">Nguyen Van A</div>
-                                    <div className="course_name">Intro to Programming</div>
-                                    <div className="meet_duration">10pm to 12pm</div>
-                                </div>
-                            </span>
-                        </li>
-                        <li className="dropdown_item">
-                            <span className="dropdown_text">
-                                <div className="left_column">
-                                    <img src="image/dashboard.png" alt=""></img>
-                                </div>
-                                <div className="right_column">
-                                    <div className="student_name">Nguyen Van A</div>
-                                    <div className="course_name">Intro to Programming</div>
-                                    <div className="meet_duration">10pm to 12pm</div>
-                                </div>
-                            </span>
-                        </li><li className="dropdown_item">
-                            <span className="dropdown_text">
-                                <div className="left_column">
-                                    <img src="image/dashboard.png" alt=""></img>
-                                </div>
-                                <div className="right_column">
-                                    <div className="student_name">Nguyen Van A</div>
-                                    <div className="course_name">Intro to Programming</div>
-                                    <div className="meet_duration">10pm to 12pm</div>
-                                </div>
-                            </span>
-                        </li>
+                    <ul className="dropdown_list">
+                        {renderRequestList(requestList)} 
                     </ul>
                 </div>
             </div>
@@ -67,6 +41,37 @@ function UpperToolbar() {
 
 
   )
+  }
+
+const renderRequestList = (requestList) => {
+    return requestList.map((request) => (
+    <li className="dropdown_item">
+    <span className="dropdown_text">
+        <div className="left_column">
+            <img src={user} alt=""></img>
+        </div>
+        <div className="right_column">
+             <div className="student_name">{request.student.username}</div>
+            <div className="course_name">{request.title}</div>
+            <div className="meet_duration">{formatDate(request.startTime)} to {formatDate(request.endTime)}</div>
+        </div>
+    </span>
+    </li>
+    ))
 }
+
+const formatDate = (date) => {
+    // Get the time portion of the Date object
+    const timeString = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+  
+    // Determine if it's AM or PM
+    const period = date.getHours() < 12 ? 'am' : 'pm';
+  
+    // Format the final time string
+    const formattedTime = `${timeString}${period}`;
+  
+    return formattedTime;
+  };
+
 
 export default UpperToolbar

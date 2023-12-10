@@ -1,4 +1,6 @@
+
 /* upper toolbar */
+
 
 .icon{
     width: 32px;
@@ -19,8 +21,8 @@
 .dashboard{
     width: 100%;
     position: relative;
-    color: red;
     cursor: pointer;
+    font-family: var(--title);
 }
 
 * {
@@ -43,7 +45,6 @@
     width: 100%;
     max-width: 47rem;
     position: relative;
-    color: red;
     display: flex;
     flex-direction: column;
 }
@@ -61,10 +62,7 @@
 .dropdown_selected {
     margin-top: 5%;
     text-align: center;
-}
-
-.dropdown_caret {
-    color: red;
+    font-family: var(--title);
 }
 
 .dropdown_list{
@@ -172,13 +170,15 @@
 }
 
 .student_name{
-    font-weight: bolder;
+    font-family: var(--title);
 }
 
-.course_name{
-    font-weight: lighter;
-}
 
 .meet_duration{
-    color: pink;
+    color: #998DE2;
+}
+
+.course_name .meet_duration{
+    font-family: var(--content);
+    font-weight: lighter;
 }

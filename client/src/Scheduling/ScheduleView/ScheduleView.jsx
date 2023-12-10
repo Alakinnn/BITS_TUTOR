@@ -3,7 +3,7 @@ import '../../css/Scheduling/ScheduleView/ScheduleView.css'
 import CalendarSummary from './CalendarSummary'
 import CalendarTimeline from './CalendarTimeline'
 
-function ScheduleView({sessionList}) {
+function ScheduleView({sessionList, requestList}) {
     return (
         <div className='schedule-view'>
             {<CalendarSummary/>}

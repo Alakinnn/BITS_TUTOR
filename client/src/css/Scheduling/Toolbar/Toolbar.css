@@ -3,6 +3,7 @@
     font-size: medium !important;
     position: relative;
     display: flex;
+    flex-direction: column;
 }
 
 

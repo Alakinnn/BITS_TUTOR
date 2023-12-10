@@ -1,18 +1,37 @@
 import React from 'react'
 import '../../css/Scheduling/Toolbar/Toolbar.css'
-import RequestDescription from './RequestDescription';
-import ToolbarRequest from './ToolbarRequest';
+import TutorRequestDescription from './TutorRequestDescription';
+import StudentCreateRequest from './StudentCreateRequest';
 import UpperToolbar from './UpperToolbar';
-function Toolbar() {
+function Toolbar(role, requestList) {
+  let renderComponent;
+  switch (role.role) {
+    case 'tutor':
+      renderComponent = (
+        <>
+            <UpperToolbar
+                requestList={requestList}                        
+            />
+            <TutorRequestDescription/>
+          </>
+      );
+      break;
+    case 'student':
+      renderComponent = (
+        <>
+            <div></div>
+            <StudentCreateRequest/>
+          </>
+      );
+      break;
+
+    default:
+      break;
+  }
   return (
     <div className='toolbar'>
-        {/* toolbat menu */}
-        {<UpperToolbar/>}
-        {/* toolbar description */}
-        {/* {<RequestDescription/>} */}
-        {<ToolbarRequest/>}
-
         
+        {renderComponent}
     </div> 
   )
 }

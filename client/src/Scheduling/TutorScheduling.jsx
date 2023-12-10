@@ -8,3 +8,7 @@ export async function getTutorSessions () {
   // console.log(response.data);
   return response.data;
 }
+export async function getStudentRequests () {
+  const response = await axios.get(`http://139.59.105.114/api/v1/sessionRequest`, {params: {tutorId: `${tutorId}`}});
+  return response.data;
+}

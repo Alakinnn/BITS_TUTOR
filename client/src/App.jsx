@@ -12,8 +12,6 @@ import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
 import CreateSession from "./Test/CreateSession";
 import Toolbar from "./Scheduling/Toolbar/Toolbar";
 import SchedulingContainer from "./Scheduling/SchedulingContainer";
-import BookingSession from "./Scheduling/Toolbar/BookingSession";
-import ToolbarRequest from "./Scheduling/Toolbar/ToolbarRequest";
 
 // import './css/Navbar.css';
 
@@ -37,8 +35,6 @@ function App() {
         <Route path="/tutor" element={<TutorMeetingSession />} />
         <Route path="/toolbar" element={<Toolbar />} />
         <Route path="/scheduleInterface" element={<SchedulingContainer />} />
-        <Route path="/bookingSession" element={<BookingSession/>} />
-        <Route path="/toolbarRequest" element={<ToolbarRequest/>} />
       </Routes>
     </BrowserRouter>
   )

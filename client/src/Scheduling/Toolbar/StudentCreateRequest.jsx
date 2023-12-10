@@ -40,7 +40,7 @@ const ToolbarRequest = () => {
                 </div>
                     
                     {/* buttons */}
-                    <div className="buttons buttonRequest">
+                    <div className="buttonRequest">
                         <BookingSession/>
                     </div>
         </div>
