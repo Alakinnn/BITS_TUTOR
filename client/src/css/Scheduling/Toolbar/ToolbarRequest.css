@@ -65,3 +65,17 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.invisible{
+    display: none;
+}
+
+.toolbar-buttons{
+    width: 42%; 
+    height: 32.1%; 
+    margin-left: 5%;
+    font-size: 90%;
+    margin-top: 3%;
+    padding-bottom: 5%;
+}

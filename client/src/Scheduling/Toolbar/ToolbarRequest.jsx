@@ -1,12 +1,18 @@
 import React from 'react'
+import { useState } from 'react'
 import user from "/src/assets/footer/circle-user.svg"
 import '../../css/Scheduling/Toolbar/ToolbarRequest.css'
 import BookingSession from './BookingSession'
 
 const ToolbarRequest = () => {
+    const [removeClass, setRemoveClass] = useState(false);
+    const showDescription = () => {
+        setRemoveClass(!removeClass)
+    }
   return (
-
-        <div className="toolbar-description">
+    <>
+        <button className='bookingSession' onClick={showDescription}>Book a Session</button>
+        <div className={`toolbar-description ${removeClass ? '' : 'invisible'}`}>
                 <div className="description-user-profile">
                     <img className="picture-user" src={user} alt="circle" />    
                     <div className="addingTitle">
@@ -38,6 +44,8 @@ const ToolbarRequest = () => {
                         <BookingSession/>
                     </div>
         </div>
+    </>
+        
     
   )
 }
