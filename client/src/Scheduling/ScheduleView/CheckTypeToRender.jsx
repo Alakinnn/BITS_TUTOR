@@ -7,20 +7,26 @@ function CheckTypeToRender(arg) {
     if (arg.event.extendedProps.type === 'upcoming') {
         return (
           <>
-            {<Upcoming/>}
+            {<Upcoming
+              event={arg}
+            />}
           </>
             
         );
       } else if (arg.event.extendedProps.type === 'completed') {
         return (
             <>
-                {<Completed/>}
+                {<Completed
+                  event={arg}
+                />}
             </>  
         );
       } else if (arg.event.extendedProps.type === 'cancelled') {
         return (
             <>
-                {<Cancelled/>}
+                {<Cancelled
+                  event={arg}
+                />}
             </>  
         );
       }

@@ -7,20 +7,40 @@ import CheckTypeToRender from './CheckTypeToRender';
 import Upcoming from './EventBox/Upcoming';
 
 
-   const CalendarTimeline = () => {
-    // function renderEventContent(eventInfo) {
-    //     return (
-    //       <>
-    //         <div className='event-content'>
-    //             <div class = "vertical"></div>
-    //             <div className='event-description'>
-    //                 <b><h5>Introduction to BGC</h5></b>
-    //                 <h5>Binh Nguyen</h5>
-    //                 <h6>10:00 - 11:00</h6>
-    //             </div>
-    //         </div>
-    //       </>
-    //     )}
+   const CalendarTimeline = (sessionList) => {
+      console.log(sessionList);
+      const ssList = [
+        {
+          title: 'Session 1',
+          startTime: '2023-12-13T09:00:00',
+          endTime: '2023-12-13T11:00:00',
+          status: 'upcoming',
+          description: 'This is the first session',
+        },
+        {
+          title: 'Session 2',
+          startTime: '2023-12-12T09:00:00',
+          endTime: '2023-12-12T10:00:00',
+          status: 'completed',
+          description: 'This is the second session',
+        },
+        {
+          title: 'Session 3',
+          startTime: '2023-12-14T09:00:00',
+          endTime: '2023-12-14T10:00:00',
+          status: 'cancelled',
+          description: 'This is the third session',
+        }
+      ];
+
+      const eventList = ssList.map(event => ({
+        title: event.title,
+        start: event.startTime,
+        end: event.endTime,
+        type: event.status,
+        backgroundColor: 'transparent',
+        // description: event.description,
+      }));
 
      return (
        <div className='calendar-timeline'>
@@ -37,36 +57,7 @@ import Upcoming from './EventBox/Upcoming';
             slotDuration={'01:00:00'}
             
 
-            events={[
-                { 
-                  title: 'C++',
-                  start: '2023-12-08T10:00:00',
-                  end: '2023-12-08T12:00:00',
-                  description: 'Lecture',
-                  backgroundColor: '#E8FDFF',
-                  type: 'upcoming',
-                },
-                { 
-                  title: 'C++',
-                  start: '2023-12-09T10:00:00',
-                  end: '2023-12-09T12:00:00',
-                  description: 'Lecture',
-                  backgroundColor: '#EAEEFF',
-                  extendedProps: {
-                    type: 'completed'
-                  }
-                },  
-                { 
-                  title: 'C++',
-                  start: '2023-12-04T10:00:00',
-                  end: '2023-12-04T12:00:00',
-                  description: 'Lecture',
-                  backgroundColor: '#FFEDED',
-                  extendedProps: {
-                    type: 'cancelled'
-                  }
-                },  
-            ]}
+            events={eventList}
             eventContent = {CheckTypeToRender}
           
             
