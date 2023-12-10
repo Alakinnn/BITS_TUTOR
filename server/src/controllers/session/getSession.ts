@@ -18,8 +18,8 @@ const getSessionById = async (req: Request, res: Response) => {
 };
 
 const getSessions = async (req: Request, res: Response) => {
-    const { tutor, student } = req.params;
-    const sessions = await Session.find({ tutor, student });
+    const { tutorId, studentId } = req.query;
+    const sessions = await Session.find({ tutor: tutorId, student: studentId });
 
     return res.status(200).json(sessions);
 };
