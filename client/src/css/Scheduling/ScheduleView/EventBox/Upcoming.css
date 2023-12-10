@@ -2,6 +2,8 @@
     display: flex;
     height: 100%;
     padding: 0;
+    position: relative;
+    background-color: #E8FDFF;
 }
 
 .upcoming-vertical {
@@ -15,22 +17,27 @@
 }
 
 .upcoming-event-description {
-    position: absolute;
-    left: 17%;
+    margin-left: 17%;
     color: #21BDCA;
+    max-height: 100%;
 }
 
 .upcoming-event-description h5 {
     font-weight: 600;
+    position: absolute;
+    top: 1rem;
 }
 
 .upcoming-event-description b h5 {
     font-weight: 700;
+    position: absolute;
+    top: 0;
 }
 
 .upcoming-event-description h6 {
     font-weight: 450;
-    margin-top: 35%;
+    position: absolute;
+    bottom: 0;
 }
 
 .fc-v-event {

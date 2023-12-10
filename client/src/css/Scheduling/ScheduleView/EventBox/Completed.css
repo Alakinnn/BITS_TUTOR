@@ -2,6 +2,8 @@
     display: flex;
     height: 100%;
     padding: 0;
+    position: relative;
+    background-color: #EAEEFF;
 }
 
 .completed-vertical {
@@ -15,22 +17,27 @@
 }
 
 .completed-event-description {
-    position: absolute;
-    left: 17%;
+    margin-left: 17%;
+    max-height: 100%;
     color: #5372E7;
 }
 
 .completed-event-description h5 {
     font-weight: 600;
+    position: absolute;
+    top: 1rem;
 }
 
 .completed-event-description b h5 {
     font-weight: 700;
+    position: absolute;
+    top: 0;
 }
 
 .completed-event-description h6 {
     font-weight: 450;
-    margin-top: 35%;
+    position: absolute;
+    bottom: 0;
 }
 
 .fc-v-event {
