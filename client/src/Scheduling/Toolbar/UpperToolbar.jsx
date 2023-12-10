@@ -1,13 +1,14 @@
 import React from 'react'
 import '../../css/Scheduling/Toolbar/UpperToolbar.css'
-import user from "/src/assets/footer/circle-user.svg";
+import dashboard from "/public/images/dashboard.png";    
+import user from "/public/images/interview.png";
 
 function UpperToolbar() {
   return (
 
         <div className="toolbar-menu">
             <div className="dashboard">
-                <img className="icon" src={user} alt=""></img>
+                <img className="icon" src={dashboard} alt=""></img>
                 <p>Dashboard</p>
             </div>
         
