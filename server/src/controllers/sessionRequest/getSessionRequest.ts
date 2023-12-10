@@ -36,6 +36,12 @@ const getSessionRequests = async (req: Request, res: Response) => {
 
     const sessionRequests = await SessionRequest.find(query);
 
+    await Promise.all(
+        sessionRequests.map(
+            async (request) => await populateTutorAndStudent(request)
+        )
+    );
+
     return res.status(200).json(sessionRequests);
 };
 
