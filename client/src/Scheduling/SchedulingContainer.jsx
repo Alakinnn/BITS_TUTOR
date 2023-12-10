@@ -8,7 +8,12 @@ import { getTutorSessions } from './TutorScheduling';
 function SchedulingContainer() {
   const [sessions, setSessions] = useState({});
   useEffect(() => {
-    setSessions(getTutorSessions());
+    const fetchData = async () => {
+      const sessions = await getTutorSessions()
+      setSessions(sessions);
+    };
+    
+    fetchData();
   }, []);
   return (
     <div className='scheduling-container'>
