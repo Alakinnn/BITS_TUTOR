@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './css/App.css';
 
 import Footer from "./Footer/Footer";
-import './css/Footer.css';
+// import './css/Footer.css';
 import StudentMeetingSession from './MeetingSession/StudentMeetingSession';
 import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
 import Navbar from "./Header/Navbar";
@@ -12,7 +12,9 @@ import PrintAllTutorSessions from "./Login/PrintAllTutorSessions";
 import CreateSession from "./Test/CreateSession";
 import Toolbar from "./Scheduling/Toolbar/Toolbar";
 import SchedulingContainer from "./Scheduling/SchedulingContainer";
-import './css/Navbar.css';
+import BookingSession from "./Scheduling/Toolbar/BookingSession";
+import ToolbarRequest from "./Scheduling/Toolbar/ToolbarRequest";
+// import './css/Navbar.css';
 
 
 

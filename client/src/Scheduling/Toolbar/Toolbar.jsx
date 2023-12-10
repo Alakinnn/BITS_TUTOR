@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../css/Scheduling/Toolbar/Toolbar.css'
 import RequestDescription from './RequestDescription';
+import ToolbarRequest from './ToolbarRequest';
 import UpperToolbar from './UpperToolbar';
 function Toolbar() {
   return (
@@ -8,7 +9,8 @@ function Toolbar() {
         {/* toolbat menu */}
         {<UpperToolbar/>}
         {/* toolbar description */}
-        {<RequestDescription/>}
+        {/* {<RequestDescription/>} */}
+        {<ToolbarRequest/>}
 
         
     </div> 
