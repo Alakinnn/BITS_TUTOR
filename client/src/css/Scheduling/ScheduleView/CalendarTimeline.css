@@ -3,10 +3,7 @@
     --light-gray: #FAFAFA;
     --gray: #D4D4D4;
     --dark-gray: #D9D9D9;
-
-    /* fonts */
-    --title: 'Poppins', monospace;
-    --content: 'DM Sans', sans-serif;
+    
 }
 
 .calendar-timeline {
@@ -37,6 +34,7 @@
 .fc .fc-col-header-cell-cushion {
     color: var(--gray);
     font-family: var(--content);
+    font-weight: bold;
     background-color: var(--light-gray);
     border-radius: 4%;
     width: 40%;

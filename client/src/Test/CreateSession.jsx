@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 function CreateSession() {
     const printAllSessions = async () => {
@@ -8,21 +9,24 @@ function CreateSession() {
     const createSession = async () => {
         const response = await axios.post(`http://139.59.105.114/api/v1/session`, {
             
-            "tutorId": "65697c9779523e566d10c967",
-            "studentId": "65697d1479523e566d10c968",
-            "tutorEmail": "mastermobo101@gmail.com",
-            "studentEmail": "s3978482@rmit.edu.vn",
-            "topic": "test",
-            "startTime": "2024-02-25T12:00:00",
-            "timezone": "Asia/Saigon",
-            "duration": "5"
+        "title": "abc",
+        "description": "hoc react",
+        "tutorId": "656f614ac37e79091ef39474",
+        "studentId": "656f616650d0394bfa76feb0",
+        "startTime": "2024-02-25T10:00:00",
+        "endTime": "2024-02-25T12:00:00",
+        "timezone": "Asia/Saigon"
             
-        })
+        });
+        console.log(response);
     }
-    createSession();
-    printAllSessions();
+    // createSession();
+    // printAllSessions();
   return (
-    <div>CreateSession</div>
+    <div>
+      <button onClick={createSession}>Create Session</button>
+      <button onClick={printAllSessions}>Print All Sessions</button>
+    </div>
   )
 }
 

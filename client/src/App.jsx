@@ -9,10 +9,9 @@ import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
 import Navbar from "./Header/Navbar";
 import LoginTest from "./Login/LoginTest";
 import PrintAllTutorSessions from "./Login/PrintAllTutorSessions";
+import CreateSession from "./Test/CreateSession";
 import Toolbar from "./Scheduling/Toolbar/Toolbar";
 import SchedulingContainer from "./Scheduling/SchedulingContainer";
-import BookingSession from "./Scheduling/Toolbar/BookingSession";
-import ToolbarRequest from "./Scheduling/Toolbar/ToolbarRequest";
 import './css/Navbar.css';
 
 
@@ -26,7 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<PrintAllTutorSessions />} />
+      <Route path="/" element={<CreateSession />} />
         {/* This is the test route for dev the footer */}
         
         <Route path="/footerTest" element={<Footer />} />
