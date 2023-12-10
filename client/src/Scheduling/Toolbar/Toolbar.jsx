@@ -3,9 +3,9 @@ import '../../css/Scheduling/Toolbar/Toolbar.css'
 import TutorRequestDescription from './TutorRequestDescription';
 import StudentCreateRequest from './StudentCreateRequest';
 import UpperToolbar from './UpperToolbar';
-function Toolbar(role, requestList) {
+function Toolbar({role, requestList}) {
   let renderComponent;
-  switch (role.role) {
+  switch (role) {
     case 'tutor':
       renderComponent = (
         <>

@@ -6,10 +6,28 @@ import request from "/public/images/interview.png";
 import user from "/src/assets/footer/circle.svg";
 import '@fortawesome/fontawesome-free/css/all.css'; 
 
-const UpperToolbar = (requestList) => {
+const UpperToolbar = ({requestList}) => {
+    console.log(requestList)
     const [removeClass, setRemoveClass] = useState(false);
     const colapseRequest = () => {
         setRemoveClass(!removeClass)
+    }
+
+    const renderRequestList = (requestList) => {
+        return requestList.map((request) => (
+        <li className="dropdown_item">
+        <span className="dropdown_text">
+            <div className="left_column">
+                <img src={user} alt=""></img>
+            </div>
+            <div className="right_column">
+                 <div className="student_name">{request.student.username}</div>
+                <div className="course_name">{request.title}</div>
+                <div className="meet_duration">{request.startTime} to {request.endTime}</div>
+            </div>
+        </span>
+        </li>
+        ))
     }
 
   return (
@@ -43,35 +61,20 @@ const UpperToolbar = (requestList) => {
   )
   }
 
-const renderRequestList = (requestList) => {
-    return requestList.map((request) => (
-    <li className="dropdown_item">
-    <span className="dropdown_text">
-        <div className="left_column">
-            <img src={user} alt=""></img>
-        </div>
-        <div className="right_column">
-             <div className="student_name">{request.student.username}</div>
-            <div className="course_name">{request.title}</div>
-            <div className="meet_duration">{formatDate(request.startTime)} to {formatDate(request.endTime)}</div>
-        </div>
-    </span>
-    </li>
-    ))
-}
 
-const formatDate = (date) => {
-    // Get the time portion of the Date object
-    const timeString = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+
+// const formatDate = (date) => {
+//     // Get the time portion of the Date object
+//     const timeString = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
   
-    // Determine if it's AM or PM
-    const period = date.getHours() < 12 ? 'am' : 'pm';
+//     // Determine if it's AM or PM
+//     const period = date.getHours() < 12 ? 'am' : 'pm';
   
-    // Format the final time string
-    const formattedTime = `${timeString}${period}`;
+//     // Format the final time string
+//     const formattedTime = `${timeString}${period}`;
   
-    return formattedTime;
-  };
+//     return formattedTime;
+//   };
 
 
 export default UpperToolbar
