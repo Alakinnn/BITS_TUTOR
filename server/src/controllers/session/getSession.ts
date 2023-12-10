@@ -36,6 +36,10 @@ const getSessions = async (req: Request, res: Response) => {
 
     const sessions = await Session.find(query);
 
+    await Promise.all(
+        sessions.map(async (session) => await populateTutorAndStudent(session))
+    );
+
     return res.status(200).json(sessions);
 };
 
@@ -43,7 +47,9 @@ const getTutorSessions = async (req: Request, res: Response) => {
     const { tutorId } = req.params;
     const sessions = await Session.find({ tutor: tutorId });
 
-    await Promise.all(sessions.map(async (session) => await populateTutorAndStudent(session)));
+    await Promise.all(
+        sessions.map(async (session) => await populateTutorAndStudent(session))
+    );
     return res.status(200).json(sessions);
 };
 
@@ -51,7 +57,9 @@ const getStudentSessions = async (req: Request, res: Response) => {
     const { studentId } = req.params;
     const sessions = await Session.find({ student: studentId });
 
-    await Promise.all(sessions.map(async (session) => await populateTutorAndStudent(session)));
+    await Promise.all(
+        sessions.map(async (session) => await populateTutorAndStudent(session))
+    );
     return res.status(200).json(sessions);
 };
 
