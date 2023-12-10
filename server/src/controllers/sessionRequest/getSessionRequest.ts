@@ -17,12 +17,24 @@ const getSessionRequestById = async (req: Request, res: Response) => {
     return res.status(200).json(sessionRequest);
 };
 
+interface sessionQuery {
+    tutor?: string;
+    student?: string;
+}
+
 const getSessionRequests = async (req: Request, res: Response) => {
     const { tutorId, studentId } = req.query;
-    const sessionRequests = await SessionRequest.find({
-        tutor: tutorId,
-        student: studentId,
-    });
+    let query: sessionQuery = {};
+
+    if (tutorId) {
+        query.tutor = tutorId as string;
+    }
+
+    if (studentId) {
+        query.student = studentId as string;
+    }
+
+    const sessionRequests = await SessionRequest.find(query);
 
     return res.status(200).json(sessionRequests);
 };
