@@ -6,20 +6,22 @@ import Footer from "./Footer/Footer";
 // import './css/Footer.css';
 import StudentMeetingSession from './MeetingSession/StudentMeetingSession';
 import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
-import Navbar from "./Header/Navbar";
-import LoginTest from "./Login/LoginTest";
-import PrintAllTutorSessions from "./Login/PrintAllTutorSessions";
+// import Navbar from "./Header/Navbar";
+// import LoginTest from "./Login/LoginTest";
+// import PrintAllTutorSessions from "./Login/PrintAllTutorSessions";
 import CreateSession from "./Test/CreateSession";
 import Toolbar from "./Scheduling/Toolbar/Toolbar";
 import SchedulingContainer from "./Scheduling/SchedulingContainer";
 import BookingSession from "./Scheduling/Toolbar/BookingSession";
 import ToolbarRequest from "./Scheduling/Toolbar/ToolbarRequest";
+
 // import './css/Navbar.css';
 
 
 
 
-const mySessionID = "123" // This is a fake ID, will have to implement scheduling feature
+
+// const mySessionID = "123"; // This is a fake ID, will have to implement scheduling feature
    
 
 function App() {
