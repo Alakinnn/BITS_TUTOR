@@ -7,7 +7,7 @@ import { getTutorSessions, getStudentRequests } from './TutorScheduling';
 import { getStudentSessions, getCurrentRequests } from './StudentScheduling';
 
 
-const role = 'tutor';
+const role = 'student';
 const studentId ='656f616650d0394bfa76feb0'
 const tutorId ='656f614ac37e79091ef39474' //This can be either the user's id or the targeted tutor's id (when student click on a tutor's profile)
 

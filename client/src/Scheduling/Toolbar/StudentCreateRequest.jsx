@@ -10,8 +10,8 @@ const ToolbarRequest = ({tutorId, studentId}) => {
     const [request, setRequest] = useState({
         title: "",
         description: "",
-        tutorId: {tutorId},
-        studentId: {studentId},
+        tutorId: tutorId,
+        studentId: studentId,
         startTime: "",
         endTime: "",
         timezone: "Asia/Saigon"
