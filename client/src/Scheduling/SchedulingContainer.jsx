@@ -4,6 +4,7 @@ import '../css/Scheduling/SchedulingContainer.css'
 import Toolbar from './Toolbar/Toolbar';
 import ScheduleView from './ScheduleView/ScheduleView';
 import { getTutorSessions, getStudentRequests } from './TutorScheduling';
+import { getStudentSessions, getCurrentRequests } from './StudentScheduling';
 
 const role = 'tutor';
 
@@ -13,14 +14,28 @@ function SchedulingContainer() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-      const sessions = await getTutorSessions()
-      const requests = await getStudentRequests()
-      setSessions(sessions);
-      setRequests(requests);
-    } catch (error) {
+        let sessions = [];
+        let requests = [];
+        switch (role) {
+          case 'tutor':
+            sessions = await getTutorSessions();
+            requests = await getStudentRequests();
+            break;
+          case 'student':
+            sessions = await getStudentSessions();
+            requests = await getCurrentRequests();
+            break;
+          default:
+            break;
+        }
+        setSessions(sessions);
+        setRequests(requests);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
       console.error('Error fetching data:', error);
     }
-  }
+
     
     fetchData();
   }, []);
