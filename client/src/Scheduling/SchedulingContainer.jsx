@@ -8,8 +8,8 @@ import { getTutorSessions, getStudentRequests } from './TutorScheduling';
 const role = 'tutor';
 
 function SchedulingContainer() {
-  const [sessions, setSessions] = useState({});
-  const [requests, setRequests] = useState({});
+  const [sessions, setSessions] = useState([]);
+  const [requests, setRequests] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {

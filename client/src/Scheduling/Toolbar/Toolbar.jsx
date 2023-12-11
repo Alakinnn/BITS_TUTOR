@@ -4,30 +4,32 @@ import TutorRequestDescription from './TutorRequestDescription';
 import StudentCreateRequest from './StudentCreateRequest';
 import UpperToolbar from './UpperToolbar';
 function Toolbar({role, requestList}) {
-  let renderComponent;
-  switch (role) {
-    case 'tutor':
-      renderComponent = (
-        <>
-            <UpperToolbar
-                requestList={requestList}                        
-            />
-            <TutorRequestDescription/>
-          </>
-      );
-      break;
-    case 'student':
-      renderComponent = (
-        <>
-            <div></div>
-            <StudentCreateRequest/>
-          </>
-      );
-      break;
-
-    default:
-      break;
-  }
+  const [renderComponent, setRenderComponent] = React.useState(null);
+  React.useEffect(() => {
+    switch (role) {
+      case 'tutor':
+        setRenderComponent(
+          <>
+              <UpperToolbar
+                  requestList={requestList}                        
+              />
+              <TutorRequestDescription/>
+            </>
+        );
+        break;
+      case 'student':
+        setRenderComponent(
+          <>
+              <div></div>
+              <StudentCreateRequest/>
+            </>
+        );
+        break;
+    
+      default:
+        break;
+    }
+  }, [requestList])
   return (
     <div className='toolbar'>
         
