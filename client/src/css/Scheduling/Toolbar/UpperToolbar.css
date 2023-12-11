@@ -65,7 +65,7 @@
     font-family: var(--title);
 }
 
-.dropdown_list{
+.dropdown_list .toolbar-requests-dropdown.visible {
     width: 100%;
     border-radius: 4px;
     position: absolute;
@@ -181,4 +181,8 @@
 .course_name .meet_duration{
     font-family: var(--content);
     font-weight: lighter;
+}
+
+.toolbar-requests-dropdown.invisible{
+    display: none;
 }

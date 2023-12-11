@@ -2,7 +2,10 @@ import React from 'react'
 import user from "/src/assets/footer/circle-user.svg";
 import '../../css/Scheduling/Toolbar/RequestDescription.css'
 
-function RequestDescription() {
+function TutorRequestDescription({requestList}) {
+    // const renderDescription = (requestList) => {
+    //     return requestList.map
+    // }
   return (
     <>
     {/* toolbar description */}
@@ -48,4 +51,4 @@ function RequestDescription() {
 )
 }
 
-export default RequestDescription
+export default TutorRequestDescription

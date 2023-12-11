@@ -12,16 +12,21 @@ const UpperToolbar = ({requestList}) => {
     const colapseRequest = () => {
         setRemoveClass(!removeClass)
     }
+    const [showRequests, setShowRequests] = useState(true);
+    const toggleRequests = () => {
+      setShowRequests(!showRequests);
+    }
 
     const renderRequestList = (requestList) => {
-        return requestList.map((request) => (
-        <li className="dropdown_item">
+     // Map over the filtered list and render the components
+        return requestList.map((request, key) => (
+        <li className="dropdown_item" key={request}>
         <span className="dropdown_text">
             <div className="left_column">
                 <img src={user} alt=""></img>
             </div>
             <div className="right_column">
-                 <div className="student_name">{request.student.username}</div>
+                <div className="student_name">{request.student.username}</div>
                 <div className="course_name">{request.title}</div>
                 <div className="meet_duration">{formatDate(request.startTime)} to {formatDate(request.endTime)}</div>
             </div>
@@ -44,11 +49,14 @@ const UpperToolbar = ({requestList}) => {
                 <div className="dropdown">
                     <div className="dropdown_select">
                         <span className="dropdown_selected">
-                            <img className="icon" src={request} alt="View Requests Icon" ></img>
-                            View Request
-                        </span>    
-                        <button className='view-request' onClick={colapseRequest}><i className="fas fa-caret-down dropdown_caret"></i></button>
+                            <button className="view-request" onClick={() => toggleRequests}>
+                                <img className="icon" src={request} alt="View Requests Icon" ></img>
+                                View Request
+                            </button>           
+                        </span>
                     </div>
+                </div>
+                <div className={`toolbar-requests-dropdown ${showRequests ? 'visible' : 'invisible'}`}>
                     {/* <!-- Request notification --> */}
                     <ul className="dropdown_list">
                         {renderRequestList(requestList)} 
