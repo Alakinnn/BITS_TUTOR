@@ -4,7 +4,7 @@ import '../../css/Scheduling/Toolbar/UpperToolbar.css';
 import dashboard from "/public/images/dashboard.png";    
 import request from "/public/images/request.png";
 import user from "/src/assets/footer/circle.svg";
-import '@fortawesome/fontawesome-free/css/all.css'; 
+// import '@fortawesome/fontawesome-free/css/all.css'; 
 
 const UpperToolbar = ({requestList}) => {
     console.log(requestList)

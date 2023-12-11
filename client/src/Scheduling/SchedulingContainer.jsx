@@ -6,7 +6,7 @@ import ScheduleView from './ScheduleView/ScheduleView';
 import { getTutorSessions, getStudentRequests } from './TutorScheduling';
 import { getStudentSessions, getCurrentRequests } from './StudentScheduling';
 
-const role = 'tutor';
+const role = 'student';
 
 function SchedulingContainer() {
   const [sessions, setSessions] = useState([]);
