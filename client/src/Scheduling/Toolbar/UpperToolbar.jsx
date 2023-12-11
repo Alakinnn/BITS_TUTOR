@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
 import '../../css/Scheduling/Toolbar/UpperToolbar.css';
-import dashboard from "/public/images/dashboard.png";    
-import request from "/public/images/interview.png";
-import user from "/src/assets/footer/circle.svg";
+// import dashboard from "/public/images/dashboard.png";    
+// import request from "/public/images/request.png";
+// import user from "/src/assets/footer/circle.svg";
 import '@fortawesome/fontawesome-free/css/all.css'; 
 
 const UpperToolbar = ({requestList}) => {
@@ -63,18 +63,19 @@ const UpperToolbar = ({requestList}) => {
 
 
 
-// const formatDate = (date) => {
-//     // Get the time portion of the Date object
-//     const timeString = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+  const formatDate = (dateString) => {
+    // Convert the date string into a Date object
+    dateObj = new Date(dateString);
+    // Get the time portion of the Date object
+    const timeString = dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
   
-//     // Determine if it's AM or PM
-//     const period = date.getHours() < 12 ? 'am' : 'pm';
+    // Determine if it's AM or PM
+    const period = dateObj.getHours() < 12 ? 'am' : 'pm';
   
-//     // Format the final time string
-//     const formattedTime = `${timeString}${period}`;
+    // Format the final time string
+    const formattedTime = `${timeString}${period}`;
   
-//     return formattedTime;
-//   };
-
+    return formattedTime;
+  };
 
 export default UpperToolbar
