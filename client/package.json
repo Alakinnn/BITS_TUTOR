@@ -10,9 +10,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
     "@zoomus/websdk": "^2.18.2",
     "axios": "^1.6.2",
     "jsrsasign": "^10.9.0",
+    "mdb-react-ui-kit": "^7.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0"
