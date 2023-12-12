@@ -2,14 +2,17 @@ import React from 'react'
 import Upcoming from './EventBox/Upcoming';
 import Completed from './EventBox/Completed';
 import Cancelled from './EventBox/Cancelled';
+import {Link } from 'react-router-dom';
 
 function CheckTypeToRender(arg) {
     if (arg.event.extendedProps.type === 'inactive') {
         return (
           <>
-            {<Upcoming
-              event={arg}
-            />}
+            <Link to={`/tutor/${arg.event.extendedProps.sessionId}`}>
+              {<Upcoming
+                event={arg}
+              />}
+            </Link>
           </>
             
         );
