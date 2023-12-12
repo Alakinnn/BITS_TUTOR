@@ -12,6 +12,7 @@ import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
 import CreateSession from "./Test/CreateSession";
 import Toolbar from "./Scheduling/Toolbar/Toolbar";
 import SchedulingContainer from "./Scheduling/SchedulingContainer";
+import LoginTest from "./Authentication/Login/LoginTest";
 
 // import './css/Navbar.css';
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/tutor" element={<TutorMeetingSession />} />
         <Route path="/toolbar" element={<Toolbar />} />
         <Route path="/scheduleInterface" element={<SchedulingContainer />} />
+        <Route path="/loginTest" element={<LoginTest />} />
       </Routes>
     </BrowserRouter>
   )
