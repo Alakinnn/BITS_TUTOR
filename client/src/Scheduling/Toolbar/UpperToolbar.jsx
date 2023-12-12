@@ -18,9 +18,9 @@ const UpperToolbar = ({requestList}) => {
     }
 
     const renderRequestList = (requestList) => {
-     // Map over the filtered list and render the components
-        return requestList.map((request, key) => (
-        <li className="dropdown_item" key={request}>
+     // Map over the filtered list and render the components 
+        return requestList.map((request) => (
+        <li className="dropdown_item" key={request._id}>
         <span className="dropdown_text">
             <div className="left_column">
                 <img src={user} alt=""></img>
