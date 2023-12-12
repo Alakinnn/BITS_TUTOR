@@ -7,7 +7,7 @@ import BookingSession from './BookingSession'
 
 const ToolbarRequest = ({tutorId, studentId}) => {
     const [removeClass, setRemoveClass] = useState(false);
-    const [request, setRequest] = useState({
+    const defaultRequest = {
         title: "",
         description: "",
         tutorId: tutorId,
@@ -15,7 +15,8 @@ const ToolbarRequest = ({tutorId, studentId}) => {
         startTime: "",
         endTime: "",
         timezone: "Asia/Saigon"
-    })
+    }
+    const [request, setRequest] = useState(defaultRequest)
 
 
     const handleChange = (e) => {
@@ -63,6 +64,8 @@ const ToolbarRequest = ({tutorId, studentId}) => {
                     <div className="buttonRequest">
                         <BookingSession
                             request={request}
+                            setRequest={setRequest}
+                            defaultRequest={defaultRequest}
                         />
                     </div>
         </div>
