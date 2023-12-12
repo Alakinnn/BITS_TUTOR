@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../css/Scheduling/Toolbar/Toolbar.css'
 import TutorRequestDescription from './TutorRequestDescription';
 import StudentCreateRequest from './StudentCreateRequest';
 import UpperToolbar from './UpperToolbar';
 function Toolbar({role, requestList, tutorId, studentId}) {
   const [renderComponent, setRenderComponent] = React.useState(null);
+  const [selectedRequest, setSelectedRequest] = React.useState({});
+  console.log(selectedRequest)
   React.useEffect(() => {
     switch (role) {
       case 'tutor':
         setRenderComponent(
           <>
               <UpperToolbar
-                  requestList={requestList}                        
+                  requestList={requestList}   
+                  setSelectedRequest={setSelectedRequest}                     
               />
               <TutorRequestDescription
                 requestList={requestList}
+                selectedRequest={selectedRequest}
               />
 
           </>   
@@ -36,7 +40,7 @@ function Toolbar({role, requestList, tutorId, studentId}) {
       default:
         break;
     }
-  }, [requestList])
+  }, [requestList, selectedRequest])
   return (
     <div className='toolbar'>
         
