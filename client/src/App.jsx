@@ -24,7 +24,7 @@ function App() {
     // Change the role to view the different profile pages
     const [user, setUser] = useState({
         _id: "123",
-        role: "tutor",
+        role: "student",
         username: "John Doe",
         email: "john@gmail.com",
     });
@@ -32,7 +32,7 @@ function App() {
     // const navigate = useNavigate();
     return (
         <BrowserRouter>
-            <UserContext.Provider>
+            <UserContext.Provider value={user}>
                 <Routes>
                     <Route path="/" element={<PrintAllTutorSessions />} />
                     {/* This is the test route for dev the footer */}
