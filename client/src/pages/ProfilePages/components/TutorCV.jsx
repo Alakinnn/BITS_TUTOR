@@ -4,7 +4,6 @@ import {
     MDBCardBody,
     MDBProgressBar,
     MDBProgress,
-
     MDBCardText,
 } from "mdb-react-ui-kit";
 

@@ -52,6 +52,7 @@ function TutorBenefits() {
         </MDBProgress>
       </MDBCardBody>
     </MDBCard>
+    
   );
 }
 

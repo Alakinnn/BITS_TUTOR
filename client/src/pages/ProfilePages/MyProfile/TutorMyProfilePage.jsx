@@ -2,11 +2,11 @@ import {
     MDBCol,
     MDBContainer,
     MDBRow,
-    MDBCard,
-    MDBCardText,
-    MDBCardBody,
-    MDBProgress,
-    MDBProgressBar,
+    // MDBCard,
+    // MDBCardText,
+    // MDBCardBody,
+    // MDBProgress,
+    // MDBProgressBar,
 } from "mdb-react-ui-kit";
 import UserCardMyProfile from "../components/UserCardMyProfile";
 import SocialLinks from "../components/SocialLinks";
@@ -23,7 +23,7 @@ export default function TutorMyProfilePage() {
                         {/* User card profile */}
                         <UserCardMyProfile />
                         
-                        {/* Social Links */}
+                        {/* Social links */}
                         <SocialLinks />
                     </MDBCol>
                     <MDBCol lg="8">
