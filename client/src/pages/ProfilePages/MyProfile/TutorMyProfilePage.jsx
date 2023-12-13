@@ -13,6 +13,7 @@ import SocialLinks from "../components/SocialLinks";
 import TutorPersonalDetail from "../components/TutorPersonalDetail";
 import TutorCV from "../components/TutorBenefits";
 import TutorBenefits from "../components/TutorBenefits";
+import TutorUserCardMyProfile from "../components/TutorUserCardMyProfile";
 
 export default function TutorMyProfilePage() {
     return (
@@ -21,8 +22,8 @@ export default function TutorMyProfilePage() {
                 <MDBRow>
                     <MDBCol lg="4">
                         {/* User card profile */}
-                        <UserCardMyProfile />
-                        
+                        <TutorUserCardMyProfile />
+
                         {/* Social links */}
                         <SocialLinks />
                     </MDBCol>
@@ -33,13 +34,11 @@ export default function TutorMyProfilePage() {
                         <MDBRow>
                             <MDBCol md="6">
                                 {/* Tutor CV */}
-                                <TutorCV/>
-                        
+                                <TutorCV />
                             </MDBCol>
                             <MDBCol md="6">
                                 {/* Tutor benefits */}
-                                <TutorBenefits/>
-                                
+                                <TutorBenefits />
                             </MDBCol>
                         </MDBRow>
                     </MDBCol>

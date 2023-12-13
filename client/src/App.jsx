@@ -23,9 +23,10 @@ function App() {
     // Change the role to view the different profile pages
     const [user, setUser] = useState({
         _id: "123",
-        role: "student",
+        role: "tutor",
         username: "John Doe",
         email: "john@gmail.com",
+        tags: ["C++", "Java", "Python", "JavaScript"],
     });
 
     // const navigate = useNavigate();
@@ -55,11 +56,7 @@ function App() {
                         path="/studentProfile"
                         element={<StudentPublicProfilePage />}
                     />
-                    <Route
-                        path="/login"
-                        element={<LoginTest />}
-                    />
-                    
+                    <Route path="/login" element={<LoginTest />} />
                 </Routes>
             </UserContext.Provider>
         </BrowserRouter>
