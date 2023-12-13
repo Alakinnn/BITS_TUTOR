@@ -7,7 +7,4 @@ export async function ApproveRequest(requestId) {
     `http://139.59.105.114/api/v1/sessionRequest/${requestId}/approve`
   );
   console.log("Response in approve", response);
-  if (response.status === 200) {
-    window.location.reload();
-  }
 }

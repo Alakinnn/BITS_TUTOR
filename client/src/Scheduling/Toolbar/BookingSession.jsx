@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/Scheduling/Toolbar/RequestDescription.css';
 import user from "/src/assets/footer/circle-user.svg";
-import { CreateRequest } from './Request Functions/CreateRequest';
+import { CreateRequest } from './RequestFunctions/CreateRequest';
 const BookingSession = ({request, setRequest, defaultRequest}) => {
   return (
     <>

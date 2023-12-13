@@ -18,11 +18,13 @@
     "@fullcalendar/daygrid": "^6.1.10",
     "@fullcalendar/react": "^6.1.10",
     "@fullcalendar/timegrid": "^6.1.10",
+    "@reduxjs/toolkit": "^2.0.1",
     "@zoomus/websdk": "^2.18.2",
     "axios": "^1.6.2",
     "jsrsasign": "^10.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.0.4",
     "react-router-dom": "^6.20.0",
     "styled-components": "^6.1.1"
   },
