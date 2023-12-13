@@ -32,7 +32,7 @@ function App() {
         
         <Route path="/footerTest" element={<Footer />} />
         <Route path="/student" element={<StudentMeetingSession />} />
-        <Route path="/tutor/:parameter" element={<TutorMeetingSession />} />
+        <Route path="/tutor" element={<TutorMeetingSession />} />
         <Route path="/toolbar" element={<Toolbar />} />
         <Route path="/scheduleInterface" element={<SchedulingContainer />} />
       </Routes>

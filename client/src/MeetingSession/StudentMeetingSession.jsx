@@ -4,10 +4,10 @@ import InitZoom from "./InitZoom";
 import InfoInterface from "./MeetingSessionContainer";
 import "../css/MeetingSession.css";
 
-// const sessionId = "6571efe2da17854f7db59958"; // This is a fake ID, will have to implement scheduling feature
+const sessionId = "6571efe2da17854f7db59958"; // This is a fake ID, will have to implement scheduling feature
 
 // STUDENT
-const StudentMeetingSession = ({sessionId}) => {
+const StudentMeetingSession = () => {
   // Only enable when time comes
   // request session data from backend
 
