@@ -38,10 +38,8 @@ function App() {
         profilePicUrl:
             "https://hips.hearstapps.com/hmg-prod/images/Kevin-Hart_GettyImages-450909048.jpg",
         cvUrl: "https://resumegenius.com/wp-content/uploads/Academic-CV-Example-Hub.png",
-        benifits: [
+        benefits:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        ],
     });
 
     // const navigate = useNavigate();
