@@ -23,7 +23,7 @@ function App() {
     // Change the role to view the different profile pages
     const [user, setUser] = useState({
         _id: "123",
-        role: "tutor",
+        role: "student",
         username: "John Doe",
         email: "john@gmail.com",
         tags: ["C++", "Java", "Python", "JavaScript"],

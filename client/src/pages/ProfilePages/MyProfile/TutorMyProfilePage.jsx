@@ -11,7 +11,7 @@ import {
 import UserCardMyProfile from "../components/UserCardMyProfile";
 import SocialLinks from "../components/SocialLinks";
 import TutorPersonalDetail from "../components/TutorPersonalDetail";
-import TutorCV from "../components/TutorBenefits";
+import TutorCV from "../components/TutorCV";
 import TutorBenefits from "../components/TutorBenefits";
 import TutorUserCardMyProfile from "../components/TutorUserCardMyProfile";
 
