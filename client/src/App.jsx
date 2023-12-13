@@ -7,6 +7,7 @@ import './css/Footer.css';
 import StudentMeetingSession from './MeetingSession/StudentMeetingSession';
 import TutorMeetingSession from './MeetingSession/TutorMeetingSession';
 import Navbar from "./Header/Navbar";
+import LoginPage from '.signupForm/components/LoginPage/LoginPage.jsx'
 import './css/Navbar.css';
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/footerTest" element={<Footer />} />
         <Route path="/student" element={<StudentMeetingSession />} />
         <Route path="/tutor" element={<TutorMeetingSession />} />
+        <Route path="/loginPage" element={<LoginPage />} />
         
       </Routes>
     </BrowserRouter>
