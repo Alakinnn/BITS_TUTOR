@@ -1,9 +1,12 @@
 import React from 'react'
+import axios from 'axios'
 
-function StudentScheduling() {
-  return (
-    <div>StudentScheduling</div>
-  )
+export async function getStudentSessions (studentId) {
+  const response = await axios.get(`http://139.59.105.114/api/v1/session?tutorId=${studentId}`);
+  // console.log(response.data);
+  return response.data;
 }
-
-export default StudentScheduling
+export async function getCurrentRequests (studentId) {
+  const response = await axios.get(`http://139.59.105.114/api/v1/sessionRequest`, {params: {studentId: `${studentId}`}});
+  return response.data;
+}
