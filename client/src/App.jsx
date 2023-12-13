@@ -57,6 +57,11 @@ function App() {
                         path="/studentProfile"
                         element={<StudentPublicProfilePage />}
                     />
+                    <Route
+                        path="/login"
+                        element={<login />}
+                    />
+                    
                 </Routes>
             </UserContext.Provider>
         </BrowserRouter>
