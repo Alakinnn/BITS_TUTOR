@@ -18,33 +18,31 @@ function SchedulingContainer() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let sessions = [];
-        let requests = [];
+        let sessionValues = [];
+        let requestValues = [];
         switch (role) {
           case 'tutor':
-            sessions = await getTutorSessions(tutorId);
+            sessionValues = await getTutorSessions(tutorId);
             let allRequests = await getStudentRequests(tutorId);
             
             // Filter the requestList to include only "pending" requests
-            requests = allRequests.filter((request) => request.status === "pending");
+            requestValues = allRequests.filter((request) => request.status === "pending");
             break;
           case 'student':
-            sessions = await getStudentSessions(studentId);
-            requests = await getCurrentRequests(studentId);
+            sessionValues = await getStudentSessions(studentId);
+            requestValues = await getCurrentRequests(studentId);
             break;
           default:
             break;
         }
-        setSessions(sessions);
-        setRequests(requests);
+        setSessions(sessionValues);
+        setRequests(requestValues);
       } catch (error) {
         console.log.error('Error fetching data:', error);
       }
     }
-
-    
     fetchData();
-  }, []);
+  }, [requests]);
   return (
     <div className='scheduling-container'>
       { <Toolbar 
