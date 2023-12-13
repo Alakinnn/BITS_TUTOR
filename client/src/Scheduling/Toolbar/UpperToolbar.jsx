@@ -16,6 +16,7 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
 
   // Select the requestList from the store
   const requestList = useSelector(selectRequestList);
+  console.log("Request list: ",requestList);
 
 
 

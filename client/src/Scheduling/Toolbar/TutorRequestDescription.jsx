@@ -7,7 +7,10 @@ import { getRequests } from "../TutorScheduling";
 import { ApproveRequest } from "./RequestFunctions/ApproveRequest";
 import { DenyRequest } from "./RequestFunctions/DenyRequest";
 
-function TutorRequestDescription({ selectedRequest }) {
+const studentId = "656f616650d0394bfa76feb0";
+const tutorId = "656f614ac37e79091ef39474";
+
+function TutorRequestDescription({ selectedRequest, role }) {
   // const renderDescription = (requestList) => {
   //     return requestList.map
   // }

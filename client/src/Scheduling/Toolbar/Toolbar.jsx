@@ -17,6 +17,7 @@ function Toolbar({role, tutorId, studentId}) {
               />
               <TutorRequestDescription
                 selectedRequest={selectedRequest}
+                role={role}
               />
 
           </>   
