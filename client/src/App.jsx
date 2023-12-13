@@ -8,10 +8,8 @@ import "./css/Footer.css";
 import StudentMeetingSession from "./MeetingSession/StudentMeetingSession";
 import TutorMeetingSession from "./MeetingSession/TutorMeetingSession";
 // import Navbar from "./Header/Navbar";
-// import LoginTest from "./Login/LoginTest";
-import PrintAllTutorSessions from "./Login/PrintAllTutorSessions";
-import Toolbar from "./Scheduling/Toolbar";
-import ScheduleInterface from "./Scheduling/ScheduleView";
+import Toolbar from "./Scheduling/Toolbar/Toolbar";
+import ScheduleInterface from "./Scheduling/ScheduleView/ScheduleView";
 // import "./css/Navbar.css";
 import TutorPublicProfilePage from "./pages/ProfilePages/PublicProfile/TutorPublicProfilePage";
 import StudentPublicProfilePage from "./pages/ProfilePages/PublicProfile/StudentPublicProfilePage";
@@ -35,7 +33,6 @@ function App() {
         <BrowserRouter>
             <UserContext.Provider value={user}>
                 <Routes>
-                    <Route path="/" element={<PrintAllTutorSessions />} />
                     {/* This is the test route for dev the footer */}
 
                     <Route path="/footerTest" element={<Footer />} />

@@ -4,9 +4,8 @@ import UserLogin from './UserLogin';
 // TODO: Change the logo from here
 import LoginLogo from 'react-login-page/logo';
 // TODO: Change the styles as needed
-import loginStyles from '../../css/Login/Login';
+import loginStyles from '../components/Login';
 import UserRegister from '../Register/UserRegister';
-
 
 // TODO: This log in/sign up page has no functionality to add role. Please update that!
 function LoginTest() {

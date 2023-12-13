@@ -5,8 +5,6 @@ import InitZoom from "./InitZoom";
 import MeetingSessionContainer from "./MeetingSessionContainer";
 import "../css/MeetingSession.css";
 // What is this? This is making the code bugged
-import PrintAllTutorSessions from "../Authentication/Login/PrintAllTutorSessions";
-const functionResponse = PrintAllTutorSessions();
 const sessionId = "6571efe2da17854f7db59958" // This is a fake ID, will have to implement scheduling feature
 
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import InitZoom from "./InitZoom";
-import InfoInterface from "./MeetingSessionContainer";
+import MeetingSessionContainer from "./MeetingSessionContainer";
 import "../css/MeetingSession.css";
 
 const sessionId = "6571efe2da17854f7db59958"; // This is a fake ID, will have to implement scheduling feature
@@ -46,7 +46,7 @@ const StudentMeetingSession = () => {
 
   return (
     <>
-      {<InfoInterface
+      {<MeetingSessionContainer
             role = 'student'
             renderData={session}
             ssActive = {session.status}
