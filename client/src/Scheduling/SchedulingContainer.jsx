@@ -40,6 +40,7 @@ function SchedulingContainer() {
         }
         await renderRequest();
         setSessions(sessions);
+        console.log("Recieved sessions", sessions);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

@@ -8,7 +8,7 @@ import Upcoming from './EventBox/Upcoming';
 
 
    const CalendarTimeline = ({sessionList}) => {
-      console.log(sessionList);
+      console.log("Session list: ", sessionList);
 
       const eventList = sessionList.map(event => ({
         title: event.title,

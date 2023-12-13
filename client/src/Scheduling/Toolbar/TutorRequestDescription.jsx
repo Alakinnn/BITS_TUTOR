@@ -7,10 +7,6 @@ import { getRequests } from "../TutorScheduling";
 import { ApproveRequest } from "./RequestFunctions/ApproveRequest";
 import { DenyRequest } from "./RequestFunctions/DenyRequest";
 
-const role = "tutor";
-const studentId = "656f616650d0394bfa76feb0";
-const tutorId = "656f614ac37e79091ef39474"; //This can be either the user's id or the targeted tutor's id (when student click on a tutor's profile)
-
 function TutorRequestDescription({ selectedRequest }) {
   // const renderDescription = (requestList) => {
   //     return requestList.map
@@ -20,7 +16,7 @@ function TutorRequestDescription({ selectedRequest }) {
   useEffect(() => {
     // prevent student username for null and/or undefine
     const studentUsername = selectedRequest?.student?.username;
-    console.log("Requenlsnfkldnfsg ", selectedRequest);
+    console.log("Selected request: ", selectedRequest);
 
     if (studentUsername) {
     console.log(studentUsername);
@@ -62,7 +58,7 @@ function TutorRequestDescription({ selectedRequest }) {
           <input
             className="input-content"
             type="text"
-            placeholder="Please approve request"
+            placeholder={selectedRequest.description}
             disabled
           />
 

@@ -105,12 +105,10 @@
 }
 
 .toolbar-buttons{
-    width: 42%; 
-    height: 32.1%; 
-    margin-left: 5%;
-    font-size: 90%;
-    margin-top: 3%;
-    padding-bottom: 5%;
+    display: flex;
+    padding: 5% 5%;
+    place-items: center;
+    justify-content: space-between;
 }
 
 .approve{
@@ -118,6 +116,5 @@
 }
 
 .decline{
-    margin-left: 86%;
     background-color: #EAEAEA;
 }

@@ -75,7 +75,8 @@
     border-radius: 4px;
     padding: 0;
     overflow: scroll;
-    min-height: 80vh;
+    height: 60vh;
+    /* min-height: 80vh; */
 }
 
 .dropdown_list:before{
