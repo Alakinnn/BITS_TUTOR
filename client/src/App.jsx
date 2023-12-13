@@ -27,6 +27,21 @@ function App() {
         username: "John Doe",
         email: "john@gmail.com",
         tags: ["C++", "Java", "Python", "JavaScript"],
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        socialLinks: [
+            "https://github.com/johndoe",
+            "https://www.linkedin.com/in/john-doe-123456789/",
+            "https://www.facebook.com/johndoe",
+        ],
+        hourlyRate: 20,
+        profilePicUrl:
+            "https://hips.hearstapps.com/hmg-prod/images/Kevin-Hart_GettyImages-450909048.jpg",
+        cvUrl: "https://resumegenius.com/wp-content/uploads/Academic-CV-Example-Hub.png",
+        benifits: [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        ],
     });
 
     // const navigate = useNavigate();
