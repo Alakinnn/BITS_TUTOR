@@ -16,6 +16,7 @@ import ScheduleInterface from "./Scheduling/ScheduleView";
 import TutorPublicProfilePage from "./pages/ProfilePages/PublicProfile/TutorPublicProfilePage";
 import StudentPublicProfilePage from "./pages/ProfilePages/PublicProfile/StudentPublicProfilePage";
 import MyProfilePage from "./pages/ProfilePages/MyProfile/MyProfilePage";
+import LoginTest from "./pages/AuthenticationPages/Login/LoginTest";
 
 const UserContext = createContext();
 
@@ -59,7 +60,7 @@ function App() {
                     />
                     <Route
                         path="/login"
-                        element={<login />}
+                        element={<LoginTest />}
                     />
                     
                 </Routes>
