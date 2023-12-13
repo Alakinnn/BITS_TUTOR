@@ -7,8 +7,9 @@ const UserRegister = () => {
   const [regEmail, setEmail] = useState('');
   const userRegister = async () => {
     try {
-      const response = await axios.post(`http://139.59.105.114/api/v1/auth/login`, {
+      const response = await axios.post(`http://139.59.105.114/api/v1/auth/register`, {
         username: regUsername,
+        email: regEmail,
         password: regPassword,
       });
       console.log(response.status);
