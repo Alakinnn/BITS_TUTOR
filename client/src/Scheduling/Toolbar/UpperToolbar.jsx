@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import '../../css/Scheduling/Toolbar/UpperToolbar.css';
-import dashboard from "/public/images/dashboard.png";    
-import request from "/public/images/request.png";
+import request from "/images/request.png";
 import user from "/src/assets/footer/circle.svg";
 
 const UpperToolbar = ({requestList, setSelectedRequest}) => {

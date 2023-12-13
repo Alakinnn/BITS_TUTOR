@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import user from "/src/assets/footer/circle-user.svg";
 import "../../css/Scheduling/Toolbar/RequestDescription.css";
+import { ApproveRequest } from "./Request Functions/ApproveRequest";
 
 function TutorRequestDescription({ requestList, selectedRequest }) {
   // const renderDescription = (requestList) => {
@@ -10,6 +11,7 @@ function TutorRequestDescription({ requestList, selectedRequest }) {
   useEffect(() => {
     // prevent student username for null and/or undefine
     const studentUsername = selectedRequest?.student?.username;
+    console.log("Requenlsnfkldnfsg ", selectedRequest);
 
     if (studentUsername) {
     console.log(studentUsername);
@@ -57,11 +59,16 @@ function TutorRequestDescription({ requestList, selectedRequest }) {
 
           {/* buttons */}
           <div className="buttons toolbar-buttons">
-            <button className="approve">Approve</button>
+            <button onClick={async () => {
+              console.log("Approve before")
+              await ApproveRequest(selectedRequest?._id)
+              console.log("After approve")
+            }} className="approve">Approve</button>
             <button className="decline">Decline</button>
           </div>
         </div>
     );
+
   }, [selectedRequest]);
   return ( 
     <>
