@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react';
 import '../../css/Scheduling/Toolbar/UpperToolbar.css';
 import dashboard from "/public/images/dashboard.png";    
@@ -6,19 +6,6 @@ import request from "/public/images/request.png";
 import user from "/src/assets/footer/circle.svg";
 
 const UpperToolbar = ({requestList, setSelectedRequest}) => {
-    // Re-render the request list when approve or decline a request
-    const [renderObject, setRenderObject] = useState(null);
-    useEffect(() => {
-        console.log("aaa")
-        setRenderObject(
-            <ul className="dropdown_list">
-                {renderRequestList(requestList)} 
-            </ul>
-        )
-    }, [requestList])
-
-
-
     // console.log(requestList)
     // const [showRequests, setShowRequests] = useState(true);
     // const hideRequests = () => {
@@ -85,7 +72,9 @@ const UpperToolbar = ({requestList, setSelectedRequest}) => {
                 </div>
                 <div className={`toolbar-requests-dropdown`}>
                     {/* <!-- Request notification --> */}
-                    {renderObject}
+                    <ul className="dropdown_list">
+                        {renderRequestList(requestList)} 
+                    </ul>
                 </div>
             </div>
         </div>

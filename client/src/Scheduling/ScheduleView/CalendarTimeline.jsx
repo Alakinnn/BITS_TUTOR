@@ -7,9 +7,8 @@ import CheckTypeToRender from './CheckTypeToRender';
 import Upcoming from './EventBox/Upcoming';
 
 
-
    const CalendarTimeline = ({sessionList}) => {
-      
+      console.log(sessionList);
 
       const eventList = sessionList.map(event => ({
         title: event.title,
@@ -18,7 +17,6 @@ import Upcoming from './EventBox/Upcoming';
         type: event.status,
         backgroundColor: 'transparent',
         tutor: event.tutor.username,
-        sessionId: event._id,
         // description: event.description,
       }));
 
