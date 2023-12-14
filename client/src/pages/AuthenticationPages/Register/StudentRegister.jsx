@@ -44,13 +44,13 @@ const StudentRegisterPage = () => {
             <LoginPage>
                 <ProfilePicUpload />
                 <Username
-                    index={1}
+                    index={2}
                     label="Full Name"
                     name="username"
                     placeholder="Your Full Name"
                 />
                 <Password
-                    index={2}
+                    index={3}
                     label="Password"
                     placeholder="Password"
                     name="password"
@@ -58,7 +58,7 @@ const StudentRegisterPage = () => {
 
                 <Submit type="submit">Confirm</Submit>
 
-                <Username keyname="username_rule" visible={false} index={3}>
+                <Username keyname="username_rule" visible={false} index={4}>
                     Social Links
                 </Username>
 

@@ -6,7 +6,7 @@ function SocialLinksList({ socialLinks, handleAdd }) {
 
         return (
             <SocialLinkInput
-                index={4 + index}
+                index={5 + index}
                 order={index}
                 placeholder="Add your socials"
                 isLast={isLast}

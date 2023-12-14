@@ -29,7 +29,7 @@ function ProfilePicUpload() {
                 onClick={openFileSelector}
             ></Input>
             <Input
-                index={6}
+                index={1}
                 id="profilePic"
                 type="file"
                 name="profilePic"
