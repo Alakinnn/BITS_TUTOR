@@ -32,14 +32,15 @@ export default function TutorMyProfilePage() {
                         <TutorPersonalDetail />
 
                         <MDBRow>
-                            <MDBCol md="6">
-                                {/* Tutor CV */}
-                                <TutorCV />
-                            </MDBCol>
-                            <MDBCol md="6">
+                            <MDBCol md="4">
                                 {/* Tutor benefits */}
                                 <TutorBenefits />
                             </MDBCol>
+                            <MDBCol md="8">
+                                {/* Tutor CV */}
+                                <TutorCV />
+                            </MDBCol>
+                            
                         </MDBRow>
                     </MDBCol>
                 </MDBRow>

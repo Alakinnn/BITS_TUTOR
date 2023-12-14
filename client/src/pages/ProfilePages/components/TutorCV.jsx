@@ -5,17 +5,21 @@ import {
     MDBProgressBar,
     MDBProgress,
     MDBCardText,
+    MDBContainer,
 } from "mdb-react-ui-kit";
 
 const TutorCV = () => {
   return (
-    <MDBCard className="mb-4 mb-md-0">
-      <MDBCardBody>
-        <MDBCardText className="mb-4">
-          <span className="text-primary font-italic me-1">Tutor</span>{" "}
-          CV
+    <MDBCard className="mb-4 mb-md-0 h-100" >
+      <MDBCardBody className='h-100'>
+        <MDBCardText className="mb-4" >
+          <span className="text-primary font-italic me-1" >Tutor</span>{" "}
+          <a href="#" data-mdb-tooltip-init title="Hold Ctrl + MB3 or Click Here to view CV!" style={{ textDecoration: 'none' }}>CV</a>
         </MDBCardText>
-        <MDBCardText className="mb-1" style={{ fontSize: ".77rem" }}>
+        <MDBContainer className='h-100'>
+          <iframe height={"80%"} width={"100%"} src="https://www.africau.edu/images/default/sample.pdf" frameBorder="0"></iframe>
+        </MDBContainer>
+        {/* <MDBCardText className="mb-1" style={{ fontSize: ".77rem" }}>
           Web Design
         </MDBCardText>
         <MDBProgress className="rounded">
@@ -48,7 +52,7 @@ const TutorCV = () => {
         </MDBCardText>
         <MDBProgress className="rounded">
           <MDBProgressBar width={66} valuemin={0} valuemax={100} />
-        </MDBProgress>
+        </MDBProgress> */}
       </MDBCardBody>
     </MDBCard>
   )
