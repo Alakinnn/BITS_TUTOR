@@ -90,10 +90,6 @@ tutorSchema.methods.passwordValid = async function (
     this: TutorDoc,
     candidatePassword: string
 ): Promise<boolean> {
-    console.log("Validating password");
-    console.log(this);
-    console.log(candidatePassword);
-
     const tutor = this;
 
     const isMatch = await bcrypt.compare(candidatePassword, tutor.password);
