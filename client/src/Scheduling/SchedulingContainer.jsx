@@ -56,9 +56,14 @@ function SchedulingContainer() {
         tutorId={tutorId}
         studentId={studentId}
       />
-      <ScheduleView sessionList={sessions} />
+      <ScheduleView 
+        sessionList={sessions} 
+        role={role}
+      />
     </div>
   );
 }
+
+export {role};
 
 export default SchedulingContainer;

@@ -31,8 +31,8 @@ function App() {
         {/* This is the test route for dev the footer */}
         
         <Route path="/footerTest" element={<Footer />} />
-        <Route path="/student" element={<StudentMeetingSession />} />
-        <Route path="/tutor" element={<TutorMeetingSession />} />
+        <Route path="/studentMeetingSession/:parameter" element={<StudentMeetingSession />} />
+        <Route path="/tutorMeetingSession/:parameter" element={<TutorMeetingSession />} />
         <Route path="/toolbar" element={<Toolbar />} />
         <Route path="/scheduleInterface" element={<SchedulingContainer />} />
       </Routes>

@@ -8,7 +8,7 @@ import CheckTypeToRender from './CheckTypeToRender';
 import Upcoming from './EventBox/Upcoming';
 
 
-   const CalendarTimeline = ({sessionList}) => {
+   const CalendarTimeline = ({sessionList, role}) => {
       // console.log("Session list: ", sessionList);
 
       const eventList = sessionList.map(event => ({
@@ -18,6 +18,7 @@ import Upcoming from './EventBox/Upcoming';
         type: event.status,
         backgroundColor: 'transparent',
         tutor: event.tutor.username,
+        sessionId: event._id,
         // description: event.description,
       }));
 

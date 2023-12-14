@@ -5,13 +5,14 @@ import InitZoom from "./InitZoom";
 import MeetingSessionContainer from "./MeetingSessionContainer";
 import "../css/MeetingSession.css";
 import PrintAllTutorSessions from "../Login/PrintAllTutorSessions";
+import { useParams } from "react-router-dom";
 
-const functionResponse = PrintAllTutorSessions();
-const sessionId = "6571efe2da17854f7db59958" // This is a fake ID, will have to implement scheduling feature
+
 
 
 // TUTOR
 const TutorMeetingSession = () => {
+    const sessionId = useParams().parameter;
     const [session, setSession] = useState({});
     const [sessionActive, setSessionActive] = useState(false);
 
