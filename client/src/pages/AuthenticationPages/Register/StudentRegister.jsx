@@ -1,15 +1,15 @@
 import React, { useRef } from "react";
 import LoginPage, {
-  Username,
-  Password,
-  Submit,
-  Title,
-  Logo,
-  Input,
-  Banner,
-  Container,
-  Render,
-  Button,
+    Username,
+    Password,
+    Submit,
+    Title,
+    Logo,
+    Input,
+    Banner,
+    Container,
+    Render,
+    Button,
 } from "@react-login-page/page11";
 // import LoginLogo from "react-login-page/logo";
 // import banner from "/public/images/session.png";
@@ -19,72 +19,63 @@ import "react-image-upload/dist/index.css";
 import "../styles/StudentRegister.css";
 import SocialLinkInput from "../components/SocialLinkInput";
 import ProfilePicUpload from "../components/ProfilePicUpload";
+import SocialLinksList from "../components/SocialLinksList";
 
 const StudentRegisterPage = () => {
-  const [data, setData] = React.useState({});
+    const [data, setData] = React.useState({});
 
-  const [socialLinks, setSocialLinks] = React.useState([null]);
+    const [socialLinks, setSocialLinks] = React.useState([null]);
 
-  const handleAdd = () => {
-    const newSocialLinks = [...socialLinks, SocialLinkInput]; // Create a new input
-    setSocialLinks(newSocialLinks); // Update the state with the new inputs
-  };
+    const handleAdd = () => {
+        const newSocialLinks = [...socialLinks, SocialLinkInput]; // Create a new input
+        setSocialLinks(newSocialLinks); // Update the state with the new inputs
+    };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const newData = Object.fromEntries(formData);
-    setData({ ...newData });
-    console.log("New data", newData);
-    console.log("Submitted");
-  };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const newData = Object.fromEntries(formData);
+        setData({ ...newData });
+        console.log("New data", newData);
+        console.log("Submitted");
+    };
 
+    return (
+        <form onSubmit={handleSubmit}>
+            <LoginPage>
+                <ProfilePicUpload />
+                <Username
+                    index={1}
+                    label="Full Name"
+                    name="username"
+                    placeholder="Your Full Name"
+                />
+                <Password
+                    index={2}
+                    label="Password"
+                    placeholder="Password"
+                    name="password"
+                />
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <LoginPage>
-        <ProfilePicUpload/>
-        <Username
-          index={1}
-          label="Full Name"
-          name="username"
-          placeholder="Your Full Name"
-        />
-        <Password
-          index={2}
-          label="Password"
-          placeholder="Password"
-          name="password"
-        />
+                <Submit type="submit">Confirm</Submit>
 
-        <Submit type="submit">Confirm</Submit>
+                <Username keyname="username_rule" visible={false} index={3}>
+                    Social Links
+                </Username>
 
-        <Username keyname="username_rule" visible={false} index={3}>
-          Social Links
-        </Username>
-        {socialLinks.map((link, index) => {
-          let isLast = index + 1 === socialLinks.length;
+                <SocialLinksList
+                    socialLinks={socialLinks}
+                    handleAdd={handleAdd}
+                />
 
-          return (
-            <SocialLinkInput
-              index={4 + index}
-              order={index}
-              placeholder="Add your socials"
-              isLast={isLast}
-              handleAdd={handleAdd}
-              key={index}
-            />
-          );
-        })}
+                <Banner>
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/kevin-main-image-1579114576.png"></img>
+                </Banner>
 
-        <Banner>
-          <img src="https://hips.hearstapps.com/hmg-prod/images/kevin-main-image-1579114576.png"></img>
-        </Banner>
-
-        <Title visible={false} />
-      </LoginPage>
-    </form>
-  );
+                <Title visible={false} />
+            </LoginPage>
+        </form>
+    );
 };
 
 export default StudentRegisterPage;
