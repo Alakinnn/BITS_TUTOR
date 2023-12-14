@@ -2,7 +2,6 @@ import Session, { SessionDoc } from "../../models/session";
 import { Request, Response } from "express";
 import { NotFoundError } from "../../errors";
 import populateTutorAndStudent from "../../utils/populate";
-
 const getSessionById = async (req: Request, res: Response) => {
     const { sessionId } = req.params;
 
