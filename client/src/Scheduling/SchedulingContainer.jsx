@@ -8,7 +8,7 @@ import { renderRequestList, selectRequestList } from "../slices/requestListSlice
 import { getTutorSessions, getStudentRequests, getRequests } from "./TutorScheduling";
 import { getStudentSessions, getCurrentRequests } from "./StudentScheduling";
 
-const role = "tutor";
+const role = "student";
 const studentId = "656f616650d0394bfa76feb0";
 const tutorId = "656f614ac37e79091ef39474"; //This can be either the user's id or the targeted tutor's id (when student click on a tutor's profile)
 
@@ -27,27 +27,27 @@ function SchedulingContainer() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let sessions = [];
+        let sessionValues = [];
         switch (role) {
           case "tutor":
-            sessions = await getTutorSessions(tutorId);
+            sessionValues = await getTutorSessions(tutorId);
             break;
           case "student":
-            sessions = await getStudentSessions(studentId);
+            sessionValues = await getStudentSessions(studentId);
             break;
           default:
             break;
         }
         await renderRequest();
-        setSessions(sessions);
-        console.log("Recieved sessions", sessions);
+        setSessions(sessionValues);
+        // console.log("Received sessions", sessions);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        // console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [requests]);
   return (
     <div className="scheduling-container">
       <Toolbar

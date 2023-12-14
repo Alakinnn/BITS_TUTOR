@@ -5,7 +5,7 @@ import StudentCreateRequest from './StudentCreateRequest';
 import UpperToolbar from './UpperToolbar';
 function Toolbar({role, tutorId, studentId}) {
   const [selectedRequest, setSelectedRequest] = React.useState({});
-  console.log(selectedRequest)
+  // console.log(selectedRequest)
   const renderComponentInside = () => {
     switch (role) {
       case 'tutor':

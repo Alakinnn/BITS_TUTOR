@@ -16,7 +16,7 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
 
   // Select the requestList from the store
   const requestList = useSelector(selectRequestList);
-  console.log("Request list: ",requestList);
+  // console.log("Request list: ",requestList);
 
 
 
@@ -132,7 +132,7 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
             <div className="toolbar-requests-dropdown">
               {/* <!-- Request notification --> */}
               <ul className="dropdown_list pending">
-                {renderRequestList(requestList)}
+              {renderRequestListByStatus(requestList, "pending")}
               </ul>
             </div>
             {/* <!-- Accepted Requests --> */}
