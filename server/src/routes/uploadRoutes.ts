@@ -1,8 +1,12 @@
-import { uploadImage } from "../middlewares/multer";
+import multerPDF from "../utils/multerPDF"
+import multerImage from "../utils/multerImage"
+import { s3Upload } from "../controllers/uploadController"
 import express from "express"
-const route = express.Router()
+import { s3Config } from "../config/s3Config"
+const uploadRouter = express.Router()
 
-route.post("/upload", uploadImage.fields([{
-  name: "avatar",
-  maxCount: 1
-}]))
+// Feel free to add more
+uploadRouter.route("/cv").post(multerPDF.any(), s3Upload)
+uploadRouter.route("/avatar").post(multerImage.any(), s3Upload)
+
+export default uploadRouter;

@@ -33,7 +33,7 @@ const errorHandler: ErrorRequestHandler = (
 
             case "LIMIT_UNEXPECTED_FILE":
                 customError.statusCode = 400;
-                customError.message = "File must be an image";
+                customError.message = "Wrong file type";
                 break;
 
             default:
