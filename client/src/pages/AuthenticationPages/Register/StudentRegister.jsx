@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import LoginPage, {
   Username,
   Password,
@@ -11,20 +11,19 @@ import LoginPage, {
   Render,
   Button,
 } from "@react-login-page/page11";
-import LoginLogo from "react-login-page/logo";
-import banner from "/public/images/session.png";
-import { MDBCardImage } from "mdb-react-ui-kit";
-
-import ImageUploader from "react-image-upload";
+// import LoginLogo from "react-login-page/logo";
+// import banner from "/public/images/session.png";
+// import { MDBCardImage } from "mdb-react-ui-kit";
+// import ImageUploader from "react-image-upload";
 import "react-image-upload/dist/index.css";
-import "/src/css/AuthenticationPages/Register/StudentRegister.css";
+import "../styles/StudentRegister.css";
 import SocialLinkInput from "../components/SocialLinkInput";
+import ProfilePicUpload from "../components/ProfilePicUpload";
 
 const StudentRegisterPage = () => {
   const [data, setData] = React.useState({});
-  const [imageURL, setImageURL] = React.useState(null);
 
-  const [socialLinks, setSocialLinks] = React.useState(["Add your socials"]);
+  const [socialLinks, setSocialLinks] = React.useState([null]);
 
   const handleAdd = () => {
     const newSocialLinks = [...socialLinks, SocialLinkInput]; // Create a new input
@@ -34,36 +33,17 @@ const StudentRegisterPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    setData({ ...data });
-    console.log(data);
+    const newData = Object.fromEntries(formData);
+    setData({ ...newData });
+    console.log("New data", newData);
     console.log("Submitted");
   };
 
-  const handleImageUpload = (event) => {
-    console.log(event.target.files[0]);
-    setImageURL(URL.createObjectURL(event.target.files[0]));
-  };
 
   return (
     <form onSubmit={handleSubmit}>
       <LoginPage>
-        <Logo>
-          <img src={imageURL} className="uploadedImage"></img>
-        </Logo>
-        <Container>
-          <Input
-            index={0}
-            type="file"
-            name="profilePic"
-            accept="image/*"
-            onChange={handleImageUpload}
-          ></Input>
-          <Input index={0} type="button">
-            Upload Picture
-          </Input>
-        </Container>
-
+        <ProfilePicUpload/>
         <Username
           index={1}
           label="Full Name"
@@ -89,7 +69,7 @@ const StudentRegisterPage = () => {
             <SocialLinkInput
               index={4 + index}
               order={index}
-              placeholder={link}
+              placeholder="Add your socials"
               isLast={isLast}
               handleAdd={handleAdd}
               key={index}
