@@ -1,11 +1,13 @@
 import React from "react";
 import {
-    MDBCard,
-    MDBCardBody,
-    MDBProgressBar,
-    MDBProgress,
-
-    MDBCardText,
+  MDBCard,
+  MDBCardBody,
+  MDBProgressBar,
+  MDBProgress,
+  MDBListGroupItem,
+  MDBIcon,
+  MDBCardText,
+  MDBBtn,
 } from "mdb-react-ui-kit";
 
 function StudentPendingRequest() {
@@ -13,43 +15,32 @@ function StudentPendingRequest() {
     <MDBCard className="mb-4 mb-md-0">
       <MDBCardBody>
         <MDBCardText className="mb-4">
-          <span className="text-primary font-italic me-1">Student</span>{" "}
-          Pending Request
+          <span className="text-primary font-italic me-1">Student</span> Pending
+          Request
         </MDBCardText>
-        <MDBCardText className="mb-1" style={{ fontSize: ".77rem" }}>
-          Web Design
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={80} valuemin={0} valuemax={100} />
-        </MDBProgress>
-
-        <MDBCardText className="mt-4 mb-1" style={{ fontSize: ".77rem" }}>
-          Website Markup
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={72} valuemin={0} valuemax={100} />
-        </MDBProgress>
-
-        <MDBCardText className="mt-4 mb-1" style={{ fontSize: ".77rem" }}>
-          One Page
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={89} valuemin={0} valuemax={100} />
-        </MDBProgress>
-
-        <MDBCardText className="mt-4 mb-1" style={{ fontSize: ".77rem" }}>
-          Mobile Template
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={55} valuemin={0} valuemax={100} />
-        </MDBProgress>
-
-        <MDBCardText className="mt-4 mb-1" style={{ fontSize: ".77rem" }}>
-          Backend API
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={66} valuemin={0} valuemax={100} />
-        </MDBProgress>
+        <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
+          <MDBIcon fab icon="github fa-lg" style={{ color: "#333333" }} />
+          <MDBCardText>mdbootstrap</MDBCardText>
+          <MDBBtn className="bg-secondary">Go to the Session</MDBBtn>
+        </MDBListGroupItem>
+        <hr />
+        <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
+          <MDBIcon fab icon="github fa-lg" style={{ color: "#333333" }} />
+          <MDBCardText>mdbootstrap</MDBCardText>
+          <MDBBtn className="bg-secondary">Go to the Session</MDBBtn>
+        </MDBListGroupItem>
+        <hr />
+        <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
+          <MDBIcon fab icon="github fa-lg" style={{ color: "#333333" }} />
+          <MDBCardText>mdbootstrap</MDBCardText>
+          <MDBBtn className="bg-secondary">Go to the Session</MDBBtn>
+        </MDBListGroupItem>
+        <hr />
+        <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
+          <MDBIcon fab icon="github fa-lg" style={{ color: "#333333" }} />
+          <MDBCardText>mdbootstrap</MDBCardText>
+          <MDBBtn className="bg-secondary">Go to the Session</MDBBtn>
+        </MDBListGroupItem>
       </MDBCardBody>
     </MDBCard>
   );
