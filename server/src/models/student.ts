@@ -4,6 +4,8 @@ interface StudentDoc {
     email: string;
     username: string;
     password: string;
+    role: string;
+    profilePicUrl: string;
 }
 
 const studentSchema = new Schema<StudentDoc>({
@@ -22,12 +24,22 @@ const studentSchema = new Schema<StudentDoc>({
         type: String,
         trim: true,
         required: true,
-        maxLength: 20,
+        maxLength: 50,
         minLength: 8,
     },
     password: {
         type: String,
         required: true,
+        trim: true,
+    },
+    role: {
+        type: String,
+        enum: ["student"],
+        required: true,
+        default: "student",
+    },
+    profilePicUrl: {
+        type: String,
         trim: true,
     },
 });
