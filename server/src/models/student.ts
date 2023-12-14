@@ -1,6 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-
-interface StudentDoc {
+import bcrypt from "bcrypt";
+import MongoResult from "../interfaces/MongoResult";
+import PasswordComparable from "../interfaces/PasswordComparable";
+interface StudentDoc extends PasswordComparable, MongoResult {
     email: string;
     username: string;
     password: string;
@@ -44,7 +46,30 @@ const studentSchema = new Schema<StudentDoc>({
     },
 });
 
-const Student = mongoose.model("Student", studentSchema);
+// Hashing Passwords with bcrypt on Save
+studentSchema.pre("save", async function (this: StudentDoc, next) {
+    const student = this;
+
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(student.password, salt);
+    student.password = hash;
+
+    next();
+});
+
+// Compare Passwords with bcrypt
+studentSchema.methods.passwordValid = async function (
+    this: StudentDoc,
+    candidatePassword: string
+): Promise<boolean> {
+    const student = this;
+
+    const isMatch = await bcrypt.compare(candidatePassword, student.password);
+
+    return isMatch;
+};
+
+const Student = mongoose.model<StudentDoc>("Student", studentSchema);
 
 export default Student;
 export { StudentDoc };

@@ -1,6 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-
-interface TutorDoc {
+import bcrypt from "bcrypt";
+import MongoResult from "../interfaces/MongoResult";
+import PasswordComparable from "../interfaces/PasswordComparable";
+interface TutorDoc extends PasswordComparable, MongoResult {
     email: string;
     username: string;
     password: string;
@@ -72,7 +74,34 @@ const tutorSchema = new Schema<TutorDoc>({
     },
 });
 
-const Tutor = mongoose.model("Tutor", tutorSchema);
+// Hashing Passwords with bcrypt on Save
+tutorSchema.pre("save", async function (this: TutorDoc, next) {
+    const tutor = this;
+
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(tutor.password, salt);
+    tutor.password = hash;
+
+    next();
+});
+
+// Compare Passwords with bcrypt
+tutorSchema.methods.passwordValid = async function (
+    this: TutorDoc,
+    candidatePassword: string
+): Promise<boolean> {
+    console.log("Validating password");
+    console.log(this);
+    console.log(candidatePassword);
+
+    const tutor = this;
+
+    const isMatch = await bcrypt.compare(candidatePassword, tutor.password);
+
+    return isMatch;
+};
+
+const Tutor = mongoose.model<TutorDoc>("Tutor", tutorSchema);
 
 export default Tutor;
 export { TutorDoc };
