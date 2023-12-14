@@ -7,6 +7,7 @@ import {
     NotFoundError,
     UnauthorizedError,
 } from "../../errors";
+import { generateToken, verifyToken } from "./jwt";
 
 const loginUser = async (req: Request, res: Response) => {
     const { email, password, role } = req.body;
@@ -42,9 +43,14 @@ const loginUser = async (req: Request, res: Response) => {
     const returnUser = user.toObject();
     delete returnUser.password;
 
-    return res
-        .status(200)
-        .json({ message: "Login successful", user: returnUser });
+    // Generate JWT
+    const token = generateToken(returnUser);
+
+    return res.status(200).json({
+        message: "Login successful",
+        user: returnUser,
+        token,
+    });
 };
 
 export default loginUser;

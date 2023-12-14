@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import Student, { StudentDoc } from "../../models/student";
 import Tutor, { TutorDoc } from "../../models/tutor";
 import { BadRequestError } from "../../errors";
+import { generateToken } from "./jwt";
 
 const registerUser = async (req: Request, res: Response) => {
     const { username, password, email, role } = req.body;
@@ -36,7 +37,12 @@ const registerUser = async (req: Request, res: Response) => {
     const returnUser = user.toObject();
     delete returnUser.password;
 
-    return res.status(200).json({ message: "testing", user: returnUser });
+    // Generate JWT
+    const token = generateToken(returnUser);
+
+    return res
+        .status(200)
+        .json({ message: "testing", user: returnUser, token });
 };
 
 export default registerUser;

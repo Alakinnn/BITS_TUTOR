@@ -1,4 +1,4 @@
-import loginUser from "./auth/loginControllers";
-import registerUser from "./auth/registerControllers";
+import loginUser from "./auth/login";
+import registerUser from "./auth/register";
 
 export { loginUser, registerUser };

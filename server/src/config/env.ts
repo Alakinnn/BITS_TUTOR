@@ -4,6 +4,10 @@ const env = {
     MONGO_PASSWORD: process.env.MONGO_PASSWORD,
     MONGO_DB_NAME: process.env.MONGO_DB_NAME,
 
+    // JWT
+    JWT_SECRET: process.env.JWT_SECRET,
+    JWT_EXPIRY: process.env.JWT_EXPIRY,
+
     // S3
     DO_S3_REGION: process.env.DO_REGION || "SGP1",
     DO_S3_ENDPOINT:

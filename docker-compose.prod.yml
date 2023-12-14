@@ -18,6 +18,9 @@ services:
       - MONGO_PASSWORD=${MONGO_PASSWORD}
       - MONGO_DB_NAME=${MONGO_DB_NAME}
 
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRY=${JWT_EXPIRY}
+
       - PORT=${PORT}
       - MONGO_PORT=${MONGO_PORT}
       - MONGO_IP=${MONGO_IP}
