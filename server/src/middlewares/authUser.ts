@@ -10,11 +10,7 @@ declare global {
     }
 }
 
-const authMiddleware = async (
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
+const authUser = async (req: Request, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization;
     if (!authHeader) throw new UnauthorizedError("No token provided");
     const token = authHeader.split(" ")[1];
@@ -26,3 +22,5 @@ const authMiddleware = async (
         throw new UnauthorizedError("Invalid token");
     }
 };
+
+export default authUser;
