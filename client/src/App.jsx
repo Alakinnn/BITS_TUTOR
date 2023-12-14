@@ -15,6 +15,8 @@ import TutorPublicProfilePage from "./pages/ProfilePages/PublicProfile/TutorPubl
 import StudentPublicProfilePage from "./pages/ProfilePages/PublicProfile/StudentPublicProfilePage";
 import MyProfilePage from "./pages/ProfilePages/MyProfile/MyProfilePage";
 import LoginTest from "./pages/AuthenticationPages/Login/LoginTest";
+import StudentRegisterPage from "./pages/AuthenticationPages/Register/StudentRegister";
+import TutorRegisterPage from "./pages/AuthenticationPages/Register/TutorRegister";
 
 const UserContext = createContext();
 
@@ -70,6 +72,9 @@ function App() {
                         element={<StudentPublicProfilePage />}
                     />
                     <Route path="/login" element={<LoginTest />} />
+                    <Route path="/register/student" element={<StudentRegisterPage />} />
+                    <Route path="/register/tutor" element={<TutorRegisterPage />} />
+
                 </Routes>
             </UserContext.Provider>
         </BrowserRouter>

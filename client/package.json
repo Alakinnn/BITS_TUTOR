@@ -19,6 +19,7 @@
     "@fullcalendar/react": "^6.1.10",
     "@fullcalendar/timegrid": "^6.1.10",
     "@react-login-page/base": "^1.0.2",
+    "@react-login-page/page11": "^1.0.2",
     "@react-login-page/page8": "^1.0.2",
     "@zoomus/websdk": "^2.18.2",
     "axios": "^1.6.2",
@@ -26,6 +27,7 @@
     "mdb-react-ui-kit": "^7.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-image-upload": "^3.0.1",
     "react-router-dom": "^6.20.0",
     "styled-components": "^6.1.1"
   },
