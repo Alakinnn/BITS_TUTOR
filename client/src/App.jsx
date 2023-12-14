@@ -11,6 +11,7 @@ import TutorMeetingSession from "./MeetingSession/TutorMeetingSession";
 import Toolbar from "./Scheduling/Toolbar/Toolbar";
 import ScheduleInterface from "./Scheduling/ScheduleView/ScheduleView";
 // import "./css/Navbar.css";
+import TutorUserCardMyProfile from "./pages/ProfilePages/components/TutorUserCardMyProfile";
 import TutorPublicProfilePage from "./pages/ProfilePages/PublicProfile/TutorPublicProfilePage";
 import StudentPublicProfilePage from "./pages/ProfilePages/PublicProfile/StudentPublicProfilePage";
 import MyProfilePage from "./pages/ProfilePages/MyProfile/MyProfilePage";
@@ -23,7 +24,7 @@ function App() {
     // Change the role to view the different profile pages
     const [user, setUser] = useState({
         _id: "123",
-        role: "student",
+        role: "tutor",
         username: "John Doe",
         email: "john@gmail.com",
         tags: ["C++", "Java", "Python", "JavaScript"],
@@ -69,7 +70,12 @@ function App() {
                         path="/studentProfile"
                         element={<StudentPublicProfilePage />}
                     />
+                    <Route
+                        path="/tutorUserCardMyProfile"
+                        element={<TutorUserCardMyProfile />}
+                    />
                     <Route path="/login" element={<LoginTest />} />
+
                 </Routes>
             </UserContext.Provider>
         </BrowserRouter>
