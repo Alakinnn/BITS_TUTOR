@@ -37,7 +37,6 @@ const StudentRegisterPage = () => {
         const newData = Object.fromEntries(formData);
         setData({ ...newData });
         console.log("New data", newData);
-        console.log("Submitted");
     };
 
     return (

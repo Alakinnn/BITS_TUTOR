@@ -13,7 +13,6 @@ function ProfilePicUpload() {
     const openFileSelector = () => {
         // Trigger a click event on the file input using its ID
         document.getElementById("profilePic").click();
-        console.log("Clicked");
     };
 
     return (
