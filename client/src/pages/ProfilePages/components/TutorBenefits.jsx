@@ -6,6 +6,7 @@ import {
     MDBProgress,
 
     MDBCardText,
+    MDBContainer,
 } from "mdb-react-ui-kit";
 
 function TutorBenefits() {
@@ -16,40 +17,36 @@ function TutorBenefits() {
           <span className="text-primary font-italic me-1">Tutor</span>{" "}
           Benefits
         </MDBCardText>
-        <MDBCardText className="mb-1" style={{ fontSize: ".77rem" }}>
-          Web Design
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={80} valuemin={0} valuemax={100} />
-        </MDBProgress>
+        
+        
+          <div >
+            <div className="row justify-content-center">
+              <div className="col-md-100 col-lg-100 col-xl-100">
+                <div className="card text-black">
+                  <div className="card-body">
+                    <div className="text-center">
+                      <h5 className="card-title">$10.50/Hr</h5>
+                      <p className="text-muted mb-4">You will get these experience:</p>
+                    </div>
+                    <div>
+                      <div className="d-flex justify-content-between">
+                        <span>Java</span><span></span>
+                      </div>
+                      <div className="d-flex justify-content-between">
+                        <span>Imps</span><span>Imps</span>
+                      </div>
+                      <div className="d-flex justify-content-between">
+                        <span>Imps</span><span>Imps</span>
+                      </div>
+                    </div>
 
-        <MDBCardText className="mt-4 mb-1" style={{ fontSize: ".77rem" }}>
-          Website Markup
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={72} valuemin={0} valuemax={100} />
-        </MDBProgress>
-
-        <MDBCardText className="mt-4 mb-1" style={{ fontSize: ".77rem" }}>
-          One Page
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={89} valuemin={0} valuemax={100} />
-        </MDBProgress>
-
-        <MDBCardText className="mt-4 mb-1" style={{ fontSize: ".77rem" }}>
-          Mobile Template
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={55} valuemin={0} valuemax={100} />
-        </MDBProgress>
-
-        <MDBCardText className="mt-4 mb-1" style={{ fontSize: ".77rem" }}>
-          Backend API
-        </MDBCardText>
-        <MDBProgress className="rounded">
-          <MDBProgressBar width={66} valuemin={0} valuemax={100} />
-        </MDBProgress>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
       </MDBCardBody>
     </MDBCard>
     
