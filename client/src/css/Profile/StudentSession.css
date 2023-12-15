@@ -1,70 +1,11 @@
-.sessions{
-    width: 100%;
-    height: 70%;
-    border-bottom: solid 0.75px #ddd;
+
+.fa-chalkboard-teacher{
     margin-bottom: 5%;
 }
-
-.session{
-    display: flex;
-    margin-bottom: 5%;
-}
-
-.session .img-session{
-    width: 7%;
-    height: 7%;
-    margin-left: 5%;
-    margin-top: 4%;
-}
-
-.name-session{
-    display: flex;
-    width: 165%;
-    justify-content: space-between;
-}
-
-.information-session{
-    margin-left: 8%;
-
-}
-
-h9{
-   margin-bottom: 2%;
-
-}
-
-
-
-.name-session .link{
-    font-size: x-small;
-    margin-top: 4%;
-    
- }
-
-
-
-.information-date{
-    display: flex;
-    justify-content: space-between;
-    width: 165%;
-}
-
-.information-date .date{
-    display: flex;
-    font-size: x-small;
+.small-text{
+    font-size: smaller;
+    padding-top: 12%;
     color: #999;
-    
-}
-
-.information-date .time{
-    font-size: xx-small;
-}
-
-.start-time{
-    display: flex;
-    font-size: x-small;
-    color: #999;
-    
 }
 
 

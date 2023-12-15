@@ -19,27 +19,28 @@ function StudentPendingRequest() {
           Request
         </MDBCardText>
         <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-          <MDBIcon fab icon="github fa-lg" style={{ color: "#333333" }} />
-          <MDBCardText>mdbootstrap</MDBCardText>
-          <MDBBtn className="bg-secondary">Go to the Session</MDBBtn>
+        <MDBIcon fas icon="user-circle" size="lg" />
+          <MDBCardText>Nguyen Ngoan</MDBCardText>
+          <MDBBtn className="bg-secondary">Pending Request</MDBBtn>
         </MDBListGroupItem>
         <hr />
         <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-          <MDBIcon fab icon="github fa-lg" style={{ color: "#333333" }} />
-          <MDBCardText>mdbootstrap</MDBCardText>
-          <MDBBtn className="bg-secondary">Go to the Session</MDBBtn>
+        <MDBIcon fas icon="user-circle" size="lg" />
+          <MDBCardText>Nguyen Ngoan</MDBCardText>
+          <MDBBtn className="bg-secondary">Pending Request</MDBBtn>
         </MDBListGroupItem>
         <hr />
         <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-          <MDBIcon fab icon="github fa-lg" style={{ color: "#333333" }} />
-          <MDBCardText>mdbootstrap</MDBCardText>
-          <MDBBtn className="bg-secondary">Go to the Session</MDBBtn>
+        <MDBIcon fas icon="user-circle" size="lg" />
+        <MDBCardText>Nguyen Ngoan</MDBCardText>
+          <MDBBtn className="bg-secondary">Pending Request</MDBBtn>
         </MDBListGroupItem>
         <hr />
         <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-          <MDBIcon fab icon="github fa-lg" style={{ color: "#333333" }} />
-          <MDBCardText>mdbootstrap</MDBCardText>
-          <MDBBtn className="bg-secondary">Go to the Session</MDBBtn>
+          <MDBIcon fas icon="user-circle" size="lg" />
+          <MDBCardText>Nguyen Ngoan</MDBCardText>
+          
+          <MDBBtn className="bg-secondary">Pending Request</MDBBtn>
         </MDBListGroupItem>
       </MDBCardBody>
     </MDBCard>
