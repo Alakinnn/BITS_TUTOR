@@ -5,16 +5,19 @@ import LoginPage, {
     Submit,
     Title,
     Banner,
+    Input,
 } from "@react-login-page/page11";
 import "react-image-upload/dist/index.css";
 import "../styles/ImageUpload.css";
 import ProfilePicUpload from "../components/ProfilePicUpload";
 import SocialLinksList from "../components/SocialLinksList";
 import CVUpload from "../components/CVUpload";
+import Tag from "../../ProfilePages/components/Tag";
+import TagList from "../../ProfilePages/components/TagList";
 
 const TutorRegisterPage = () => {
     const [data, setData] = React.useState({});
-
+    const [tags, setTags] = React.useState([]);
     const [socialLinks, setSocialLinks] = React.useState([null]);
 
     const handleAdd = () => {
@@ -28,6 +31,11 @@ const TutorRegisterPage = () => {
         const newData = Object.fromEntries(formData);
         setData({ ...newData });
         console.log("New data", newData);
+    };
+
+    const handleTagChange = (event) => {
+        const newTags = event.target.value.split(",");
+        setTags(newTags);
     };
 
     return (
@@ -49,12 +57,30 @@ const TutorRegisterPage = () => {
                     name="password"
                 />
 
-                <Username keyname="username_rule" visible={false} index={8}>
+                <Username keyname="tags_label" visible={false} index={8}>
+                    Tags
+                </Username>
+
+                <Input
+                    index={9}
+                    name="tags"
+                    placeholder="Add Tags"
+                    onChange={handleTagChange}
+                ></Input>
+
+                <Input
+                    index={10}
+                    name="tag-preview"
+                    style={{ display: "none" }}
+                >
+                    <TagList tags={tags} />
+                </Input>
+                <Username keyname="username_rule" visible={false} index={11}>
                     Social Links
                 </Username>
 
                 <SocialLinksList
-                    baseIndex={9}
+                    baseIndex={12}
                     socialLinks={socialLinks}
                     handleAdd={handleAdd}
                 />
