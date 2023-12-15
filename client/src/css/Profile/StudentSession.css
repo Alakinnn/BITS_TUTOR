@@ -1,15 +1,39 @@
 
-.fa-chalkboard-teacher{
-    margin-bottom: 5%;
+.button-style{
+    margin-top: 5%;
 }
 .small-text{
     font-size: smaller;
-    padding-top: 12%;
+    /* padding-top: 10%; */
+    color: #999;
+    text-align: center;
+}
+
+.text-style{
+    font-size: smaller;
+    padding-top: 2%;
     color: #999;
 }
 
+.row{
+    width: 105%;
+}
+.text-primary{
+    /* margin-top: 20%; */
+}
 
+.col-sm-3{
+    text-align: right;
+    width: 30%;
+}
 
+.col-sm-9{
+    justify-content: center;
+}
+.fa-lg{
+    vertical-align: 0.25rem;
+    justify-content: space-between;
+}
 
 
 
