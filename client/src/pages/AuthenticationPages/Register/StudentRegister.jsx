@@ -1,23 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
 import LoginPage, {
     Username,
     Password,
     Submit,
     Title,
-    Logo,
-    Input,
     Banner,
-    Container,
-    Render,
-    Button,
 } from "@react-login-page/page11";
-// import LoginLogo from "react-login-page/logo";
-// import banner from "/public/images/session.png";
-// import { MDBCardImage } from "mdb-react-ui-kit";
-// import ImageUploader from "react-image-upload";
 import "react-image-upload/dist/index.css";
-import "../styles/StudentRegister.css";
-import SocialLinkInput from "../components/SocialLinkInput";
+import "../styles/ImageUpload.css";
 import ProfilePicUpload from "../components/ProfilePicUpload";
 import SocialLinksList from "../components/SocialLinksList";
 
@@ -42,15 +32,15 @@ const StudentRegisterPage = () => {
     return (
         <form onSubmit={handleSubmit}>
             <LoginPage>
-                <ProfilePicUpload />
+                <ProfilePicUpload index={0} />
                 <Username
-                    index={2}
+                    index={3}
                     label="Full Name"
                     name="username"
                     placeholder="Your Full Name"
                 />
                 <Password
-                    index={3}
+                    index={4}
                     label="Password"
                     placeholder="Password"
                     name="password"
@@ -58,7 +48,7 @@ const StudentRegisterPage = () => {
 
                 <Submit type="submit">Confirm</Submit>
 
-                <Username keyname="username_rule" visible={false} index={4}>
+                <Username keyname="username_rule" visible={false} index={5}>
                     Social Links
                 </Username>
 
