@@ -23,8 +23,6 @@
     "@react-login-page/page8": "^1.0.2",
     "@zoomus/websdk": "^2.18.2",
     "axios": "^1.6.2",
-    "flowbite-react": "^0.7.2",
-    "jsrsasign": "^10.9.0",
     "md5": "^2.3.0",
     "mdb-react-ui-kit": "^7.0.0",
     "react": "^18.2.0",
