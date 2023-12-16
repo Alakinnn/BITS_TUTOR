@@ -1,23 +1,36 @@
-import React from 'react'
+import React from "react";
 import {
-    MDBCard,
-    MDBCardBody,
-    MDBProgressBar,
-    MDBProgress,
-    MDBCardText,
-    MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBProgressBar,
+  MDBProgress,
+  MDBCardText,
+  MDBContainer,
 } from "mdb-react-ui-kit";
+import defaultImage from "/public/images/cv.png";
 
 const TutorCV = () => {
   return (
-    <MDBCard className="mb-4 mb-md-0 h-100" >
-      <MDBCardBody className='h-100'>
-        <MDBCardText className="mb-4" >
-          <span className="text-primary font-italic me-1" >Tutor</span>{" "}
-          <a href="#" data-mdb-tooltip-init title="Hold Ctrl + MB3 or Click Here to view CV!" style={{ textDecoration: 'none' }}>CV</a>
+    <MDBCard className="mb-4 mb-md-0 h-100">
+      <MDBCardBody className="h-100">
+        <MDBCardText className="mb-4">
+          <span className="text-primary font-italic me-1">Tutor</span>{" "}
+          <a
+            href="#"
+            data-mdb-tooltip-init
+            title="Hold Ctrl + MB3 or Click Here to view CV!"
+            style={{ textDecoration: "none" }}
+          >
+            CV
+          </a>
         </MDBCardText>
-        <MDBContainer className='h-100'>
-          <iframe height={"80%"} width={"100%"} src="https://www.africau.edu/images/default/sample.pdf" frameBorder="0"></iframe>
+        <MDBContainer className="h-100">
+          <iframe
+            height={"80%"}
+            width={"100%"}
+            src="https://www.africau.edu/images/default/sample.pdf"
+            frameBorder="0"
+          ></iframe>
         </MDBContainer>
         {/* <MDBCardText className="mb-1" style={{ fontSize: ".77rem" }}>
           Web Design
@@ -55,7 +68,7 @@ const TutorCV = () => {
         </MDBProgress> */}
       </MDBCardBody>
     </MDBCard>
-  )
-}
+  );
+};
 
-export default TutorCV
+export default TutorCV;

@@ -1,12 +1,14 @@
 .profilePicture {
-    max-height: 20vh;
-    border-radius: 50%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
+  max-height: 20vh;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin: 0 50%;
 }
 
 .cv {
-    max-height: 20vh;
-    width: 100%;
-    object-fit: cover;
+  max-height: 20vh;
+  width: 100%;
+  object-fit: cover;
+  margin: 0 50%;
 }
