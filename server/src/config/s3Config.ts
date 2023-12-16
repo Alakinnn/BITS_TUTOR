@@ -23,7 +23,7 @@ export const s3Config = async (files: any) => {
           secretAccessKey: AWS_SECRET_ACCESS_KEY
         }
       });
-    
+      
       const params = files.map((file: any) => {
         return {
           Bucket: DO_S3_NAME,
@@ -32,8 +32,10 @@ export const s3Config = async (files: any) => {
           ACL: "public-read"
         };
       });
+      
       console.log(params);
       
+
       return await Promise.all(
         params.map((param: any) => s3Client.send(new PutObjectCommand(param)))
       );
