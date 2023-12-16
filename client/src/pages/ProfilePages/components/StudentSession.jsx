@@ -9,79 +9,83 @@ import {
   MDBListGroupItem,
   MDBIcon,
   MDBBtn,
-  MDBRow,
-  MDBCol,
 } from "mdb-react-ui-kit";
-// import Sessions from "./Sessions";
+
 
 function StudentSession() {
   return (
-    <MDBCard className="mb-4 mb-md-0">
+    <MDBCard className="mb-4 mb-md-0 card-session">
       <MDBCardBody>
         <MDBCardText className="mb-4">
           <span className="text-primary font-italic me-1">Student</span>{" "}
           Sessions
         </MDBCardText>
-        <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-          <MDBRow>
-            <MDBCol sm="3">
-              <MDBIcon fas icon="chalkboard-teacher" size="lg" />
-            </MDBCol>
-            <MDBCol sm="9">
-              <span className="text-primary font-italic me-1">
-                {" "}
-                Website Markup
-              </span>{" "}
-              <MDBCardText className="text-style">Start on: 9:00pm</MDBCardText>
-            </MDBCol>
-          </MDBRow>
-          <MDBCardText className="mb-4 button-style">
-            <MDBBtn size="sm" className="bg-secondary ">
-              Go to the Session
-            </MDBBtn>
-            <MDBCardText className="small-text">16/12/2023</MDBCardText>
-          </MDBCardText>
-        </MDBListGroupItem>
-
-        <hr />
-
-        <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-          <MDBRow>
-            <MDBCol sm="3">
-              <MDBIcon fas icon="chalkboard-teacher" size="lg" />
-            </MDBCol>
-            <MDBCol sm="9">
-              <span className="text-primary font-italic me-1">
-                {" "}
-                Website Markup
-              </span>{" "}
-              <MDBCardText className="text-style">Start on: 9:00pm</MDBCardText>
-            </MDBCol>
-          </MDBRow>
-          <MDBCardText className="mb-4 button-style">
-          <MDBBtn size="sm" className="bg-secondary ">
-              Go to the Session
-            </MDBBtn>
-            <MDBCardText className="small-text">16/12/2023</MDBCardText>
-          </MDBCardText>
-        </MDBListGroupItem>
-
-        <hr />
-        
-        <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
+        <MDBListGroupItem className="d-flex justify-content-between align-items-center">
           <MDBIcon fas icon="chalkboard-teacher" size="lg" />
-          <MDBCardText className="mb-4">
-            <span className="text-primary font-italic me-1">
+          <MDBCardText className="card-text">
+            <span className="text-primary font-italic me-1 style-title">
               {" "}
               Website Markup
             </span>{" "}
-            <MDBCardText className="small-text">mdbootstrap</MDBCardText>
+            <MDBCardText className="small-text">Start On: 9:00pm</MDBCardText>
+            <MDBCardText className="small-text">
+              Start Date: 16/12/2023
+            </MDBCardText>
+            <MDBCardText className="small-text">
+              End Date: 18/12/2023
+            </MDBCardText>
           </MDBCardText>
-          <MDBCardText className="mb-4">
-            <MDBBtn size="sm" className="bg-secondary ">
+          <MDBCardText>
+            <MDBBtn size="sm" className="button-session bg-secondary  ">
               Go to the Session
             </MDBBtn>
-            <MDBCardText className="small-text">mdbootstrap</MDBCardText>
+          </MDBCardText>
+        </MDBListGroupItem>
+        <hr />
+
+        <MDBListGroupItem className="d-flex justify-content-between align-items-center">
+          <MDBIcon fas icon="chalkboard-teacher" size="lg" />
+          <MDBCardText className="card-text">
+            <span className="text-primary font-italic me-1 style-title">
+              {" "}
+              Website Markup
+            </span>{" "}
+            <MDBCardText className="small-text">Start On: 9:00pm</MDBCardText>
+            <MDBCardText className="small-text">
+              Start Date: 16/12/2023
+            </MDBCardText>
+            <MDBCardText className="small-text">
+              End Date: 18/12/2023
+            </MDBCardText>
+          </MDBCardText>
+          <MDBCardText>
+            <MDBBtn size="sm" className="button-session bg-secondary  ">
+              Go to the Session
+            </MDBBtn>
+          </MDBCardText>
+        </MDBListGroupItem>
+
+        <hr />
+
+        <MDBListGroupItem className="d-flex justify-content-between align-items-center">
+          <MDBIcon fas icon="chalkboard-teacher" size="lg" />
+          <MDBCardText className="card-text">
+            <span className="text-primary font-italic me-1 style-title">
+              {" "}
+              Website Markup
+            </span>{" "}
+            <MDBCardText className="small-text">Start On: 9:00pm</MDBCardText>
+            <MDBCardText className="small-text">
+              Start Date: 16/12/2023
+            </MDBCardText>
+            <MDBCardText className="small-text">
+              End Date: 18/12/2023
+            </MDBCardText>
+          </MDBCardText>
+          <MDBCardText>
+            <MDBBtn size="sm" className="button-session bg-secondary  ">
+              Go to the Session
+            </MDBBtn>
           </MDBCardText>
         </MDBListGroupItem>
       </MDBCardBody>
