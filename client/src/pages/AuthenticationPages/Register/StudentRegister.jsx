@@ -53,6 +53,7 @@ const StudentRegisterPage = () => {
                 </Username>
 
                 <SocialLinksList
+                    baseIndex={6}
                     socialLinks={socialLinks}
                     handleAdd={handleAdd}
                 />
