@@ -16,6 +16,11 @@ interface TutorDoc extends PasswordComparable, MongoResult {
     benefits: string;
 }
 
+const isValidURL = function(value: String) {
+    const prefix = 'https://finder-tutor.sgp1.digitaloceanspaces.com/';
+    return typeof value === 'string' && value.startsWith(prefix);
+  };
+
 const tutorSchema = new Schema<TutorDoc>({
     email: {
         type: String,
@@ -63,6 +68,7 @@ const tutorSchema = new Schema<TutorDoc>({
     cvUrl: {
         type: String,
         trim: true,
+        validate: [isValidURL, 'URL must start with the specified prefix']
     },
     hourlyRate: {
         type: Number,
@@ -71,6 +77,7 @@ const tutorSchema = new Schema<TutorDoc>({
     benefits: {
         type: String,
         trim: true,
+        validate: [isValidURL, 'URL must start with the specified prefix']
     },
 });
 
@@ -96,6 +103,9 @@ tutorSchema.methods.passwordValid = async function (
 
     return isMatch;
 };
+
+// Turn off automatic validation
+tutorSchema.set('validateBeforeSave', false);
 
 const Tutor = mongoose.model<TutorDoc>("Tutor", tutorSchema);
 
