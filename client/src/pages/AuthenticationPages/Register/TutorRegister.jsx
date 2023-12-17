@@ -24,7 +24,7 @@ const TutorRegisterPage = () => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const newData = Object.fromEntries(formData);
-        setData({ ...newData });
+        setData(newData);
         console.log("New data", newData);
     };
 

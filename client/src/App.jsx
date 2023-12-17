@@ -18,6 +18,8 @@ import MyProfilePage from "./pages/ProfilePages/MyProfile/MyProfilePage";
 import LoginTest from "./pages/AuthenticationPages/Login/LoginTest";
 import StudentRegisterPage from "./pages/AuthenticationPages/Register/StudentRegister";
 import TutorRegisterPage from "./pages/AuthenticationPages/Register/TutorRegister";
+import { AuthProvider } from "./contexts/AuthContext";
+import PrivateRoute from "./components/PrivateRoute";
 
 const UserContext = createContext();
 
@@ -48,49 +50,68 @@ function App() {
     // const navigate = useNavigate();
     return (
         <BrowserRouter>
-            <UserContext.Provider value={user}>
-                <Routes>
-                    {/* This is the test route for dev the footer */}
+            <AuthProvider>
+                <UserContext.Provider value={user}>
+                    <Routes>
+                        {/* This is the test route for dev the footer */}
 
-                    <Route path="/footerTest" element={<Footer />} />
+                        <Route path="/footerTest" element={<Footer />} />
 
-                    <Route
-                        path="/studentSession/:sessionId"
-                        element={<StudentMeetingSession />}
-                    />
-                    <Route
-                        path="/tutorSession/:sessionId"
-                        element={<TutorMeetingSession />}
-                    />
-                    <Route path="/toolbar" element={<Toolbar />} />
-                    <Route
-                        path="/scheduleInterface"
-                        element={<ScheduleInterface />}
-                    />
-                    <Route path="/me" element={<MyProfilePage />} />
-                    <Route
-                        path="/tutor/:tutorId"
-                        element={<TutorPublicProfilePage />}
-                    />
-                    <Route
-                        path="/student/:studentId"
-                        element={<StudentPublicProfilePage />}
-                    />
-                    <Route
-                        path="/tutorUserCardMyProfile"
-                        element={<TutorUserCardMyProfile />}
-                    />
-                    <Route path="/login" element={<LoginTest />} />
-                    <Route
-                        path="/register/student"
-                        element={<StudentRegisterPage />}
-                    />
-                    <Route
-                        path="/register/tutor"
-                        element={<TutorRegisterPage />}
-                    />
-                </Routes>
-            </UserContext.Provider>
+                        <Route
+                            path="/studentSession/:sessionId"
+                            element={
+                                <PrivateRoute
+                                    Component={StudentMeetingSession}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/tutorSession/:sessionId"
+                            element={
+                                <PrivateRoute Component={TutorMeetingSession} />
+                            }
+                        />
+                        <Route path="/toolbar" element={<Toolbar />} />
+                        <Route
+                            path="/scheduleInterface"
+                            element={
+                                <PrivateRoute Component={ScheduleInterface} />
+                            }
+                        />
+                        <Route
+                            path="/me"
+                            element={<PrivateRoute Component={MyProfilePage} />}
+                        />
+                        <Route
+                            path="/tutor/:tutorId"
+                            element={
+                                <PrivateRoute
+                                    Component={TutorPublicProfilePage}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/student/:studentId"
+                            element={
+                                <PrivateRoute
+                                    Component={StudentPublicProfilePage}
+                                />
+                            }
+                        />
+
+                        <Route path="/login" element={<LoginTest />} />
+
+                        <Route
+                            path="/register/student"
+                            element={<StudentRegisterPage />}
+                        />
+                        <Route
+                            path="/register/tutor"
+                            element={<TutorRegisterPage />}
+                        />
+                    </Routes>
+                </UserContext.Provider>
+            </AuthProvider>
         </BrowserRouter>
     );
 }
