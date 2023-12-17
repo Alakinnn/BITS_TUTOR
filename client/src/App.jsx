@@ -27,7 +27,7 @@ function App() {
   // This is temporary, will have to implement login feature
   // Change the role to view the different profile pages
   const [user, setUser] = useState({
-    _id: "65783c95473fe4813e601dfd",
+    _id: "656f614ac37e79091ef39474",
     role: "tutor",
     username: "John Fuck",
     email: "john@gmail.com",
@@ -42,8 +42,7 @@ function App() {
     hourlyRate: 20,
     profilePicUrl:
       "https://hips.hearstapps.com/hmg-prod/images/Kevin-Hart_GettyImages-450909048.jpg",
-    cvUrl:
-      "https://resumegenius.com/wp-content/uploads/Academic-CV-Example-Hub.png",
+    cvUrl: "https://grad.illinois.edu/sites/default/files/pdfs/cvsamples.pdf",
     benefits:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   });
