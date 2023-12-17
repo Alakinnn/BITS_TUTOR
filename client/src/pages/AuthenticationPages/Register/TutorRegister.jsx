@@ -20,17 +20,17 @@ const TutorRegisterPage = () => {
     const [tags, setTags] = React.useState([]);
     const [socialLinks, setSocialLinks] = React.useState([null]);
 
-    const handleAdd = () => {
-        const newSocialLinks = [...socialLinks, " "]; // Create a new input
-        setSocialLinks(newSocialLinks); // Update the state with the new inputs
-    };
-
     const handleSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const newData = Object.fromEntries(formData);
         setData({ ...newData });
         console.log("New data", newData);
+    };
+
+    const handleAdd = () => {
+        const newSocialLinks = [...socialLinks, " "]; // Create a new input
+        setSocialLinks(newSocialLinks); // Update the state with the new inputs
     };
 
     const handleTagChange = (event) => {
