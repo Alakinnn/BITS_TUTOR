@@ -32,7 +32,6 @@ const loginUser = async (req: Request, res: Response) => {
     if (!user) {
         throw new NotFoundError("User not found");
     }
-
     const isPasswordValid = await user.passwordValid(password);
 
     if (!isPasswordValid) {

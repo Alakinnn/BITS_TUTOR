@@ -64,6 +64,7 @@ const tutorSchema = new Schema<TutorDoc>({
     profilePicUrl: {
         type: String,
         trim: true,
+        validate: [isValidURL, 'URL must start with the specified prefix']
     },
     cvUrl: {
         type: String,
@@ -76,8 +77,7 @@ const tutorSchema = new Schema<TutorDoc>({
     },
     benefits: {
         type: String,
-        trim: true,
-        validate: [isValidURL, 'URL must start with the specified prefix']
+        trim: true
     },
 });
 
