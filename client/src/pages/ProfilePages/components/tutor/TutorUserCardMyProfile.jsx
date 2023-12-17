@@ -1,7 +1,5 @@
 import { useContext, useState } from "react";
 import { MDBCard, MDBCardBody, MDBCardImage, MDBBtn } from "mdb-react-ui-kit";
-import { UserContext } from "../../../../App";
-import Tag from "../Tag";
 import TagList from "../TagList";
 
 function TutorUserCardMyProfile({ tutor }) {
@@ -9,7 +7,7 @@ function TutorUserCardMyProfile({ tutor }) {
         <MDBCard className="mb-4">
             <MDBCardBody className="text-center">
                 <MDBCardImage
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                    src={tutor.profilePicUrl}
                     alt="avatar"
                     className="rounded-circle"
                     style={{ width: "150px" }}

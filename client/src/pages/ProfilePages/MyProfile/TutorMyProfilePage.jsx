@@ -8,7 +8,6 @@ import {
     // MDBProgress,
     // MDBProgressBar,
 } from "mdb-react-ui-kit";
-import StudentUserCardMyProfile from "../components/student/StudentUserCardMyProfile";
 import SocialLinks from "../components/SocialLinks";
 import TutorPersonalDetail from "../components/tutor/TutorPersonalDetail";
 import TutorCV from "../components/tutor/TutorCV";
@@ -38,11 +37,11 @@ export default function TutorMyProfilePage() {
                         <MDBRow>
                             <MDBCol md="4">
                                 {/* Tutor benefits */}
-                                <TutorBenefits />
+                                <TutorBenefits tutor={user}/>
                             </MDBCol>
                             <MDBCol md="8">
                                 {/* Tutor CV */}
-                                <TutorCV />
+                                <TutorCV tutor={user}/>
                             </MDBCol>
                         </MDBRow>
                     </MDBCol>
