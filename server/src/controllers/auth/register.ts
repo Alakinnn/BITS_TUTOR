@@ -8,7 +8,17 @@ import assert from "assert";
 const baseDOUrl = "https://finder-tutor.sgp1.digitaloceanspaces.com/";
 
 const registerUser = async (req: Request, res: Response) => {
-    const { username, password, email, role } = req.body;
+    const {
+        username,
+        password,
+        email,
+        role,
+        description,
+        tags,
+        socialLinks,
+        hourlyRate,
+        benefits,
+    } = req.body;
     console.log(req.body);
     console.log(req.files);
 
@@ -24,6 +34,7 @@ const registerUser = async (req: Request, res: Response) => {
                 username,
                 password,
                 email,
+                socialLinks,
             });
             break;
         case "tutor":
@@ -31,6 +42,11 @@ const registerUser = async (req: Request, res: Response) => {
                 username,
                 password,
                 email,
+                description,
+                tags,
+                socialLinks,
+                hourlyRate,
+                benefits,
             });
             break;
         default:
