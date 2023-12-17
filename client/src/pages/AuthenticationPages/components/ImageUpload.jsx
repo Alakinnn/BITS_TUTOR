@@ -25,6 +25,7 @@ function ImageUpload({
                 index={index}
                 name={`${fieldName}Image`}
                 style={{ display: "none" }}
+                disabled={true}
             >
                 <img src={imageURL} className={cssClass}></img>
             </Input>
