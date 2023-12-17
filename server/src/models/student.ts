@@ -10,6 +10,11 @@ interface StudentDoc extends PasswordComparable, MongoResult {
     profilePicUrl: string;
 }
 
+const isValidURL = function(value: String) {
+    const prefix = 'https://finder-tutor.sgp1.digitaloceanspaces.com/';
+    return typeof value === 'string' && value.startsWith(prefix);
+  };
+
 const studentSchema = new Schema<StudentDoc>({
     email: {
         type: String,
@@ -43,6 +48,7 @@ const studentSchema = new Schema<StudentDoc>({
     profilePicUrl: {
         type: String,
         trim: true,
+        validate: [isValidURL, 'URL must start with the specified prefix']
     },
 });
 
@@ -70,6 +76,9 @@ studentSchema.methods.passwordValid = async function (
 
     return isMatch;
 };
+
+// Turn off automatic validation
+studentSchema.set('validateBeforeSave', false);
 
 const Student = mongoose.model<StudentDoc>("Student", studentSchema);
 
