@@ -28,10 +28,11 @@ const TutorRegisterPage = () => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    const newData = Object.fromEntries(formData);
+    let newData = Object.fromEntries(formData);
 
-    await formatData(newData);
-    const response = await registerUser(data);
+    newData = formatData(newData);
+    console.log("Submitted:", newData);
+    const response = await registerUser(newData);
 
     if (!response) {
       // Alert error message
@@ -57,7 +58,7 @@ const TutorRegisterPage = () => {
     setTags(newTags);
   };
 
-  const formatData = async (newData) => {
+  const formatData = (newData) => {
     const socialLinks = [];
 
     Object.keys(newData).forEach((key) => {
@@ -77,7 +78,7 @@ const TutorRegisterPage = () => {
     const tags = newData.tags.split(",");
     delete newData.tags;
 
-    await setData({ ...newData, socialLinks, tags, role: "tutor" }); // Add the socialLinks array to the newData object
+    return { ...newData, socialLinks, tags, role: "tutor" }; // Add the socialLinks array to the newData object
   };
 
   return (
