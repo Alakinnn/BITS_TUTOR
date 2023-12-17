@@ -2,13 +2,13 @@ import { useState } from 'react';
 import axios from 'axios';
 
 const UserLogin = () => {
-  const [logUsername, setUsername] = useState('');
+  const [logEmail, setEmail] = useState('');
   const [logPassword, setPassword] = useState('');
 
   const userLogin = async () => {
     try {
       const response = await axios.post(`http://139.59.105.114/api/v1/auth/login`, {
-        username: logUsername,
+        Email: logEmail,
         password: logPassword,
       });
       console.log(response.status);
@@ -17,8 +17,8 @@ const UserLogin = () => {
     }
   };
 
-  const logHandleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const logHandleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   const logHandlePasswordChange = (event) => {
@@ -26,10 +26,10 @@ const UserLogin = () => {
   };
 
   return {
-    logUsername,
+    logEmail,
     logPassword,
     userLogin,
-    logHandleUsernameChange,
+    logHandleEmailChange,
     logHandlePasswordChange,
   };
 };
