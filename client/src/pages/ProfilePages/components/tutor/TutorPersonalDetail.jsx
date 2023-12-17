@@ -6,7 +6,7 @@ import {
     MDBCardText,
 } from "mdb-react-ui-kit";
 
-function TutorPersonalDetail() {
+function TutorPersonalDetail({ tutor }) {
     return (
         <MDBCard className="mb-4">
             <MDBCardBody>
@@ -16,7 +16,7 @@ function TutorPersonalDetail() {
                     </MDBCol>
                     <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                            Johnatan Smith
+                            {tutor.username}
                         </MDBCardText>
                     </MDBCol>
                 </MDBRow>
@@ -27,7 +27,7 @@ function TutorPersonalDetail() {
                     </MDBCol>
                     <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                            example@example.com
+                            {tutor.email}
                         </MDBCardText>
                     </MDBCol>
                 </MDBRow>
@@ -38,8 +38,7 @@ function TutorPersonalDetail() {
                     </MDBCol>
                     <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                            LAKN IWNM WIOD WN IOWND WOID KDOIB DOIW KWODB KWJODW
-                            IW KJ WD
+                            {tutor.description}
                         </MDBCardText>
                     </MDBCol>
                 </MDBRow>

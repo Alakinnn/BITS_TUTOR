@@ -7,21 +7,23 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(/* your initial user state */);
 
     const isAuthenticated = async () => {
-        // FIXME: This is just a placeholder
+        const localToken = localStorage.getItem("token");
+        if (!localToken) {
+            return false;
+        }
+
+        const validatedUser = await validateUser(localToken);
+
+        if (!validatedUser) {
+            return false;
+        }
+
+        await setUser(validatedUser);
         return true;
+    };
 
-        // const localToken = localStorage.getItem("token");
-        // if (!localToken) {
-        //     return false;
-        // }
-
-        // const validatedUser = await validateUser(localToken);
-
-        // if (!validatedUser) {
-        //     return false;
-        // }
-
-        // setUser(validatedUser);
+    const getUser = () => {
+        return user;
     };
 
     const loginUser = ({ newUser, newToken }) => {
@@ -39,6 +41,7 @@ const AuthProvider = ({ children }) => {
 
     const value = {
         user,
+        getUser,
         setUser,
         isAuthenticated,
         loginUser,

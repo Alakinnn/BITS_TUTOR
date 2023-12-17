@@ -13,20 +13,37 @@ import "../styles/ImageUpload.css";
 import ProfilePicUpload from "../components/ProfilePicUpload";
 import SocialLinksList from "../components/SocialLinksList";
 import CVUpload from "../components/CVUpload";
-import Tag from "../../ProfilePages/components/Tag";
 import TagList from "../../ProfilePages/components/TagList";
+import { registerUser } from "../services/auth";
+import { useAuth } from "../../../contexts/AuthContext";
 
 const TutorRegisterPage = () => {
     const [data, setData] = React.useState({});
     const [tags, setTags] = React.useState([]);
+    const { loginUser } = useAuth();
     const [socialLinks, setSocialLinks] = React.useState([null]);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+
         const formData = new FormData(event.target);
         const newData = Object.fromEntries(formData);
-        formatData(newData);
-        console.log("Submitted:", data);
+
+        await formatData(newData);
+        const response = await registerUser(data);
+
+        if (!response) {
+            // Alert error message
+            alert("Error registering user");
+            return;
+        }
+
+        const { user, token } = response;
+
+        await loginUser({ newUser: user, newToken: token });
+
+        alert("Successfully registered user");
+        console.log("New User:", user);
     };
 
     const handleAdd = () => {
@@ -39,7 +56,7 @@ const TutorRegisterPage = () => {
         setTags(newTags);
     };
 
-    const formatData = (newData) => {
+    const formatData = async (newData) => {
         const socialLinks = [];
 
         Object.keys(newData).forEach((key) => {
@@ -59,7 +76,7 @@ const TutorRegisterPage = () => {
         const tags = newData.tags.split(",");
         delete newData.tags;
 
-        setData({ ...newData, socialLinks, tags, role: "tutor" }); // Add the socialLinks array to the newData object
+        await setData({ ...newData, socialLinks, tags, role: "tutor" }); // Add the socialLinks array to the newData object
     };
 
     return (

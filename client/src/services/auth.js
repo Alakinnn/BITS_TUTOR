@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASEURL = "http://139.59.105.114/api/users";
+const BASEURL = "http://139.59.105.114/api/v1";
 
 const validateUser = async (token) => {
     try {
@@ -14,7 +14,7 @@ const validateUser = async (token) => {
             return null;
         }
 
-        return response.data;
+        return response.data.user;
     } catch (error) {
         return null;
     }

@@ -14,22 +14,26 @@ import TutorPersonalDetail from "../components/tutor/TutorPersonalDetail";
 import TutorCV from "../components/tutor/TutorCV";
 import TutorBenefits from "../components/tutor/TutorBenefits";
 import TutorUserCardMyProfile from "../components/tutor/TutorUserCardMyProfile";
-
+import { useAuth } from "../../../contexts/AuthContext";
+import { useContext, useEffect } from "react";
+import { UserContext } from "../../../App";
 export default function TutorMyProfilePage() {
+    const { user } = useAuth();
+
     return (
         <section style={{ backgroundColor: "#eee" }}>
             <MDBContainer className="py-5">
                 <MDBRow>
                     <MDBCol lg="4">
                         {/* User card profile */}
-                        <TutorUserCardMyProfile />
+                        <TutorUserCardMyProfile tutor={user} />
 
                         {/* Social links */}
                         <SocialLinks />
                     </MDBCol>
                     <MDBCol lg="8">
                         {/* Tutor Personal Detail */}
-                        <TutorPersonalDetail />
+                        <TutorPersonalDetail tutor={user} />
 
                         <MDBRow>
                             <MDBCol md="4">
