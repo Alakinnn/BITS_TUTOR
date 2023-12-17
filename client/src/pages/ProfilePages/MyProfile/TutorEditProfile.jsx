@@ -16,8 +16,10 @@ import CVUpload from "../components/CVUpload";
 import Tag from "../../ProfilePages/components/Tag";
 import TagList from "../../ProfilePages/components/TagList";
 import background from "/public/images/registerbackground.jpg";
+import { UserContext } from "../../../../App";
 
-const TutorRegisterPage = () => {
+const TutorEditProfile = () => {
+  const user = React.useContext(UserContext);
   const [data, setData] = React.useState({});
   const [tags, setTags] = React.useState([]);
   const [socialLinks, setSocialLinks] = React.useState([null]);
@@ -73,7 +75,7 @@ const TutorRegisterPage = () => {
           index={6}
           label="Full Name"
           name="username"
-          placeholder="Your Full Name"
+          placeholder={user.username}
         />
 
         <Username
@@ -81,14 +83,14 @@ const TutorRegisterPage = () => {
           keyname="email"
           label="Email"
           name="email"
-          placeholder="Your Email"
+          placeholder={user.email}
         />
 
         <Password
           index={8}
           label="Password"
           placeholder="Password"
-          name="password"
+          name={user.password}
         />
 
         <Username
@@ -96,7 +98,7 @@ const TutorRegisterPage = () => {
           keyname="description"
           label="Short Description"
           name="description"
-          placeholder="Tell us about yourself"
+          placeholder={user.description}
         />
 
         <Username
@@ -105,7 +107,7 @@ const TutorRegisterPage = () => {
           label="Hourly Rate (USD)"
           name="hourlyRate"
           placeholder="Your Hourly Rate (USD)"
-          type="number"
+          type={user.hourlyRate}
         />
 
         <Username
@@ -113,7 +115,7 @@ const TutorRegisterPage = () => {
           keyname="benefits"
           label="Student Benefits"
           name="benefits"
-          placeholder="What will students get from you?"
+          placeholder={user.benefits}
         />
 
         <Username keyname="tags_label" visible={false} index={12}>
@@ -123,7 +125,7 @@ const TutorRegisterPage = () => {
         <Input
           index={13}
           name="tags"
-          placeholder="Add Tags"
+          placeholder="Add New Tags"
           onChange={handleTagChange}
         ></Input>
 
@@ -145,7 +147,7 @@ const TutorRegisterPage = () => {
           handleAdd={handleAdd}
         />
 
-        <Submit type="submit">Confirm</Submit>
+        <Submit type="submit">Save</Submit>
         <Banner>
           <img src={background}></img>
         </Banner>
@@ -156,4 +158,4 @@ const TutorRegisterPage = () => {
   );
 };
 
-export default TutorRegisterPage;
+export default TutorEditProfile;
