@@ -55,8 +55,8 @@ const registerUser = async (req: Request, res: Response) => {
 
     // Upload files
     const s3Files = await s3Config(req.files);
-    const cvUrl = `${baseDOUrl}s3Files[0].Key`;
-    const profilePicUrl = `${baseDOUrl}s3Files[1].Key`;
+    const cvUrl = `${baseDOUrl}${s3Files[0].Key}`;
+    const profilePicUrl = `${baseDOUrl}${s3Files[1].Key}`;
 
     // Setting files to database
     if (user as TutorDoc) {
