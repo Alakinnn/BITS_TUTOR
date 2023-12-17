@@ -5,6 +5,7 @@ import LoginPage, {
     Submit,
     Title,
     Banner,
+    Input,
 } from "@react-login-page/page11";
 import "react-image-upload/dist/index.css";
 import "../styles/ImageUpload.css";
@@ -61,8 +62,17 @@ const StudentRegisterPage = () => {
                     name="username"
                     placeholder="Your Full Name"
                 />
-                <Password
+
+                <Username
                     index={4}
+                    keyname="email"
+                    label="Email"
+                    name="email"
+                    placeholder="Your Email"
+                />
+
+                <Password
+                    index={5}
                     label="Password"
                     placeholder="Password"
                     name="password"
@@ -70,12 +80,12 @@ const StudentRegisterPage = () => {
 
                 <Submit type="submit">Confirm</Submit>
 
-                <Username keyname="username_rule" visible={false} index={5}>
+                <Username keyname="username_rule" visible={false} index={6}>
                     Social Links
                 </Username>
 
                 <SocialLinksList
-                    baseIndex={6}
+                    baseIndex={7}
                     socialLinks={socialLinks}
                     handleAdd={handleAdd}
                 />

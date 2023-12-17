@@ -6,6 +6,7 @@ import LoginPage, {
     Title,
     Banner,
     Input,
+    Textarea,
 } from "@react-login-page/page11";
 import "react-image-upload/dist/index.css";
 import "../styles/ImageUpload.css";
@@ -24,8 +25,8 @@ const TutorRegisterPage = () => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const newData = Object.fromEntries(formData);
-        setData(newData);
-        console.log("New data", newData);
+        formatData(newData);
+        console.log("Submitted:", data);
     };
 
     const handleAdd = () => {
@@ -36,6 +37,29 @@ const TutorRegisterPage = () => {
     const handleTagChange = (event) => {
         const newTags = event.target.value.split(",");
         setTags(newTags);
+    };
+
+    const formatData = (newData) => {
+        const socialLinks = [];
+
+        Object.keys(newData).forEach((key) => {
+            if (!key.startsWith("socialLink-")) {
+                return;
+            }
+
+            if (newData[key] === "") {
+                delete newData[key];
+                return;
+            }
+
+            socialLinks.push(newData[key]); // Push social links to the socialLinks array
+            delete newData[key]; // Remove the social link key from the newData object
+        });
+
+        const tags = newData.tags.split(",");
+        delete newData.tags;
+
+        setData({ ...newData, socialLinks, tags }); // Add the socialLinks array to the newData object
     };
 
     return (
@@ -50,37 +74,72 @@ const TutorRegisterPage = () => {
                     name="username"
                     placeholder="Your Full Name"
                 />
-                <Password
+
+                <Username
                     index={7}
+                    keyname="email"
+                    label="Email"
+                    name="email"
+                    placeholder="Your Email"
+                />
+
+                <Password
+                    index={8}
                     label="Password"
                     placeholder="Password"
                     name="password"
                 />
 
-                <Username keyname="tags_label" visible={false} index={8}>
-                    Tags
+                <Username
+                    index={9}
+                    keyname="description"
+                    label="Short Description"
+                    name="description"
+                    placeholder="Tell us about yourself"
+                />
+
+                <Username
+                    index={10}
+                    keyname="hourlyRate"
+                    label="Hourly Rate (USD)"
+                    name="hourlyRate"
+                    placeholder="Your Hourly Rate (USD)"
+                    type="number"
+                />
+
+                <Username
+                    index={11}
+                    keyname="benefits"
+                    label="Student Benefits"
+                    name="benefits"
+                    placeholder="What will students get from you?"
+                />
+
+                <Username keyname="tags_label" visible={false} index={12}>
+                    Tags (separated by commas)
                 </Username>
 
                 <Input
-                    index={9}
+                    index={13}
                     name="tags"
                     placeholder="Add Tags"
                     onChange={handleTagChange}
                 ></Input>
 
                 <Input
-                    index={10}
+                    index={14}
                     name="tag-preview"
+                    disabled={true}
                     style={{ display: "none" }}
                 >
                     <TagList tags={tags} />
                 </Input>
-                <Username keyname="username_rule" visible={false} index={11}>
+                <Username keyname="username_rule" visible={false} index={15}>
                     Social Links
                 </Username>
 
                 <SocialLinksList
-                    baseIndex={12}
+                    baseIndex={16}
                     socialLinks={socialLinks}
                     handleAdd={handleAdd}
                 />
