@@ -1,8 +1,10 @@
-import express from "express"
-const tutorRouter = express.Router()
+import express from "express";
+const tutorRouter = express.Router();
 
-tutorRouter.route("/").get()
+import { getTutors, getTutorById } from "../controllers/tutorControllers";
 
-tutorRouter.route("/:tutorId").get()
+tutorRouter.route("/").get(getTutors);
 
-export default tutorRouter
+tutorRouter.route("/:tutorId").get(getTutorById);
+
+export default tutorRouter;

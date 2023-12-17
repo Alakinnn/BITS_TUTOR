@@ -1,3 +1,4 @@
 import errorHandler from "./errorHandler";
+import authUser from "./authUser";
 
-export { errorHandler };
+export { errorHandler, authUser };

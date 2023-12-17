@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import MongoResult from "../interfaces/MongoResult";
 import PasswordComparable from "../interfaces/PasswordComparable";
 interface StudentDoc extends PasswordComparable, MongoResult {
@@ -50,11 +50,13 @@ const studentSchema = new Schema<StudentDoc>({
 studentSchema.pre("save", async function (this: StudentDoc, next) {
     const student = this;
 
+    if (!student.isModified("password")) return next();
+
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(student.password, salt);
     student.password = hash;
 
-    next();
+    return next();
 });
 
 // Compare Passwords with bcrypt
