@@ -8,12 +8,12 @@ import {
     // MDBProgress,
     // MDBProgressBar,
 } from "mdb-react-ui-kit";
-import UserCardMyProfile from "../components/UserCardMyProfile";
+import StudentUserCardMyProfile from "../components/student/StudentUserCardMyProfile";
 import SocialLinks from "../components/SocialLinks";
-import TutorPersonalDetail from "../components/TutorPersonalDetail";
-import TutorCV from "../components/TutorCV";
-import TutorBenefits from "../components/TutorBenefits";
-import TutorUserCardMyProfile from "../components/TutorUserCardMyProfile";
+import TutorPersonalDetail from "../components/tutor/TutorPersonalDetail";
+import TutorCV from "../components/tutor/TutorCV";
+import TutorBenefits from "../components/tutor/TutorBenefits";
+import TutorUserCardMyProfile from "../components/tutor/TutorUserCardMyProfile";
 
 export default function TutorMyProfilePage() {
     return (
@@ -40,7 +40,6 @@ export default function TutorMyProfilePage() {
                                 {/* Tutor CV */}
                                 <TutorCV />
                             </MDBCol>
-                            
                         </MDBRow>
                     </MDBCol>
                 </MDBRow>

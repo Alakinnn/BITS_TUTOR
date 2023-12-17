@@ -1,13 +1,9 @@
 import SocialLinks from "../components/SocialLinks";
-import TutorPersonalDetail from "../components/TutorPersonalDetail";
-import TutorCV from "../components/TutorCV";
-import TutorBenefits from "../components/TutorBenefits";
-import {
-    MDBCol,
-    MDBContainer,
-    MDBRow,
-} from "mdb-react-ui-kit";
-import TutorPublicUserCard from "../components/TutorPublicUserCard";
+import TutorPersonalDetail from "../components/tutor/TutorPersonalDetail";
+import TutorCV from "../components/tutor/TutorCV";
+import TutorBenefits from "../components/tutor/TutorBenefits";
+import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
+import TutorPublicUserCard from "../components/tutor/TutorPublicUserCard";
 
 export default function TutorPublicProfilePage() {
     return (
@@ -16,12 +12,10 @@ export default function TutorPublicProfilePage() {
                 <MDBRow>
                     <MDBCol lg="4">
                         {/* tutor public card */}
-                        <TutorPublicUserCard/>
-        
+                        <TutorPublicUserCard />
 
                         {/* Social links */}
-                        <SocialLinks/>
-            
+                        <SocialLinks />
                     </MDBCol>
                     <MDBCol lg="8">
                         {/* Tutor Personal Detail */}
@@ -30,18 +24,14 @@ export default function TutorPublicProfilePage() {
                         <MDBRow>
                             <MDBCol md="6">
                                 {/* Tutor CV */}
-                                <TutorCV/>
-                        
+                                <TutorCV />
                             </MDBCol>
                             <MDBCol md="6">
                                 {/* Tutor benefits */}
-                                <TutorBenefits/>
-                                
+                                <TutorBenefits />
                             </MDBCol>
                         </MDBRow>
                     </MDBCol>
-
-                    
                 </MDBRow>
             </MDBContainer>
         </section>

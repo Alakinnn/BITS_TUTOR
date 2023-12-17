@@ -11,7 +11,7 @@ import TutorMeetingSession from "./MeetingSession/TutorMeetingSession";
 import Toolbar from "./Scheduling/Toolbar/Toolbar";
 import ScheduleInterface from "./Scheduling/ScheduleView/ScheduleView";
 // import "./css/Navbar.css";
-import TutorUserCardMyProfile from "./pages/ProfilePages/components/TutorUserCardMyProfile";
+import TutorUserCardMyProfile from "./pages/ProfilePages/components/tutor/TutorUserCardMyProfile";
 import TutorPublicProfilePage from "./pages/ProfilePages/PublicProfile/TutorPublicProfilePage";
 import StudentPublicProfilePage from "./pages/ProfilePages/PublicProfile/StudentPublicProfilePage";
 import MyProfilePage from "./pages/ProfilePages/MyProfile/MyProfilePage";
@@ -25,9 +25,9 @@ function App() {
     // This is temporary, will have to implement login feature
     // Change the role to view the different profile pages
     const [user, setUser] = useState({
-        _id: "123",
+        _id: "65783c95473fe4813e601dfd",
         role: "student",
-        username: "John Doe",
+        username: "John Fuck",
         email: "john@gmail.com",
         tags: ["C++", "Java", "Python", "JavaScript"],
         description:
@@ -53,11 +53,15 @@ function App() {
                     {/* This is the test route for dev the footer */}
 
                     <Route path="/footerTest" element={<Footer />} />
+
                     <Route
-                        path="/student"
+                        path="/studentSession/:sessionId"
                         element={<StudentMeetingSession />}
                     />
-                    <Route path="/tutor" element={<TutorMeetingSession />} />
+                    <Route
+                        path="/tutorSession/:sessionId"
+                        element={<TutorMeetingSession />}
+                    />
                     <Route path="/toolbar" element={<Toolbar />} />
                     <Route
                         path="/scheduleInterface"
@@ -65,11 +69,11 @@ function App() {
                     />
                     <Route path="/me" element={<MyProfilePage />} />
                     <Route
-                        path="/tutorProfile"
+                        path="/tutor/:tutorId"
                         element={<TutorPublicProfilePage />}
                     />
                     <Route
-                        path="/studentProfile"
+                        path="/student/:studentId"
                         element={<StudentPublicProfilePage />}
                     />
                     <Route
@@ -90,6 +94,9 @@ function App() {
         </BrowserRouter>
     );
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
 
 export default App;
 export { UserContext };

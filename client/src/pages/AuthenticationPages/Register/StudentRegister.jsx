@@ -13,6 +13,21 @@ import SocialLinksList from "../components/SocialLinksList";
 
 const StudentRegisterPage = () => {
     const [data, setData] = React.useState({});
+    const [arrangedData, setArrangedData] = React.useState({}); // Create a copy of the original data
+    const reArrangeData = () => {
+        const socialLinks = [];
+        setArrangedData(data);
+        // Loop through the keys in the data object
+        Object.keys(arrangedData).forEach((key) => {
+            // Check if the key starts with "socialLink-"
+            if (key.startsWith("socialLink-")) {
+                socialLinks.push(arrangedData[key]); // Push social links to the socialLinks array
+                delete arrangedData[key]; // Remove the social link key from the newData object
+            }
+        });
+
+        setArrangedData({ ...data, socialLinks: socialLinks }); // Add the socialLinks array to the newData object
+    };
 
     const [socialLinks, setSocialLinks] = React.useState([null]);
 
@@ -25,8 +40,11 @@ const StudentRegisterPage = () => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const newData = Object.fromEntries(formData);
-        setData({ ...newData });
-        console.log("New data", newData);
+        setData(newData);
+        console.log(data);
+        reArrangeData();
+
+        console.log("Arranged data", arrangedData);
     };
 
     return (

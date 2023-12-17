@@ -1,9 +1,13 @@
-import { useContext } from "react";
-import { MDBCard, MDBCardBody, MDBCardImage, MDBBtn } from "mdb-react-ui-kit";
-import { UserContext } from "../../../App";
+import {
+    MDBCard,
+    MDBCardBody,
+    MDBCardImage,
+    MDBBtn,
 
-function UserCardMyProfile() {
-    const user = useContext(UserContext);
+    // MDBListGroupItem,
+} from "mdb-react-ui-kit";
+
+const TutorPublicUserCard = () => {
     return (
         <MDBCard className="mb-4">
             <MDBCardBody className="text-center">
@@ -14,14 +18,16 @@ function UserCardMyProfile() {
                     style={{ width: "150px" }}
                     fluid
                 />
-                <p className="text-muted mb-3">{user.username}</p>
-                <p className="text-muted mb-3">{user.role}</p>
+                <p className="text-muted mb-3">NGUYEN THI NGOAN(TUTOR)</p>
+                <p className="text-muted mb-3">#Python</p>
+                <p className="text-muted mb-3">#C++</p>
+
                 <div className="d-flex justify-content-center mb-2">
-                    <MDBBtn className="bg-secondary">Edit Profile</MDBBtn>
+                    <MDBBtn className="bg-secondary">Book A Session</MDBBtn>
                 </div>
             </MDBCardBody>
         </MDBCard>
     );
-}
+};
 
-export default UserCardMyProfile;
+export default TutorPublicUserCard;
