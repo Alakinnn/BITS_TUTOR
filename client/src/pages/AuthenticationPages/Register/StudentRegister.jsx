@@ -32,7 +32,7 @@ const StudentRegisterPage = () => {
             delete newData[key]; // Remove the social link key from the newData object
         });
 
-        setData({ ...newData, socialLinks: socialLinks }); // Add the socialLinks array to the newData object
+        setData({ ...newData, socialLinks: socialLinks, role: "student" }); // Add the socialLinks array to the newData object
     };
 
     const [socialLinks, setSocialLinks] = React.useState([null]);

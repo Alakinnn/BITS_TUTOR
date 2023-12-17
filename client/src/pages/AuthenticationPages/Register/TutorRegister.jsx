@@ -59,7 +59,7 @@ const TutorRegisterPage = () => {
         const tags = newData.tags.split(",");
         delete newData.tags;
 
-        setData({ ...newData, socialLinks, tags }); // Add the socialLinks array to the newData object
+        setData({ ...newData, socialLinks, tags, role: "tutor" }); // Add the socialLinks array to the newData object
     };
 
     return (
