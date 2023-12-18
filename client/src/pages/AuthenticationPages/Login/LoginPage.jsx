@@ -19,14 +19,13 @@ function MAMLoginPage() {
         event.preventDefault();
         const formData = new FormData(event.target);
         const newData = Object.fromEntries(formData);
-
         const response = await loginUser(newData);
-
-        if (response.status !== 200) {
+        console.log(response);
+        if (!response) {
             alert("Login failed");
         }
 
-        const { user, token } = response.data;
+        const { user, token } = response;
         await storeAuth({ newUser: user, newToken: token });
 
         alert("Login successful");
