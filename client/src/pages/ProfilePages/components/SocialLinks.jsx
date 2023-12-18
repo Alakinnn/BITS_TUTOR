@@ -17,7 +17,7 @@ function SocialLinks({ user }) {
     }, [user]);
 
     const renderSocialLinks = () => {
-        if (links == null) {
+        if (!links) {
             return <div>Loading...</div>;
         }
 
