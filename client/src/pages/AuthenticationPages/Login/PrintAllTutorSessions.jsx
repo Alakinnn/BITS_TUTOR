@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import axios from 'axios'
 
 const tutorId ='656f614ac37e79091ef39474'
@@ -15,3 +15,5 @@ function PrintAllTutorSessions() {
 }
 
 export default PrintAllTutorSessions
+
+// Please move this file elsewhere

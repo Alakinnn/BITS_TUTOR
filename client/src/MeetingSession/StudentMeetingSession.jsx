@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import InitZoom from "./InitZoom";
-import InfoInterface from "./MeetingSessionContainer";
+import MeetingSessionContainer from "./MeetingSessionContainer";
 import "../css/MeetingSession.css";
 import { useParams } from "react-router-dom";
-
-
 
 // STUDENT
 const StudentMeetingSession = () => {
@@ -34,7 +32,9 @@ const StudentMeetingSession = () => {
   // GET({sID: '123'})
 
   const joinSession = async () => {
-    const response = await axios.get(`http://139.59.105.114/api/v1/session/${sessionId}/join`); 
+    const response = await axios.get(
+      `http://139.59.105.114/api/v1/session/${sessionId}/join`
+    );
     console.log(response);
     InitZoom(response.data.session);
   };
@@ -44,17 +44,19 @@ const StudentMeetingSession = () => {
       // Redirect to live share URL
       window.open(session.liveShareUrl, "_blank");
     }
-  }
+  };
 
   return (
     <>
-      {<InfoInterface
-            role = 'student'
-            renderData={session}
-            ssActive = {session.status}
-            joinSessionFunction = {joinSession}
-            joinLiveCodingFunction={joinLiveCoding}
-          />}
+      {
+        <MeetingSessionContainer
+          role="student"
+          renderData={session}
+          ssActive={session.status}
+          joinSessionFunction={joinSession}
+          joinLiveCodingFunction={joinLiveCoding}
+        />
+      }
 
       <div id="meetingSDKElement"></div>
     </>
