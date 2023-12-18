@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 export default function TutorPublicProfilePage() {
     // const tutorId = "657f20c25877dc352dc7d18b"
     const { tutorId } = useParams();
-    const [tutor, setTutor] = useState({});
+    const [tutor, setTutor] = useState(null);
     useEffect(() => {
         // Fetch the tutor data
         const fetchData = async () => {
@@ -21,6 +21,11 @@ export default function TutorPublicProfilePage() {
         };
         fetchData();
     }, [tutorId]);
+
+    if (!tutor) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <section style={{ backgroundColor: "#eee" }}>
             <MDBContainer className="py-5">
@@ -30,7 +35,6 @@ export default function TutorPublicProfilePage() {
                         <TutorPublicUserCard tutor={tutor} />
 
                         {/* Social links */}
-                        {/* FIXME This is broken? */}
                         <SocialLinks user={tutor} />
                     </MDBCol>
                     <MDBCol lg="8">
