@@ -86,6 +86,8 @@ const tutorSchema = new Schema<TutorDoc>({
 tutorSchema.pre("save", async function (this: TutorDoc, next) {
     const tutor = this;
 
+    if (!tutor.isModified("password")) return next();
+
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(tutor.password, salt);
     tutor.password = hash;
