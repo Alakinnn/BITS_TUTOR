@@ -9,7 +9,7 @@ import StudentMeetingSession from "./MeetingSession/StudentMeetingSession";
 import TutorMeetingSession from "./MeetingSession/TutorMeetingSession";
 // import Navbar from "./Header/Navbar";
 import Toolbar from "./Scheduling/Toolbar/Toolbar";
-import ScheduleInterface from "./Scheduling/ScheduleView/ScheduleView";
+import ScheduleInterface from "./Scheduling/SchedulingContainer";
 // import "./css/Navbar.css";
 import TutorUserCardMyProfile from "./pages/ProfilePages/components/tutor/TutorUserCardMyProfile";
 import TutorPublicProfilePage from "./pages/ProfilePages/PublicProfile/TutorPublicProfilePage";

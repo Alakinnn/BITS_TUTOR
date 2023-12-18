@@ -1,14 +1,22 @@
 import React from "react";
 import axios from "axios";
 
-export async function getCurrentRequests (studentId) {
-  const response = await axios.get(`http://139.59.105.114/api/v1/sessionRequest`, {params: {studentId: `${studentId}`}});
+export async function getCurrentRequests(studentId) {
+  const response = await axios.get(
+    `http://139.59.105.114/api/v1/sessionRequest`,
+    { params: { studentId: `${studentId}` } }
+  );
   return response.data;
 }
 
 export async function getTutorSessions(tutorId) {
   const response = await axios.get(
-    `http://139.59.105.114/api/v1/session?tutorId=${tutorId}`
+    `http://139.59.105.114/api/v1/session?tutorId=${tutorId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
   );
   // console.log(response.data);
   return response.data;
@@ -16,7 +24,12 @@ export async function getTutorSessions(tutorId) {
 export async function getStudentRequests(tutorId) {
   const response = await axios.get(
     `http://139.59.105.114/api/v1/sessionRequest`,
-    { params: { tutorId: `${tutorId}` } }
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      params: { tutorId: `${tutorId}` },
+    }
   );
   return response.data;
 }

@@ -4,25 +4,29 @@ import { useSelector, useDispatch } from "react-redux";
 import "../css/Scheduling/SchedulingContainer.css";
 import Toolbar from "./Toolbar/Toolbar";
 import ScheduleView from "./ScheduleView/ScheduleView";
-import { renderRequestList, selectRequestList } from "../slices/requestListSlice";
-import { getTutorSessions, getStudentRequests, getRequests } from "./TutorScheduling";
+import {
+  renderRequestList,
+  selectRequestList,
+} from "../slices/requestListSlice";
+import {
+  getTutorSessions,
+  getStudentRequests,
+  getRequests,
+} from "./TutorScheduling";
 import { getStudentSessions, getCurrentRequests } from "./StudentScheduling";
-
-const role = "student";
-const studentId = "656f616650d0394bfa76feb0";
-const tutorId = "656f614ac37e79091ef39474"; //This can be either the user's id or the targeted tutor's id (when student click on a tutor's profile)
+import { useAuth } from "../contexts/AuthContext";
 
 function SchedulingContainer() {
+  const { user } = useAuth();
+  const role = user.role;
+  const userId = user._id;
   const dispatch = useDispatch();
   const requests = useSelector(selectRequestList);
   const [sessions, setSessions] = useState([]);
   const renderRequest = async () => {
-    let renderedRequestList = await getRequests(role, role === "tutor" ? tutorId : studentId);
+    let renderedRequestList = await getRequests(role, userId);
 
-    dispatch(
-      renderRequestList(renderedRequestList)
-    );
-
+    dispatch(renderRequestList(renderedRequestList));
   };
   useEffect(() => {
     const fetchData = async () => {
@@ -30,10 +34,10 @@ function SchedulingContainer() {
         let sessionValues = [];
         switch (role) {
           case "tutor":
-            sessionValues = await getTutorSessions(tutorId);
+            sessionValues = await getTutorSessions(userId);
             break;
           case "student":
-            sessionValues = await getStudentSessions(studentId);
+            sessionValues = await getStudentSessions(userId);
             break;
           default:
             break;
@@ -53,17 +57,12 @@ function SchedulingContainer() {
       <Toolbar
         role={role}
         requestList={requests}
-        tutorId={tutorId}
-        studentId={studentId}
+        tutorId={userId}
+        studentId={userId}
       />
-      <ScheduleView 
-        sessionList={sessions} 
-        role={role}
-      />
+      <ScheduleView sessionList={sessions} role={role} />
     </div>
   );
 }
-
-export {role};
 
 export default SchedulingContainer;
