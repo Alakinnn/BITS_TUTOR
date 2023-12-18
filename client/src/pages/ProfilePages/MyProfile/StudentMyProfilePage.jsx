@@ -18,9 +18,10 @@ import { useContext, useEffect, useState } from "react";
 import { getStudentSessions } from "../services/sessions";
 import { getStudentRequests } from "../services/requests";
 import axios from "axios";
+import { useAuth } from "../../../contexts/AuthContext";
 
 export default function StudentMyProfilePage() {
-    const student = useContext(UserContext);
+    const student = useAuth().user;
     const [sessions, setSessions] = useState([]);
     const [pendingRequests, setPendingRequests] = useState([]);
 
@@ -56,7 +57,7 @@ export default function StudentMyProfilePage() {
                         <StudentUserCardMyProfile student={student} />
 
                         {/* Social Links */}
-                        <SocialLinks />
+                        <SocialLinks user={student} />
                     </MDBCol>
                     <MDBCol lg="8">
                         {/* Student Details */}
