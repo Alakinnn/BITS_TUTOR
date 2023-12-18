@@ -36,6 +36,17 @@
     margin-right: 10px;
 }
 
+
+.dropdown_list.pending{
+    min-height: auto;
+    max-height: 25vh;
+}
+
+.dropdown_list.accepted{
+    min-height: auto;
+    max-height: 25vh;
+}   
+
 .dropdown {
     width: 100%;
     max-width: 47rem;
@@ -64,7 +75,8 @@
     border-radius: 4px;
     padding: 0;
     overflow: scroll;
-    height: 80vh;
+    height: 60vh;
+    /* min-height: 80vh; */
 }
 
 .dropdown_list:before{

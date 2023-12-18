@@ -7,59 +7,59 @@ import { useParams } from "react-router-dom";
 
 // STUDENT
 const StudentMeetingSession = () => {
-    const sessionId = useParams().parameter;
-    // Only enable when time comes
-    // request session data from backend
+  const sessionId = useParams().parameter;
+  // Only enable when time comes
+  // request session data from backend
 
-    const [session, setSession] = useState({});
+  const [session, setSession] = useState({});
 
-    useEffect(() => {
-        // declare the data fetching function
-        const fetchData = async () => {
-            const response = await axios.get(
-                `http://139.59.105.114/api/v1/session/${sessionId}`
-            );
-            console.log(response.data);
-            setSession(response.data);
-        };
-
-        // call the function
-        fetchData()
-            // make sure to catch any error
-            .catch(console.error);
-    }, []);
-
-    // GET({sID: '123'})
-
-    const joinSession = async () => {
-        const response = await axios.get(
-            `http://139.59.105.114/api/v1/session/${sessionId}/join`
-        );
-        console.log(response);
-        InitZoom(response.data.session);
+  useEffect(() => {
+    // declare the data fetching function
+    const fetchData = async () => {
+      const response = await axios.get(
+        `http://139.59.105.114/api/v1/session/${sessionId}`
+      );
+      console.log(response.data);
+      setSession(response.data);
     };
 
-    const joinLiveCoding = () => {
-        if (session.liveShareUrl) {
-            // Redirect to live share URL
-            window.open(session.liveShareUrl, "_blank");
-        }
-    };
+    // call the function
+    fetchData()
+      // make sure to catch any error
+      .catch(console.error);
+  }, []);
 
-    return (
-        <>
-            {
-                <MeetingSessionContainer
-                    role="student"
-                    renderData={session}
-                    ssActive={session.status}
-                    joinSessionFunction={joinSession}
-                    joinLiveCodingFunction={joinLiveCoding}
-                />
-            }
+  // GET({sID: '123'})
 
-            <div id="meetingSDKElement"></div>
-        </>
+  const joinSession = async () => {
+    const response = await axios.get(
+      `http://139.59.105.114/api/v1/session/${sessionId}/join`
     );
+    console.log(response);
+    InitZoom(response.data.session);
+  };
+
+  const joinLiveCoding = () => {
+    if (session.liveShareUrl) {
+      // Redirect to live share URL
+      window.open(session.liveShareUrl, "_blank");
+    }
+  };
+
+  return (
+    <>
+      {
+        <MeetingSessionContainer
+          role="student"
+          renderData={session}
+          ssActive={session.status}
+          joinSessionFunction={joinSession}
+          joinLiveCodingFunction={joinLiveCoding}
+        />
+      }
+
+      <div id="meetingSDKElement"></div>
+    </>
+  );
 };
 export default StudentMeetingSession;
