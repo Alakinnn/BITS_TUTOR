@@ -4,7 +4,8 @@ import Tutor, { TutorDoc } from "../../models/tutor";
 import { BadRequestError } from "../../errors";
 import { generateToken } from "./jwt";
 import { s3Config } from "../../config/s3Config";
-import assert from "assert";
+import studentRegister from "./studentRegister";
+import tutorRegister from "./tutorRegister";
 const baseDOUrl = "https://finder-tutor.sgp1.digitaloceanspaces.com/";
 
 const registerUser = async (req: Request, res: Response) => {
@@ -19,68 +20,20 @@ const registerUser = async (req: Request, res: Response) => {
         hourlyRate,
         benefits,
     } = req.body;
-    console.log(req.body);
-    console.log(req.files);
 
     if (!username || !password || !email || !role) {
         throw new BadRequestError("Please provide all fields");
     }
 
-    let user: StudentDoc | TutorDoc;
-
     switch (role) {
         case "student":
-            user = await Student.create({
-                username,
-                password,
-                email,
-                socialLinks,
-            });
-            break;
+            return await studentRegister(req, res)
         case "tutor":
-            user = await Tutor.create({
-                username,
-                password,
-                email,
-                description,
-                tags,
-                socialLinks,
-                hourlyRate,
-                benefits,
-            });
-            break;
+            return await tutorRegister(req, res)
         default:
             throw new BadRequestError("Invalid role");
     }
 
-    // Upload files
-    const s3Files = await s3Config(req.files);
-    const cvUrl = `${baseDOUrl}${s3Files[0].Key}`;
-    const profilePicUrl = `${baseDOUrl}${s3Files[1].Key}`;
-
-    // Setting files to database
-    if (user as TutorDoc) {
-        (user as TutorDoc).cvUrl = cvUrl;
-    }
-    user.profilePicUrl = profilePicUrl;
-
-    // Run validations
-    const error = user.validateSync();
-    if (error) {
-        assert.equal(error.message, "Invalid URL");
-    }
-
-    // Saving Documents
-    await user.save();
-
-    // Remove password field from response
-    const returnUser = user.toObject();
-    delete returnUser.password;
-
-    // Generate JWT
-    const token = generateToken(returnUser);
-
-    return res.status(200).json({ user: returnUser, token });
 };
 
 export default registerUser;
