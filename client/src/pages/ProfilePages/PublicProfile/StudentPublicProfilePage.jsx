@@ -7,6 +7,7 @@ import StudentPersonalDetail from "../components/student/StudentPersonalDetail";
 import { getStudent } from "../services/user";
 
 function StudentPublicProfilePage() {
+    // const studentId = "6580286701da228ba974527b";
     const { studentId } = useParams();
     const [student, setStudent] = useState(null);
 
