@@ -10,7 +10,6 @@
         "serve": "vite preview"
     },
     "dependencies": {
-        "@esbuild/darwin-arm64": "^0.19.9",
         "@fortawesome/fontawesome-free": "^6.5.1",
         "@fortawesome/fontawesome-svg-core": "^6.5.1",
         "@fortawesome/free-solid-svg-icons": "^6.5.1",
