@@ -6,7 +6,7 @@ import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
 import TutorPublicUserCard from "../components/tutor/TutorPublicUserCard";
 import { UserContext } from "../../../App";
 import { useContext, useEffect, useState } from "react";
-import getTutor from "../services/tutor";
+import { getTutor } from "../services/user";
 import { useParams } from "react-router-dom";
 
 export default function TutorPublicProfilePage() {
