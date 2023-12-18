@@ -19,7 +19,6 @@ import { useAuth } from "../../../contexts/AuthContext";
 import background from "/public/images/registerbackground.jpg";
 
 const TutorRegisterPage = () => {
-    const [data, setData] = React.useState({});
     const [tags, setTags] = React.useState([]);
     const { storeAuth } = useAuth();
     const [socialLinks, setSocialLinks] = React.useState([null]);
@@ -92,10 +91,12 @@ const TutorRegisterPage = () => {
                     label="Full Name"
                     name="username"
                     placeholder="Your Full Name"
+                    minLength={8}
                 />
 
                 <Username
                     index={7}
+                    type="email"
                     keyname="email"
                     label="Email"
                     name="email"
@@ -124,6 +125,7 @@ const TutorRegisterPage = () => {
                     name="hourlyRate"
                     placeholder="Your Hourly Rate (USD)"
                     type="number"
+                    min={0}
                 />
 
                 <Username

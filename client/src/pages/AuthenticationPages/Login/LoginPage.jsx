@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import loginStyles from "../components/Login";
 import { loginUser } from "../services/auth";
 import { useAuth } from "../../../contexts/AuthContext";
+
 function MAMLoginPage() {
     const { storeAuth } = useAuth();
 
@@ -18,7 +19,7 @@ function MAMLoginPage() {
         event.preventDefault();
         const formData = new FormData(event.target);
         const newData = Object.fromEntries(formData);
-        console.log(newData);
+
         const response = await loginUser(newData);
 
         if (response.status !== 200) {
@@ -30,6 +31,7 @@ function MAMLoginPage() {
 
         alert("Login successful");
     };
+
     return (
         <div style={{ height: "100%" }}>
             <form onSubmit={handleSubmit} style={{ height: "100%" }}>
