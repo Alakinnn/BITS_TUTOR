@@ -31,7 +31,7 @@ export default function TutorPublicProfilePage() {
 
                         {/* Social links */}
                         {/* FIXME This is broken? */}
-                        {/* <SocialLinks user={tutor} /> */}
+                        <SocialLinks user={tutor} />
                     </MDBCol>
                     <MDBCol lg="8">
                         {/* Tutor Personal Detail */}

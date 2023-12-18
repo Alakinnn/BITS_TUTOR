@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
     MDBCard,
     MDBCardBody,
@@ -11,8 +11,17 @@ import { SocialIcon } from "react-social-icons";
 import "/src/css/Profile/SocialLink.css";
 
 function SocialLinks({ user }) {
+    const [links, setLinks] = useState([]);
+    useEffect(() => {
+        setLinks(user.socialLinks);
+    }, [user]);
+
     const renderSocialLinks = () => {
-        return user.socialLinks.map((link, index) => {
+        if (links == null) {
+            return <div>Loading...</div>;
+        }
+
+        return links.map((link, index) => {
             return (
                 <MDBListGroupItem
                     key={index}
