@@ -20,6 +20,7 @@ import StudentRegisterPage from "./pages/AuthenticationPages/Register/StudentReg
 import TutorRegisterPage from "./pages/AuthenticationPages/Register/TutorRegister";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
+import SearchResults from "./pages/SearchResults/SearchResult";
 
 const UserContext = createContext();
 
@@ -87,6 +88,7 @@ function App() {
 
             <Route path="/register/student" element={<StudentRegisterPage />} />
             <Route path="/register/tutor" element={<TutorRegisterPage />} />
+            <Route path="/SearchResults" element={<SearchResults/>} > </Route>
           </Routes>
         </UserContext.Provider>
       </AuthProvider>
