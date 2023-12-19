@@ -25,6 +25,7 @@
         "@reduxjs/toolkit": "^2.0.1",
         "@zoomus/websdk": "^2.18.2",
         "axios": "^1.6.2",
+        "jsrsasign": "^10.9.0",
         "md5": "^2.3.0",
         "mdb-react-ui-kit": "^7.0.0",
         "react": "^18.2.0",
