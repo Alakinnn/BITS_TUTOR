@@ -3,12 +3,12 @@ import React from "react";
 function Pagination() {
   return (
     <div>
-      <div class="text-align-center">
-        <ul class="pagination pagination-sm">
-          <li class="disabled">
+      <div className="text-align-center">
+        <ul className="pagination pagination-sm">
+          <li className="disabled">
             <a href="#/">Prev</a>
           </li>
-          <li class="active">
+          <li className="active">
             <a href="#/">1</a>
           </li>
           <li>

@@ -6,20 +6,20 @@ function ResultItem({ user }) {
   console.log(user._id);
   return (
     <Link to={`/tutor/${user._id}`}>
-      <section class="search-result-item">
+      <section className="search-result-item">
         <div className="image-link">
-          <img class="image" src={user.profilePicUrl} />
+          <img className="image" src={user.profilePicUrl} />
         </div>
-        <div class="search-result-item-body">
-          <div class="row">
-            <div class="col-sm-9">
-              <h4 class="search-result-item-heading">{user.fullName}</h4>
+        <div className="search-result-item-body">
+          <div className="row">
+            <div className="col-sm-9">
+              <h4 className="search-result-item-heading">{user.fullName}</h4>
               <TagList tags={user.tags} tagsPerLine={5} />
-              <p class="description">{user.description}</p>
+              <p className="description">{user.description}</p>
             </div>
-            <div class="col-sm-3 text-align-center">
-              <p class="value3 mt-sm">{user.hourlyRate}</p>
-              <p class="fs-mini text-muted">PER HOUR</p>
+            <div className="col-sm-3 text-align-center">
+              <p className="value3 mt-sm">{user.hourlyRate}</p>
+              <p className="fs-mini text-muted">PER HOUR</p>
             </div>
           </div>
         </div>

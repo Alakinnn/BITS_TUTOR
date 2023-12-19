@@ -3,16 +3,16 @@ import React from "react";
 function SearchBar() {
   return (
     <div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="input-group">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="input-group">
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Search for..."
             />
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">
+            <span className="input-group-btn">
+              <button className="btn btn-default" type="button">
                 Go!
               </button>
             </span>
