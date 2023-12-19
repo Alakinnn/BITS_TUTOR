@@ -18,11 +18,11 @@ body, html{
   --content: 'DM Sans', sans-serif;
 }
 
-.titleFont {
+.title {
   font-family: var(--title);
 }
 
-.contentFont {
+.content {
   font-family: var(--content);
 }
 

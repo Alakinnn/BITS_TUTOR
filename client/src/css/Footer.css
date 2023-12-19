@@ -1,0 +1,57 @@
+#footer {
+  width: 80rem;
+  height: 20.5rem;
+  flex-shrink: 0;
+  background: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: Open Sans;
+  padding: 1rem;
+}
+
+.containerContentFooter {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerTextFooter {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 4rem;
+  margin-right: 5rem;
+}
+
+.rightContentFooter {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 170.533%;
+  letter-spacing: 0.03125rem;
+}
+
+.rightContentFooter > * {
+  margin-right: 3rem;
+  list-style-type: none;
+}
+
+.iconFooter {
+  display: flex;
+  flex-direction: row;
+}
+.iconFooter > * {
+  margin-right: 2rem;
+}
+
+.copyRight {
+  margin-top: 1rem;
+  font-weight: bold;
+}
