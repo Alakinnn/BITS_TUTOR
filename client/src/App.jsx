@@ -29,6 +29,7 @@ function App() {
   // Change the role to view the different profile pages
   const [user, setUser] = useState({
     _id: "656f614ac37e79091ef39474",
+    fullName: "Will Smith",
     role: "tutor",
     username: "John Fuck",
     email: "john@gmail.com",
@@ -47,6 +48,8 @@ function App() {
     benefits:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   });
+
+  const [users, setUsers] = useState([user, user, user]);
 
   // const navigate = useNavigate();
   return (
@@ -88,7 +91,12 @@ function App() {
 
             <Route path="/register/student" element={<StudentRegisterPage />} />
             <Route path="/register/tutor" element={<TutorRegisterPage />} />
-            <Route path="/SearchResults" element={<SearchResults/>} > </Route>
+            <Route
+              path="/SearchResults"
+              element={<SearchResults users={users} />}
+            >
+              {" "}
+            </Route>
           </Routes>
         </UserContext.Provider>
       </AuthProvider>
