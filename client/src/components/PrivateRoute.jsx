@@ -22,7 +22,8 @@ const PrivateRoute = ({ Component }) => {
 
   if (isAuth === null) {
     // You can show a loading spinner or any other loading indicator here
-    return <div>Loading...</div>;
+    // return <div>Loading...</div>;
+    return;
   }
 
   return isAuth ? <Component /> : <Navigate to="/login" />;
