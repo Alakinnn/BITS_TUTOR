@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./css/App.css";
 
 import Footer from "./Footer/Footer";
-import "./css/Footer.css";
+
 import StudentMeetingSession from "./MeetingSession/StudentMeetingSession";
 import TutorMeetingSession from "./MeetingSession/TutorMeetingSession";
 // import Navbar from "./Header/Navbar";
