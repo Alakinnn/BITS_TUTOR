@@ -3,8 +3,9 @@ import TutorMyProfilePage from "./TutorMyProfilePage";
 import StudentMyProfilePage from "./StudentMyProfilePage";
 
 import { UserContext } from "../../../App";
+import { useAuth } from "../../../contexts/AuthContext";
 function MyProfilePage() {
-    const user = useContext(UserContext);
+    const { user } = useAuth();
 
     if (user.role === "tutor") {
         return <TutorMyProfilePage />;

@@ -52,3 +52,7 @@
     color: var(--dark-gray);
 }
 
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0;
+    padding: 1% 2%;
+}

@@ -2,14 +2,26 @@ import React from 'react'
 import Upcoming from './EventBox/Upcoming';
 import Completed from './EventBox/Completed';
 import Cancelled from './EventBox/Cancelled';
+import {Link } from 'react-router-dom';
+import { role } from '../SchedulingContainer';
 
 function CheckTypeToRender(arg) {
     if (arg.event.extendedProps.type === 'inactive') {
         return (
           <>
-            {<Upcoming
-              event={arg}
-            />}
+            {(role == 'tutor') ? (
+              <Link to={`/tutorMeetingSession/${arg.event.extendedProps.sessionId}`}>
+                {<Upcoming
+                  event={arg}
+                />}
+              </Link>
+            ) : (
+              <Link to={`/studentMeetingSession/${arg.event.extendedProps.sessionId}`}>
+                {<Upcoming
+                  event={arg}
+                />}
+              </Link>
+            )}
           </>
             
         );

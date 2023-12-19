@@ -28,7 +28,7 @@ export default function TutorMyProfilePage() {
                         <TutorUserCardMyProfile tutor={user} />
 
                         {/* Social links */}
-                        <SocialLinks />
+                        <SocialLinks user={user} />
                     </MDBCol>
                     <MDBCol lg="8">
                         {/* Tutor Personal Detail */}
@@ -37,11 +37,11 @@ export default function TutorMyProfilePage() {
                         <MDBRow>
                             <MDBCol md="4">
                                 {/* Tutor benefits */}
-                                <TutorBenefits tutor={user}/>
+                                <TutorBenefits tutor={user} />
                             </MDBCol>
                             <MDBCol md="8">
                                 {/* Tutor CV */}
-                                <TutorCV tutor={user}/>
+                                <TutorCV tutor={user} />
                             </MDBCol>
                         </MDBRow>
                     </MDBCol>

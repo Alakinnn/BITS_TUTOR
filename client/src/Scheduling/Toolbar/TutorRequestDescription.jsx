@@ -1,15 +1,25 @@
 import React, { useState, useEffect } from "react";
 import user from "/src/assets/footer/circle-user.svg";
 import "../../css/Scheduling/Toolbar/RequestDescription.css";
+import { useDispatch } from "react-redux";
+import { renderRequestList } from "../../slices/requestListSlice";
+import { getRequests } from "../TutorScheduling";
+import { ApproveRequest } from "./RequestFunctions/ApproveRequest";
+import { DenyRequest } from "./RequestFunctions/DenyRequest";
 
-function TutorRequestDescription({ requestList, selectedRequest }) {
+const studentId = "656f616650d0394bfa76feb0";
+const tutorId = "656f614ac37e79091ef39474";
+
+function TutorRequestDescription({ selectedRequest, role }) {
   // const renderDescription = (requestList) => {
   //     return requestList.map
   // }
+  const dispatch = useDispatch();
   const [renderObject, setRenderObject] = useState(null);
   useEffect(() => {
     // prevent student username for null and/or undefine
     const studentUsername = selectedRequest?.student?.username;
+    console.log("Selected request: ", selectedRequest);
 
     if (studentUsername) {
     console.log(studentUsername);
@@ -51,17 +61,30 @@ function TutorRequestDescription({ requestList, selectedRequest }) {
           <input
             className="input-content"
             type="text"
-            placeholder="Please approve request"
+            placeholder={selectedRequest.description}
             disabled
           />
 
           {/* buttons */}
           <div className="buttons toolbar-buttons">
-            <button className="approve">Approve</button>
-            <button className="decline">Decline</button>
+            <button onClick={async () => {
+              await ApproveRequest(selectedRequest?._id)
+              // remove the request from the list
+              dispatch(renderRequestList(await getRequests(
+                role, 
+                role === "tutor" ? tutorId : studentId
+                )));
+              console.log("After approve")
+            }} className="approve">Approve</button>
+            <button className="decline" onClick={async () => {
+              await DenyRequest(selectedRequest?._id)
+              // remove the request from the list
+              dispatch(renderRequestList(await getRequests(role, role === "tutor" ? tutorId : studentId)));
+            }}>Decline</button>
           </div>
         </div>
     );
+
   }, [selectedRequest]);
   return ( 
     <>

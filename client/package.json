@@ -10,7 +10,6 @@
         "serve": "vite preview"
     },
     "dependencies": {
-        "@esbuild/darwin-arm64": "^0.19.9",
         "@fortawesome/fontawesome-free": "^6.5.1",
         "@fortawesome/fontawesome-svg-core": "^6.5.1",
         "@fortawesome/free-solid-svg-icons": "^6.5.1",
@@ -22,6 +21,7 @@
         "@react-login-page/base": "^1.0.2",
         "@react-login-page/page11": "^1.0.2",
         "@react-login-page/page8": "^1.0.2",
+        "@reduxjs/toolkit": "^2.0.1",
         "@zoomus/websdk": "^2.18.2",
         "axios": "^1.6.2",
         "jsrsasign": "^10.9.0",
@@ -31,6 +31,8 @@
         "react-dom": "^18.2.0",
         "react-image-upload": "^3.0.1",
         "react-router-dom": "^6.20.0",
+        "react-redux": "^9.0.4",
+        "react-social-icons": "^6.7.0",
         "styled-components": "^6.1.1"
     },
     "devDependencies": {

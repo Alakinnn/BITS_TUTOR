@@ -2,7 +2,6 @@
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 5%;
 }
 
 .upper-info {
@@ -42,9 +41,7 @@
     align-items: center;
 }
 
-input#checker{
-   
-}
+
 
 #summary-details{
     font-size: large;

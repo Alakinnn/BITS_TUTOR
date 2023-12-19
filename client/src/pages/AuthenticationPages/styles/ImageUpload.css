@@ -12,3 +12,16 @@
   object-fit: cover;
   margin: 0 50%;
 }
+
+[type="button"]:hover {
+  background-color: #979695;
+  color: #ffffff;
+}
+
+button {
+  background-color: #ffffff;
+}
+
+main img {
+  object-fit: cover;
+}

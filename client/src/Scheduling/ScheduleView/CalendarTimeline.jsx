@@ -3,12 +3,13 @@ import '../../css/Scheduling/ScheduleView/CalendarTimeline.css'
 import timeGridPlugin from '@fullcalendar/timegrid';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import FullCalendar from '@fullcalendar/react';
+import interactionPlugin from '@fullcalendar/interaction';
 import CheckTypeToRender from './CheckTypeToRender';
 import Upcoming from './EventBox/Upcoming';
 
 
-   const CalendarTimeline = ({sessionList}) => {
-      console.log(sessionList);
+   const CalendarTimeline = ({sessionList, role}) => {
+      // console.log("Session list: ", sessionList);
 
       const eventList = sessionList.map(event => ({
         title: event.title,
@@ -17,21 +18,26 @@ import Upcoming from './EventBox/Upcoming';
         type: event.status,
         backgroundColor: 'transparent',
         tutor: event.tutor.username,
+        sessionId: event._id,
         // description: event.description,
       }));
 
      return (
        <div className='calendar-timeline'>
         <FullCalendar
-            plugins={[ timeGridPlugin ]}
+            plugins={[ timeGridPlugin, interactionPlugin ]}
             initialView="timeGridWeek"
-            headerToolbar= {false}
+            headerToolbar={{
+                left: 'today',
+                center: 'title',
+                right: 'prev,next'
+            }}
             allDaySlot={false}
 
             slotLabelFormat={{ hour: 'numeric', minute: '2-digit', omitZeroMinute: false, meridiem: false }}
             dayHeaderFormat={{ weekday: 'short', day: 'numeric', omitCommas: true }}
  
-            contentHeight={'65vh'}
+            contentHeight={'68vh'}
             slotDuration={'01:00:00'}
             timeZone='Asia/Saigon'
 

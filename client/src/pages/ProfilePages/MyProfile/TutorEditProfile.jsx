@@ -13,39 +13,23 @@ import "../styles/ImageUpload.css";
 import ProfilePicUpload from "../components/ProfilePicUpload";
 import SocialLinksList from "../components/SocialLinksList";
 import CVUpload from "../components/CVUpload";
+import Tag from "../../ProfilePages/components/Tag";
 import TagList from "../../ProfilePages/components/TagList";
-import { registerUser } from "../services/auth";
-import { useAuth } from "../../../contexts/AuthContext";
 import background from "/public/images/registerbackground.jpg";
+import { UserContext } from "../../../../App";
 
-const TutorRegisterPage = () => {
+const TutorEditProfile = () => {
+  const user = React.useContext(UserContext);
+  const [data, setData] = React.useState({});
   const [tags, setTags] = React.useState([]);
-  const { storeAuth } = useAuth();
   const [socialLinks, setSocialLinks] = React.useState([null]);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-
     const formData = new FormData(event.target);
-    let newData = Object.fromEntries(formData);
-
-    newData = formatData(newData);
-    console.log("Submitted:", newData);
-    const response = await registerUser(newData);
-
-    if (!response) {
-      // Alert error message
-      alert("Error registering user");
-      return;
-    }
-
-    const { user, token } = response;
-
-    await storeAuth({ newUser: user, newToken: token });
-
-    alert("Successfully registered user");
-    console.log("New User:", user);
-    window.location.href = "/me";
+    const newData = Object.fromEntries(formData);
+    formatData(newData);
+    console.log("Submitted:", data);
   };
 
   const handleAdd = () => {
@@ -78,7 +62,7 @@ const TutorRegisterPage = () => {
     const tags = newData.tags.split(",");
     delete newData.tags;
 
-    return { ...newData, socialLinks, tags, role: "tutor" }; // Add the socialLinks array to the newData object
+    setData({ ...newData, socialLinks, tags, role: "tutor" }); // Add the socialLinks array to the newData object
   };
 
   return (
@@ -91,24 +75,22 @@ const TutorRegisterPage = () => {
           index={6}
           label="Full Name"
           name="username"
-          placeholder="Your Full Name"
-          minLength={8}
+          placeholder={user.username}
         />
 
         <Username
           index={7}
-          type="email"
           keyname="email"
           label="Email"
           name="email"
-          placeholder="Your Email"
+          placeholder={user.email}
         />
 
         <Password
           index={8}
           label="Password"
           placeholder="Password"
-          name="password"
+          name={user.password}
         />
 
         <Username
@@ -116,7 +98,7 @@ const TutorRegisterPage = () => {
           keyname="description"
           label="Short Description"
           name="description"
-          placeholder="Tell us about yourself"
+          placeholder={user.description}
         />
 
         <Username
@@ -125,8 +107,7 @@ const TutorRegisterPage = () => {
           label="Hourly Rate (USD)"
           name="hourlyRate"
           placeholder="Your Hourly Rate (USD)"
-          type="number"
-          min={0}
+          type={user.hourlyRate}
         />
 
         <Username
@@ -134,7 +115,7 @@ const TutorRegisterPage = () => {
           keyname="benefits"
           label="Student Benefits"
           name="benefits"
-          placeholder="What will students get from you?"
+          placeholder={user.benefits}
         />
 
         <Username keyname="tags_label" visible={false} index={12}>
@@ -144,7 +125,7 @@ const TutorRegisterPage = () => {
         <Input
           index={13}
           name="tags"
-          placeholder="Add Tags"
+          placeholder="Add New Tags"
           onChange={handleTagChange}
         ></Input>
 
@@ -166,7 +147,7 @@ const TutorRegisterPage = () => {
           handleAdd={handleAdd}
         />
 
-        <Submit type="submit">Confirm</Submit>
+        <Submit type="submit">Save</Submit>
         <Banner>
           <img src={background}></img>
         </Banner>
@@ -177,4 +158,4 @@ const TutorRegisterPage = () => {
   );
 };
 
-export default TutorRegisterPage;
+export default TutorEditProfile;
