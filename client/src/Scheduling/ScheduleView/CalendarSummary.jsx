@@ -1,11 +1,7 @@
 import React from 'react'
 import '../../css/Scheduling/ScheduleView/CalendarSummary.css'
-import FullCalendar from '@fullcalendar/react';
-import timeGridPlugin from '@fullcalendar/timegrid';
-
 
 function CalendarSummary() {
-
   return (
     
     
@@ -25,13 +21,13 @@ function CalendarSummary() {
             {/* Filter checkboxs */}
             <div className="summary-filter-checker">
                 <p></p>
-                <input type="checkbox" id="checker" name="completed"  checked/>
+                <input type="checkbox" id="checker" name="completed" checked />
                 <label for="completed">Completed</label>
             </div>
 
             <div className="summary-filter-checker">
                 <p></p>
-                <input type="checkbox" id="checker" name="enrolled" checked/>
+                <input type="checkbox" id="checker" name="enrolled" checked />
                 <label for="enrolled">Enroll</label>
             </div>
 
@@ -41,6 +37,10 @@ function CalendarSummary() {
                 <label for="upcomming">Upcomming</label>
             </div>
         </div>
+      </div>
+      {/* Summary details */}
+      <div id="summary-details">
+          <p className="h">18 - 24 December, 2023</p>
       </div>
    </div>
   

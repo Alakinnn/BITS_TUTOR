@@ -1,5 +1,5 @@
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
-const StudentPublicUserCard = ({ student }) => {
+const StudentPublicUserCard = () => {
     return (
         <MDBCard className="mb-4">
             <MDBCardBody className="text-center">
@@ -10,8 +10,7 @@ const StudentPublicUserCard = ({ student }) => {
                     style={{ width: "150px" }}
                     fluid
                 />
-                <p className="text-muted mb-3">{student.username}</p>
-                <p className="text-muted mb-3">student</p>
+                <p className="text-muted mb-3">PHUNG QUOC CHIEN(STUDENT)</p>
 
                 <div className="d-flex justify-content-center mb-2"></div>
             </MDBCardBody>

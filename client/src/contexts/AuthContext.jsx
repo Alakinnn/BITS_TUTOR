@@ -26,13 +26,13 @@ const AuthProvider = ({ children }) => {
         return user;
     };
 
-    const storeAuth = ({ newUser, newToken }) => {
+    const loginUser = ({ newUser, newToken }) => {
         setUser(newUser);
         // Add to localStorage
         localStorage.setItem("token", newToken);
     };
 
-    const removeAuth = () => {
+    const logoutUser = () => {
         // Add any necessary cleanup logic
         setUser(null);
         // Remove from localStorage
@@ -44,8 +44,8 @@ const AuthProvider = ({ children }) => {
         getUser,
         setUser,
         isAuthenticated,
-        storeAuth,
-        removeAuth,
+        loginUser,
+        logoutUser,
     };
 
     return (

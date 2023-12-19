@@ -1,122 +1,103 @@
 import React from "react";
 import LoginPage, {
-  Username,
-  Password,
-  Submit,
-  Title,
-  Banner,
-  Input,
+    Username,
+    Password,
+    Submit,
+    Title,
+    Banner,
+    Input,
 } from "@react-login-page/page11";
 import "react-image-upload/dist/index.css";
 import "../styles/ImageUpload.css";
-import { registerUser } from "../services/auth";
-import { useAuth } from "../../../contexts/AuthContext";
 import ProfilePicUpload from "../components/ProfilePicUpload";
 import SocialLinksList from "../components/SocialLinksList";
-import background from "/public/images/registerbackground.jpg";
 
 const StudentRegisterPage = () => {
-  const { storeAuth } = useAuth();
-  const [socialLinks, setSocialLinks] = React.useState([null]);
+    const [data, setData] = React.useState({});
 
-  const formatData = (newData) => {
-    const socialLinks = [];
+    const formatData = (newData) => {
+        const socialLinks = [];
 
-    Object.keys(newData).forEach((key) => {
-      if (!key.startsWith("socialLink-")) {
-        return;
-      }
+        Object.keys(newData).forEach((key) => {
+            if (!key.startsWith("socialLink-")) {
+                return;
+            }
 
-      if (newData[key] === "") {
-        delete newData[key];
-        return;
-      }
+            if (newData[key] === "") {
+                delete newData[key];
+                return;
+            }
 
-      socialLinks.push(newData[key]); // Push social links to the socialLinks array
-      delete newData[key]; // Remove the social link key from the newData object
-    });
+            socialLinks.push(newData[key]); // Push social links to the socialLinks array
+            delete newData[key]; // Remove the social link key from the newData object
+        });
 
-    return { ...newData, socialLinks, role: "student" }; // Add the socialLinks array to the newData object
-  };
+        setData({ ...newData, socialLinks: socialLinks, role: "student" }); // Add the socialLinks array to the newData object
+    };
 
-  const handleAdd = () => {
-    const newSocialLinks = [...socialLinks, " "]; // Create a new input
-    setSocialLinks(newSocialLinks); // Update the state with the new inputs
-  };
+    const [socialLinks, setSocialLinks] = React.useState([null]);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+    const handleAdd = () => {
+        const newSocialLinks = [...socialLinks, " "]; // Create a new input
+        setSocialLinks(newSocialLinks); // Update the state with the new inputs
+    };
 
-    const formData = new FormData(event.target);
-    let newData = Object.fromEntries(formData);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const newData = Object.fromEntries(formData);
 
-    newData = formatData(newData);
-    console.log("Submitted:", newData);
-    const response = await registerUser(newData);
+        formatData(newData);
 
-    if (!response) {
-      // Alert error message
-      alert("Error registering user");
-      return;
-    }
+        console.log("Submitted: ", data);
+    };
 
-    const { user, token } = response;
+    return (
+        <form onSubmit={handleSubmit}>
+            <LoginPage>
+                <ProfilePicUpload index={0} />
+                <Username
+                    index={3}
+                    label="Full Name"
+                    name="username"
+                    placeholder="Your Full Name"
+                />
 
-    await storeAuth({ newUser: user, newToken: token });
+                <Username
+                    index={4}
+                    keyname="email"
+                    label="Email"
+                    name="email"
+                    placeholder="Your Email"
+                />
 
-    alert("Successfully registered user");
-    console.log("New User:", user);
-    window.location.href = "/me";
-  };
+                <Password
+                    index={5}
+                    label="Password"
+                    placeholder="Password"
+                    name="password"
+                />
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <LoginPage>
-        <ProfilePicUpload index={0} />
-        <Username
-          index={3}
-          label="Full Name"
-          name="username"
-          placeholder="Your Full Name"
-          minLength={8}
-        />
+                <Submit type="submit">Confirm</Submit>
 
-        <Username
-          index={4}
-          type="email"
-          keyname="email"
-          label="Email"
-          name="email"
-          placeholder="Your Email"
-        />
+                <Username keyname="username_rule" visible={false} index={6}>
+                    Social Links
+                </Username>
 
-        <Password
-          index={5}
-          label="Password"
-          placeholder="Password"
-          name="password"
-        />
+                <SocialLinksList
+                    baseIndex={7}
+                    socialLinks={socialLinks}
+                    handleAdd={handleAdd}
+                />
 
-        <Submit type="submit">Confirm</Submit>
+                <Banner>
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/kevin-main-image-1579114576.png"></img>
+                </Banner>
 
-        <Username keyname="username_rule" visible={false} index={6}>
-          Social Links
-        </Username>
-
-        <SocialLinksList
-          baseIndex={7}
-          socialLinks={socialLinks}
-          handleAdd={handleAdd}
-        />
-
-        <Banner>
-          <img src={background}></img>
-        </Banner>
-
-        <Title visible={false} />
-      </LoginPage>
-    </form>
-  );
+                <Title visible={false} />
+            </LoginPage>
+        </form>
+    );
 };
 
 export default StudentRegisterPage;

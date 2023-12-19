@@ -8,77 +8,77 @@ import { useParams } from "react-router-dom";
 
 // TUTOR
 const TutorMeetingSession = () => {
-  const sessionId = useParams().parameter;
-  const [session, setSession] = useState({});
-  const [sessionActive, setSessionActive] = useState(false);
+    const sessionId = useParams().parameter;
+    const [session, setSession] = useState({});
+    const [sessionActive, setSessionActive] = useState(false);
 
-  useEffect(() => {
-    // declare the data fetching function
-    const fetchData = async () => {
-      const response = await axios.get(
-        `http://139.59.105.114/api/v1/session/${sessionId}`
-      );
-      console.log(response.data);
-      setSession(response.data);
+    useEffect(() => {
+        // declare the data fetching function
+        const fetchData = async () => {
+            const response = await axios.get(
+                `http://139.59.105.114/api/v1/session/${sessionId}`
+            );
+            console.log(response.data);
+            setSession(response.data);
+        };
+
+        // call the function
+        fetchData()
+            // make sure to catch any error
+            .catch(console.error);
+    }, []);
+
+    const [inputUrl, setInputUrl] = useState("");
+
+    const handleChange = (event) => {
+        setInputUrl(event.target.value);
     };
 
-    // call the function
-    fetchData()
-      // make sure to catch any error
-      .catch(console.error);
-  }, []);
+    const startSession = async () => {
+        //  Send update request to backend
+        // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
+        const response = await axios.post(
+            `http://139.59.105.114/api/v1/session/${sessionId}/start`,
+            {
+                liveShareUrl: inputUrl,
+            }
+        );
+        setInputUrl("");
+        // window.location.href = "/tutor";
+        setSessionActive(true);
+        console.log(response);
+        InitZoom(response.data.session);
+    };
 
-  const [inputUrl, setInputUrl] = useState("");
+    const endSession = async () => {
+        // Set URL
+        // let lastInputUrl = ("");
+        //  Send update request to backend
+        // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
+        const response = await axios.post(
+            `http://139.59.105.114/api/v1/session/${sessionId}/end`,
+            {}
+        );
+        console.log(response);
+        setSessionActive(false);
+    };
 
-  const handleChange = (event) => {
-    setInputUrl(event.target.value);
-  };
+    return (
+        <>
+            {
+                <MeetingSessionContainer
+                    role="tutor"
+                    renderData={session}
+                    ssActive={sessionActive}
+                    joinSessionFunction={() => InitZoom(session)}
+                    handleChangeFunction={handleChange}
+                    startSessionFunction={startSession}
+                    endSessionFunction={endSession}
+                />
+            }
 
-  const startSession = async () => {
-    //  Send update request to backend
-    // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
-    const response = await axios.post(
-      `http://139.59.105.114/api/v1/session/${sessionId}/start`,
-      {
-        liveShareUrl: inputUrl,
-      }
+            <div id="meetingSDKElement"></div>
+        </>
     );
-    setInputUrl("");
-    // window.location.href = "/tutor";
-    setSessionActive(true);
-    console.log(response);
-    InitZoom(response.data.session);
-  };
-
-  const endSession = async () => {
-    // Set URL
-    // let lastInputUrl = ("");
-    //  Send update request to backend
-    // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
-    const response = await axios.post(
-      `http://139.59.105.114/api/v1/session/${sessionId}/end`,
-      {}
-    );
-    console.log(response);
-    setSessionActive(false);
-  };
-
-  return (
-    <>
-      {
-        <MeetingSessionContainer
-          role="tutor"
-          renderData={session}
-          ssActive={sessionActive}
-          joinSessionFunction={() => InitZoom(session)}
-          handleChangeFunction={handleChange}
-          startSessionFunction={startSession}
-          endSessionFunction={endSession}
-        />
-      }
-
-      <div id="meetingSDKElement"></div>
-    </>
-  );
 };
 export default TutorMeetingSession;

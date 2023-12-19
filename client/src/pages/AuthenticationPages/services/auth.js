@@ -20,23 +20,4 @@ const registerUser = async (user) => {
     }
 };
 
-const loginUser = async (user) => {
-    try {
-        const response = await axios.post(`${BASEURL}/auth/login`, user, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-
-        if (response.status !== 200) {
-            return null;
-        }
-
-        return response.data;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
-};
-
-export { registerUser, loginUser };
+export { registerUser };
