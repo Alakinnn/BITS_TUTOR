@@ -1,0 +1,107 @@
+#footer {
+  height: 20.5rem;
+  flex-shrink: 0;
+  background: #505050;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: Open Sans;
+  padding: 1rem;
+}
+
+.containerContentFooter {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerTextFooter {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 4rem;
+  margin-right: 5rem;
+}
+
+.rightContentFooter {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170.533%;
+  letter-spacing: 0.03125rem;
+  align-items: center;
+}
+
+.rightContentFooter > * {
+  margin-right: 3rem;
+  height: 10rem;
+  list-style-type: none;
+}
+
+.homeFooter, .aboutUsFooter{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.homeTextFooter, .aboutUsTextFooter {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.footerLink {
+  color: white;
+  text-decoration: none;
+}
+
+.iconFooter {
+  display: flex;
+  width: 10rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.copyRight {
+  font-weight: bold;
+  display: flex;
+  height: 3rem;
+  align-items: flex-end;
+}
+
+/* Set responsive for Iphone 14 Pro Max */
+@media only screen and (max-width: 430px) {
+  .containerContentFooter {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headerTextFooter {
+    margin: 1rem 0;
+  }
+
+  .rightContentFooter {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0;
+    width: 80%;
+  }
+
+  .rightContentFooter > * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .iconFooter {
+    width: 50%;
+    justify-content: space-between;
+  }
+}
