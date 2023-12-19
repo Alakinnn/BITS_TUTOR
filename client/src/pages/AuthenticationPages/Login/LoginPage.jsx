@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import loginStyles from "../components/Login";
 import { loginUser } from "../services/auth";
 import { useAuth } from "../../../contexts/AuthContext";
-import Header from "../../../components/Header";
+import Header from "../../../components/header/Header";
 
 function MAMLoginPage() {
     const { storeAuth } = useAuth();

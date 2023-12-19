@@ -20,7 +20,7 @@ import StudentRegisterPage from "./pages/AuthenticationPages/Register/StudentReg
 import TutorRegisterPage from "./pages/AuthenticationPages/Register/TutorRegister";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
-
+import Header from "./components/header/Header";
 const UserContext = createContext();
 
 function App() {
@@ -83,6 +83,7 @@ function App() {
               element={<PrivateRoute Component={StudentPublicProfilePage} />}
             />
 
+            <Route path="/test" element={<Header/>}/>
             <Route path="/login" element={<MAMLoginPage />} />
 
             <Route path="/register/student" element={<StudentRegisterPage />} />
