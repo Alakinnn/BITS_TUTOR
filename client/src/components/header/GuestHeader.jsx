@@ -2,19 +2,15 @@ import React, { useState } from "react";
 import {
     MDBContainer,
     MDBNavbar,
-    MDBNavbarBrand,
     MDBNavbarToggler,
     MDBIcon,
     MDBNavbarNav,
     MDBNavbarItem,
     MDBNavbarLink,
     MDBBtn,
-    MDBDropdown,
-    MDBDropdownToggle,
-    MDBDropdownMenu,
-    MDBDropdownItem,
     MDBCollapse,
 } from "mdb-react-ui-kit";
+import Logo from "./Logo";
 
 export default function GuestHeader() {
     const [openBasic, setOpenBasic] = useState(false);
@@ -23,7 +19,7 @@ export default function GuestHeader() {
         <header>
             <MDBNavbar expand="lg" light bgColor="light">
                 <MDBContainer fluid>
-                    <MDBNavbarBrand href="#">Brand</MDBNavbarBrand>
+                    <Logo />
 
                     <MDBNavbarToggler
                         aria-controls="navbarSupportedContent"
@@ -47,15 +43,26 @@ export default function GuestHeader() {
                             </MDBNavbarItem>
 
                             <MDBNavbarItem>
-                                <MDBNavbarLink href="/search">Find Tutors</MDBNavbarLink>
+                                <MDBNavbarLink href="/search">
+                                    Find Tutors
+                                </MDBNavbarLink>
                             </MDBNavbarItem>
-
                         </MDBNavbarNav>
 
-                     <div className="d-flex input-group w-auto">
-                    <MDBBtn href="/login" className="btn btn-dark me-2 rounded">Login</MDBBtn>
-                    <MDBBtn href="/register/student" className="btn btn-light b-1px rounded border text-nowrap">Sign Up</MDBBtn>
-                    </div>
+                        <div className="d-flex input-group w-auto">
+                            <MDBBtn
+                                href="/login"
+                                className="btn btn-dark me-2 rounded"
+                            >
+                                Login
+                            </MDBBtn>
+                            <MDBBtn
+                                href="/register/student"
+                                className="btn btn-light b-1px rounded border text-nowrap"
+                            >
+                                Sign Up
+                            </MDBBtn>
+                        </div>
                     </MDBCollapse>
                 </MDBContainer>
             </MDBNavbar>
