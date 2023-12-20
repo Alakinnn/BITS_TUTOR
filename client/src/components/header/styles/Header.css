@@ -4,4 +4,5 @@ header .profilePicture {
     object-fit: cover;
     margin-left: 0;
     margin-right: 15px;
+    border: 1px solid rgb(210, 210, 210);
 }
