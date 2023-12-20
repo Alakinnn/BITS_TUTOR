@@ -13,8 +13,8 @@ function ResultItem({ user }) {
         <div className="search-result-item-body">
           <div className="row">
             <div className="col-sm-9">
-              <h4 className="search-result-item-heading">{user.fullName}</h4>
-              <TagList tags={user.tags} tagsPerLine={5} />
+              <h5 className="search-result-item-heading">{user.fullName}</h5>
+              <TagList tags={user.tags} tagsPerLine={5} className="justify-content-left" />
               <p className="description">{user.description}</p>
             </div>
             <div className="col-sm-3 text-align-center">

@@ -8,11 +8,11 @@ import SearchBar from "./components/SearchBar.jsx";
 function SearchResult({ users }) {
   console.log(users);
   return (
-    <div class="container">
+    <div className="container">
       <SearchBar />
-      <div class="row ng-scope">
+      <div className="row ng-scope">
         <ResultFilter />
-        <div class="col-md-9 col-md-pull-3">
+        <div className="col-md-9 col-md-pull-3">
           {users.map((user) => (
             <ResultItem user={user} />
           ))}

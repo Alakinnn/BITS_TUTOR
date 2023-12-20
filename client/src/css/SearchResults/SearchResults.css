@@ -1,7 +1,7 @@
 body{margin-top:20px;
     background-color: #eee;
     }
-    
+   
     .search-result-categories>li>a {
         color: #b6b6b6;
         font-weight: 400
@@ -27,7 +27,9 @@ body{margin-top:20px;
     .search-result-item {
         padding: 20px;
         background-color: #fff;
-        border-radius: 4px
+        border-radius: 4px;
+        margin-top: 2%;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     }
     
     .search-result-item:after,
@@ -45,6 +47,15 @@ body{margin-top:20px;
         overflow: hidden;
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px
+    }
+    .d-flex.justify-content-center.align-items-center{
+        justify-content: left !important;
+        margin-top: 2%;
+        font-size: 15px;
+    }
+
+    .col-sm-9{
+        color: #000;
     }
     
     @media (min-width:768px) {
@@ -99,3 +110,6 @@ body{margin-top:20px;
             margin: 0
         }
     }
+
+
+   
