@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import TagList from "../../ProfilePages/components/TagList";
 
 function ResultItem({ user }) {
-  console.log(user._id);
+  // console.log(user._id);
   return (
     <Link to={`/tutor/${user._id}`}>
       <section className="search-result-item">
@@ -14,7 +14,11 @@ function ResultItem({ user }) {
           <div className="row">
             <div className="col-sm-9">
               <h5 className="search-result-item-heading">{user.fullName}</h5>
-              <TagList tags={user.tags} tagsPerLine={5} className="justify-content-left" />
+              <TagList
+                tags={user.tags}
+                tagsPerLine={5}
+                className="justify-content-left"
+              />
               <p className="description">{user.description}</p>
             </div>
             <div className="col-sm-3 text-align-center">
