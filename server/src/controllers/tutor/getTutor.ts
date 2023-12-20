@@ -9,44 +9,36 @@ const getTutorById = async (req: Request, res: Response) => {
     return res.status(200).json(tutor);
 };
 
+const MAX_RESULTS = 20;
+
 interface TutorQuery {
-    $or: any[];
+    $or?: any[];
     hourlyRate?: any;
 }
 
 const getTutors = async (req: Request, res: Response) => {
-    const { username, description, benefits, tags, hourlyRate } = req.query;
+    const { query, hourlyRate } = req.query;
 
-    const baseQuery: TutorQuery = { $or: [] };
+    const baseQuery: TutorQuery = {};
 
-    if (username) {
-        baseQuery.$or.push({
-            username: { $regex: username.toString(), $options: "i" },
-        });
-    }
-
-    if (description) {
-        baseQuery.$or.push({
-            description: { $regex: description.toString(), $options: "i" },
-        });
-    }
-
-    if (benefits) {
-        baseQuery.$or.push({
-            benefits: { $regex: benefits.toString(), $options: "i" },
-        });
-    }
-
-    if (tags) {
-        baseQuery.$or.push({ tags: { $in: tags } });
+    if (query) {
+        baseQuery.$or = [
+            { username: { $regex: query.toString(), $options: "i" } },
+            { description: { $regex: query.toString(), $options: "i" } },
+            { benefits: { $regex: query.toString(), $options: "i" } },
+            {
+                tags: {
+                    $elemMatch: { $regex: query.toString(), $options: "i" },
+                },
+            },
+        ];
     }
 
     if (hourlyRate) {
         // Split the hourlyRate into min and max values
-        const [minHourlyRate, maxHourlyRate] = hourlyRate
-            .toString()
-            .split("-")
-            .map((rate: string) => parseFloat(rate));
+        const [minHourlyRate, maxHourlyRate] = parseHourlyRate(
+            hourlyRate.toString()
+        );
 
         // Add hourlyRate filter if valid minHourlyRate or maxHourlyRate is provided
         if (!isNaN(minHourlyRate)) {
@@ -64,9 +56,15 @@ const getTutors = async (req: Request, res: Response) => {
         }
     }
 
-    const tutors = await Tutor.find(baseQuery).select("-password");
+    const tutors = await Tutor.find(baseQuery)
+        .select("-password")
+        .limit(MAX_RESULTS);
 
     return res.status(200).json(tutors);
+};
+
+const parseHourlyRate = (hourlyRate: string) => {
+    return hourlyRate.split("-").map((rate: string) => parseFloat(rate));
 };
 
 export { getTutors, getTutorById };
