@@ -19,17 +19,16 @@ import "./styles/Header.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from 'react-router-dom';
 
-export default function StudentHeader({student}) {
+export default function TutorHeader({tutor}) {
     const {removeAuth} = useAuth()
     const navigate = useNavigate();
 
     const [openBasic, setOpenBasic] = useState(false);
     const handleSignOut = () => {
         removeAuth();
-        location.reload();
-        navigate("/login");
+        navigate("/login")
     }
-    
+
     return (
         <header>
             <MDBNavbar expand="lg" light bgColor="light">
@@ -58,12 +57,6 @@ export default function StudentHeader({student}) {
                             </MDBNavbarItem>
 
                             <MDBNavbarItem>
-                                <MDBNavbarLink href="/search">
-                                    Find Tutors
-                                </MDBNavbarLink>
-                            </MDBNavbarItem>
-
-                            <MDBNavbarItem>
                                 <MDBNavbarLink href="/scheduleInterface">
                                     Schedules
                                 </MDBNavbarLink>
@@ -75,7 +68,7 @@ export default function StudentHeader({student}) {
                             <a href="/me">
                                 <img
                                     className="rounded-circle profilePicture "
-                                    src={student.profilePicUrl}
+                                    src={tutor.profilePicUrl}
                                     alt="pfp"
                                 />
                             </a>

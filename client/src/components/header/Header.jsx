@@ -1,20 +1,30 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import GuestHeader from "./GuestHeader";
 import StudentHeader from "./StudentHeader";
-
-const isAuthenticated = () => {
-    return true;
-};
-const role = "student";
+import TutorHeader from "./TutorHeader";
+import { useAuth } from "../../contexts/AuthContext";
 
 function Header() {
-    if (!isAuthenticated()) {
-        return <GuestHeader />;
+    const [user, setUser] = useState(null)
+    const { getLocalUser } = useAuth()
+
+    useEffect(() => {
+        console.log("Local User:", getLocalUser());
+        setUser(getLocalUser())
+    }, [])
+
+    if (!user) {
+        return <div> <GuestHeader/> </div>;
     }
 
-    if (role == "student") {
-        return <StudentHeader />;
-    }
+    if (user.role == "student") {
+        return <div> <StudentHeader student={user}/> </div>;
+    } else if (user.role == "tutor") {
+        return <div> <TutorHeader tutor={user}/> </div>;
+    } 
+
+    return null
+
 }
 
 export default Header;
