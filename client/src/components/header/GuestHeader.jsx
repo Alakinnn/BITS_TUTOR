@@ -52,9 +52,9 @@ export default function GuestHeader() {
                         <div className="d-flex input-group w-auto">
                             <MDBBtn
                                 href="/login"
-                                className="btn btn-dark me-2 rounded"
+                                className="btn btn-dark me-2 rounded text-nowrap"
                             >
-                                Login
+                                Log in
                             </MDBBtn>
                             <MDBBtn
                                 href="/register/student"
