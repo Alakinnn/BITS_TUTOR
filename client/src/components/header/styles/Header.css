@@ -1,0 +1,7 @@
+header .profilePicture {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    margin-left: 0;
+    margin-right: 15px;
+}
