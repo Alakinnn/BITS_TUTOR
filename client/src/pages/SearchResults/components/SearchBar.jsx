@@ -1,20 +1,10 @@
 import React, { useState } from "react";
+import HandleSearch from "./functions/HandleSearch";
 import "/src/css/SearchResults/SearchBar.css";
 
-function SearchBar() {
-  const [inputStr, setInputStr] = useState("");
+function SearchBar({ inputStr, setInputStr }) {
   const handleChange = (event) => {
     setInputStr(event.target.value);
-  };
-  const handleSearch = async () => {
-    // const response = await axios.post(
-    //   ``,
-    //   {
-
-    //   }
-    // );
-    // setInputStr("");
-    console.log(inputStr);
   };
 
   return (
@@ -33,7 +23,14 @@ function SearchBar() {
               <button
                 className="btn btn-default"
                 type="button"
-                onClick={handleSearch}
+                onClick={() =>
+                  HandleSearch({
+                    inputStr,
+                    minPrice: 0,
+                    maxPrice: 100,
+                    filterCriteria: "",
+                  })
+                }
               >
                 Go!
               </button>
