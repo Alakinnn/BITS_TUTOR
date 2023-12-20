@@ -3,16 +3,11 @@ import logo from "/images/mam_logo.png";
 // import logo from "/images/mam_logo_words.svg";
 function Logo() {
     return (
-        <MDBNavbarBrand
-            style={{
-                width: "70px",
-                height: "60px",
-            }}
-            href="/"
-        >
+        <MDBNavbarBrand href="/">
             <img
                 style={{
-                    width: "100%",
+                    width: "35px",
+                    // height: "40px",
                     marginLeft: "10px",
                 }}
                 src={logo}
