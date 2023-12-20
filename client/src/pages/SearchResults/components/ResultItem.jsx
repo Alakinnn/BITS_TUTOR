@@ -24,7 +24,7 @@ function ResultItem({ user }) {
             </div>
             <div className="col-sm-3 text-align-center">
               <p className="value3 mt-sm">{user.hourlyRate}</p>
-              <p className="fs-mini text-muted">PER HOUR</p>
+              <p className="fs-mini text-muted"><span>/</span>PER HOUR</p> 
             </div>
           </div>
         </div>

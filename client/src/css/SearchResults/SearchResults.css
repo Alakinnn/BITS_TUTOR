@@ -54,6 +54,16 @@ body {
     height: fit-content;
 }
 
+.col-sm-3.text-align-center{
+    display: flex;
+    color: black;
+}
+
+.value3.mt-sm{
+    margin-bottom: 0;
+}
+
+
 .col-sm-9 {
   color: #000;
 }
@@ -122,3 +132,6 @@ body {
 .container {
   margin-top: 5%;
 }
+
+
+
