@@ -29,7 +29,7 @@ body {
   padding: 20px;
   background-color: #fff;
   border-radius: 4px;
-  margin-top: 2%;
+  margin-top: 3%;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
@@ -49,10 +49,9 @@ body {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.d-flex.justify-content-center.align-items-center {
-  justify-content: left !important;
-  margin-top: 2%;
-  font-size: 15px;
+.style-tags{
+    width: fit-content;
+    height: fit-content;
 }
 
 .col-sm-9 {
@@ -92,25 +91,29 @@ body {
   margin-top: 20px;
 }
 
+.search-result-item-heading {
+    font-weight: 400;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  .search-result-item-heading > a {
+    color: #555;
+  }
+
 @media (min-width: 768px) {
   .search-result-item-body {
     margin-left: 200px;
   }
 }
 
-.search-result-item-heading {
-  font-weight: 400;
-}
 
-.search-result-item-heading > a {
-  color: #555;
-}
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .search-result-item-heading {
     margin: 0;
   }
-}
+} */
 
 .ng-scope {
   margin-top: 3%;

@@ -14,11 +14,12 @@ function ResultItem({ user }) {
           <div className="row">
             <div className="col-sm-9">
               <h5 className="search-result-item-heading">{user.fullName}</h5>
+              <div className="style-tags">
               <TagList
                 tags={user.tags}
                 tagsPerLine={5}
-                className="justify-content-left"
               />
+              </div>
               <p className="description">{user.description}</p>
             </div>
             <div className="col-sm-3 text-align-center">
