@@ -17,9 +17,10 @@ function TagList({ tags, tagsPerLine }) {
       const tagsSlice = tags.slice(i, i + TAGS_PER_LINE);
       const tagGroup = (
         <div
-          className="d-flex justify-content-center align-items-center"
+          className=" justify-content-center align-items-center"
           key={i}
         >
+          {/* d-flex tui note, đừng xoá (yuumi)*/}
           {tagsSlice.map((tag, key) => (
             <Tag tag={tag} key={key} />
           ))}
