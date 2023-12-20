@@ -16,7 +16,7 @@ function SearchResult({ users }) {
           {users.map((user) => (
             <ResultItem user={user} />
           ))}
-          <Pagination />
+          {/* <Pagination /> */}
         </div>
       </div>
     </div>
