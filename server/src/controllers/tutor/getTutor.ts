@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import Tutor from "../../models/tutor";
+import { SortOrder } from "mongoose";
 
 const getTutorById = async (req: Request, res: Response) => {
     const tutorId = req.params.tutorId;
@@ -17,7 +18,7 @@ interface TutorQuery {
 }
 
 const getTutors = async (req: Request, res: Response) => {
-    const { query, hourlyRate } = req.query;
+    const { query, hourlyRate, sortPrice } = req.query;
 
     const baseQuery: TutorQuery = {};
 
@@ -56,8 +57,15 @@ const getTutors = async (req: Request, res: Response) => {
         }
     }
 
+    const sortOptions: { [key: string]: SortOrder | { $meta: any } } = sortPrice
+        ? { hourlyRate: sortPrice as SortOrder }
+        : {};
+
+    // sortPrice should be either "asc" or "desc"
+
     const tutors = await Tutor.find(baseQuery)
         .select("-password")
+        .sort(sortOptions)
         .limit(MAX_RESULTS);
 
     return res.status(200).json(tutors);

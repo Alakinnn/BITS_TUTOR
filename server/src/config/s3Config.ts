@@ -40,7 +40,6 @@ export const s3Config = async (files: any) => {
     await Promise.all(
         params.map((param: any) => s3Client.send(new PutObjectCommand(param)))
     );
-    console.log(params);
 
     return params;
 };
