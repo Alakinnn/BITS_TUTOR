@@ -116,3 +116,17 @@ button {
     width: 14%;
     margin-bottom: 5%;
 }
+
+@media only screen and (max-width: 768px) {
+ .meetingInfo{
+  margin-top: 10.7%;
+  margin-left: 5.5%;
+  padding: 4%;
+  width: 40%;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #d9d9d9;
+  line-height: 1;
+  font-size: smaller;
+ }
+}
