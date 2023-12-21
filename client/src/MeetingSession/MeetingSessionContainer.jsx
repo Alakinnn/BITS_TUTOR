@@ -1,7 +1,10 @@
 import React from "react";
 import "../css/InfoInterface.css";
-import testImg from "/src/assets/footer/circle.svg";
+import heading from "/src/assets/footer/circle.svg";
 import testImg1 from "/src/assets/footer/circle-small.svg";
+import date from "/src/assets/footer/calendar.svg";
+import time from "/src/assets/footer/calendar-clock.svg";
+import waiting from "/src/assets/footer/loading.svg";
 import user from "/src/assets/footer/circle-user.svg";
 import ButtonsSessions from "./Buttons/ButtonsSessions";
 import EndSession from "./Buttons/EndSession";
@@ -11,19 +14,19 @@ function MeetingSessionContainer({role, renderData, ssActive, joinSessionFunctio
     <div className="meetingSession">
       <div className="meetingInfo">
         <div className="line title">
-          <img className="pictureTitle" src={testImg} alt="circle" />
+          <img className="pictureTitle" src={heading} alt="circle" />
           <h1>{renderData.title}</h1>
         </div>
         <div className="time line">
-          <img className="pictureTitle" src={testImg1} alt="circle" />
+          <img className="pictureTitle" src={date} alt="circle" />
           <h4>{renderData.startTime}</h4>
         </div>
         <div className="line description">
-          <img className="pictureTitle" src={testImg1} alt="circle" />
+          <img className="pictureTitle" src={time} alt="circle" />
           <h4>{renderData.description}</h4>
         </div>
         <div className="line accessToURLs">
-          <img className="pictureTitle" src={testImg1} alt="circle" />
+          <img className="pictureTitle" src={waiting} alt="circle" />
           {role == 'tutor' ? (
             ssActive? (
               <EndSession

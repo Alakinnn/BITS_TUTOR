@@ -1,7 +1,7 @@
 import React from "react";
 import ResultItem from "./components/ResultItem.jsx";
 import "/src/css/SearchResults/SearchResults.css";
-import Pagination from "./components/Pagination.jsx";
+// import Pagination from "./components/Pagination.jsx";
 import ResultFilter from "./components/ResultFilter.jsx";
 import SearchBar from "./components/SearchBar.jsx";
 
