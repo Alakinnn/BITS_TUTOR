@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HandleSearch from "./functions/HandleSearch";
 import "/src/css/SearchResults/SearchBar.css";
 
-function SearchBar({ inputStr, setInputStr }) {
+function SearchBar({ inputStr, setInputStr, setTutors }) {
   const handleChange = (event) => {
     setInputStr(event.target.value);
   };
@@ -29,6 +29,7 @@ function SearchBar({ inputStr, setInputStr }) {
                     minPrice: 0,
                     maxPrice: 100,
                     filterCriteria: "",
+                    setTutors,
                   })
                 }
               >

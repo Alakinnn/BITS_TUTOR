@@ -7,6 +7,7 @@ const HandleSearch = async ({
   minPrice,
   maxPrice,
   filterCriteria,
+  setTutors,
 }) => {
   console.log(inputStr, minPrice, maxPrice, filterCriteria);
   const response = await axios.get(`${BASE_URL}/api/v1/tutor`, {
@@ -16,11 +17,12 @@ const HandleSearch = async ({
     params: {
       query: inputStr,
       hourlyRate: `${minPrice}-${maxPrice}`,
-      //   sortPrice: filterCriteria,
+      sortPrice: filterCriteria,
     },
   });
 
-  console.log(response);
+  console.log(response.data);
+  setTutors(response.data);
 };
 
 export default HandleSearch;

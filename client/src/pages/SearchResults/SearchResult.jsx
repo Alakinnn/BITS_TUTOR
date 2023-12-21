@@ -5,15 +5,20 @@ import Pagination from "./components/Pagination.jsx";
 import ResultFilter from "./components/ResultFilter.jsx";
 import SearchBar from "./components/SearchBar.jsx";
 
-function SearchResult({ users }) {
+function SearchResult() {
   const [inputStr, setInputStr] = React.useState("");
   const [minPrice, setMinPrice] = React.useState(0);
   const [maxPrice, setMaxPrice] = React.useState(0);
   const [filterCriteria, setFilterCriteria] = React.useState("");
+  const [tutors, setTutors] = React.useState([]);
 
   return (
     <div className="container">
-      <SearchBar inputStr={inputStr} setInputStr={setInputStr} />
+      <SearchBar
+        inputStr={inputStr}
+        setInputStr={setInputStr}
+        setTutors={setTutors}
+      />
       <div className="row ng-scope">
         <ResultFilter
           inputStr={inputStr}
@@ -23,10 +28,11 @@ function SearchResult({ users }) {
           setMaxPrice={setMaxPrice}
           filterCriteria={filterCriteria}
           setFilterCriteria={setFilterCriteria}
+          setTutors={setTutors}
         />
         <div className="col-md-9 col-md-pull-3">
-          {users.map((user) => (
-            <ResultItem user={user} />
+          {tutors.map((tutor) => (
+            <ResultItem user={tutor} />
           ))}
           {/* <Pagination /> */}
         </div>
@@ -34,4 +40,5 @@ function SearchResult({ users }) {
     </div>
   );
 }
+
 export default SearchResult;

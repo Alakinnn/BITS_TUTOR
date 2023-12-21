@@ -12,6 +12,7 @@ function ResultFilter({
   setMaxPrice,
   filterCriteria,
   setFilterCriteria,
+  setTutors,
 }) {
   useEffect(() => {
     SliderFunction({
@@ -36,14 +37,26 @@ function ResultFilter({
           <li
             class="active"
             onClick={() =>
-              HandleSearch({ inputStr, minPrice, maxPrice, filterCriteria })
+              HandleSearch({
+                inputStr,
+                minPrice,
+                maxPrice,
+                filterCriteria,
+                setTutors,
+              })
             }
           >
             Default
           </li>
           <li
             onClick={() =>
-              HandleSearch({ inputStr, minPrice, maxPrice, filterCriteria })
+              HandleSearch({
+                inputStr,
+                minPrice,
+                maxPrice,
+                filterCriteria,
+                setTutors,
+              })
             }
           >
             {" "}
@@ -51,7 +64,13 @@ function ResultFilter({
           </li>
           <li
             onClick={() =>
-              HandleSearch({ inputStr, minPrice, maxPrice, filterCriteria })
+              HandleSearch({
+                inputStr,
+                minPrice,
+                maxPrice,
+                filterCriteria,
+                setTutors,
+              })
             }
           >
             {" "}
@@ -85,7 +104,13 @@ function ResultFilter({
           className="confirm-range"
           onClick={() => {
             console.log(minPrice, maxPrice, filterCriteria);
-            HandleSearch({ inputStr, minPrice, maxPrice, filterCriteria });
+            HandleSearch({
+              inputStr,
+              minPrice,
+              maxPrice,
+              filterCriteria,
+              setTutors,
+            });
           }}
         >
           Confirm

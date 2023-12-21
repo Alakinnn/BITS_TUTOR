@@ -13,18 +13,17 @@ function ResultItem({ user }) {
         <div className="search-result-item-body">
           <div className="row">
             <div className="col-sm-9">
-              <h5 className="search-result-item-heading">{user.fullName}</h5>
+              <h5 className="search-result-item-heading">{user.username}</h5>
               <div className="style-tags">
-              <TagList
-                tags={user.tags}
-                tagsPerLine={5}
-              />
+                <TagList tags={user.tags} tagsPerLine={5} />
               </div>
               <p className="description">{user.description}</p>
             </div>
             <div className="col-sm-3 text-align-center">
               <p className="value3 mt-sm">{user.hourlyRate}</p>
-              <p className="fs-mini text-muted"><span>/</span>PER HOUR</p> 
+              <p className="fs-mini text-muted">
+                <span>/</span>PER HOUR
+              </p>
             </div>
           </div>
         </div>
