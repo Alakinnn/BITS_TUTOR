@@ -4,6 +4,7 @@ import "/src/css/SearchResults/SearchResults.css";
 // import Pagination from "./components/Pagination.jsx";
 import ResultFilter from "./components/ResultFilter.jsx";
 import SearchBar from "./components/SearchBar.jsx";
+import HandleSearch from "./components/functions/HandleSearch.jsx";
 
 function SearchResult() {
   const [inputStr, setInputStr] = React.useState("");
@@ -11,6 +12,16 @@ function SearchResult() {
   const [maxPrice, setMaxPrice] = React.useState(0);
   const [filterCriteria, setFilterCriteria] = React.useState("");
   const [tutors, setTutors] = React.useState([]);
+
+  React.useEffect(() => {
+    HandleSearch({
+      inputStr: "",
+      minPrice: 0,
+      maxPrice: 100,
+      filterCriteria: "",
+      setTutors,
+    });
+  }, []);
 
   return (
     <div className="container">

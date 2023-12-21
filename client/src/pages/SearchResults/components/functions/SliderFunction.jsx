@@ -8,14 +8,20 @@ export function SliderFunction({
     priceInput = document.querySelectorAll(".price-input input"),
     range = document.querySelector(".slider .progress");
   let priceGap = 1;
+
   // Set default values for price range
-  priceInput[0].value = 25;
-  priceInput[1].value = 75;
-  setMinPrice(priceInput[0].value);
-  setMaxPrice(priceInput[1].value);
+  priceInput[0].value = 0;
+  priceInput[1].value = 100;
 
   rangeInput[0].value = priceInput[0].value;
   rangeInput[1].value = priceInput[1].value;
+
+  range.style.left = (priceInput[0].value / rangeInput[0].max) * 100 + "%";
+  range.style.right =
+    100 - (priceInput[1].value / rangeInput[1].max) * 100 + "%";
+
+  setMinPrice(priceInput[0].value);
+  setMaxPrice(priceInput[1].value);
 
   priceInput.forEach((input) => {
     input.addEventListener("input", (e) => {
