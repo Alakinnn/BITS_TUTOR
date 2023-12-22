@@ -10,7 +10,7 @@ const getFirstName = (name) => {
     return name.split(" ")[0];
 };
 
-function WelcomeBack() {
+function StudentWelcomeBack() {
     return (
         <MDBRow className="d-flex flex-column flex-lg-row screen-height gap-5">
             <MDBCol className="d-flex flex-column align-items-center">
@@ -29,4 +29,4 @@ function WelcomeBack() {
     );
 }
 
-export default WelcomeBack;
+export default StudentWelcomeBack;
