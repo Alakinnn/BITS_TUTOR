@@ -14,16 +14,16 @@ function MeetingSessionContainer({role, renderData, ssActive, joinSessionFunctio
     <div className="meetingSession">
       <div className="meetingInfo">
         <div className="line title">
-          <img className="pictureTitle" src={heading} alt="circle" />
-          <h1>{renderData.title}</h1>
+          {/* <img className="pictureTitle" src={heading} alt="circle" /> */}
+          <p className="heading">{renderData.title}Meeting</p>
         </div>
         <div className="time line">
           <img className="pictureTitle" src={date} alt="circle" />
-          <h4>{renderData.startTime}</h4>
+          <p className="date">date{renderData.startTime}</p>
         </div>
         <div className="line description">
           <img className="pictureTitle" src={time} alt="circle" />
-          <h4>{renderData.description}</h4>
+          <p className="time">time{renderData.description}</p>
         </div>
         <div className="line accessToURLs">
           <img className="pictureTitle" src={waiting} alt="circle" />
@@ -46,7 +46,7 @@ function MeetingSessionContainer({role, renderData, ssActive, joinSessionFunctio
                 joinLiveCodingFunction = {joinLiveCodingFunction}
               />
             ) : (
-                <h4 className="textNotice">Sessions has not started or has been</h4>
+                <p className="textNotice">Sessions has not started or has been</p>
             )
           ) 
           }
@@ -66,11 +66,11 @@ function MeetingSessionContainer({role, renderData, ssActive, joinSessionFunctio
         <h2>Participants:</h2>
         <div className="participant student">
           <img className="pictureTitle" src={user} alt="circle" />
-          <h4>{renderData.tutorId}</h4>
+          <h4>{renderData.tutorId}student</h4>
         </div>
         <div className="participant tutor">
           <img className="pictureTitle" src={user} alt="circle" />
-          <h4>{renderData.studentId}</h4>
+          <h4>{renderData.studentId}tutor.</h4>
         </div> 
       </div>
     </div>

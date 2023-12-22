@@ -42,16 +42,16 @@
 }
 
 button {
-    padding: 10%;
-    text-align: center;
+  padding: 10%;
+  text-align: center;
 }
 
-.blueButton{
-    background-color: #6AB3E8;
+.blueButton {
+  background-color: #6ab3e8;
 }
 
-.blueButton:hover{
-    background-color: #5A9CD6;
+.blueButton:hover {
+  background-color: #5a9cd6;
 }
 
 .buttons input {
@@ -68,25 +68,22 @@ button {
   margin-top: 4%;
 }
 
-
 /* Start Buttons */
 
-
 /*Sessions has not started yet*/
-.buttons .textNotice{
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+.buttons .textNotice {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 /* End Button */
 
 .buttons .endSession {
-    background-color: #FB6868;
+  background-color: #fb6868;
 }
 
 .buttons .endSession:hover {
-    background-color: #E85A5A;
+  background-color: #e85a5a;
 }
-
 
 /* Participants Styling:  */
 .meetingParticipants {
@@ -113,54 +110,215 @@ button {
 }
 
 .participant img {
-    width: 14%;
+  width: 14%;
+  margin-bottom: 5%;
+}
+
+.meetingInfo .pictureTitle {
+  width: 6%;
+}
+
+.meetingInfo .title {
+  text-align: center;
+  justify-content: center;
+}
+
+.meetingInfo:hover {
+  background-color: #ccc;
+}
+
+.meetingParticipants:hover {
+  background-color: #ccc;
+}
+
+@media only screen and (max-width: 459px) {
+  .meetingInfo {
+    /* margin-top: 10.7%; */
+    margin-left: 3.5%;
+    padding: 4%;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+    line-height: 1;
+    font-size: smaller;
+  }
+  .meetingParticipants {
+    margin-top: 10.7%;
+    margin-left: 2.5%;
+    padding: 3%;
+    width: 40%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+  }
+  .participant img {
+    width: 12%;
     margin-bottom: 5%;
+  }
+
+  .meetingInfo .pictureTitle {
+    width: 7%;
+  }
+
+  .heading {
+    font-size: 150%;
+  }
+
+  .description {
+    margin-top: 7%;
+  }
+  .line .date {
+    font-size: 95%;
+
+    
+  }
+  .description .time {
+    font-size: 95%;
+    padding-top: 1.5%;
+
+  }
+  .textNotice {
+    font-size: 110%;
+    padding-top: 8%;
+  }
 }
 
-@media only screen and (max-width: 768px) {
- .meetingInfo{
-  /* margin-top: 10.7%; */
-  margin-left: 3.5%;
-  padding: 4%;
-  width: 50%;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  background-color: #d9d9d9;
-  line-height: 1;
-  font-size: smaller;
- }
- .meetingParticipants {
-  margin-top: 10.7%;
-  margin-left: 2.5%;
-  padding: 3%;
-  width: 35%;
-  border: 1px solid #ccc;
-  border-radius: 5%;
-  background-color: #d9d9d9;
-}
+@media only screen and (min-width: 460px) and (max-width: 768px) {
+  .meetingInfo {
+    /* margin-top: 10.7%; */
+    margin-left: 3.5%;
+    padding: 4%;
+    width: 55%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+    line-height: 1;
+    font-size: smaller;
+  }
+  .meetingParticipants {
+    margin-top: 10.7%;
+    margin-left: 2.5%;
+    padding: 3%;
+    width: 35%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+  }
+  .meetingInfo .pictureTitle {
+    width: 5.5%;
+  }
+  .participant img {
+    width: 12%;
+    margin-bottom: 5%;
+  }
 
+  .heading {
+    font-size: 200%;
+  }
+
+  .description {
+    margin-top: 7%;
+  }
+  .line .date {
+    font-size: 100%;
+    /* padding-top: 8%; */
+    
+  }
+  .description .time {
+    font-size: 100%;
+    padding-top: 1.5%;
+
+  }
+  .textNotice {
+    font-size: 150%;
+    padding-top: 1%;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
-  .meetingInfo{
+  .meetingInfo {
     /* margin-top: 10.7%; */
     margin-left: 5.5%;
     padding: 4%;
     width: 55%;
     border: 1px solid #ccc;
-    border-radius: 15px;
+    border-radius: 5%;
     background-color: #d9d9d9;
     line-height: 1;
     font-size: smaller;
-   }
-   .meetingParticipants {
+  }
+  .meetingParticipants {
     margin-top: 10.7%;
     margin-left: 2.5%;
     padding: 3%;
-    width: 30%;
+    width: 35%;
     border: 1px solid #ccc;
     border-radius: 5%;
     background-color: #d9d9d9;
   }
-  
+
+  .meetingInfo .pictureTitle {
+    width: 5%;
+  }
+  .participant img {
+    width: 12%;
+    margin-bottom: 5%;
+  }
+
+  .heading {
+    font-size: 250%;
+  }
+
+  .description {
+    margin-top: 7%;
+  }
+  .line .date {
+    font-size: 150%;
+    /* padding-top: 8%; */
+    
+  }
+  .description .time {
+    font-size: 150%;
+    padding-top: 1.5%;
+
+  }
+  .textNotice {
+    font-size: 200%;
+    padding-top: 1%;
+  }
+
 }
+
+@media (min-width: 1200px) and (max-width: 2560px){
+  .meetingInfo .pictureTitle {
+    width: 3.5%;
+  }
+  .participant img {
+    width: 15%;
+    margin-bottom: 20%;
+  }
+
+  .heading {
+    font-size: 300%;
+  }
+
+  .description {
+    margin-top: 4%;
+  }
+  .line .date {
+    font-size: 150%;
+    /* padding-top: 8%; */
+    
+  }
+  .description .time {
+    font-size: 150%;
+    padding-top: 1.5%;
+
+  }
+  .textNotice {
+    font-size: 200%;
+    padding-top: 1%;
+  }
+}
+
