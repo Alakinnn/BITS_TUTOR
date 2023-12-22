@@ -119,14 +119,48 @@ button {
 
 @media only screen and (max-width: 768px) {
  .meetingInfo{
-  margin-top: 10.7%;
-  margin-left: 5.5%;
+  /* margin-top: 10.7%; */
+  margin-left: 3.5%;
   padding: 4%;
-  width: 40%;
+  width: 50%;
   border: 1px solid #ccc;
   border-radius: 15px;
   background-color: #d9d9d9;
   line-height: 1;
   font-size: smaller;
  }
+ .meetingParticipants {
+  margin-top: 10.7%;
+  margin-left: 2.5%;
+  padding: 3%;
+  width: 35%;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  background-color: #d9d9d9;
+}
+
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .meetingInfo{
+    /* margin-top: 10.7%; */
+    margin-left: 5.5%;
+    padding: 4%;
+    width: 55%;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #d9d9d9;
+    line-height: 1;
+    font-size: smaller;
+   }
+   .meetingParticipants {
+    margin-top: 10.7%;
+    margin-left: 2.5%;
+    padding: 3%;
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+  }
+  
 }
