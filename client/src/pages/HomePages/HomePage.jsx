@@ -1,11 +1,12 @@
 import React from "react";
-import WelcomeBack from "./components/WelcomeBack";
+import StudentWelcomeBack from "./components/StudentWelcomeBack";
+import TutorWelcomeBack from "./components/TutorWelcomeBack";
 import { MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 
 function HomePage() {
     return (
         <MDBContainer breakpoint="fluid">
-            <WelcomeBack />
+            <StudentWelcomeBack />
         </MDBContainer>
     );
 }
