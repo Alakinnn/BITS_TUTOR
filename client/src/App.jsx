@@ -20,7 +20,8 @@ import StudentRegisterPage from "./pages/AuthenticationPages/Register/StudentReg
 import TutorRegisterPage from "./pages/AuthenticationPages/Register/TutorRegister";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
-import Header from "./components/header/Header";
+import HomePage from "./pages/HomePages/HomePage";
+
 const UserContext = createContext();
 
 function App() {
@@ -56,7 +57,7 @@ function App() {
                         {/* This is the test route for dev the footer */}
 
                         <Route path="/footerTest" element={<Footer />} />
-
+                        <Route path="/" element={<HomePage />} />
                         <Route
                             path="/studentSession/:sessionId"
                             element={
@@ -99,7 +100,6 @@ function App() {
                             }
                         />
 
-                        <Route path="/test" element={<Header />} />
                         <Route path="/login" element={<MAMLoginPage />} />
 
                         <Route
