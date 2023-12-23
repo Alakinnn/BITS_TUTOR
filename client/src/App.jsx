@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./css/App.css";
 
-import Footer from "./Footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 import StudentMeetingSession from "./MeetingSession/StudentMeetingSession";
 import TutorMeetingSession from "./MeetingSession/TutorMeetingSession";
