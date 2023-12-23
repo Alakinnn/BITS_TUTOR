@@ -63,14 +63,14 @@ function MeetingSessionContainer({role, renderData, ssActive, joinSessionFunctio
         </div>
       </div>
       <div className="meetingParticipants">
-        <h2>Participants:</h2>
+        <p className="participants">Participants:</p>
         <div className="participant student">
           <img className="pictureTitle" src={user} alt="circle" />
-          <h4>{renderData.tutorId}student</h4>
+          <p className="name-users">{renderData.tutorId}student</p>
         </div>
         <div className="participant tutor">
           <img className="pictureTitle" src={user} alt="circle" />
-          <h4>{renderData.studentId}tutor.</h4>
+          <p className="name-users">{renderData.studentId}tutor.</p>
         </div> 
       </div>
     </div>
