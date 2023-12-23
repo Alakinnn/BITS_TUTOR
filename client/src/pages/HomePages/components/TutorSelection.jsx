@@ -1,4 +1,3 @@
-import React from "react";
 import tutorSelectionImg from "/images/tutor-selection.png";
 import { MDBRow } from "mdb-react-ui-kit";
 import { MDBCol } from "mdb-react-ui-kit";

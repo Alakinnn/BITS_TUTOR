@@ -1,5 +1,3 @@
-import React from "react";
-
 function CoreValues() {
     return (
         <section className="container mt-5 mb-5">
