@@ -170,28 +170,27 @@ button {
     margin-top: 5%;
     padding-top: 10%;
     font-weight: 500;
-    
-    
   }
 
   .description {
     margin-top: 10%;
   }
 
-.time.line {
-  margin-top: 10%;
-}
+  .time.line {
+    margin-top: 10%;
+  }
   .line .date {
     font-size: 70%;
     padding-top: 6%;
     font-weight: 500;
-    
+  }
+  .line.accessToURLs {
+    margin-top: 8%;
   }
   .description .time {
     font-size: 70%;
     padding-top: 6.5%;
     font-weight: 500;
-
   }
   .textNotice {
     font-size: 80%;
@@ -199,7 +198,7 @@ button {
     font-weight: 500;
   }
 
-  .participants{
+  .participants {
     font-size: 100%;
     margin-top: 5%;
     padding-top: 16%;
@@ -207,15 +206,14 @@ button {
     text-align: center;
     justify-content: center;
   }
-  .name-users{
-    font-size: 70%;
+  .name-users {
+    font-size: 60%;
     padding-bottom: 5%;
     font-weight: 500;
-
   }
-  
-
-
+  .participant.student {
+    margin-top: 12%;
+  }
 }
 
 @media only screen and (min-width: 459px) and (max-width: 768px) {
@@ -259,20 +257,17 @@ button {
     font-size: 100%;
     padding-top: 2%;
     font-weight: 500;
-    
   }
-  .description .time {
-    font-size: 100%;
-    padding-top: 1.5%;
-    font-weight: 500;
 
+  .line.accessToURLs {
+    margin-top: 8%;
   }
   .textNotice {
     font-size: 150%;
     padding-top: 1%;
     font-weight: 500;
   }
-  .participants{
+  .participants {
     font-size: 135%;
     margin-top: 1%;
     padding-top: 16%;
@@ -280,11 +275,10 @@ button {
     text-align: center;
     justify-content: center;
   }
-  .name-users{
-    font-size: 100%;
+  .name-users {
+    font-size: 85%;
     padding-bottom: 5%;
     font-weight: 500;
-
   }
 }
 
@@ -321,7 +315,6 @@ button {
   .heading {
     font-size: 250%;
     margin-top: 4%;
-    
   }
 
   .description {
@@ -329,22 +322,23 @@ button {
   }
   .line .date {
     font-size: 150%;
-    padding-top: 2%;
+    padding-top: 1%;
     font-weight: 500;
-    
   }
   .description .time {
     font-size: 150%;
-    padding-top: 1.5%;
+    padding-top: 1%;
     font-weight: 500;
-
+  }
+  .line.accessToURLs {
+    margin-top: 8%;
   }
   .textNotice {
     font-size: 200%;
-    padding-top: 1%;
+    padding-top: 5%;
   }
 
-  .participants{
+  .participants {
     font-size: 135%;
     margin-top: 6%;
     padding-top: 16%;
@@ -352,16 +346,24 @@ button {
     text-align: center;
     justify-content: center;
   }
-  .name-users{
-    font-size: 150%;
+  .name-users {
+    font-size: 120%;
     padding-bottom: 5%;
     font-weight: 500;
-
+  }
+  .student {
+    margin-top: 15%;
   }
 
+  .participant.tutor {
+    margin-top: 12%;
+  }
+  .tutor {
+    margin-top: 10%;
+  }
 }
 
-@media (min-width: 1200px) and (max-width: 2560px){
+@media (min-width: 1200px) and (max-width: 2560px) {
   .meetingInfo .pictureTitle {
     width: 4.5%;
   }
@@ -378,25 +380,23 @@ button {
   }
   .line .date {
     font-size: 200%;
-    
+
     font-weight: 500;
-    
   }
 
-  .line.accessToURLs{
+  .line.accessToURLs {
     margin-top: 10%;
   }
   .description .time {
     font-size: 200%;
-  
-    font-weight: 500;
 
+    font-weight: 500;
   }
   .textNotice {
     font-size: 230%;
     font-weight: 500;
   }
-  .participants{
+  .participants {
     font-size: 250%;
     margin-top: 6%;
     padding-top: 16%;
@@ -404,18 +404,15 @@ button {
     text-align: center;
     justify-content: center;
   }
-  .name-users{
+  .name-users {
     font-size: 200%;
     font-weight: 500;
     padding-bottom: 5%;
-
   }
-  .student{
+  .student {
     margin-top: 15%;
   }
-  .tutor{
+  .tutor {
     margin-top: 9%;
   }
-
 }
-
