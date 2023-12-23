@@ -17,12 +17,12 @@ function StudentWelcomeBack() {
                 <img className="w-75" src={welcomeBackImg} alt="welcome back" />
             </MDBCol>
             <MDBCol className="d-flex gap-2 flex-column align-items-center justify-content-center">
-                <h1 className="fs-1 mb-2 text-nowrap">
+                <h1 className="fs-1 mb-2 text-nowrap titleFont">
                     Welcome back, {getFirstName(user.username)}!
                 </h1>
-                <p className="fs-3 mb-4">What will you learn today?</p>
+                <p className="fs-3 mb-4 contentFont">What will you learn today?</p>
                 <MDBBtn className="btn btn-dark text-nowraptext" href="/search">
-                    <h4 className="fs-4">Find a Tutor</h4>
+                    <h4 className="fs-4 titleFont">Find a Tutor</h4>
                 </MDBBtn>
             </MDBCol>
         </MDBRow>
