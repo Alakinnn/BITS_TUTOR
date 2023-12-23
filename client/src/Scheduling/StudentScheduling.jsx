@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+const token = localStorage.getItem("token");
 
 export async function getStudentSessions(studentId) {
   const response = await axios.get(`http://139.59.105.114/api/v1/session/`, {

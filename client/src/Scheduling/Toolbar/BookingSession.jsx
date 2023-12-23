@@ -1,14 +1,21 @@
-import React from 'react'
-import '../../css/Scheduling/Toolbar/RequestDescription.css';
+import React from "react";
+import "../../css/Scheduling/Toolbar/RequestDescription.css";
 import user from "/src/assets/footer/circle-user.svg";
-import { CreateRequest } from './RequestFunctions/CreateRequest';
-const BookingSession = ({request, setRequest, defaultRequest}) => {
+import { CreateRequest } from "./RequestFunctions/CreateRequest";
+const BookingSession = ({ request, setRequest, defaultRequest }) => {
   return (
     <>
-      <button className='bookingSession' onClick={() => CreateRequest(request, setRequest, defaultRequest)}>Book a Session</button>
-        {/* <button className='bookingSession'>Book a Session</button> */}
+      <button
+        className="bookingSession"
+        onClick={() =>
+          CreateRequest({ newRequest: request, setRequest, defaultRequest })
+        }
+      >
+        Book a Session
+      </button>
+      {/* <button className='bookingSession'>Book a Session</button> */}
     </>
-  )
-}
+  );
+};
 
-export default BookingSession
+export default BookingSession;
