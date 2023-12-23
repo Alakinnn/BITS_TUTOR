@@ -7,7 +7,11 @@ import { MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 function HomePage() {
     return (
         <>
-            <MDBContainer breakpoint="fluid">
+            <MDBContainer
+                breakpoint="fluid"
+                className=" d-flex flex-column"
+                style={{ minHeight: "100vh", gap: "7rem" }}
+            >
                 <StudentWelcomeBack />
                 <TutorSelection />
                 <CoreValues />
