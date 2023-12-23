@@ -16,31 +16,29 @@ function CoreValues() {
                 <div className="col-4">
                     <h3>Interactivity</h3>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Sunt sapiente doloribus debitis, earum cumque
-                        obcaecati vero odit nisi culpa distinctio impedit eum
-                        dolores labore molestiae placeat at, ipsum veniam
-                        quibusdam!
+                    "At the heart of our core values is interactivity, 
+                    fostering a dynamic learning environment where students 
+                    can actively engage with tutors in real-time, ensuring 
+                    a collaborative and effective learning experience."
                     </p>
                 </div>
                 <div className="col-4">
                     <h3>Personalization</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Est itaque blanditiis nesciunt labore minima dolorem
-                        doloremque nam expedita, quisquam, alias neque
-                        reprehenderit unde ab nihil adipisci aliquam fugit
-                        aperiam voluptas!
+                    "We believe in the power of personalization, 
+                    tailoring each tutoring session to meet the unique needs and 
+                    learning styles of every student, creating a customized educational 
+                    journey that maximizes growth and understanding."
                     </p>
                 </div>
                 <div className="col-4">
                     <h3>Trust</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Velit porro veritatis pariatur. Nihil delectus adipisci
-                        ad mollitia, earum vitae maxime, illo ipsa corporis
-                        nobis maiores veritatis consequuntur illum. Animi,
-                        nihil?
+                    "Trust is the cornerstone of our platform, 
+                    where we carefully vet and select experienced tutors, 
+                    providing a secure and reliable space for students to 
+                    confidently seek academic support, building a community 
+                    founded on trust and educational excellence."
                     </p>
                 </div>
             </div>
