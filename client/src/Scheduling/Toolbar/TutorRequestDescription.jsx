@@ -63,7 +63,6 @@ function TutorRequestDescription({ selectedRequest, role }) {
           placeholder={selectedRequest.description}
           disabled
         />
-
         {/* buttons */}
         <div className="buttons toolbar-buttons">
           <button

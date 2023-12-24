@@ -1,6 +1,5 @@
 .toolbar-description{
     width: 100%;
-    margin-top: 35%;
     background-color: #F4F4F4;
 }
 
@@ -45,9 +44,7 @@
     border-radius: 3px;
 }
 
-.input-content{
-    margin-top:5%;
-}
+
 
 .inputContent input{
     border: solid 1px #e4e4e4;

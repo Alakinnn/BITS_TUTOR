@@ -83,7 +83,7 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
           {/* toolbar request */}
           <div className="toolbar-requests">
             {/* <!-- view request --> */}
-            <div className="dropdown">
+            <div className="toolbar-dropdown">
               <div className="dropdown_select">
                 <span className="dropdown_selected">
                   <button className="view-request">

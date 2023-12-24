@@ -51,7 +51,7 @@ function SchedulingContainer() {
     };
 
     fetchData();
-  }, [requests]);
+  }, []);
   return (
     <div className="scheduling-container">
       <Toolbar
