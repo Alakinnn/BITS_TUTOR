@@ -2,16 +2,16 @@ function CoreValues() {
     return (
         <section className="container mt-5 mb-5">
             <div className="row">
-                <div className="col-6 titleFont">
+                <div className="col-md-6 titleFont">
                     <h1>Our Core Values</h1>
                 </div>
-                <div className="col mt-5 contentFont">
+                <div className="col-md mt-3 mt-md-0 contentFont">
                     <p>Your education is invaluable to us</p>
                 </div>
             </div>
 
             <div className="row mt-5">
-                <div className="col-4">
+                <div className="col-md-4">
                     <h3 className="titleFont">Interactivity</h3>
                     <p className="contentFont">
                         At the heart of our core values is interactivity,
@@ -20,7 +20,7 @@ function CoreValues() {
                         collaborative and effective learning experience.
                     </p>
                 </div>
-                <div className="col-4">
+                <div className="col-md-4">
                     <h3 className="titleFont">Personalization</h3>
                     <p className="contentFont">
                         We believe in the power of personalization, tailoring
@@ -30,7 +30,7 @@ function CoreValues() {
                         understanding.
                     </p>
                 </div>
-                <div className="col-4">
+                <div className="col-md-4">
                     <h3 className="titleFont">Trust</h3>
                     <p className="contentFont">
                         Trust is the cornerstone of our platform, where we
@@ -42,6 +42,7 @@ function CoreValues() {
                 </div>
             </div>
         </section>
+
     );
 }
 
