@@ -1,13 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import "../css/Scheduling/SchedulingContainer.css";
-import Toolbar from "./Toolbar/Toolbar";
-import ScheduleView from "./ScheduleView/ScheduleView";
 import {
   renderRequestList,
   selectRequestList,
 } from "../slices/requestListSlice";
+import "../css/Scheduling/SchedulingContainer.css";
+import Toolbar from "./Toolbar/Toolbar";
+import ScheduleView from "./ScheduleView/ScheduleView";
+
 import {
   getTutorSessions,
   getStudentRequests,
@@ -25,6 +26,7 @@ function SchedulingContainer() {
   const userId = user._id;
   const dispatch = useDispatch();
   const requests = useSelector(selectRequestList);
+  console.log("Request list: ", requests);
   const [sessions, setSessions] = useState([]);
 
   const renderRequest = async () => {
@@ -48,12 +50,13 @@ function SchedulingContainer() {
       setSessions(sessionValues);
       renderRequest();
     } catch (error) {
-      // console.error("Error fetching data:", error);
+      console.error("Error fetching data:", error);
     }
-  }, [dispatch, userId, role]);
+  }, []);
+
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, [dispatch, role, userId]);
 
   return (
     <div className="scheduling-container">
@@ -61,7 +64,6 @@ function SchedulingContainer() {
       <ScheduleView sessionList={sessions} role={role} />
     </div>
   );
-  [];
 }
 
 export default SchedulingContainer;

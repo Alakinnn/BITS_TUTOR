@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import user from "/src/assets/footer/circle-user.svg";
 import "../../css/Scheduling/Toolbar/RequestDescription.css";
-import { useDispatch } from "react-redux";
-import { renderRequestList } from "../../slices/requestListSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { renderRequestList, selectRequestList } from "../../slices/requestListSlice";
 import { getRequests } from "../TutorScheduling";
 import { ApproveRequest } from "./RequestFunctions/ApproveRequest";
 import { DenyRequest } from "./RequestFunctions/DenyRequest";
@@ -11,6 +11,7 @@ import { useAuth } from "../../contexts/AuthContext";
 function TutorRequestDescription({ selectedRequest, role }) {
   const { user } = useAuth();
   const dispatch = useDispatch();
+  const requests = useSelector(selectRequestList);
   const [renderObject, setRenderObject] = useState(null);
   useEffect(() => {
     // prevent student username for null and/or undefine
@@ -64,9 +65,10 @@ function TutorRequestDescription({ selectedRequest, role }) {
           <button
             className="approve"
             onClick={async () => {
-              ApproveRequest({ requestId: selectedRequest?._id });
+              await ApproveRequest({ requestId: selectedRequest?._id });
               // remove the request from the list
               dispatch(renderRequestList(await getRequests(role, user._id)));
+              // console.log("New request list: ", requests);
             }}
           >
             Approve
@@ -74,7 +76,7 @@ function TutorRequestDescription({ selectedRequest, role }) {
           <button
             className="decline"
             onClick={async () => {
-              DenyRequest({ requestId: selectedRequest?._id });
+              await DenyRequest({ requestId: selectedRequest?._id });
               // remove the request from the list
               dispatch(renderRequestList(await getRequests(role, user._id)));
             }}

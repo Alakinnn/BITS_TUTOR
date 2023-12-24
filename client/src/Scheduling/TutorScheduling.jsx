@@ -22,7 +22,7 @@ export async function getTutorSessions(tutorId) {
     },
     params: { tutorId: `${tutorId}` },
   });
-  // console.log(response.data);
+  console.log("Respond data: ",response);
   return response.data;
 }
 export async function getStudentRequests(tutorId) {

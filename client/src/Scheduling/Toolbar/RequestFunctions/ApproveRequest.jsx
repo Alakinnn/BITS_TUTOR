@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { getStudentRequests } from "../../TutorScheduling";
 const token = localStorage.getItem("token");
 
 export async function ApproveRequest({ requestId }) {
