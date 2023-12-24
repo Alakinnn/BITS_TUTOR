@@ -362,7 +362,7 @@ input[type="range"]::-moz-range-thumb {
 @media (min-width: 767px) {
   .search-result-item .image-link {
     margin: auto;
-    float: left;
+    float: center;
 
     height: 80%;
     justify-content: center;

@@ -7,3 +7,23 @@
   gap: 1%;
   margin-top: 7%;
 }
+
+@media screen and (max-width: 768px) {
+  .scheduling-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .toolbar{
+    width: 100%;
+    float: right;
+    margin-bottom: 5em;
+  }
+
+  .schedule-view{
+    width: 100%;
+    float: left;
+  }
+  
+}
