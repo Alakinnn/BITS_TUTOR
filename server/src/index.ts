@@ -1,13 +1,14 @@
 import "express-async-errors";
 import express from "express";
+import helmet from "helmet";
 import cors from "cors";
+import { rateLimit } from "express-rate-limit";
 
 import env from "./config/env";
 import {
     authRouter,
     tutorRouter,
     studentRouter,
-    reviewRouter,
     sessionRouter,
     sessionRequestRouter,
 } from "./routes/index";
@@ -16,9 +17,19 @@ import { connectMongoDB } from "./db/connect";
 
 const app = express();
 
-app.enable("trust proxy");
+// Security
+app.set("trust proxy", 1);
+app.get("/api/v1/ip", (request, response) => response.send(request.ip));
 
+app.use(
+    rateLimit({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 100, // Limit each IP to 100 requests every windowMS
+    })
+);
 app.use(cors());
+app.use(helmet());
+
 app.use(express.json());
 
 // Routes
