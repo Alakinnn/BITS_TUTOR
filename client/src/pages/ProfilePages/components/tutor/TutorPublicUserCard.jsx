@@ -22,7 +22,7 @@ const TutorPublicUserCard = ({ tutor }) => {
         />
         <p className="text-muted mb-3">{tutor.username}</p>
         <TagList tags={tutor.tags} />
-        <Link to={`/scheduleInterface`}>
+        <Link to={`/scheduleInterface/${tutor._id}`}>
           <div className="d-flex justify-content-center mb-2">
             <MDBBtn className="bg-secondary">Book A Session</MDBBtn>
           </div>

@@ -7,7 +7,6 @@ export async function CreateRequest({
   setRequest,
   defaultRequest,
 }) {
-  console.log(newRequest);
   const response = await axios.post(
     `http://139.59.105.114/api/v1/sessionRequest`,
     newRequest,

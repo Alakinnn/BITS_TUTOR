@@ -6,14 +6,10 @@ import { renderRequestList } from "../../slices/requestListSlice";
 import { getRequests } from "../TutorScheduling";
 import { ApproveRequest } from "./RequestFunctions/ApproveRequest";
 import { DenyRequest } from "./RequestFunctions/DenyRequest";
-
-// const studentId = "656f616650d0394bfa76feb0";
-// const tutorId = "656f614ac37e79091ef39474";
+import { useAuth } from "../../contexts/AuthContext";
 
 function TutorRequestDescription({ selectedRequest, role }) {
-  // const renderDescription = (requestList) => {
-  //     return requestList.map
-  // }
+  const { user } = useAuth();
   const dispatch = useDispatch();
   const [renderObject, setRenderObject] = useState(null);
   useEffect(() => {
@@ -66,36 +62,21 @@ function TutorRequestDescription({ selectedRequest, role }) {
         {/* buttons */}
         <div className="buttons toolbar-buttons">
           <button
-            onClick={async () => {
-              await ApproveRequest(selectedRequest?._id);
-              // remove the request from the list
-              dispatch(
-                renderRequestList(
-                  await getRequests(
-                    role,
-                    role === "tutor" ? tutorId : studentId
-                  )
-                )
-              );
-              console.log("After approve");
-            }}
             className="approve"
+            onClick={async () => {
+              ApproveRequest({ requestId: selectedRequest?._id });
+              // remove the request from the list
+              dispatch(renderRequestList(await getRequests(role, user._id)));
+            }}
           >
             Approve
           </button>
           <button
             className="decline"
             onClick={async () => {
-              await DenyRequest(selectedRequest?._id);
+              DenyRequest({ requestId: selectedRequest?._id });
               // remove the request from the list
-              dispatch(
-                renderRequestList(
-                  await getRequests(
-                    role,
-                    role === "tutor" ? tutorId : studentId
-                  )
-                )
-              );
+              dispatch(renderRequestList(await getRequests(role, user._id)));
             }}
           >
             Decline

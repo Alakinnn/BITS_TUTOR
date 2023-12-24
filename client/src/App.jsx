@@ -71,7 +71,7 @@ function App() {
             />
             <Route path="/toolbar" element={<Toolbar />} />
             <Route
-              path="/scheduleInterface"
+              path="/scheduleInterface/:tutorId"
               element={<PrivateRoute Component={ScheduleInterface} />}
             />
             <Route
