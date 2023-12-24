@@ -16,18 +16,17 @@ export async function getCurrentRequests(studentId) {
 }
 
 export async function getTutorSessions(tutorId) {
-  const response = await axios.get(
-    `http://139.59.105.114/api/v1/session?tutorId=${tutorId}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const response = await axios.get(`http://139.59.105.114/api/v1/session`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    params: { tutorId: `${tutorId}` },
+  });
   // console.log(response.data);
   return response.data;
 }
 export async function getStudentRequests(tutorId) {
+  console.log(tutorId);
   const response = await axios.get(
     `http://139.59.105.114/api/v1/sessionRequest`,
     {
