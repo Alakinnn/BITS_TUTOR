@@ -19,8 +19,6 @@ const app = express();
 
 // Security
 app.set("trust proxy", 1);
-app.get("/api/v1/ip", (request, response) => response.send(request.ip));
-
 app.use(
     rateLimit({
         windowMs: 15 * 60 * 1000, // 15 minutes
