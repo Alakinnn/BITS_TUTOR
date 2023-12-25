@@ -1,6 +1,6 @@
 .upcoming-event-content {
     display: flex;
-    height: 100%;
+    height: 200%;
     padding: 0;
     position: relative;
     background-color: #E8FDFF;
@@ -20,27 +20,29 @@
     margin-left: 17%;
     color: #21BDCA;
     max-height: 100%;
+    position: relative;
 }
 
-.upcoming-event-description h5 {
-    font-weight: 600;
-    position: absolute;
-    top: 1rem;
+.upcoming-event-description h5{
+    font-size: 1rem;
 }
 
-.upcoming-event-description b h5 {
-    font-weight: 700;
-    position: absolute;
-    top: 0;
+.upcoming-event-description h5,
+.upcoming-event-description p {
+  font-weight: normal;
+  margin: 0;
+}
+
+.upcoming-event-description h5:first-child {
+  font-weight: 700;
 }
 
 .upcoming-event-description h6 {
-    font-weight: 450;
-    position: absolute;
-    bottom: 0;
+  font-weight: 450;
+  position: absolute;
+  bottom: 0;
 }
 
 .fc-v-event {
     border: none;
 }
-

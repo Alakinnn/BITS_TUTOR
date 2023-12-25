@@ -8,7 +8,7 @@ function Upcoming({event}) {
               <div class = "upcoming-vertical"></div>
               <div className='upcoming-event-description'>
                   <b><h5>{event.event._def.title}</h5></b>
-                  <h5>{event.event._def.extendedProps.tutor}</h5>
+                  <p>{event.event._def.extendedProps.tutor}</p>
                   <h6>{event.timeText}</h6>
               </div>
           </div>
