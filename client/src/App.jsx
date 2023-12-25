@@ -22,7 +22,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import SearchResults from "./pages/SearchResults/SearchResult";
 
 const UserContext = createContext();
-export const BASE_URL = "http://139.59.105.114";
+export const BASE_URL = "http://139.59.105.114/api/v1";
 
 function App() {
   // This is temporary, will have to implement login feature

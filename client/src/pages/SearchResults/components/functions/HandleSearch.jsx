@@ -10,7 +10,7 @@ const HandleSearch = async ({
   setTutors,
 }) => {
   console.log(inputStr, minPrice, maxPrice, filterCriteria);
-  const response = await axios.get(`${BASE_URL}/api/v1/tutor`, {
+  const response = await axios.get(`${BASE_URL}/tutor`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

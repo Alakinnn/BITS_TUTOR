@@ -11,15 +11,11 @@ function CheckTypeToRender(arg) {
     return (
       <>
         {role == "tutor" ? (
-          <Link
-            to={`/tutorMeetingSession/${arg.event.extendedProps.sessionId}`}
-          >
+          <Link to={`/tutorSession/${arg.event.extendedProps.sessionId}`}>
             {<Upcoming event={arg} />}
           </Link>
         ) : (
-          <Link
-            to={`/studentMeetingSession/${arg.event.extendedProps.sessionId}`}
-          >
+          <Link to={`/studentSession/${arg.event.extendedProps.sessionId}`}>
             {<Upcoming event={arg} />}
           </Link>
         )}
