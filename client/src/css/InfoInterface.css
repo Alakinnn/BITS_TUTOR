@@ -214,11 +214,25 @@ button {
   .participant.student {
     margin-top: 12%;
   }
+
+  /*  tutor button*/
+  .line.accessToURLs .buttons{
+    padding-top: 5%;
+  }
+  .line.accessToURLs .buttons input{
+    width: 65%;
+    font-size: 65%;
+  }
+
+  .line.accessToURLs .buttons .blueButton {
+    width: 35%;
+    font-size: 50%;
+  }
+
 }
 
 @media only screen and (min-width: 459px) and (max-width: 768px) {
   .meetingInfo {
-    /* margin-top: 10.7%; */
     margin-left: 3.5%;
     padding: 4%;
     width: 55%;
@@ -280,6 +294,22 @@ button {
     padding-bottom: 5%;
     font-weight: 500;
   }
+
+   /*  tutor button*/
+   .line.accessToURLs .buttons{
+    padding-top: 1%;
+  }
+  .line.accessToURLs .buttons input{
+    width: 65%;
+    font-size: 75%;
+  }
+
+  .line.accessToURLs .buttons .blueButton {
+    width: 35%;
+    height: 95%;
+    font-size: 60%;
+  }
+
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -361,6 +391,22 @@ button {
   .tutor {
     margin-top: 10%;
   }
+
+  /*  tutor button*/
+  .line.accessToURLs .buttons{
+    padding-top: 1%;
+  }
+  .line.accessToURLs .buttons input{
+    width: 75%;
+    height: fit-content;
+    font-size: 120%;
+  }
+
+  .line.accessToURLs .buttons .blueButton {
+    width: 35%;
+    height: 100%;
+    font-size: 100%;
+  }
 }
 
 @media (min-width: 1200px) and (max-width: 2560px) {
@@ -415,4 +461,21 @@ button {
   .tutor {
     margin-top: 9%;
   }
+
+  /*  tutor button*/
+  .line.accessToURLs .buttons{
+    padding-top: 1%;
+  }
+  .line.accessToURLs .buttons input{
+    width: 75%;
+    height: fit-content;
+    font-size: 120%;
+  }
+
+  .line.accessToURLs .buttons .blueButton {
+    width: 35%;
+    height: 100%;
+    font-size: 100%;
+  }
+
 }
