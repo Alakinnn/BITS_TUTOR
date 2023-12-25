@@ -1,12 +1,13 @@
 import React from "react";
 import axios from "axios";
 const token = localStorage.getItem("token");
+import { BASE_URL } from "../../../App";
 
 export async function ApproveRequest({ requestId }) {
-  console.log("Request ID", requestId);
-  console.log("Token", token);
+  // console.log("Request ID", requestId);
+  // console.log("Token", token);
   const response = await axios.post(
-    `http://139.59.105.114/api/v1/sessionRequest/${requestId}/approve`,
+    `${BASE_URL}/sessionRequest/${requestId}/approve`,
     {},
     {
       headers: {

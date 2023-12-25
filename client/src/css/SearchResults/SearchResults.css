@@ -15,6 +15,7 @@ body {
 }
 
 .dropdown {
+  width: 100%;
   position: relative;
   margin: 2em;
 }

@@ -1,41 +1,36 @@
 import React from "react";
 import axios from "axios";
+import { BASE_URL } from "../App";
 const token = localStorage.getItem("token");
 
 export async function getCurrentRequests(studentId) {
-  const response = await axios.get(
-    `http://139.59.105.114/api/v1/sessionRequest`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      params: { studentId: `${studentId}` },
-    }
-  );
+  const response = await axios.get(`${BASE_URL}/sessionRequest`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    params: { studentId: `${studentId}` },
+  });
   return response.data;
 }
 
 export async function getTutorSessions(tutorId) {
-  const response = await axios.get(`http://139.59.105.114/api/v1/session`, {
+  const response = await axios.get(`${BASE_URL}/session`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
     params: { tutorId: `${tutorId}` },
   });
-  console.log("Respond data: ",response);
+  console.log("Respond data: ", response);
   return response.data;
 }
 export async function getStudentRequests(tutorId) {
   console.log(tutorId);
-  const response = await axios.get(
-    `http://139.59.105.114/api/v1/sessionRequest`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      params: { tutorId: `${tutorId}` },
-    }
-  );
+  const response = await axios.get(`${BASE_URL}/sessionRequest`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    params: { tutorId: `${tutorId}` },
+  });
   return response.data;
 }
 // Get tutor and student requests

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { BASE_URL } from "../../../App";
 const token = localStorage.getItem("token");
 
 export async function CreateRequest({
@@ -7,15 +8,11 @@ export async function CreateRequest({
   setRequest,
   defaultRequest,
 }) {
-  const response = await axios.post(
-    `http://139.59.105.114/api/v1/sessionRequest`,
-    newRequest,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const response = await axios.post(`${BASE_URL}/sessionRequest`, newRequest, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
   console.log(response);
   setRequest(defaultRequest);
 }
