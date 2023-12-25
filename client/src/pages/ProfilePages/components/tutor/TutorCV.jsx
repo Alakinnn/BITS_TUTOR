@@ -21,7 +21,7 @@ const TutorCV = ({ tutor }) => {
           </a>
         </MDBCardText>
         <MDBContainer className="h-100">
-          <iframe height={"80%"} width={"100%"} src={tutor.cvUrl}></iframe>
+          <embed height={"80%"} width={"100%"} src={tutor.cvUrl}></embed>
         </MDBContainer>
         {/* <MDBCardText className="mb-1" style={{ fontSize: ".77rem" }}>
           Web Design

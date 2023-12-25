@@ -26,7 +26,7 @@ function SchedulingContainer() {
   const userId = user._id;
   const dispatch = useDispatch();
   const requests = useSelector(selectRequestList);
-  console.log("Request list: ", requests);
+  // console.log("Request list: ", requests);
   const [sessions, setSessions] = useState([]);
 
   const renderRequest = async () => {
