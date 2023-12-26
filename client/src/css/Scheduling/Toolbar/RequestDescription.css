@@ -100,6 +100,14 @@
   background-color: #cac2fc;
 }
 
+.approve:hover{
+  background-color: #dbd8ee;
+}
+
 .decline {
-  background-color: #eaeaea;
+  background-color: #d7d5d5;
+}
+
+.decline:hover{
+  background-color: #ffffff;
 }
