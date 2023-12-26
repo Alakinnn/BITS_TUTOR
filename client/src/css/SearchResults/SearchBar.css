@@ -1,0 +1,19 @@
+.col-md-12 {
+  width: 52%;
+  margin: 0 auto;
+}
+
+.form-control {
+  border-radius: 1.5rem;
+}
+
+.input-group-btn .btn {
+  height: 100%;
+  border-radius: 0 1.5rem 1.5rem 0;
+  background-color: #3788d8;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background-color: #89bff4;
+}

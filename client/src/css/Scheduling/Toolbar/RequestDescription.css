@@ -1,6 +1,6 @@
 .toolbar-description {
   width: 100%;
-  margin-top: 35%;
+  /* margin-top: 35%; */
   background-color: #fafafa;
 }
 
@@ -12,7 +12,6 @@
 
 .description-user-profile img {
   width: 8%;
-  height: 8%;
   margin-top: 6%;
   left: 5%;
   margin-left: 10%;
