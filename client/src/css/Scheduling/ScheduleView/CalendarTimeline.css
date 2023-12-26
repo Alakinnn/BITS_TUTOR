@@ -62,3 +62,19 @@
 .fc-direction-ltr{
     height: 100%;
 }
+
+@media screen  and (max-width: 767px) {
+    .fc-toolbar-chunk {
+        margin-top: 5%;
+        font-size: 75%;
+    }
+
+    .fc-scrollgrid-sync-inner a{
+        font-size: xx-small;
+    }
+
+    .fc-timegrid-slot-label-frame.fc-scrollgrid-shrink-frame{
+        font-size: x-small;
+    }
+    
+}
