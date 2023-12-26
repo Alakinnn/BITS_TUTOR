@@ -135,18 +135,6 @@ button {
 }
 
 @media only screen and (max-width: 459px) {
-
-  #summary-title .title {
-    font-size: 200%;
-    margin-bottom: 4%;
-    margin-left: 3%;
-  }
-
-  #summary-title .content {
-    font-size: 65%;
-    
-  }
-  
   .meetingInfo {
     /* margin-top: 10.7%; */
     margin-left: 3.5%;

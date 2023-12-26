@@ -4,7 +4,10 @@
     flex-direction: column;
 }
 
-
+.upper-info {
+    display: flex;
+    border-bottom: solid 1px #000000;
+}
 
 #summary-title {
     display: flex;
@@ -25,13 +28,13 @@
     padding-top: 2%;
 }
 
-/* #summary-filters {
+#summary-filters {
     display: flex;
     gap: 5%;
     position: absolute;
     right: 5%;
     max-width: 50%;
-} */
+}
 
 .summary-filter-checker {
     display: flex;

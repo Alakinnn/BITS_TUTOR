@@ -141,7 +141,7 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
                       src={request}
                       alt="View Requests Icon"
                     ></img>
-                    Accept Requests
+                    Accepted Requests
                     {/* <FontAwesomeIcon icon={faCaretDown} /> */}
                   </button>
                 </span>
