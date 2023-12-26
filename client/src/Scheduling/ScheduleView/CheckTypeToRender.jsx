@@ -3,14 +3,13 @@ import Upcoming from "./EventBox/Upcoming";
 import Completed from "./EventBox/Completed";
 import Cancelled from "./EventBox/Cancelled";
 import { Link } from "react-router-dom";
-
-const role = "tutor";
+import { useAuth } from "../../contexts/AuthContext";
 
 function CheckTypeToRender(arg) {
   if (arg.event.extendedProps.type === "inactive") {
     return (
       <>
-        {role == "tutor" ? (
+        {arg.event.extendedProps.role == "tutor" ? (
           <Link to={`/tutorSession/${arg.event.extendedProps.sessionId}`}>
             {<Upcoming event={arg} />}
           </Link>
