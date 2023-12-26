@@ -62,6 +62,7 @@ function App() {
         <UserContext.Provider value={user}>
           <Routes>
             {/* This is the test route for dev the footer */}
+            <Route path="/" element={<HomePage />} />
 
             <Route path="/footerTest" element={<Footer />} />
 
