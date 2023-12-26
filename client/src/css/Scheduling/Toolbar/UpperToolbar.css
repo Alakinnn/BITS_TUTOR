@@ -47,7 +47,7 @@
     max-height: 25vh;
 }   
 
-.dropdown {
+.toolbar-dropdown {
     width: 100%;
     max-width: 47rem;
     position: relative;
@@ -72,6 +72,7 @@
 
 .dropdown_list {
     width: 100%;
+    margin: 0em;
     border-radius: 4px;
     padding: 0;
     overflow: scroll;

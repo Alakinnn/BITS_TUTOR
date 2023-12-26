@@ -3,6 +3,9 @@
   display: flex;
 }
 
+p {
+  margin-bottom: 0 !important;
+}
 /* Meeting Info Styling: */
 .meetingInfo {
   margin-top: 10.7%;
@@ -42,16 +45,16 @@
 }
 
 button {
-    padding: 10%;
-    text-align: center;
+  padding: 10%;
+  text-align: center;
 }
 
-.blueButton{
-    background-color: #6AB3E8;
+.blueButton {
+  background-color: #6ab3e8;
 }
 
-.blueButton:hover{
-    background-color: #5A9CD6;
+.blueButton:hover {
+  background-color: #5a9cd6;
 }
 
 .buttons input {
@@ -68,25 +71,22 @@ button {
   margin-top: 4%;
 }
 
-
 /* Start Buttons */
 
-
 /*Sessions has not started yet*/
-.buttons .textNotice{
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+.buttons .textNotice {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 /* End Button */
 
 .buttons .endSession {
-    background-color: #FB6868;
+  background-color: #fb6868;
 }
 
 .buttons .endSession:hover {
-    background-color: #E85A5A;
+  background-color: #e85a5a;
 }
-
 
 /* Participants Styling:  */
 .meetingParticipants {
@@ -113,6 +113,369 @@ button {
 }
 
 .participant img {
-    width: 14%;
+  width: 14%;
+  margin-bottom: 5%;
+}
+
+.meetingInfo .pictureTitle {
+  width: 6%;
+}
+
+.meetingInfo .title {
+  text-align: center;
+  justify-content: center;
+}
+
+.meetingInfo:hover {
+  background-color: #ccc;
+}
+
+.meetingParticipants:hover {
+  background-color: #ccc;
+}
+
+@media only screen and (max-width: 459px) {
+  .meetingInfo {
+    /* margin-top: 10.7%; */
+    margin-left: 3.5%;
+    padding: 4%;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+    line-height: 1;
+    font-size: smaller;
+  }
+  .meetingParticipants {
+    margin-top: 10.7%;
+    margin-left: 2.5%;
+    padding: 3%;
+    width: 40%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+  }
+  .participant img {
+    width: 12%;
     margin-bottom: 5%;
+  }
+
+  .meetingInfo .pictureTitle {
+    width: 7%;
+    margin-top: 5%;
+  }
+
+  .heading {
+    font-size: 170%;
+    margin-top: 5%;
+    padding-top: 10%;
+    font-weight: 500;
+  }
+
+  .description {
+    margin-top: 10%;
+  }
+
+  .time.line {
+    margin-top: 10%;
+  }
+  .line .date {
+    font-size: 70%;
+    padding-top: 6%;
+    font-weight: 500;
+  }
+  .line.accessToURLs {
+    margin-top: 8%;
+  }
+  .description .time {
+    font-size: 70%;
+    padding-top: 6.5%;
+    font-weight: 500;
+  }
+  .textNotice {
+    font-size: 80%;
+    padding-top: 8%;
+    font-weight: 500;
+  }
+
+  .participants {
+    font-size: 100%;
+    margin-top: 5%;
+    padding-top: 16%;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+  }
+  .name-users {
+    font-size: 60%;
+    padding-bottom: 5%;
+    font-weight: 500;
+  }
+  .participant.student {
+    margin-top: 12%;
+  }
+
+  /*  tutor button*/
+  .line.accessToURLs .buttons{
+    padding-top: 5%;
+  }
+  .line.accessToURLs .buttons input{
+    width: 65%;
+    font-size: 65%;
+  }
+
+  .line.accessToURLs .buttons .blueButton {
+    width: 35%;
+    font-size: 50%;
+  }
+
+}
+
+@media only screen and (min-width: 459px) and (max-width: 768px) {
+  .meetingInfo {
+    margin-left: 3.5%;
+    padding: 4%;
+    width: 55%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+    line-height: 1;
+    font-size: smaller;
+  }
+  .meetingParticipants {
+    margin-top: 10.7%;
+    margin-left: 2.5%;
+    padding: 3%;
+    width: 35%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+  }
+  .meetingInfo .pictureTitle {
+    width: 5.5%;
+  }
+  .participant img {
+    width: 12%;
+    margin-bottom: 5%;
+  }
+
+  .heading {
+    font-size: 200%;
+    margin-top: 9%;
+  }
+
+  .description {
+    margin-top: 7%;
+  }
+  .line .date {
+    font-size: 100%;
+    padding-top: 2%;
+    font-weight: 500;
+  }
+
+  .line.accessToURLs {
+    margin-top: 8%;
+  }
+  .textNotice {
+    font-size: 150%;
+    padding-top: 1%;
+    font-weight: 500;
+  }
+  .participants {
+    font-size: 135%;
+    margin-top: 1%;
+    padding-top: 16%;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+  }
+  .name-users {
+    font-size: 85%;
+    padding-bottom: 5%;
+    font-weight: 500;
+  }
+
+   /*  tutor button*/
+   .line.accessToURLs .buttons{
+    padding-top: 1%;
+  }
+  .line.accessToURLs .buttons input{
+    width: 65%;
+    font-size: 75%;
+  }
+
+  .line.accessToURLs .buttons .blueButton {
+    width: 35%;
+    height: 95%;
+    font-size: 60%;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .meetingInfo {
+    /* margin-top: 10.7%; */
+    margin-left: 5.5%;
+    padding: 4%;
+    width: 55%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+    line-height: 1;
+    font-size: smaller;
+  }
+  /* .meetingParticipants {
+    margin-top: 10.7%;
+    margin-left: 2.5%;
+    padding: 3%;
+    width: 35%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    background-color: #d9d9d9;
+  } */
+
+  .meetingInfo .pictureTitle {
+    width: 5%;
+  }
+  .participant img {
+    width: 22%;
+    margin-bottom: 5%;
+  }
+
+  .heading {
+    font-size: 250%;
+    margin-top: 4%;
+  }
+
+  .description {
+    margin-top: 7%;
+  }
+  .line .date {
+    font-size: 150%;
+    padding-top: 1%;
+    font-weight: 500;
+  }
+  .description .time {
+    font-size: 150%;
+    padding-top: 1%;
+    font-weight: 500;
+  }
+  .line.accessToURLs {
+    margin-top: 8%;
+  }
+  .textNotice {
+    font-size: 200%;
+    padding-top: 5%;
+  }
+
+  .participants {
+    font-size: 135%;
+    margin-top: 6%;
+    padding-top: 16%;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+  }
+  .name-users {
+    font-size: 120%;
+    padding-bottom: 5%;
+    font-weight: 500;
+  }
+  .student {
+    margin-top: 15%;
+  }
+
+  .participant.tutor {
+    margin-top: 12%;
+  }
+  .tutor {
+    margin-top: 10%;
+  }
+
+  /*  tutor button*/
+  .line.accessToURLs .buttons{
+    padding-top: 1%;
+  }
+  .line.accessToURLs .buttons input{
+    width: 75%;
+    height: fit-content;
+    font-size: 120%;
+  }
+
+  .line.accessToURLs .buttons .blueButton {
+    width: 35%;
+    height: 100%;
+    font-size: 100%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 2560px) {
+  .meetingInfo .pictureTitle {
+    width: 4.5%;
+  }
+  .participant img {
+    width: 18%;
+  }
+
+  .heading {
+    font-size: 400%;
+  }
+
+  .description {
+    margin-top: 4%;
+  }
+  .line .date {
+    font-size: 200%;
+
+    font-weight: 500;
+  }
+
+  .line.accessToURLs {
+    margin-top: 10%;
+  }
+  .description .time {
+    font-size: 200%;
+
+    font-weight: 500;
+  }
+  .textNotice {
+    font-size: 230%;
+    font-weight: 500;
+  }
+  .participants {
+    font-size: 250%;
+    margin-top: 6%;
+    padding-top: 16%;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+  }
+  .name-users {
+    font-size: 200%;
+    font-weight: 500;
+    padding-bottom: 5%;
+  }
+  .student {
+    margin-top: 15%;
+  }
+  .tutor {
+    margin-top: 9%;
+  }
+
+  /*  tutor button*/
+  .line.accessToURLs .buttons{
+    padding-top: 1%;
+  }
+  .line.accessToURLs .buttons input{
+    width: 75%;
+    height: fit-content;
+    font-size: 120%;
+  }
+
+  .line.accessToURLs .buttons .blueButton {
+    width: 35%;
+    height: 100%;
+    font-size: 100%;
+  }
+
 }

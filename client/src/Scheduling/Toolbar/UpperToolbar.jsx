@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 import { selectRequestList } from "../../slices/requestListSlice";
 
 const UpperToolbar = ({ setSelectedRequest, role }) => {
-
   // console.log(requestList)
   // const [showRequests, setShowRequests] = useState(true);
   // const hideRequests = () => {
@@ -18,16 +17,11 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
   const requestList = useSelector(selectRequestList);
   // console.log("Request list: ",requestList);
 
-
-
-
   // Return the request by id from the requestList
   const getRequestByKey = (key) => {
     let selectedRequest = requestList.find((request) => request._id === key);
-    // console.log(requestList.find((request) => request._id === key))
     setSelectedRequest(selectedRequest);
   };
-
 
   const renderRequestList = (requestList) => {
     // Map over the filtered list and render the components
@@ -53,10 +47,12 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
   };
 
   const renderRequestListByStatus = (requestList, status) => {
-        // Filter the requestList by status
-        requestList = requestList.filter((request) => {return request.status === status;});
+    // Filter the requestList by status
+    let newRequestList = requestList.filter((request) => {
+      return request.status === status;
+    });
     // Map over the filtered list and render the components
-    return requestList.map((request) => (
+    return newRequestList.map((request) => (
       <li
         className="dropdown_item"
         onClick={() => getRequestByKey(request._id)}
@@ -83,7 +79,7 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
           {/* toolbar request */}
           <div className="toolbar-requests">
             {/* <!-- view request --> */}
-            <div className="dropdown">
+            <div className="toolbar-dropdown">
               <div className="dropdown_select">
                 <span className="dropdown_selected">
                   <button className="view-request">
@@ -132,7 +128,7 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
             <div className="toolbar-requests-dropdown">
               {/* <!-- Request notification --> */}
               <ul className="dropdown_list pending">
-              {renderRequestListByStatus(requestList, "pending")}
+                {renderRequestListByStatus(requestList, "pending")}
               </ul>
             </div>
             {/* <!-- Accepted Requests --> */}

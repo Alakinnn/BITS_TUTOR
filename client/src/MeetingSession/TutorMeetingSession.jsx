@@ -5,28 +5,36 @@ import InitZoom from "./InitZoom";
 import MeetingSessionContainer from "./MeetingSessionContainer";
 import "../css/MeetingSession.css";
 import { useParams } from "react-router-dom";
+import { BASE_URL } from "../App";
+const token = localStorage.getItem("token");
 
 // TUTOR
 const TutorMeetingSession = () => {
-  const sessionId = useParams().parameter;
+  const { sessionId } = useParams();
   const [session, setSession] = useState({});
-  const [sessionActive, setSessionActive] = useState(false);
+  const [sessionActive, setSessionActive] = useState("");
 
+  // declare the data fetching function
+  const fetchData = async () => {
+    console.log("Token", token);
+    console.log("Session ID", sessionId);
+    const response = await axios.get(
+      `${BASE_URL}/session/${sessionId}`,
+
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    console.log(response.data);
+    setSession(response.data);
+    setSessionActive(response.data.status);
+  };
   useEffect(() => {
-    // declare the data fetching function
-    const fetchData = async () => {
-      const response = await axios.get(
-        `http://139.59.105.114/api/v1/session/${sessionId}`
-      );
-      console.log(response.data);
-      setSession(response.data);
-    };
-
     // call the function
-    fetchData()
-      // make sure to catch any error
-      .catch(console.error);
-  }, []);
+    fetchData();
+  }, [sessionId]);
 
   const [inputUrl, setInputUrl] = useState("");
 
@@ -38,14 +46,20 @@ const TutorMeetingSession = () => {
     //  Send update request to backend
     // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
     const response = await axios.post(
-      `http://139.59.105.114/api/v1/session/${sessionId}/start`,
+      `${BASE_URL}/session/${sessionId}/start`,
       {
         liveShareUrl: inputUrl,
+      },
+
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
     );
     setInputUrl("");
-    // window.location.href = "/tutor";
-    setSessionActive(true);
+    window.open(response.data.liveShareUrl);
+    setSessionActive("active");
     console.log(response);
     InitZoom(response.data.session);
   };
@@ -56,11 +70,16 @@ const TutorMeetingSession = () => {
     //  Send update request to backend
     // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
     const response = await axios.post(
-      `http://139.59.105.114/api/v1/session/${sessionId}/end`,
-      {}
+      `${BASE_URL}/session/${sessionId}/end`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     );
     console.log(response);
-    setSessionActive(false);
+    setSessionActive("completed");
   };
 
   return (
