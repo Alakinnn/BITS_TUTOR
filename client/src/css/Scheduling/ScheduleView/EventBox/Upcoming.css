@@ -26,21 +26,36 @@
     font-weight: 600;
     position: absolute;
     top: 1rem;
+    margin: 0.1rem;
+    font-size: 0.5rem;
 }
 
 .upcoming-event-description b h5 {
     font-weight: 700;
     position: absolute;
     top: 0;
+    font-size: 0.7rem;
 }
 
 .upcoming-event-description h6 {
     font-weight: 450;
     position: absolute;
     bottom: 0;
+    margin: 0.2rem;
+    font-size: 0.7rem;
 }
 
 .fc-v-event {
     border: none;
 }
 
+@media screen and (max-width: 1000px){
+    .upcoming-event-description h6 {
+        font-weight: 450;
+        position: absolute;
+        bottom: 0;
+        margin: 0.2rem;
+        font-size: 0.4rem;
+    }
+    
+}

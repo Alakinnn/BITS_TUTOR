@@ -45,12 +45,18 @@
     font-size: 0.7rem;
 }
 
-.completed-event-description h5 h6{
-    font-size: 1rem;
-
-}
 
 .fc-v-event {
     border: none;
+}
+
+@media screen and (max-width: 1000px){
+    .completed-event-description h6 {
+        font-weight: 450;
+        position: absolute;
+        bottom: 0;
+        margin: 0.2rem;
+        font-size: 0.4rem;
+    }
 }
 
