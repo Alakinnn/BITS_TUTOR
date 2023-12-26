@@ -5,6 +5,7 @@ import requestImg from "/images/request.png";
 import user from "/src/assets/footer/circle.svg";
 import { useSelector } from "react-redux";
 import { selectRequestList } from "../../slices/requestListSlice";
+import { formatDate } from "./RequestFunctions/DateTimeFormat";
 
 const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
   // console.log(requestList)
@@ -160,26 +161,6 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
     default:
       break;
   }
-};
-
-const formatDate = (dateString) => {
-  // Convert the date string into a Date object
-  let dateObj = new Date(dateString);
-  // Get the time portion of the Date object
-  const timeString = dateObj.toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-    timeZone: "UTC",
-  });
-
-  // Determine if it's AM or PM
-  const period = dateObj.getHours() < 12 ? "am" : "pm";
-
-  // Format the final time string
-  const formattedTime = `${timeString}${period}`;
-
-  return formattedTime;
 };
 
 export default UpperToolbar;
