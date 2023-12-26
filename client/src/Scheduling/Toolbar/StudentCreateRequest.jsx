@@ -4,7 +4,12 @@ import user from "/src/assets/footer/circle-user.svg";
 import "../../css/Scheduling/Toolbar/ToolbarRequest.css";
 import BookingSession from "./BookingSession";
 
-const StudentCreateRequest = ({ tutorId, studentId }) => {
+const StudentCreateRequest = ({
+  tutorId,
+  studentId,
+  submitCounter,
+  setSubmitCounter,
+}) => {
   const [removeClass, setRemoveClass] = useState(false);
   const defaultRequest = {
     title: "",
@@ -91,6 +96,8 @@ const StudentCreateRequest = ({ tutorId, studentId }) => {
             request={request}
             setRequest={setRequest}
             defaultRequest={defaultRequest}
+            submitCounter={submitCounter}
+            setSubmitCounter={setSubmitCounter}
           />
         </div>
       </div>

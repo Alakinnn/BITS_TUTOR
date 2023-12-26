@@ -6,7 +6,7 @@ import user from "/src/assets/footer/circle.svg";
 import { useSelector } from "react-redux";
 import { selectRequestList } from "../../slices/requestListSlice";
 
-const UpperToolbar = ({ setSelectedRequest, role }) => {
+const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
   // console.log(requestList)
   // const [showRequests, setShowRequests] = useState(true);
   // const hideRequests = () => {
@@ -14,7 +14,6 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
   // const [showRequests, setShowRequests] = useState(false);
 
   // Select the requestList from the store
-  const requestList = useSelector(selectRequestList);
   // console.log("Request list: ",requestList);
 
   // Return the request by id from the requestList
@@ -72,6 +71,7 @@ const UpperToolbar = ({ setSelectedRequest, role }) => {
       </li>
     ));
   };
+
   switch (role) {
     case "tutor":
       return (

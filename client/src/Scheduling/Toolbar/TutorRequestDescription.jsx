@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import user from "/src/assets/footer/circle-user.svg";
 import "../../css/Scheduling/Toolbar/RequestDescription.css";
-import { useDispatch, useSelector } from "react-redux";
-import { renderRequestList, selectRequestList } from "../../slices/requestListSlice";
 import { getRequests } from "../TutorScheduling";
 import { ApproveRequest } from "./RequestFunctions/ApproveRequest";
 import { DenyRequest } from "./RequestFunctions/DenyRequest";
 import { useAuth } from "../../contexts/AuthContext";
 
-function TutorRequestDescription({ selectedRequest, role }) {
+function TutorRequestDescription({
+  selectedRequest,
+  role,
+  submitCounter,
+  setSubmitCounter,
+}) {
   const { user } = useAuth();
-  const dispatch = useDispatch();
-  const requests = useSelector(selectRequestList);
   const [renderObject, setRenderObject] = useState(null);
   useEffect(() => {
     // prevent student username for null and/or undefine
@@ -66,8 +67,7 @@ function TutorRequestDescription({ selectedRequest, role }) {
             className="approve"
             onClick={async () => {
               await ApproveRequest({ requestId: selectedRequest?._id });
-              // remove the request from the list
-              dispatch(renderRequestList(await getRequests(role, user._id)));
+              setSubmitCounter(submitCounter + 1);
               // console.log("New request list: ", requests);
             }}
           >
@@ -77,8 +77,7 @@ function TutorRequestDescription({ selectedRequest, role }) {
             className="decline"
             onClick={async () => {
               await DenyRequest({ requestId: selectedRequest?._id });
-              // remove the request from the list
-              dispatch(renderRequestList(await getRequests(role, user._id)));
+              setSubmitCounter(submitCounter + 1);
             }}
           >
             Decline

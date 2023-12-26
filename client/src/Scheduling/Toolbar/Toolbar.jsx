@@ -3,7 +3,14 @@ import "../../css/Scheduling/Toolbar/Toolbar.css";
 import TutorRequestDescription from "./TutorRequestDescription";
 import StudentCreateRequest from "./StudentCreateRequest";
 import UpperToolbar from "./UpperToolbar";
-function Toolbar({ role, tutorId, studentId }) {
+function Toolbar({
+  role,
+  tutorId,
+  studentId,
+  requestList,
+  setSubmitCounter,
+  submitCounter,
+}) {
   const [selectedRequest, setSelectedRequest] = React.useState({});
   // console.log(selectedRequest)
   const renderComponentInside = () => {
@@ -11,18 +18,29 @@ function Toolbar({ role, tutorId, studentId }) {
       case "tutor":
         return (
           <>
-            <UpperToolbar setSelectedRequest={setSelectedRequest} role={role} />
+            <UpperToolbar
+              setSelectedRequest={setSelectedRequest}
+              role={role}
+              requestList={requestList}
+            />
             <TutorRequestDescription
               selectedRequest={selectedRequest}
               role={role}
+              submitCounter={submitCounter}
+              setSubmitCounter={setSubmitCounter}
             />
           </>
         );
       case "student":
         return (
           <>
-            <UpperToolbar role={role} />
-            <StudentCreateRequest studentId={studentId} tutorId={tutorId} />
+            <UpperToolbar role={role} requestList={requestList} />
+            <StudentCreateRequest
+              studentId={studentId}
+              tutorId={tutorId}
+              submitCounter={submitCounter}
+              setSubmitCounter={setSubmitCounter}
+            />
           </>
         );
 
