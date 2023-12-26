@@ -9,21 +9,42 @@
 }
 
 @media screen and (max-width: 768px) {
-  .scheduling-container{
+  .scheduling-container {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
-  .toolbar{
+  .toolbar {
     width: 100%;
     float: right;
     margin-bottom: 5em;
   }
 
-  .schedule-view{
+  .schedule-view {
     width: 100%;
     float: left;
   }
-  
+}
+
+@media screen and (min-width: 769) and (max-width: 2560px) {
+  .upper-info {
+    display: flex;
+    border-bottom: solid 1px #000000;
+  }
+
+  #summary-filters {
+    display: flex;
+    gap: 5%;
+    position: absolute;
+    right: 5%;
+    max-width: 50%;
+  }
+  label {
+    margin-left: 50%;
+  }
+  .summary-filter-checker {
+    display: flex;
+    align-items: center;
+  }
 }

@@ -216,10 +216,10 @@ button {
   }
 
   /*  tutor button*/
-  .line.accessToURLs .buttons{
+  .line.accessToURLs .buttons {
     padding-top: 5%;
   }
-  .line.accessToURLs .buttons input{
+  .line.accessToURLs .buttons input {
     width: 65%;
     font-size: 65%;
   }
@@ -228,7 +228,6 @@ button {
     width: 35%;
     font-size: 50%;
   }
-
 }
 
 @media only screen and (min-width: 459px) and (max-width: 768px) {
@@ -295,11 +294,11 @@ button {
     font-weight: 500;
   }
 
-   /*  tutor button*/
-   .line.accessToURLs .buttons{
+  /*  tutor button*/
+  .line.accessToURLs .buttons {
     padding-top: 1%;
   }
-  .line.accessToURLs .buttons input{
+  .line.accessToURLs .buttons input {
     width: 65%;
     font-size: 75%;
   }
@@ -309,7 +308,6 @@ button {
     height: 95%;
     font-size: 60%;
   }
-
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -393,10 +391,10 @@ button {
   }
 
   /*  tutor button*/
-  .line.accessToURLs .buttons{
+  .line.accessToURLs .buttons {
     padding-top: 1%;
   }
-  .line.accessToURLs .buttons input{
+  .line.accessToURLs .buttons input {
     width: 75%;
     height: fit-content;
     font-size: 120%;
@@ -463,10 +461,10 @@ button {
   }
 
   /*  tutor button*/
-  .line.accessToURLs .buttons{
+  .line.accessToURLs .buttons {
     padding-top: 1%;
   }
-  .line.accessToURLs .buttons input{
+  .line.accessToURLs .buttons input {
     width: 75%;
     height: fit-content;
     font-size: 120%;
@@ -477,5 +475,4 @@ button {
     height: 100%;
     font-size: 100%;
   }
-
 }
