@@ -24,7 +24,10 @@ function TutorRequestDescription({
     } else {
       console.log("Student username is not available.");
     }
-
+    console.log("Selected request: ", selectedRequest);
+    if (selectedRequest.title == null) {
+      return;
+    }
     setRenderObject(
       <div className="toolbar-description">
         <div className="description-user-profile">
