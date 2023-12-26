@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./css/App.css";
 
-import Footer from "./Footer/Footer";
+import Footer from "./components/footer/Footer";
+
 import StudentMeetingSession from "./MeetingSession/StudentMeetingSession";
 import TutorMeetingSession from "./MeetingSession/TutorMeetingSession";
 // import Navbar from "./Header/Navbar";
@@ -21,6 +22,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import SearchResults from "./pages/SearchResults/SearchResult";
 
+import Header from "./components/header/Header";
 const UserContext = createContext();
 export const BASE_URL = "http://139.59.105.114/api/v1";
 
@@ -87,6 +89,7 @@ function App() {
               element={<PrivateRoute Component={StudentPublicProfilePage} />}
             />
 
+            <Route path="/test" element={<Header />} />
             <Route path="/login" element={<MAMLoginPage />} />
 
             <Route path="/register/student" element={<StudentRegisterPage />} />

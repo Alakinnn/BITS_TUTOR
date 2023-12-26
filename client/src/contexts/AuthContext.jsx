@@ -22,14 +22,16 @@ const AuthProvider = ({ children }) => {
         return true;
     };
 
-    const getUser = () => {
-        return user;
+    const getLocalUser = () => {
+        const localUser = JSON.parse(localStorage.getItem("user"));
+        return localUser;
     };
 
     const storeAuth = ({ newUser, newToken }) => {
         setUser(newUser);
         // Add to localStorage
         localStorage.setItem("token", newToken);
+        localStorage.setItem("user", JSON.stringify(newUser))
     };
 
     const removeAuth = () => {
@@ -37,11 +39,12 @@ const AuthProvider = ({ children }) => {
         setUser(null);
         // Remove from localStorage
         localStorage.removeItem("token");
+        localStorage.removeItem("user");
     };
 
     const value = {
         user,
-        getUser,
+        getLocalUser,
         setUser,
         isAuthenticated,
         storeAuth,
