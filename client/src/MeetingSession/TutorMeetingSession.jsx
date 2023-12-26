@@ -16,8 +16,8 @@ const TutorMeetingSession = () => {
 
   // declare the data fetching function
   const fetchData = async () => {
-    console.log("Token", token);
-    console.log("Session ID", sessionId);
+    // console.log("Token", token);
+    // console.log("Session ID", sessionId);
     const response = await axios.get(
       `${BASE_URL}/session/${sessionId}`,
 

@@ -5,10 +5,11 @@ import MeetingSessionContainer from "./MeetingSessionContainer";
 import { BASE_URL } from "../App";
 import "../css/MeetingSession.css";
 import { useParams } from "react-router-dom";
+const token = localStorage.getItem("token");
 
 // STUDENT
 const StudentMeetingSession = () => {
-  const sessionId = useParams().parameter;
+  const { sessionId } = useParams();
   // Only enable when time comes
   // request session data from backend
 
@@ -17,12 +18,12 @@ const StudentMeetingSession = () => {
   useEffect(() => {
     // declare the data fetching function
     const fetchData = async () => {
-      const response = await axios.get(`${BASE_URL}/v1/session/${sessionId}`, {
+      const response = await axios.get(`${BASE_URL}/session/${sessionId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      // console.log(response.data);
+      console.log(response.data);
       setSession(response.data);
     };
 
