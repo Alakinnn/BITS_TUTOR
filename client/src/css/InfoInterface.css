@@ -103,7 +103,7 @@ button {
   margin-top: 8%;
   display: flex;
   gap: 15%;
-  max-width: 80%;
+  max-width: 100%;
 }
 
 .meetingParticipants h2 {
@@ -322,21 +322,15 @@ button {
     line-height: 1;
     font-size: smaller;
   }
-  /* .meetingParticipants {
-    margin-top: 10.7%;
-    margin-left: 2.5%;
-    padding: 3%;
-    width: 35%;
-    border: 1px solid #ccc;
-    border-radius: 5%;
-    background-color: #d9d9d9;
-  } */
+  .meetingParticipants {
+    width: 30%;
+  }
 
   .meetingInfo .pictureTitle {
     width: 5%;
   }
   .participant img {
-    width: 22%;
+    width: 15%;
     margin-bottom: 5%;
   }
 
@@ -375,7 +369,7 @@ button {
     justify-content: center;
   }
   .name-users {
-    font-size: 120%;
+    font-size: 100%;
     padding-bottom: 5%;
     font-weight: 500;
   }
@@ -449,7 +443,7 @@ button {
     justify-content: center;
   }
   .name-users {
-    font-size: 200%;
+    font-size: 100%;
     font-weight: 500;
     padding-bottom: 5%;
   }
