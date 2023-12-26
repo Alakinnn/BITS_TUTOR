@@ -20,6 +20,8 @@ import StudentRegisterPage from "./pages/AuthenticationPages/Register/StudentReg
 import TutorRegisterPage from "./pages/AuthenticationPages/Register/TutorRegister";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
+import HomePage from "./pages/HomePages/HomePage";
+
 import SearchResults from "./pages/SearchResults/SearchResult";
 
 import Header from "./components/header/Header";
