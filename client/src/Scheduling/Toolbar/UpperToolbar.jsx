@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "../../css/Scheduling/Toolbar/UpperToolbar.css";
-import request from "/images/request.png";
+import requestImg from "/images/request.png";
 import user from "/src/assets/footer/circle.svg";
 import { useSelector } from "react-redux";
 import { selectRequestList } from "../../slices/requestListSlice";
@@ -23,6 +23,7 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
   };
 
   const renderRequestList = (requestList) => {
+    console.log("Request list: ", requestList);
     // Map over the filtered list and render the components
     return requestList.map((request) => (
       <li
@@ -85,7 +86,7 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
                   <button className="view-request">
                     <img
                       className="icon"
-                      src={request}
+                      src={requestImg}
                       alt="View Requests Icon"
                     ></img>
                     View Request
@@ -116,7 +117,7 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
                   <button className="view-request">
                     <img
                       className="icon"
-                      src={request}
+                      src={requestImg}
                       alt="View Requests Icon"
                     ></img>
                     Pending Requests
@@ -138,7 +139,7 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
                   <button className="view-request">
                     <img
                       className="icon"
-                      src={request}
+                      src={requestImg}
                       alt="View Requests Icon"
                     ></img>
                     Accepted Requests
@@ -165,10 +166,11 @@ const formatDate = (dateString) => {
   // Convert the date string into a Date object
   let dateObj = new Date(dateString);
   // Get the time portion of the Date object
-  const timeString = dateObj.toLocaleTimeString([], {
+  const timeString = dateObj.toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
+    timeZone: "UTC",
   });
 
   // Determine if it's AM or PM
