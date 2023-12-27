@@ -47,3 +47,22 @@ export const extractDate = (dateString) => {
 
   return formattedDate;
 };
+
+export const convertTimeToString = (dateTime) => {
+  if (dateTime) {
+    const selectedDate = new Date(dateTime);
+    const formattedDateTime = selectedDate.toISOString().slice(0, 19); // Format as YYYY-MM-DDTHH:mm:ss
+    return formattedDateTime;
+  }
+};
+
+export function convertStringToDateTime(dateTimeString) {
+  console.log(dateTimeString);
+  if (!dateTimeString) {
+    return null; // or handle the case when the string is empty
+  }
+
+  const dateTimeObject = new Date(dateTimeString);
+  console.log(dateTimeObject);
+  return dateTimeObject;
+}
