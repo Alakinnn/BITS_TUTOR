@@ -3,7 +3,6 @@
   display: flex;
   margin-top: 5%;
   margin-bottom: 5%;
-  margin-left: 9.5%;
 }
 
 p {
@@ -147,7 +146,6 @@ button {
     font-size: smaller;
   }
   .meetingParticipants {
-    margin-top: 10.7%;
     margin-left: 2.5%;
     padding: 3%;
     width: 40%;
@@ -230,6 +228,16 @@ button {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .meetingSession {
+    width: 100%;
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 9.5%;
+  }
+}
+
 @media only screen and (min-width: 459px) and (max-width: 768px) {
   .meetingInfo {
     margin-left: 3.5%;
@@ -242,7 +250,6 @@ button {
     font-size: smaller;
   }
   .meetingParticipants {
-    margin-top: 10.7%;
     margin-left: 2.5%;
     padding: 3%;
     width: 35%;
