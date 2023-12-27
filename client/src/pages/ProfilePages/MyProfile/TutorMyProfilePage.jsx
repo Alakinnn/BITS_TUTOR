@@ -16,10 +16,14 @@ import TutorUserCardMyProfile from "../components/tutor/TutorUserCardMyProfile";
 import { useAuth } from "../../../contexts/AuthContext";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../../App";
+import Header from "/src/components/header/Header";
+import Footer from "/src/components/footer/Footer";
 export default function TutorMyProfilePage() {
   const { user } = useAuth();
 
   return (
+    <>
+      <Header />
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
         <MDBRow>
@@ -48,5 +52,7 @@ export default function TutorMyProfilePage() {
         </MDBRow>
       </MDBContainer>
     </section>
+      <Footer />
+    </>
   );
 }

@@ -19,6 +19,8 @@ import { getStudentSessions } from "../services/sessions";
 import { getStudentRequests } from "../services/requests";
 import axios from "axios";
 import { useAuth } from "../../../contexts/AuthContext";
+import Header from "/src/components/header/Header";
+import Footer from "/src/components/footer/Footer";
 
 export default function StudentMyProfilePage() {
   const student = useAuth().user;
@@ -48,6 +50,8 @@ export default function StudentMyProfilePage() {
   }, [student]);
 
   return (
+    <>
+    <Header />
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
         <MDBRow>
@@ -77,5 +81,7 @@ export default function StudentMyProfilePage() {
         </MDBRow>
       </MDBContainer>
     </section>
+    <Footer />
+    </>
   );
 }

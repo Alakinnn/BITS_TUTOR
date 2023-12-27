@@ -8,6 +8,8 @@ import { UserContext } from "../../../App";
 import { useContext, useEffect, useState } from "react";
 import { getTutor } from "../services/user";
 import { useParams } from "react-router-dom";
+import Header from "/src/components/header/Header";
+import Footer from "/src/components/footer/Footer";
 
 export default function TutorPublicProfilePage() {
     // const tutorId = "657f20c25877dc352dc7d18b"
@@ -27,6 +29,8 @@ export default function TutorPublicProfilePage() {
     }
 
     return (
+        <>
+            <Header />
         <section style={{ backgroundColor: "#eee" }}>
             <MDBContainer className="py-5">
                 <MDBRow>
@@ -55,5 +59,7 @@ export default function TutorPublicProfilePage() {
                 </MDBRow>
             </MDBContainer>
         </section>
+        <Footer />
+        </>
     );
 }

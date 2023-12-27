@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import "../css/Scheduling/SchedulingContainer.css";
 import Toolbar from "./Toolbar/Toolbar";
 import ScheduleView from "./ScheduleView/ScheduleView";
+import Header from "/src/components/header/Header";
+import Footer from "/src/components/footer/Footer";
+
 
 import {
   getTutorSessions,
@@ -52,6 +55,8 @@ function SchedulingContainer() {
   }, [submitCounter]);
 
   return (
+    <>
+    <Header />
     <div className="scheduling-container">
       <Toolbar
         role={role}
@@ -63,6 +68,8 @@ function SchedulingContainer() {
       />
       <ScheduleView sessionList={sessions} role={role} />
     </div>
+     <Footer />
+     </>
   );
 }
 

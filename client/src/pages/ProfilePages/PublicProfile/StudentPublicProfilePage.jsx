@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import StudentPersonalDetail from "../components/student/StudentPersonalDetail";
 import { getStudent } from "../services/user";
+import Header from "/src/components/header/Header";
+import Footer from "/src/components/footer/Footer";
 
 function StudentPublicProfilePage() {
     // const studentId = "6580286701da228ba974527b";
@@ -25,6 +27,8 @@ function StudentPublicProfilePage() {
     }
 
     return (
+        <>
+            <Header />
         <section style={{ backgroundColor: "#eee" }}>
             <MDBContainer className="py-5">
                 <MDBRow>
@@ -43,6 +47,8 @@ function StudentPublicProfilePage() {
                 </MDBRow>
             </MDBContainer>
         </section>
+            <Footer />
+        </>
     );
 }
 
