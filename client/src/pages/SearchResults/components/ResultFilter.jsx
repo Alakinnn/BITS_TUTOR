@@ -28,7 +28,7 @@ function ResultFilter({
       <h4>
         <span className="fw-semi-bold">Price Filtering</span>
       </h4>
-      <div class="dropdown">
+      <div class="dropdown-filter">
         <div class="select" onClick={() => Dropdown({ setFilterCriteria })}>
           <div class="selected">Default</div>
           <div class="caret"></div>

@@ -55,4 +55,8 @@
   .dropdown_list {
     height: 40vh;
   }
+
+  .summary-filter-checker label {
+    font-size: 70%;
+  }
 }

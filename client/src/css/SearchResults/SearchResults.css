@@ -14,13 +14,13 @@ body {
   margin: 0 auto;
 }
 
-.dropdown {
+.dropdown-filter {
   width: 100%;
   position: relative;
   margin: 2em;
 }
 
-.dropdown * {
+.dropdown-filter * {
   box-sizing: border-box;
 }
 
