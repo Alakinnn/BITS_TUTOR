@@ -51,37 +51,37 @@ export default function StudentMyProfilePage() {
 
   return (
     <>
-    <Header />
-    <section style={{ backgroundColor: "#eee" }}>
-      <MDBContainer className="py-5">
-        <MDBRow>
-          <MDBCol lg="4">
-            {/* User card profile */}
-            <StudentUserCardMyProfile student={student} />
+      <Header />
+      <section style={{ backgroundColor: "#eee" }}>
+        <MDBContainer className="py-5">
+          <MDBRow>
+            <MDBCol lg="4">
+              {/* User card profile */}
+              <StudentUserCardMyProfile student={student} />
 
-            {/* Social Links */}
-            <SocialLinks user={student} />
-          </MDBCol>
-          <MDBCol lg="8">
-            {/* Student Details */}
-            <StudentPersonalDetail student={student} />
+              {/* Social Links */}
+              <SocialLinks user={student} />
+            </MDBCol>
+            <MDBCol lg="8">
+              {/* Student Details */}
+              <StudentPersonalDetail student={student} />
 
-            <MDBRow>
-              <MDBCol md="6">
-                {/* Student Session */}
-                <StudentSessionList sessions={sessions} />
-              </MDBCol>
+              <MDBRow>
+                <MDBCol md="6">
+                  {/* Student Session */}
+                  <StudentSessionList sessions={sessions} />
+                </MDBCol>
 
-              <MDBCol md="6">
-                {/* Student Pending Request */}
-                <StudentPendingRequest requests={pendingRequests} />
-              </MDBCol>
-            </MDBRow>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-    </section>
-    <Footer />
+                <MDBCol md="6">
+                  {/* Student Pending Request */}
+                  <StudentPendingRequest requests={pendingRequests} />
+                </MDBCol>
+              </MDBRow>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </section>
+      <Footer />
     </>
   );
 }

@@ -9,6 +9,7 @@
   align-items: center;
   font-family: Open Sans;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .containerContentFooter {
@@ -45,14 +46,16 @@
   list-style-type: none;
 }
 
-.homeFooter, .aboutUsFooter{
+.homeFooter,
+.aboutUsFooter {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   justify-content: flex-start;
 }
 
-.homeTextFooter, .aboutUsTextFooter {
+.homeTextFooter,
+.aboutUsTextFooter {
   font-weight: 500;
   font-size: 1.25rem;
 }

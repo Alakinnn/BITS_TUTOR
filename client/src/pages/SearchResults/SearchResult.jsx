@@ -27,33 +27,33 @@ function SearchResult() {
 
   return (
     <>
-    <Header />
-    <div className="container">
-      <SearchBar
-        inputStr={inputStr}
-        setInputStr={setInputStr}
-        setTutors={setTutors}
-      />
-      <div className="row ng-scope">
-        <ResultFilter
+      <Header />
+      <div className="search-container">
+        <SearchBar
           inputStr={inputStr}
-          minPrice={minPrice}
-          maxPrice={maxPrice}
-          setMinPrice={setMinPrice}
-          setMaxPrice={setMaxPrice}
-          filterCriteria={filterCriteria}
-          setFilterCriteria={setFilterCriteria}
+          setInputStr={setInputStr}
           setTutors={setTutors}
         />
-        <div className="col-md-9 col-md-pull-3">
-          {tutors.map((tutor) => (
-            <ResultItem user={tutor} />
-          ))}
-          {/* <Pagination /> */}
+        <div className="row ng-scope">
+          <ResultFilter
+            inputStr={inputStr}
+            minPrice={minPrice}
+            maxPrice={maxPrice}
+            setMinPrice={setMinPrice}
+            setMaxPrice={setMaxPrice}
+            filterCriteria={filterCriteria}
+            setFilterCriteria={setFilterCriteria}
+            setTutors={setTutors}
+          />
+          <div className="col-md-9 col-md-pull-3">
+            {tutors.map((tutor) => (
+              <ResultItem user={tutor} />
+            ))}
+            {/* <Pagination /> */}
+          </div>
         </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 }

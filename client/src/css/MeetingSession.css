@@ -1,17 +1,17 @@
-#boxContains{
-    width: 300px;
-    height: fit-content;
-    background-color: #82918333;
-    margin-top: 50px;
-    margin-left: 20px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+#boxContains {
+  width: 300px;
+  height: fit-content;
+  background-color: #82918333;
+  margin-top: 50px;
+  margin-left: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
-#boxContains .container{
+#boxContains .container {
   font-size: 20px;
   position: relative;
 }
-.container h2{
+.container h2 {
   padding-left: 10px;
 }
 /* .container img{
@@ -19,15 +19,15 @@
   height: 200px;
   
 } */
-.container .opacity{
+.container .opacity {
   width: 100%;
-  height: 200px; 
+  height: 200px;
   background-color: #999;
   position: absolute;
   opacity: 0.1;
 }
 
-.opacity:hover{
+.opacity:hover {
   opacity: 0.4;
 }
 
@@ -35,45 +35,42 @@
   display: flex;
 }
 
-.imgBox .student{
+.imgBox .student {
   margin-left: 50px;
 }
-.imgBox .tutor{
+.imgBox .tutor {
   margin-left: 70px;
-  
 }
-.imgBox  .tutorImg {
- 
+.imgBox .tutorImg {
   width: 30px;
   height: 30px;
 }
-.imgBox  .studentImg {
+.imgBox .studentImg {
   margin-left: 10px;
   width: 30px;
   height: 30px;
 }
-.infoDate{
+.infoDate {
   display: flex;
   font-size: 10px;
   padding-left: 10px;
-  
 }
 
-.infoDate .text{
+.infoDate .text {
   margin-left: 20px;
 }
 
-.infoStart{
+.infoStart {
   display: flex;
   font-size: 12px;
   padding-left: 10px;
   font-size: 10px;
 }
-.infoStart .text{
+.infoStart .text {
   margin-left: 20px;
 }
 
-.infoEnd{
+.infoEnd {
   display: flex;
   font-size: 12px;
   padding-left: 10px;
@@ -83,23 +80,23 @@
 #message {
   padding-left: 10px;
 }
-.infoEnd .text{
+.infoEnd .text {
   margin-left: 20px;
-
 }
-.startSession{
+.startSession {
   display: flex;
   padding-left: 10px;
   height: 50px;
 }
 
-.startSession input{
- font-size: 12px;
- height: 25px;
- margin-top: 10px;
+.startSession input {
+  font-size: 12px;
+  height: 25px;
+  margin-top: 10px;
 }
 
-.startSession button, .endSession button{
+.startSession button,
+.endSession button {
   font-size: 12px;
   height: 35px;
   margin-top: 7.5px;
@@ -111,30 +108,23 @@
   height: 70px;
 }
 
-
-
-.joinSession button{
+.joinSession button {
   font-size: 12px;
   height: 35px;
   color: aqua;
   margin-left: 10px;
-  
 }
 
-.buttons input{
+.buttons input {
   width: 150px;
   height: 25px;
   border-style: groove;
   border-radius: 3px;
 }
 
-#blueButton{
+#blueButton {
   width: 135px;
   height: 30px;
   padding-top: 0;
   padding-bottom: 10px;
-
 }
-
-
-

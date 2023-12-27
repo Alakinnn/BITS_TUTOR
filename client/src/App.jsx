@@ -97,10 +97,7 @@ function App() {
 
             <Route path="/register/student" element={<StudentRegisterPage />} />
             <Route path="/register/tutor" element={<TutorRegisterPage />} />
-            <Route
-              path="/SearchResults"
-              element={<SearchResults users={users} />}
-            >
+            <Route path="/search" element={<SearchResults users={users} />}>
               {" "}
             </Route>
           </Routes>

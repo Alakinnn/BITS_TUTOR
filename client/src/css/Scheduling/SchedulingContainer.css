@@ -5,7 +5,8 @@
 .scheduling-container {
   display: flex;
   gap: 1%;
-  margin-top: 7%;
+  margin-top: 1%;
+  margin-bottom: 3%;
 }
 
 @media screen and (max-width: 768px) {
@@ -25,8 +26,8 @@
     float: left;
   }
 
-  .bookingSession{
-    background-color: #D4D4D4;
+  .bookingSession {
+    background-color: #d4d4d4;
     font-size: small;
     width: 70%;
     display: flex;

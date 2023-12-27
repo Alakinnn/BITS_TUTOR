@@ -1,6 +1,9 @@
 .meetingSession {
   width: 100%;
   display: flex;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 9.5%;
 }
 
 p {
@@ -8,8 +11,6 @@ p {
 }
 /* Meeting Info Styling: */
 .meetingInfo {
-  margin-top: 10.7%;
-  margin-left: 9.5%;
   padding: 5%;
   width: 55%;
   border: 1px solid #ccc;
@@ -90,7 +91,6 @@ button {
 
 /* Participants Styling:  */
 .meetingParticipants {
-  margin-top: 10.7%;
   margin-left: 5%;
   padding: 3%;
   width: 20%;
