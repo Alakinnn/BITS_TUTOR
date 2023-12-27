@@ -11,6 +11,10 @@ const validateTutor = async (req: Request, res: Response) => {
         throw new NotFoundError("Tutor not found");
     }
 
+    if (tutor.validated) {
+        return res.status(200).json({ message: "Tutor already validated" });
+    }
+
     tutor.validated = true;
     await tutor.save();
 
