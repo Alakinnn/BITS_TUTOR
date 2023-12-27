@@ -2,12 +2,14 @@ import SocialLinks from "../components/SocialLinks";
 import TutorPersonalDetail from "../components/tutor/TutorPersonalDetail";
 import TutorCV from "../components/tutor/TutorCV";
 import TutorBenefits from "../components/tutor/TutorBenefits";
+import "/src/css/Profile/TutorPublicProfile.css"
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
 import TutorPublicUserCard from "../components/tutor/TutorPublicUserCard";
 import { UserContext } from "../../../App";
 import { useContext, useEffect, useState } from "react";
 import { getTutor } from "../services/user";
 import { useParams } from "react-router-dom";
+
 
 export default function TutorPublicProfilePage() {
     // const tutorId = "657f20c25877dc352dc7d18b"
