@@ -8,6 +8,7 @@ import { extractDate, formatDate } from "./RequestFunctions/DateTimeFormat";
 
 function TutorRequestDescription({
   selectedRequest,
+  setSelectedRequest,
   role,
   submitCounter,
   setSubmitCounter,
@@ -25,7 +26,8 @@ function TutorRequestDescription({
       console.log("Student username is not available.");
     }
     console.log("Selected request: ", selectedRequest);
-    if (selectedRequest.title == null) {
+    if (selectedRequest.title == null || selectedRequest == {}) {
+      setRenderObject(null);
       return;
     }
     setRenderObject(
@@ -76,6 +78,7 @@ function TutorRequestDescription({
             onClick={async () => {
               await ApproveRequest({ requestId: selectedRequest?._id });
               setSubmitCounter(submitCounter + 1);
+              setSelectedRequest({});
               // console.log("New request list: ", requests);
             }}
           >
@@ -86,6 +89,7 @@ function TutorRequestDescription({
             onClick={async () => {
               await DenyRequest({ requestId: selectedRequest?._id });
               setSubmitCounter(submitCounter + 1);
+              setSelectedRequest({});
             }}
           >
             Decline
