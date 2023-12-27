@@ -24,6 +24,10 @@ const loginUser = async (req: Request, res: Response) => {
             break;
         case "tutor":
             user = await Tutor.findOne({ email, role });
+
+            if ((user as TutorDoc)?.validated === false) {
+                throw new UnauthorizedError("Tutor not validated");
+            }
             break;
         default:
             throw new BadRequestError("Invalid role");
