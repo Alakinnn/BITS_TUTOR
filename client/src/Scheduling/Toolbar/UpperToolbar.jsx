@@ -133,28 +133,6 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
                 {renderRequestListByStatus(requestList, "pending")}
               </ul>
             </div>
-            {/* <!-- Accepted Requests --> */}
-            <div className="dropdown">
-              <div className="dropdown_select">
-                <span className="dropdown_selected">
-                  <button className="view-request">
-                    <img
-                      className="icon"
-                      src={requestImg}
-                      alt="View Requests Icon"
-                    ></img>
-                    Accepted Requests
-                    {/* <FontAwesomeIcon icon={faCaretDown} /> */}
-                  </button>
-                </span>
-              </div>
-            </div>
-            <div className="toolbar-requests-dropdown">
-              {/* <!-- Request notification --> */}
-              <ul className="dropdown_list accepted">
-                {renderRequestListByStatus(requestList, "approved")}
-              </ul>
-            </div>
           </div>
         </div>
       );

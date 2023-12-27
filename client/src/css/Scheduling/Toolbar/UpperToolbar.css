@@ -39,7 +39,7 @@
 
 .dropdown_list.pending{
     min-height: auto;
-    max-height: 25vh;
+    max-height: 60vh;
 }
 
 .dropdown_list.accepted{
@@ -76,7 +76,7 @@
     border-radius: 4px;
     padding: 0;
     overflow: scroll;
-    height: 40vh;
+    height: 60vh;
     /* min-height: 80vh; */
 }
 
