@@ -14,6 +14,7 @@ interface TutorDoc extends PasswordComparable, MongoResult {
     cvUrl: string;
     hourlyRate: number;
     benefits: string;
+    validated: boolean;
 }
 
 const tutorSchema = new Schema<TutorDoc>({
@@ -71,6 +72,10 @@ const tutorSchema = new Schema<TutorDoc>({
     benefits: {
         type: String,
         trim: true,
+    },
+    validated: {
+        type: Boolean,
+        default: false,
     },
 });
 
