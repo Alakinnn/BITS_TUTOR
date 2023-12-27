@@ -15,12 +15,13 @@ const MAX_RESULTS = 20;
 interface TutorQuery {
     $or?: any[];
     hourlyRate?: any;
+    validated?: boolean;
 }
 
 const getTutors = async (req: Request, res: Response) => {
     const { query, hourlyRate, sortPrice } = req.query;
 
-    const baseQuery: TutorQuery = {};
+    const baseQuery: TutorQuery = { validated: true };
 
     if (query) {
         baseQuery.$or = [
