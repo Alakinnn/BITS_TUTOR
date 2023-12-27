@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
 function CheckTypeToRender(arg) {
-  if (arg.event.extendedProps.type === "inactive") {
+  if (
+    arg.event.extendedProps.type === "inactive" ||
+    arg.event.extendedProps.type === "active"
+  ) {
     return (
       <>
         {arg.event.extendedProps.role == "tutor" ? (

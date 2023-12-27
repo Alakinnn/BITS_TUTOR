@@ -1,18 +1,14 @@
-import React from 'react'
-import '../../css/Scheduling/ScheduleView/CalendarSummary.css'
-import FullCalendar from '@fullcalendar/react';
-import timeGridPlugin from '@fullcalendar/timegrid';
+import React from "react";
+import "../../css/Scheduling/ScheduleView/CalendarSummary.css";
+import FullCalendar from "@fullcalendar/react";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import { handleCheck } from "./Function/FilterCheck";
 
-
-function CalendarSummary() {
-
+function CalendarSummary({ filterCriteria, setFilterCriteria }) {
   return (
-    
-    
     <div className="calendar-summary">
       {/* Upper info */}
       <div className="upper-info">
-
         {/* Summart title */}
         <div id="summary-title">
           <div className="title">Calendar</div>
@@ -21,30 +17,49 @@ function CalendarSummary() {
 
         {/* Summary filters */}
         <div id="summary-filters">
+          {/* Filter checkboxs */}
+          <div className="summary-filter-checker">
+            <p></p>
+            <input
+              type="checkbox"
+              id="checker"
+              name="completed"
+              data-label="completed"
+              onChange={(event) => handleCheck({ event, setFilterCriteria })}
+              checked={filterCriteria.includes("completed")}
+            />
+            <label for="completed">Completed</label>
+          </div>
 
-            {/* Filter checkboxs */}
-            <div className="summary-filter-checker">
-                <p></p>
-                <input type="checkbox" id="checker" name="completed"  checked/>
-                <label for="completed">Completed</label>
-            </div>
+          <div className="summary-filter-checker">
+            <p></p>
+            <input
+              type="checkbox"
+              id="checker"
+              name="enrolled"
+              data-label="cancelled"
+              onChange={(event) => handleCheck({ event, setFilterCriteria })}
+              checked={filterCriteria.includes("cancelled")}
+            />
+            <label for="enrolled">Cancelled</label>
+          </div>
 
-            <div className="summary-filter-checker">
-                <p></p>
-                <input type="checkbox" id="checker" name="enrolled" checked/>
-                <label for="enrolled">Enroll</label>
-            </div>
-
-            <div className="summary-filter-checker">
-                <p></p>
-                <input type="checkbox" id="checker" name="upcomming" checked />
-                <label for="upcomming">Upcomming</label>
-            </div>
+          <div className="summary-filter-checker">
+            <p></p>
+            <input
+              type="checkbox"
+              id="checker"
+              name="upcomming"
+              data-label="upcoming"
+              onChange={(event) => handleCheck({ event, setFilterCriteria })}
+              checked={filterCriteria.includes("active" || "inactive")}
+            />
+            <label for="upcomming">Upcomming</label>
+          </div>
         </div>
       </div>
-   </div>
-  
-  )
+    </div>
+  );
 }
 
-export default CalendarSummary
+export default CalendarSummary;

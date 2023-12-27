@@ -17,7 +17,6 @@ const TutorPublicUserCard = ({ tutor }) => {
           src={tutor.profilePicUrl}
           alt="avatar"
           className="rounded-circle"
-          style={{ width: "150px" }}
           fluid
         />
         <p className="text-muted mb-3">{tutor.username}</p>

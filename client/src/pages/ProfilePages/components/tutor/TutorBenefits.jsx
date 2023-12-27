@@ -10,7 +10,7 @@ import {
 
 function TutorBenefits({ tutor }) {
   return (
-    <MDBCard className="mb-4 mb-md-0">
+    <MDBCard className="mb-4 mb-md-0 style-benefits">
       <MDBCardBody>
         <MDBCardText className="mb-4">
           <span className="text-primary font-italic me-1">Tutor</span> Benefits
