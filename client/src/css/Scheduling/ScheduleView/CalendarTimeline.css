@@ -26,6 +26,10 @@
   border: none;
 }
 
+.fc-theme-standard:hover{
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
 /* Date text container */
 .fc .fc-scrollgrid table {
   border: hidden;
