@@ -65,5 +65,4 @@ function SchedulingContainer() {
     </div>
   );
 }
-
 export default SchedulingContainer;

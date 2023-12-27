@@ -4,12 +4,22 @@ import CalendarSummary from "./CalendarSummary";
 import CalendarTimeline from "./CalendarTimeline";
 
 function ScheduleView({ sessionList, role }) {
+  const [filterCriteria, setFilterCriteria] = React.useState([
+    "active",
+    "inactive",
+    "completed",
+    "cancelled",
+  ]);
   return (
     <div className="schedule-view">
-      <CalendarSummary />
-      <CalendarTimeline 
+      <CalendarSummary
+        filterCriteria={filterCriteria}
+        setFilterCriteria={setFilterCriteria}
+      />
+      <CalendarTimeline
         sessionList={sessionList}
-        role={role}  
+        role={role}
+        filterCriteria={filterCriteria}
       />
     </div>
   );

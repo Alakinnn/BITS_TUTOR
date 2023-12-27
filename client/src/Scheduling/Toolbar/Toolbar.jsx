@@ -25,6 +25,7 @@ function Toolbar({
             />
             <TutorRequestDescription
               selectedRequest={selectedRequest}
+              setSelectedRequest={setSelectedRequest}
               role={role}
               submitCounter={submitCounter}
               setSubmitCounter={setSubmitCounter}

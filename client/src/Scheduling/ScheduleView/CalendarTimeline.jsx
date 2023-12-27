@@ -7,21 +7,22 @@ import interactionPlugin from "@fullcalendar/interaction";
 import CheckTypeToRender from "./CheckTypeToRender";
 import Upcoming from "./EventBox/Upcoming";
 
-const CalendarTimeline = ({ sessionList, role }) => {
+const CalendarTimeline = ({ sessionList, role, filterCriteria }) => {
   // console.log("Session list: ", sessionList);
 
-  const eventList = sessionList.map((event) => ({
-    title: event.title,
-    start: event.startTime,
-    end: event.endTime,
-    type: event.status,
-    role: role,
-    backgroundColor: "transparent",
-    tutor: event.tutor.username,
-    sessionId: event._id,
-    // description: event.description,
-  }));
-
+  const eventList = sessionList
+    .filter((event) => filterCriteria.includes(event.status))
+    .map((event) => ({
+      title: event.title,
+      start: event.startTime,
+      end: event.endTime,
+      type: event.status,
+      role: role,
+      backgroundColor: "transparent",
+      tutor: event.tutor.username,
+      sessionId: event._id,
+      // description: event.description,
+    }));
   return (
     <div className="calendar-timeline">
       <FullCalendar
