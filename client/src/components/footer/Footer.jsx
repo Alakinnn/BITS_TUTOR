@@ -14,7 +14,8 @@ export default function Footer() {
     <footer id="footer">
       <div className="containerContentFooter">
         <div className="headerTextFooter titleFont">
-          <h2>Best services</h2>
+          <img src={"/"} alt="logo" />
+          <h2>Meet a Mentor</h2>
         </div>
         <div className="rightContentFooter titleFont">
           <ul className="homeFooter">

@@ -26,6 +26,12 @@
   font-weight: 800;
   line-height: 4rem;
   margin-right: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.headerTextFooter img{
+  margin-right: 2%;
 }
 
 .rightContentFooter {
