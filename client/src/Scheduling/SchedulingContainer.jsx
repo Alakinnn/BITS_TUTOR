@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import "../css/Scheduling/SchedulingContainer.css";
 import Toolbar from "./Toolbar/Toolbar";
 import ScheduleView from "./ScheduleView/ScheduleView";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
+import Header from "/src/components/header/Header";
+import Footer from "/src/components/footer/Footer";
 
 
 import {
