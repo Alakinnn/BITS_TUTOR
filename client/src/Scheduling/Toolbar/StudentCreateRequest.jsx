@@ -3,6 +3,11 @@ import { useState } from "react";
 import user from "/src/assets/footer/circle-user.svg";
 import "../../css/Scheduling/Toolbar/ToolbarRequest.css";
 import BookingSession from "./BookingSession";
+import {
+  convertTimeToString,
+  convertStringToDateTime,
+} from "./RequestFunctions/DateTimeFormat";
+import { GetTutorInfo } from "./RequestFunctions/GetTutorInfo";
 
 const StudentCreateRequest = ({
   tutorId,
@@ -11,6 +16,7 @@ const StudentCreateRequest = ({
   setSubmitCounter,
 }) => {
   const [removeClass, setRemoveClass] = useState(false);
+  const [tutor, setTutor] = useState(null);
   const defaultRequest = {
     title: "",
     description: "",
@@ -23,6 +29,14 @@ const StudentCreateRequest = ({
   const [request, setRequest] = useState(defaultRequest);
 
   const handleChange = (e) => {
+    if (e.target.name === "startTime" || e.target.name === "endTime") {
+      const { name } = e.target;
+      const { value } = convertTimeToString(e.target.value);
+      setRequest((prevRequest) => ({
+        ...prevRequest,
+        [name]: value,
+      }));
+    }
     const { name, value } = e.target;
     setRequest((prevRequest) => ({
       ...prevRequest,
@@ -32,6 +46,7 @@ const StudentCreateRequest = ({
 
   const showDescription = () => {
     setRemoveClass(!removeClass);
+    GetTutorInfo(tutorId, setTutor);
   };
   return (
     <>
@@ -40,7 +55,11 @@ const StudentCreateRequest = ({
       </button>
       <div className={`toolbar-description ${removeClass ? "" : "invisible"}`}>
         <div className="description-user-profile">
-          <img className="picture-user" src={user} alt="circle" />
+          <img
+            className="picture-user"
+            src={tutor != null ? tutor.profilePicUrl : { user }}
+            alt="circle"
+          />
           <div className="addingTitle">
             <input
               type="text"
@@ -58,22 +77,21 @@ const StudentCreateRequest = ({
             <div className="from">
               <p>From:</p>
               <input
-                type="text"
+                type="datetime-local"
                 value={request.startTime}
                 name="startTime"
                 onChange={handleChange}
-                placeholder="E.g: 2024-02-25T12:00:00"
               />
             </div>
 
             <div className="to">
               <p>To:</p>
               <input
-                type="text"
+                type="datetime-local"
                 value={request.endTime}
                 name="endTime"
                 onChange={handleChange}
-                placeholder="E.g: 2024-02-25T12:00:00"
+                min={request.startTime}
               />
             </div>
           </div>

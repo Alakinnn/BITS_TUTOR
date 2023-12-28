@@ -1,5 +1,5 @@
 export function Dropdown({ setFilterCriteria }) {
-  const dropdowns = document.querySelectorAll(".dropdown");
+  const dropdowns = document.querySelectorAll(".dropdown-filter");
   //   loop through all dropdown
   dropdowns.forEach((dropdown) => {
     const select = dropdown.querySelector(".select");
