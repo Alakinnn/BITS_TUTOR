@@ -35,7 +35,7 @@ function ResultFilter({
         </div>
         <ul class="menu">
           <li
-            class="active"
+            class="default-active"
             onClick={() =>
               HandleSearch({
                 inputStr,

@@ -82,7 +82,7 @@ body {
   background: rgb(188, 201, 188);
 }
 
-.active {
+.default-active {
   background: grey;
 }
 

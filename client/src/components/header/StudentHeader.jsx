@@ -35,7 +35,7 @@ export default function StudentHeader({ student }) {
           <MDBCollapse navbar open={openBasic}>
             <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
               <MDBNavbarItem>
-                <MDBNavbarLink active aria-current="page" href="/">
+                <MDBNavbarLink aria-current="page" href="/" >
                   Home
                 </MDBNavbarLink>
               </MDBNavbarItem>
