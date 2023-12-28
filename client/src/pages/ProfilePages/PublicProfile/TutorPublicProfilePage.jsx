@@ -9,8 +9,8 @@ import { UserContext } from "../../../App";
 import { useContext, useEffect, useState } from "react";
 import { getTutor } from "../services/user";
 import { useParams } from "react-router-dom";
-import Header from "/src/components/header/Header";
-import Footer from "/src/components/footer/Footer";
+import Header from "../../../components/header/Header";
+import Footer from "../../../components/footer/Footer";
 
 
 export default function TutorPublicProfilePage() {

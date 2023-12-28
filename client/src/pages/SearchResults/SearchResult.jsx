@@ -5,8 +5,8 @@ import "/src/css/SearchResults/SearchResults.css";
 import ResultFilter from "./components/ResultFilter.jsx";
 import SearchBar from "./components/SearchBar.jsx";
 import HandleSearch from "./components/functions/HandleSearch.jsx";
-import Header from "/src/components/header/Header";
-import Footer from "/src/components/footer/Footer";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 
 function SearchResult() {
   const [inputStr, setInputStr] = React.useState("");
