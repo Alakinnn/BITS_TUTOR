@@ -6,8 +6,8 @@ import MeetingSessionContainer from "./MeetingSessionContainer";
 import "../css/MeetingSession.css";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../App";
-import Header from "/src/components/header/Header";
-import Footer from "/src/components/footer/Footer";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
 const token = localStorage.getItem("token");
 
 // TUTOR
