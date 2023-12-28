@@ -204,21 +204,6 @@ input[type="range"]::-moz-range-thumb {
   background-color: #89bff4;
 }
 
-@media (min-width: 768px) {
-  .search-result-item .image-link {
-    display: inline-block;
-    margin: -20px 0 -20px -20px;
-    float: left;
-    width: 200px;
-  }
-}
-
-@media (max-width: 767px) {
-  .search-result-item .image-link {
-    max-height: 200px;
-  }
-}
-
 .search-result-item .image {
   max-width: 100%;
 }
@@ -237,11 +222,7 @@ input[type="range"]::-moz-range-thumb {
   margin-top: 20px;
 }
 
-@media (min-width: 768px) {
-  .search-result-item-body {
-    margin-left: 200px;
-  }
-}
+
 
 .search-result-item-heading {
   font-weight: 400;
@@ -251,11 +232,7 @@ input[type="range"]::-moz-range-thumb {
   color: #555;
 }
 
-@media (min-width: 768px) {
-  .search-result-item-heading {
-    margin: 0;
-  }
-}
+
 .search-result-categories > li > a {
   color: #b6b6b6;
   font-weight: 400;
@@ -361,6 +338,17 @@ input[type="range"]::-moz-range-thumb {
   color: #555;
 }
 
+@media (max-width: 767px) {
+  .search-result-item .image-link {
+    max-height: 200px;
+  }
+  .dropdown-filter{
+    width: 90%;
+  }
+ 
+  
+}
+
 @media (min-width: 767px) {
   .search-result-item .image-link {
     margin: auto;
@@ -372,24 +360,85 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (min-width: 768px) {
+  .search-result-item .image-link {
+    display: inline-block;
+    margin: -20px 0 -20px -20px;
+    float: left;
+    width: 200px;
+  }
   .search-result-item-body {
     margin-left: 200px;
   }
-}
-
-@media (min-width: 768px) {
+  .search-result-item-body {
+    margin-left: 200px;
+  }
+  .search-result-item-heading {
+    margin: 0;
+  }
   .col-md-9 {
     width: 65%;
   }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1140px) {
+
+  .filter.col-md-3.col-md-push-9 .wrapper {
+    width: fit-content;
+  }
+  .price-input{
+    font-size: medium;
+  }
+  .field input{
+    font-size: medium;
+  }
+
+}
+
+
+@media (min-width: 426px) and (max-width: 767px) {
   .image-link {
     display: block;
     width: fit-content;
 
     margin: auto;
     justify-content: center;
+  }
+  .wrapper {
+    
+    width: 90%;
+  }
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px){
+  .search-container .row .col-md-12 {
+    width: 100%;
+    font-size: x-small;
+  }
+
+  
+
+  .col-md-9.col-md-pull-3{
+
+  }
+  
+  .search-result-item{
+    border-radius: 0px;
+  }
+
+  .search-result-item-heading{
+    margin-top: 5%;
+  }
+
+  
+  .image-link {
+    width: 40%;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .search-result-item-body .row .description {
+    margin-top: 3%;
   }
 }
 
