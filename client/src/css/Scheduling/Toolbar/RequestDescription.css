@@ -11,6 +11,10 @@
 }
 
 .description-user-profile img {
+  width: 100%;
+}
+
+.description-user-profile a {
   width: 8%;
   margin-top: 6%;
   left: 5%;
@@ -100,7 +104,7 @@
   background-color: #cac2fc;
 }
 
-.approve:hover{
+.approve:hover {
   background-color: #dbd8ee;
 }
 
@@ -108,6 +112,6 @@
   background-color: #d7d5d5;
 }
 
-.decline:hover{
+.decline:hover {
   background-color: #ffffff;
 }

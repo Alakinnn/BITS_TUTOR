@@ -24,9 +24,21 @@ function CheckTypeToRender(arg) {
       </>
     );
   } else if (arg.event.extendedProps.type === "completed") {
-    return <>{<Completed event={arg} />}</>;
+    return (
+      <>
+        <Link to={`/tutorSession/${arg.event.extendedProps.sessionId}`}>
+          {<Completed event={arg} />}
+        </Link>
+      </>
+    );
   } else if (arg.event.extendedProps.type === "cancelled") {
-    return <>{<Cancelled event={arg} />}</>;
+    return (
+      <>
+        <Link to={`/tutorSession/${arg.event.extendedProps.sessionId}`}>
+          {<Cancelled event={arg} />}
+        </Link>
+      </>
+    );
   }
 }
 

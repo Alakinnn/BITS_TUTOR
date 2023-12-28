@@ -8,6 +8,7 @@ import {
   convertStringToDateTime,
 } from "./RequestFunctions/DateTimeFormat";
 import { GetTutorInfo } from "./RequestFunctions/GetTutorInfo";
+import { Link } from "react-router-dom";
 
 const StudentCreateRequest = ({
   tutorId,
@@ -55,11 +56,13 @@ const StudentCreateRequest = ({
       </button>
       <div className={`toolbar-description ${removeClass ? "" : "invisible"}`}>
         <div className="description-user-profile">
-          <img
-            className="picture-user"
-            src={tutor != null ? tutor.profilePicUrl : { user }}
-            alt="circle"
-          />
+          <Link to={`/tutor/${tutorId}`}>
+            <img
+              className="picture-user"
+              src={tutor != null ? tutor.profilePicUrl : { user }}
+              alt="circle"
+            />
+          </Link>
           <div className="addingTitle">
             <input
               type="text"

@@ -58,9 +58,21 @@ const StudentMeetingSession = () => {
     }
   };
 
+  const handleCancelSession = async () => {
+    const response = await axios.post(
+      `${BASE_URL}/session/${sessionId}/cancel`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  };
+
   return (
     <>
-    <Header />
+      <Header />
       {
         <MeetingSessionContainer
           role="student"
@@ -68,11 +80,12 @@ const StudentMeetingSession = () => {
           ssActive={session.status}
           joinSessionFunction={joinSession}
           joinLiveCodingFunction={joinLiveCoding}
+          handleCancelSession={handleCancelSession}
         />
       }
 
       <div id="meetingSDKElement"></div>
-    <Footer />
+      <Footer />
     </>
   );
 };

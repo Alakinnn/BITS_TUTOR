@@ -66,7 +66,7 @@ const StudentRegisterPage = () => {
 
     alert("Successfully registered user");
     console.log("New User:", user);
-    window.location.href = "/me";
+    window.location.href = "/";
   };
 
   return (

@@ -71,6 +71,10 @@ button {
   margin-top: 4%;
 }
 
+.accessToURLs p {
+  width: 100%;
+}
+
 /* Start Buttons */
 
 /*Sessions has not started yet*/
@@ -80,11 +84,16 @@ button {
 
 /* End Button */
 
-.buttons .endSession {
+.buttons .endSession,
+.cancelSession {
   background-color: #fb6868;
 }
 
 .buttons .endSession:hover {
+  background-color: #e85a5a;
+}
+
+.buttons .cancelSession:hover {
   background-color: #e85a5a;
 }
 

@@ -1,7 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/InfoInterface.css";
-import heading from "/src/assets/footer/circle.svg";
-import testImg1 from "/src/assets/footer/circle-small.svg";
 import date from "/src/assets/footer/calendar.svg";
 import time from "/src/assets/footer/calendar-clock.svg";
 import waiting from "/src/assets/footer/loading.svg";
@@ -9,6 +7,11 @@ import user from "/src/assets/footer/circle-user.svg";
 import ButtonsSessions from "./Buttons/ButtonsSessions";
 import EndSession from "./Buttons/EndSession";
 import InputUrl from "./Buttons/InputUrl";
+import CancelSession from "./Buttons/CancelSession";
+import {
+  formatDate,
+  extractDate,
+} from "../Scheduling/Toolbar/RequestFunctions/DateTimeFormat";
 function MeetingSessionContainer({
   role,
   renderData,
@@ -18,8 +21,8 @@ function MeetingSessionContainer({
   handleChangeFunction,
   startSessionFunction,
   endSessionFunction,
+  handleCancelSession,
 }) {
-  console.log(renderData);
   return (
     <div className="meetingSession">
       <div className="meetingInfo">
@@ -29,7 +32,12 @@ function MeetingSessionContainer({
         </div>
         <div className="time line">
           <img className="pictureTitle" src={time} alt="circle" />
-          <p className="date">Date: {renderData.startTime}</p>
+          <p className="date">Date: {extractDate(renderData.startTime)}</p>
+        </div>
+        <div className="time line">
+          <img className="pictureTitle" src={time} alt="circle" />
+          <p className="date">Start: {formatDate(renderData.startTime)}</p>
+          <p className="date">End: {formatDate(renderData.endTime)}</p>
         </div>
         <div className="line description">
           <img className="pictureTitle" src={date} alt="circle" />
@@ -48,8 +56,10 @@ function MeetingSessionContainer({
                 handleChangeFunction={handleChangeFunction}
                 startSessionFunction={startSessionFunction}
               />
-            ) : (
+            ) : ssActive == "completed" ? (
               <p className="textNotice">Sessions has been completed</p>
+            ) : (
+              <p className="textNotice">Sessions has been cancelled</p>
             )
           ) : ssActive == "active" ? (
             <ButtonsSessions
@@ -57,17 +67,15 @@ function MeetingSessionContainer({
               joinLiveCodingFunction={joinLiveCodingFunction}
             />
           ) : ssActive == "inactive" ? (
-            <p className="textNotice">Sessions has not started or has been</p>
-          ) : (
+            <>
+              <p className="textNotice">Sessions has not started</p>
+              <CancelSession handleCancelSession={handleCancelSession} />
+            </>
+          ) : ssActive == "completed" ? (
             <p className="textNotice">Sessions has been completed</p>
+          ) : (
+            <p className="textNotice">Sessions has been cancelled</p>
           )}
-
-          {/* <div className="buttons">
-            <input type="url" placeholder="Live Share URL" />
-            <button className="blueButton">Start Session</button>
-          </div> */}
-
-          {/* <EndSession/> */}
         </div>
       </div>
       <div className="meetingParticipants">

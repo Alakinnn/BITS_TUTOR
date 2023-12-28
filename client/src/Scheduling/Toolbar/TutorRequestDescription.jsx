@@ -5,6 +5,7 @@ import { ApproveRequest } from "./RequestFunctions/ApproveRequest";
 import { DenyRequest } from "./RequestFunctions/DenyRequest";
 import { useAuth } from "../../contexts/AuthContext";
 import { extractDate, formatDate } from "./RequestFunctions/DateTimeFormat";
+import { Link } from "react-router-dom";
 
 function TutorRequestDescription({
   selectedRequest,
@@ -33,11 +34,14 @@ function TutorRequestDescription({
     setRenderObject(
       <div className="toolbar-description">
         <div className="description-user-profile">
-          <img
-            className="picture-user"
-            src={selectedRequest.student.profilePicUrl}
-            alt="circle"
-          />
+          <Link to={`/student/${selectedRequest.student._id}`}>
+            <img
+              className="picture-user"
+              src={selectedRequest.student.profilePicUrl}
+              alt="circle"
+            />
+          </Link>
+
           <div className="student-info">
             <div className="subject">{selectedRequest.title}</div>
             <div className="status">

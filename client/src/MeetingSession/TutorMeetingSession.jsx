@@ -47,6 +47,12 @@ const TutorMeetingSession = () => {
   const startSession = async () => {
     //  Send update request to backend
     // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
+    if (
+      !inputUrl.startsWith("https://prod.liveshare.vsengsaas.visualstudio.com")
+    ) {
+      window.alert("Invalid Live Share Url");
+      return;
+    }
     const response = await axios.post(
       `${BASE_URL}/session/${sessionId}/start`,
       {
@@ -60,7 +66,7 @@ const TutorMeetingSession = () => {
       }
     );
     setInputUrl("");
-    window.open(response.data.liveShareUrl);
+    window.open(response.data.session.liveShareUrl, "_blank");
     setSessionActive("active");
     console.log(response);
     InitZoom(response.data.session);
@@ -86,7 +92,7 @@ const TutorMeetingSession = () => {
 
   return (
     <>
-    <Header />
+      <Header />
       {
         <MeetingSessionContainer
           role="tutor"
@@ -100,7 +106,7 @@ const TutorMeetingSession = () => {
       }
 
       <div id="meetingSDKElement"></div>
-    <Footer />
+      <Footer />
     </>
   );
 };

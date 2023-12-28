@@ -8,15 +8,6 @@ import { selectRequestList } from "../../slices/requestListSlice";
 import { formatDate } from "./RequestFunctions/DateTimeFormat";
 
 const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
-  // console.log(requestList)
-  // const [showRequests, setShowRequests] = useState(true);
-  // const hideRequests = () => {
-  //   setShowRequests(!showRequests);
-  // const [showRequests, setShowRequests] = useState(false);
-
-  // Select the requestList from the store
-  // console.log("Request list: ",requestList);
-
   // Return the request by id from the requestList
   const getRequestByKey = (key) => {
     let selectedRequest = requestList.find((request) => request._id === key);
@@ -33,7 +24,15 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
       >
         <span className="dropdown_text">
           <div className="left_column">
-            <img src={user} alt=""></img>
+            <img
+              src={
+                // role == "student"
+                //   ? request.tutor.profilePicUrl
+                //   : request.student.profilePicUrl
+                request.student.profilePicUrl
+              }
+              alt=""
+            ></img>
           </div>
           <div className="right_column">
             <div className="student_name">{request?.student?.username}</div>
@@ -60,7 +59,15 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
       >
         <span className="dropdown_text">
           <div className="left_column">
-            <img src={user} alt=""></img>
+            <img
+              src={
+                // role == "student"
+                //   ? request.tutor.profilePicUrl
+                //   : request.student.profilePicUrl
+                request.student.profilePicUrl
+              }
+              alt=""
+            ></img>
           </div>
           <div className="right_column">
             <div className="student_name">{request?.student?.username}</div>
