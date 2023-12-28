@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import "../css/InfoInterface.css";
-import date from "/src/assets/footer/calendar.svg";
-import time from "/src/assets/footer/calendar-clock.svg";
-import waiting from "/src/assets/footer/loading.svg";
-import user from "/src/assets/footer/circle-user.svg";
+import date from "../assets/footer/calendar.svg";
+import time from "../assets/footer/calendar-clock.svg";
+import waiting from "../assets/footer/loading.svg";
+import user from "../assets/footer/circle-user.svg";
 import ButtonsSessions from "./Buttons/ButtonsSessions";
 import EndSession from "./Buttons/EndSession";
 import InputUrl from "./Buttons/InputUrl";
