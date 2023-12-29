@@ -16,21 +16,16 @@ function TutorRequestDescription({
 }) {
   const { user } = useAuth();
   const [renderObject, setRenderObject] = useState(null);
+
   useEffect(() => {
     // prevent student username for null and/or undefine
     const studentUsername = selectedRequest?.student?.username;
-    console.log("Selected request: ", selectedRequest);
 
-    if (studentUsername) {
-      console.log(studentUsername);
-    } else {
-      console.log("Student username is not available.");
-    }
-    console.log("Selected request: ", selectedRequest);
     if (selectedRequest.title == null || selectedRequest == {}) {
       setRenderObject(null);
       return;
     }
+
     setRenderObject(
       <div className="toolbar-description">
         <div className="description-user-profile">
@@ -102,7 +97,9 @@ function TutorRequestDescription({
       </div>
     );
   }, [selectedRequest]);
+
   return <>{renderObject}</>;
 }
 
-export default TutorRequestDescription;
+exp
+
