@@ -28,12 +28,13 @@
   margin-right: 5rem;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .headerTextFooter img {
   margin-right: 2%;
-  height: 10%;
-  width: 10%;
+  height: 35px;
+  width: 35px;
 }
 
 .rightContentFooter {
@@ -45,7 +46,11 @@
   font-weight: 400;
   line-height: 170.533%;
   letter-spacing: 0.03125rem;
-  align-items: center;
+  align-items: center;  
+}
+
+.rightContentFooter li {
+  white-space: nowrap;
 }
 
 .rightContentFooter > * {
@@ -88,7 +93,7 @@
 }
 
 /* Set responsive for Iphone 14 Pro Max */
-@media only screen and (max-width: 525px) {
+@media only screen and (max-width: 431px) {
   .containerContentFooter {
     flex-direction: column;
 
