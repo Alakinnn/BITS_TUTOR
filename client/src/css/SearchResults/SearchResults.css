@@ -203,6 +203,9 @@ input[type="range"]::-moz-range-thumb {
 .confirm-range:hover {
   background-color: #89bff4;
 }
+.search-result-item {
+  background-color: #fcfcfc;
+}
 
 .search-result-item .image {
   max-width: 100%;
@@ -240,7 +243,7 @@ input[type="range"]::-moz-range-thumb {
 
 .search-result-categories > li > a:hover {
   background-color: #ddd;
-  color: #555;
+  color: #fbfbfbfb;
 }
 
 .search-result-categories > li > a > .glyphicon {
@@ -391,6 +394,8 @@ input[type="range"]::-moz-range-thumb {
   .search-result-item{
     height: 200px;
     width: 95%;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 16px;
+    background-color: #fff;
   }
 
   .search-result-item-body .col-sm-9{
@@ -478,4 +483,5 @@ input[type="range"]::-moz-range-thumb {
     width: 210px;
     margin: auto;
   }
+  
 }
