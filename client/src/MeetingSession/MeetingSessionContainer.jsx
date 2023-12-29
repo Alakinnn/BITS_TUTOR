@@ -35,16 +35,25 @@ function MeetingSessionContainer({
         </div>
         <div className="time line">
           <img className="pictureTitle" src={calendar} alt="circle" />
-          <p className="date"><strong>Date:</strong>{extractDate(renderData.startTime)}</p>
+          <p className="date">
+            <strong>Date:</strong>
+            {extractDate(renderData.startTime)}
+          </p>
         </div>
         <div className="time line">
           <img className="pictureTitle" src={time} alt="circle" />
-          <p className="date"><strong>Start:</strong>{formatDate(renderData.startTime)}</p>
-          <p className="date"><strong>End:</strong> {formatDate(renderData.endTime)}</p>
+          <p className="date">
+            <strong>Start:</strong> {formatDate(renderData.startTime)}
+          </p>
+          <p className="date">
+            <strong>End:</strong> {formatDate(renderData.endTime)}
+          </p>
         </div>
         <div className="line description">
           <img className="pictureTitle" src={note} alt="circle" />
-          <p className="time"><strong>Description:</strong> {renderData.description}</p>
+          <p className="time">
+            <strong>Description:</strong> {renderData.description}
+          </p>
         </div>
         <div className="line accessToURLs">
           <img className="pictureTitle" src={waiting} alt="circle" />

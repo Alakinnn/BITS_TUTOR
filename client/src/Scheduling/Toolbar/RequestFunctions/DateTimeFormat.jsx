@@ -68,5 +68,7 @@ export function convertStringToDateTime(dateTimeString) {
 }
 
 export function checkTimeAhead(startTime, endTime, duration) {
+  startTime = convertStringToDateTime(startTime);
+  endTime = convertStringToDateTime(endTime);
   return endTime - startTime >= duration * 60 * 1000;
 }
