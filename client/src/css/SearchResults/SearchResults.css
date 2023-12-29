@@ -483,5 +483,8 @@ input[type="range"]::-moz-range-thumb {
     width: 210px;
     margin: auto;
   }
+  .search-result-item {
+    background-color: #ffff;
+  }
   
 }
