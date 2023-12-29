@@ -28,7 +28,7 @@ function CalendarSummary({ filterCriteria, setFilterCriteria }) {
               onChange={(event) => handleCheck({ event, setFilterCriteria })}
               checked={filterCriteria.includes("completed")}
             />
-            <label for="completed">Completed</label>
+            <label htmlFor="completed">Completed</label>
           </div>
 
           <div className="summary-filter-checker">
@@ -41,7 +41,7 @@ function CalendarSummary({ filterCriteria, setFilterCriteria }) {
               onChange={(event) => handleCheck({ event, setFilterCriteria })}
               checked={filterCriteria.includes("cancelled")}
             />
-            <label for="enrolled">Cancelled</label>
+            <label htmlFor="enrolled">Cancelled</label>
           </div>
 
           <div className="summary-filter-checker">
@@ -54,7 +54,7 @@ function CalendarSummary({ filterCriteria, setFilterCriteria }) {
               onChange={(event) => handleCheck({ event, setFilterCriteria })}
               checked={filterCriteria.includes("active" || "inactive")}
             />
-            <label for="upcomming">Upcomming</label>
+            <label htmlFor="upcomming">Upcomming</label>
           </div>
         </div>
       </div>

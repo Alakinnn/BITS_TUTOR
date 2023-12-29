@@ -43,6 +43,10 @@ export default function TutorHeader({ tutor }) {
               <MDBNavbarItem>
                 <MDBNavbarLink href="/schedule/me">Schedules</MDBNavbarLink>
               </MDBNavbarItem>
+
+              <MDBNavbarItem>
+                <MDBNavbarLink href="/search">Other tutors</MDBNavbarLink>
+              </MDBNavbarItem>
             </MDBNavbarNav>
 
             <div className="d-flex input-group w-auto">

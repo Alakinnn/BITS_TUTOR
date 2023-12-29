@@ -8,8 +8,10 @@ import {
 } from "mdb-react-ui-kit";
 import TagList from "../TagList";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../../contexts/AuthContext";
 
 const TutorPublicUserCard = ({ tutor }) => {
+  const { user } = useAuth();
   return (
     <MDBCard className="mb-4">
       <MDBCardBody className="text-center">
@@ -21,11 +23,24 @@ const TutorPublicUserCard = ({ tutor }) => {
         />
         <p className="text-muted mb-3">{tutor.username}</p>
         <TagList tags={tutor.tags} />
-        <Link to={`/schedule/${tutor._id}`}>
+        {user.role == "student" ? (
+          <Link to={`/schedule/${tutor._id}`}>
+            <div className="d-flex justify-content-center mb-2">
+              <MDBBtn className="bg-secondary">Book A Session</MDBBtn>
+            </div>
+          </Link>
+        ) : (
           <div className="d-flex justify-content-center mb-2">
-            <MDBBtn className="bg-secondary">Book A Session</MDBBtn>
+            <MDBBtn
+              className="bg-secondary"
+              onClick={() =>
+                window.alert("You cannot book another tutor's session")
+              }
+            >
+              Book A Session
+            </MDBBtn>
           </div>
-        </Link>
+        )}
       </MDBCardBody>
     </MDBCard>
   );

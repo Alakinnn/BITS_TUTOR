@@ -24,38 +24,51 @@ const StudentMeetingSession = () => {
       setSession(response.data);
     };
 
-    fetchData().catch(console.error);
+    fetchData().catch((error) => {
+      console.error("Error fetching data: ", error);
+    });
   }, []);
 
   const joinSession = async () => {
-    const response = await axios.get(
-      `${BASE_URL}/session/${sessionId}/join`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    InitZoom(response.data.session, "student");
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/session/${sessionId}/join`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      InitZoom(response.data.session, "student");
+    } catch (error) {
+      console.error("Error joining session: ", error);
+    }
   };
 
   const joinLiveCoding = () => {
-    if (session.liveShareUrl) {
-      window.open(session.liveShareUrl, "_blank");
+    try {
+      if (session.liveShareUrl) {
+        window.open(session.liveShareUrl, "_blank");
+      }
+    } catch (error) {
+      console.error("Error opening live share Url: ", error);
     }
   };
 
   const handleCancelSession = async () => {
-    await axios.post(
-      `${BASE_URL}/session/${sessionId}/cancel`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    try {
+      await axios.post(
+        `${BASE_URL}/session/${sessionId}/cancel`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Error cancelling session: ", error);
+    }
   };
 
   return (

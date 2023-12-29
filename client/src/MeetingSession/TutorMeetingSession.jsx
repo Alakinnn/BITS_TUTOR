@@ -18,21 +18,20 @@ const TutorMeetingSession = () => {
 
   // declare the data fetching function
   const fetchData = async () => {
-    const response = await axios.get(
-      `${BASE_URL}/session/${sessionId}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await axios.get(`${BASE_URL}/session/${sessionId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     setSession(response.data);
     setSessionActive(response.data.status);
   };
 
   useEffect(() => {
     // call the function
-    fetchData();
+    fetchData().catch((error) => {
+      console.error("Error fetching data: ", error);
+    });
   }, [sessionId]);
 
   const [inputUrl, setInputUrl] = useState("");
@@ -48,34 +47,42 @@ const TutorMeetingSession = () => {
       window.alert("Invalid Live Share Url");
       return;
     }
-    const response = await axios.post(
-      `${BASE_URL}/session/${sessionId}/start`,
-      {
-        liveShareUrl: inputUrl,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/session/${sessionId}/start`,
+        {
+          liveShareUrl: inputUrl,
         },
-      }
-    );
-    setInputUrl("");
-    window.open(response.data.session.liveShareUrl, "_blank");
-    setSessionActive("active");
-    InitZoom(response.data.session);
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setInputUrl("");
+      window.open(response.data.session.liveShareUrl, "_blank");
+      setSessionActive("active");
+      InitZoom(response.data.session);
+    } catch (error) {
+      console.error("Error starting session: ", error);
+    }
   };
 
   const endSession = async () => {
-    const response = await axios.post(
-      `${BASE_URL}/session/${sessionId}/end`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    setSessionActive("completed");
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/session/${sessionId}/end`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setSessionActive("completed");
+    } catch (error) {
+      console.error("Error ending session: ", error);
+    }
   };
 
   return (
