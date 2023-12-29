@@ -232,9 +232,14 @@ button {
   }
 
   .line.accessToURLs .buttons .blueButton {
-    width: 35%;
-    font-size: 50%;
+    width: 90%;
+    font-size: 70%;
   }
+  .buttons .endSession{
+    width: 90%;
+    font-size: 70%;
+  } 
+  
 }
 
 @media screen and (min-width: 1200px) {

@@ -30,7 +30,7 @@
   align-items: center;
 }
 
-.headerTextFooter img{
+.headerTextFooter img {
   margin-right: 2%;
   height: 10%;
   width: 10%;
@@ -83,20 +83,22 @@
 .copyRight {
   font-weight: bold;
   display: flex;
-  height: 3rem;
+  height: 2.5rem;
   align-items: flex-end;
 }
 
 /* Set responsive for Iphone 14 Pro Max */
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 525px) {
   .containerContentFooter {
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
   }
 
   .headerTextFooter {
     margin: 1rem 0;
+    width: 100%;
+    justify-content: center;
   }
 
   .rightContentFooter {
@@ -112,7 +114,93 @@
   }
 
   .iconFooter {
-    width: 50%;
+    width: 40%;
     justify-content: space-between;
+  }
+
+  .iconFooter div a img {
+    width: 80%;
+    height: 100%;
+  }
+
+  .homeFooter a li {
+    font-size: small;
+  }
+  .aboutUsFooter a li {
+    font-size: small;
+  }
+
+  .copyRight {
+    font-size: small;
+  }
+}
+
+@media only screen and (min-width: 526px) and (max-width: 769px) {
+  #footer{
+    width: 100%;
+  }
+  .footerLink {
+    width: 100%;
+    height: 4rem;
+  }
+
+  .headerTextFooter {
+    width: 100%;
+  }
+
+  .headerTextFooter.titleFont img {
+    width: 40px;
+  }
+  .headerTextFooter.titleFont h2 {
+    font-size: 27px;
+    padding-left: 10px;
+    padding-top: 7px;
+  }
+  .iconFooter div a img {
+    width: 80%;
+    height: 100%;
+  }
+
+  .homeFooter {
+    height: 100px;
+  }
+
+  .aboutUsFooter {
+    height: 100px;
+  }
+
+  .aboutUsFooter a {
+    width: 200%;
+  }
+  .homeFooter a {
+    width: 200%;
+  }
+
+  .homeFooter a li {
+    font-size: 15px;
+  }
+  .aboutUsFooter a li {
+    font-size: 15px;
+  }
+
+  .copyRight {
+    font-size: small;
+  }
+}
+
+@media only screen and (min-width: 770px){
+
+  .homeFooter a li {
+    font-size: 17px;
+  }
+  .aboutUsFooter a li {
+    font-size: 17px;
+  }
+  .copyRight {
+    font-size: small;
+  }
+  .iconFooter div a img {
+    width: 90%;
+    height: 100%;
   }
 }
