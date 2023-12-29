@@ -4,6 +4,8 @@ import date from "../assets/footer/calendar.svg";
 import time from "../assets/footer/calendar-clock.svg";
 import waiting from "../assets/footer/loading.svg";
 import user from "../assets/footer/circle-user.svg";
+import calendar from "../assets/footer/calendar-days.svg";
+import note from "../assets/footer/description.svg";
 import ButtonsSessions from "./Buttons/ButtonsSessions";
 import EndSession from "./Buttons/EndSession";
 import InputUrl from "./Buttons/InputUrl";
@@ -32,17 +34,17 @@ function MeetingSessionContainer({
           <p className="heading">{renderData.title}</p>
         </div>
         <div className="time line">
-          <img className="pictureTitle" src={time} alt="circle" />
-          <p className="date">Date: {extractDate(renderData.startTime)}</p>
+          <img className="pictureTitle" src={calendar} alt="circle" />
+          <p className="date"><strong>Date:</strong>{extractDate(renderData.startTime)}</p>
         </div>
         <div className="time line">
           <img className="pictureTitle" src={time} alt="circle" />
-          <p className="date">Start: {formatDate(renderData.startTime)}</p>
-          <p className="date">End: {formatDate(renderData.endTime)}</p>
+          <p className="date"><strong>Start:</strong>{formatDate(renderData.startTime)}</p>
+          <p className="date"><strong>End:</strong> {formatDate(renderData.endTime)}</p>
         </div>
         <div className="line description">
-          <img className="pictureTitle" src={date} alt="circle" />
-          <p className="time">Description: {renderData.description}</p>
+          <img className="pictureTitle" src={note} alt="circle" />
+          <p className="time"><strong>Description:</strong> {renderData.description}</p>
         </div>
         <div className="line accessToURLs">
           <img className="pictureTitle" src={waiting} alt="circle" />
