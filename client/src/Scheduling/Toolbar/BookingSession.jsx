@@ -2,6 +2,7 @@ import React from "react";
 import "../../css/Scheduling/Toolbar/RequestDescription.css";
 import user from "/src/assets/footer/circle-user.svg";
 import { CreateRequest } from "./RequestFunctions/CreateRequest";
+import { checkTimeAhead } from "./RequestFunctions/DateTimeFormat";
 const BookingSession = ({
   request,
   setRequest,
@@ -14,9 +15,12 @@ const BookingSession = ({
       <button
         className="bookingSession"
         onClick={() => {
-          CreateRequest({ newRequest: request, setRequest, defaultRequest });
-          setSubmitCounter(submitCounter + 1);
-          // console.log(submitCounter);
+          if (!checkTimeAhead(request.startTime, request.endTime, 30)) {
+            window.alert("Please book at least 30 minutes");
+          } else {
+            CreateRequest({ newRequest: request, setRequest, defaultRequest });
+            setSubmitCounter(submitCounter + 1);
+          }
         }}
       >
         Book a Session

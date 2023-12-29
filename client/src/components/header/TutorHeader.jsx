@@ -41,9 +41,7 @@ export default function TutorHeader({ tutor }) {
               </MDBNavbarItem>
 
               <MDBNavbarItem>
-                <MDBNavbarLink href="/scheduleInterface/me">
-                  Schedules
-                </MDBNavbarLink>
+                <MDBNavbarLink href="/schedule/me">Schedules</MDBNavbarLink>
               </MDBNavbarItem>
             </MDBNavbarNav>
 

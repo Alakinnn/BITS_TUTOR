@@ -66,3 +66,7 @@ export function convertStringToDateTime(dateTimeString) {
   console.log(dateTimeObject);
   return dateTimeObject;
 }
+
+export function checkTimeAhead(startTime, endTime, duration) {
+  return endTime - startTime >= duration * 60 * 1000;
+}

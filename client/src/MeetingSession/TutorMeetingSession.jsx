@@ -98,7 +98,7 @@ const TutorMeetingSession = () => {
           role="tutor"
           renderData={session}
           ssActive={sessionActive}
-          joinSessionFunction={() => InitZoom(session)}
+          joinSessionFunction={() => InitZoom(session, "tutor")}
           handleChangeFunction={handleChange}
           startSessionFunction={startSession}
           endSessionFunction={endSession}

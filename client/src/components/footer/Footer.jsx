@@ -15,10 +15,10 @@ export default function Footer() {
       <div className="containerContentFooter">
         <Link to={HOME_URL} className="footerLink">
           <div className="headerTextFooter titleFont">
-            <img src={"/public/images/weblogo.png"} alt="logo" />
+            <img src={"/images/weblogo.png"} alt="logo" />
             <h2>Meet a Mentor</h2>
-          </div>   
-            </Link>
+          </div>
+        </Link>
         <div className="rightContentFooter titleFont">
           <ul className="homeFooter">
             <Link to={HOME_URL} className="footerLink">

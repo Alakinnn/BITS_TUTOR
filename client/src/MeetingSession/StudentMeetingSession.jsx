@@ -48,7 +48,7 @@ const StudentMeetingSession = () => {
       }
     );
     console.log(response);
-    InitZoom(response.data.session);
+    InitZoom(response.data.session, "student");
   };
 
   const joinLiveCoding = () => {

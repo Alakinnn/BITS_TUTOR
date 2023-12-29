@@ -6,6 +6,7 @@ import BookingSession from "./BookingSession";
 import {
   convertTimeToString,
   convertStringToDateTime,
+  checkTimeAhead,
 } from "./RequestFunctions/DateTimeFormat";
 import { GetTutorInfo } from "./RequestFunctions/GetTutorInfo";
 import { Link } from "react-router-dom";
@@ -51,7 +52,14 @@ const StudentCreateRequest = ({
   };
   return (
     <>
-      <button className="bookingSession" onClick={showDescription}>
+      <button
+        className="bookingSession"
+        onClick={() =>
+          tutorId != "me"
+            ? showDescription()
+            : (window.location.href = "/search")
+        }
+      >
         Book a Session
       </button>
       <div className={`toolbar-description ${removeClass ? "" : "invisible"}`}>
