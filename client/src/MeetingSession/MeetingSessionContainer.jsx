@@ -36,7 +36,7 @@ function MeetingSessionContainer({
         <div className="time line">
           <img className="pictureTitle" src={calendar} alt="circle" />
           <p className="date">
-            <strong>Date:</strong>
+            <strong>Date: </strong>
             {extractDate(renderData.startTime)}
           </p>
         </div>
