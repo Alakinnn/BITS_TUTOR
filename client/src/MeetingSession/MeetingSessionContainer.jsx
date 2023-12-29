@@ -12,6 +12,7 @@ import {
   formatDate,
   extractDate,
 } from "../Scheduling/Toolbar/RequestFunctions/DateTimeFormat";
+import { Link } from "react-router-dom";
 function MeetingSessionContainer({
   role,
   renderData,
@@ -82,13 +83,25 @@ function MeetingSessionContainer({
         <p className="participants">Participants:</p>
         {renderData && renderData.tutor && (
           <div className="participant student">
-            <img className="pictureTitle" src={user} alt="circle" />
+            <Link to={`/tutor/${renderData.tutor._id}`}>
+              <img
+                className="pictureTitle"
+                src={renderData.tutor.profilePicUrl}
+                alt="circle"
+              />
+            </Link>
             <p className="name-users">{renderData.tutor.username}</p>
           </div>
         )}
         {renderData && renderData.student && (
           <div className="participant tutor">
-            <img className="pictureTitle" src={user} alt="circle" />
+            <Link to={`/student/${renderData.student._id}`}>
+              <img
+                className="pictureTitle"
+                src={renderData.student.profilePicUrl}
+                alt="circle"
+              />
+            </Link>
             <p className="name-users">{renderData.student.username}</p>
           </div>
         )}
