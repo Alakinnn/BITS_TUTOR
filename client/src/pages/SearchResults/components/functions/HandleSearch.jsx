@@ -21,7 +21,7 @@ const HandleSearch = async ({
     },
   });
 
-  console.log(response.data);
+
   setTutors(response.data);
 };
 

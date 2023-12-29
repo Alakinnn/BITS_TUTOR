@@ -15,7 +15,7 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
   };
 
   const renderRequestList = (requestList) => {
-    console.log("Request list: ", requestList);
+    // No console log in this function
     // Map over the filtered list and render the components
     return requestList.map((request) => (
       <li
@@ -25,12 +25,7 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
         <span className="dropdown_text">
           <div className="left_column">
             <img
-              src={
-                // role == "student"
-                //   ? request.tutor.profilePicUrl
-                //   : request.student.profilePicUrl
-                request.student.profilePicUrl
-              }
+              src={request.student.profilePicUrl}
               alt=""
             ></img>
           </div>
@@ -47,7 +42,6 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
   };
 
   const renderRequestListByStatus = (requestList, status) => {
-    // Filter the requestList by status
     let newRequestList = requestList.filter((request) => {
       return request.status === status;
     });
@@ -60,12 +54,7 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
         <span className="dropdown_text">
           <div className="left_column">
             <img
-              src={
-                // role == "student"
-                //   ? request.tutor.profilePicUrl
-                //   : request.student.profilePicUrl
-                request.student.profilePicUrl
-              }
+              src={request.student.profilePicUrl}
               alt=""
             ></img>
           </div>
@@ -149,3 +138,4 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
 };
 
 export default UpperToolbar;
+

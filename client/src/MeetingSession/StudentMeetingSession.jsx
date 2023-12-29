@@ -12,30 +12,20 @@ const token = localStorage.getItem("token");
 // STUDENT
 const StudentMeetingSession = () => {
   const { sessionId } = useParams();
-  // Only enable when time comes
-  // request session data from backend
-
   const [session, setSession] = useState({});
 
   useEffect(() => {
-    // declare the data fetching function
     const fetchData = async () => {
       const response = await axios.get(`${BASE_URL}/session/${sessionId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(response.data);
       setSession(response.data);
     };
 
-    // call the function
-    fetchData()
-      // make sure to catch any error
-      .catch(console.error);
+    fetchData().catch(console.error);
   }, []);
-
-  // GET({sID: '123'})
 
   const joinSession = async () => {
     const response = await axios.get(
@@ -47,19 +37,17 @@ const StudentMeetingSession = () => {
         },
       }
     );
-    console.log(response);
     InitZoom(response.data.session);
   };
 
   const joinLiveCoding = () => {
     if (session.liveShareUrl) {
-      // Redirect to live share URL
       window.open(session.liveShareUrl, "_blank");
     }
   };
 
   const handleCancelSession = async () => {
-    const response = await axios.post(
+    await axios.post(
       `${BASE_URL}/session/${sessionId}/cancel`,
       {},
       {
@@ -89,4 +77,5 @@ const StudentMeetingSession = () => {
     </>
   );
 };
+
 export default StudentMeetingSession;

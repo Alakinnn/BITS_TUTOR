@@ -20,11 +20,12 @@ export async function getTutorSessions(tutorId) {
     },
     params: { tutorId: `${tutorId}` },
   });
-  console.log("Respond data: ", response);
+  // console.log("Respond data: ", response);
   return response.data;
 }
+
 export async function getStudentRequests(tutorId) {
-  console.log(tutorId);
+  // console.log(tutorId);
   const response = await axios.get(`${BASE_URL}/sessionRequest`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -33,6 +34,7 @@ export async function getStudentRequests(tutorId) {
   });
   return response.data;
 }
+
 // Get tutor and student requests
 export async function getRequests(role, id) {
   switch (role) {

@@ -18,21 +18,18 @@ const TutorMeetingSession = () => {
 
   // declare the data fetching function
   const fetchData = async () => {
-    // console.log("Token", token);
-    // console.log("Session ID", sessionId);
     const response = await axios.get(
       `${BASE_URL}/session/${sessionId}`,
-
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
     );
-    console.log(response.data);
     setSession(response.data);
     setSessionActive(response.data.status);
   };
+
   useEffect(() => {
     // call the function
     fetchData();
@@ -45,8 +42,6 @@ const TutorMeetingSession = () => {
   };
 
   const startSession = async () => {
-    //  Send update request to backend
-    // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
     if (
       !inputUrl.startsWith("https://prod.liveshare.vsengsaas.visualstudio.com")
     ) {
@@ -58,7 +53,6 @@ const TutorMeetingSession = () => {
       {
         liveShareUrl: inputUrl,
       },
-
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -68,15 +62,10 @@ const TutorMeetingSession = () => {
     setInputUrl("");
     window.open(response.data.session.liveShareUrl, "_blank");
     setSessionActive("active");
-    console.log(response);
     InitZoom(response.data.session);
   };
 
   const endSession = async () => {
-    // Set URL
-    // let lastInputUrl = ("");
-    //  Send update request to backend
-    // PATCH({sID: '123', status: 'ongoing', liveShareUrl: inputUrl})
     const response = await axios.post(
       `${BASE_URL}/session/${sessionId}/end`,
       {},
@@ -86,7 +75,6 @@ const TutorMeetingSession = () => {
         },
       }
     );
-    console.log(response);
     setSessionActive("completed");
   };
 
@@ -110,4 +98,5 @@ const TutorMeetingSession = () => {
     </>
   );
 };
+
 export default TutorMeetingSession;
