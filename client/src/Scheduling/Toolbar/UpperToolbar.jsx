@@ -25,7 +25,12 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
         <span className="dropdown_text">
           <div className="left_column">
             <img
-              src={request.student.profilePicUrl}
+              src={
+                // role == "student"
+                //   ? request.tutor.profilePicUrl
+                //   : request.student.profilePicUrl
+                request.student.profilePicUrl
+              }
               alt=""
             ></img>
           </div>
@@ -42,6 +47,7 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
   };
 
   const renderRequestListByStatus = (requestList, status) => {
+    // Filter the requestList by status
     let newRequestList = requestList.filter((request) => {
       return request.status === status;
     });
@@ -54,7 +60,12 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
         <span className="dropdown_text">
           <div className="left_column">
             <img
-              src={request.student.profilePicUrl}
+              src={
+                // role == "student"
+                //   ? request.tutor.profilePicUrl
+                //   : request.student.profilePicUrl
+                request.student.profilePicUrl
+              }
               alt=""
             ></img>
           </div>
@@ -138,4 +149,3 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
 };
 
 export default UpperToolbar;
-

@@ -101,5 +101,4 @@ function TutorRequestDescription({
   return <>{renderObject}</>;
 }
 
-exp
-
+export default TutorRequestDescription;
