@@ -1,5 +1,5 @@
 #root {
-  background-color: #ffffff;
+  background-color: #eaecee ;
 }
 
 .scheduling-container {
@@ -21,6 +21,7 @@
   .toolbar {
     width: 100%;
     float: right;
+    
   }
 
   .schedule-view {

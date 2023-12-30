@@ -70,7 +70,7 @@ function App() {
               path="/studentSession/:sessionId"
               element={<PrivateRoute Component={StudentMeetingSession} />}
             />
-            <Route
+            <Route 
               path="/tutorSession/:sessionId"
               element={<PrivateRoute Component={TutorMeetingSession} />}
             />

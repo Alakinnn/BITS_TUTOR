@@ -16,6 +16,8 @@ html {
 :root {
   --title: "Poppins", monospace;
   --content: "DM Sans", sans-serif;
+  --primary-color:#eaecee;
+  --card-color: #fff;
 }
 
 .titleFont {
