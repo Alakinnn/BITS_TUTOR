@@ -9,11 +9,13 @@
   margin-bottom: 4%;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (min-width: 319px) and (max-width: 424px) {
   .scheduling-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+   
+    
   }
 
   .toolbar {
@@ -35,9 +37,80 @@
     align-items: center;
     margin-left: 17%;
   }
+  #summary-title {
+    width:40%;
+  }
+ 
+  #summary-title .title{
+    font-size: 28px;
+  }
+  #summary-title .content{
+    margin-top: 17px;
+    font-size: 10px;
+  }
+  #summary-filters{
+    font-size: small;
+    display:grid;
+    width: 15%;
+    padding-bottom: 20px;
+    height: 50px;
+  }
+
 }
 
-@media screen and (min-width: 769) and (max-width: 2560px) {
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .scheduling-container {
+    display: flex;
+    flex-direction: column;
+  
+  }
+
+  .toolbar {
+    width: 100%;
+    float: right;
+  }
+
+  .schedule-view {
+    width: 100%;
+    float: left;
+  }
+
+  .bookingSession {
+    background-color: #d4d4d4;
+    font-size: 15px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  #summary-title {
+    width:30%;
+  }
+ 
+  #summary-title .title{
+    font-size: 28px;
+  }
+  #summary-title .content{
+    margin-top: 18px;
+    font-size: 10px;
+  }
+  #summary-filters{
+    font-size: small;
+    width: 37%;
+    height: 60px;
+  }
+  .fc-toolbar-chunk{
+    font-size: 0.85rem !important;
+  }
+  .scheduling-container{
+    
+  }
+  
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 2560px) {
   .upper-info {
     display: flex;
     border-bottom: solid 1px #000000;
@@ -48,13 +121,25 @@
     gap: 5%;
     position: absolute;
     right: 5%;
-    max-width: 50%;
+    width: fit-content;
+    margin-top: 30px;
   }
-  label {
-    margin-left: 50%;
-  }
+ 
   .summary-filter-checker {
     display: flex;
     align-items: center;
   }
+  
+ 
+  #summary-title .title{
+    font-size: 35px;
+  }
+  #summary-title .content{
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  .fc-toolbar-chunk{
+    font-size: 18px;
+  }
+ 
 }

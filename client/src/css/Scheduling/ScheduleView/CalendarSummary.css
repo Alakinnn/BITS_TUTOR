@@ -60,3 +60,38 @@
     font-size: 70%;
   }
 }
+
+@media screen and (min-width: 319px) and (max-width: 424px) {
+  .scheduling-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .toolbar {
+    width: 100%;
+    float: right;
+  }
+
+  .schedule-view {
+    width: 100%;
+    float: left;
+  }
+
+  .bookingSession {
+    background-color: #d4d4d4;
+    font-size: small;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 17%;
+  }
+  .summary-title .title{
+    font-size: 100px;
+  }
+  .summary-title .content{
+    font-size: 100px;
+  }
+
+}
