@@ -2,9 +2,9 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 export default function Footer() {
   // List of URLs
-  const HOME_URL = "/FooterTest";
+  const HOME_URL = "/ ";
   const SEARCH_URL = "/FooterTest";
-  const SCHEDULE_URL = "/FooterTest";
+  const SCHEDULE_URL = "/schedule/me";
   const TUTOR_REGISTER_URL = "/FooterTest";
   const ABOUT_URL = "/FooterTest";
   const CONTACT_URL = "/FooterTest";
