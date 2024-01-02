@@ -12,7 +12,6 @@ function CalendarSummary({ filterCriteria, setFilterCriteria }) {
         {/* Summart title */}
         <div id="summary-title">
           <div className="title">Calendar</div>
-          <p className="content">12 Total Enrolled in January</p>
         </div>
 
         {/* Summary filters */}
