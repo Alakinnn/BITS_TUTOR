@@ -8,3 +8,15 @@ header .profilePicture {
 }
 
 
+.nav-link {
+    color: black;
+    background-color: white; 
+    transition: background-color 0.3s, color 0.3s; 
+
+}
+
+.nav-link:hover {
+    background-color: black;
+    color: white;
+}
+
