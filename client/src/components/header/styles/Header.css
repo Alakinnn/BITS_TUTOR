@@ -20,3 +20,15 @@ header .profilePicture {
     color: white;
 }
 
+.name{
+    margin-top: 0;
+    margin-left: 1%;
+}
+
+.navbar-brand{
+    transition: transform .2s;
+}
+
+.navbar-brand:hover{
+    transform: scale(1.1);
+}
