@@ -1,70 +1,94 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import InitZoom from "./InitZoom";
-import InfoInterface from "./InfoInterface";
+import MeetingSessionContainer from "./MeetingSessionContainer";
+import { BASE_URL } from "../App";
 import "../css/MeetingSession.css";
-
-const sessionId = "6569a1f8c3f228b8ee4b6de0"; // This is a fake ID, will have to implement scheduling feature
+import { useParams } from "react-router-dom";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
+const token = localStorage.getItem("token");
 
 // STUDENT
 const StudentMeetingSession = () => {
-  // Only enable when time comes
-  // request session data from backend
-
+  const { sessionId } = useParams();
   const [session, setSession] = useState({});
 
   useEffect(() => {
-    // declare the data fetching function
     const fetchData = async () => {
-      const response = await axios.get(
-        `http://139.59.105.114/api/v1/session/${sessionId}`
-      );
-      console.log(response.data);
+      const response = await axios.get(`${BASE_URL}/session/${sessionId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setSession(response.data);
     };
 
-    // call the function
-    fetchData()
-      // make sure to catch any error
-      .catch(console.error);
+    fetchData().catch((error) => {
+      console.error("Error fetching data: ", error);
+    });
   }, []);
 
-  // GET({sID: '123'})
-
   const joinSession = async () => {
-    const response = await axios.get(`http://139.59.105.114/api/v1/session/${sessionId}/join`); 
-    console.log(response);
-    if (response.data.session.liveShareUrl) {
-      // Redirect to live share URL
-      window.open(response.data.session.liveShareUrl, "_blank");
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/session/${sessionId}/join`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      InitZoom(response.data.session, "student");
+    } catch (error) {
+      console.error("Error joining session: ", error);
     }
-    InitZoom(response.data.session);
-    
+  };
+
+  const joinLiveCoding = () => {
+    try {
+      if (session.liveShareUrl) {
+        window.open(session.liveShareUrl, "_blank");
+      }
+    } catch (error) {
+      console.error("Error opening live share Url: ", error);
+    }
+  };
+
+  const handleCancelSession = async () => {
+    try {
+      await axios.post(
+        `${BASE_URL}/session/${sessionId}/cancel`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Error cancelling session: ", error);
+    }
   };
 
   return (
     <>
-      <div id="boxContains">
-        {<InfoInterface/>}
-        {session.status === "active" ? (
-          <div>
-            <div className="infoEnd">
-              <h3 className="title">End Time: </h3>
-              <h3 className="text">2am PCT</h3>
-            </div>
-            <h4 id="message">Session is ongoing</h4>
-            <div className="joinSession">
-              <button onClick={joinSession}>Join Session</button>
-            </div>
-          </div>
-        ) : (
-          <div className="joinSession">
-            <h4 id="message">Session has not started yet</h4>
-          </div>
-        )}
-        <div id="meetingSDKElement"></div>
-      </div>
+      <Header />
+      {
+        <MeetingSessionContainer
+          role="student"
+          renderData={session}
+          ssActive={session.status}
+          joinSessionFunction={joinSession}
+          joinLiveCodingFunction={joinLiveCoding}
+          handleCancelSession={handleCancelSession}
+        />
+      }
+
+      <div id="meetingSDKElement"></div>
+      <Footer />
     </>
   );
 };
+
 export default StudentMeetingSession;

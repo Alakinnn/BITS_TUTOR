@@ -1,28 +1,32 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body, html{
+body,
+html {
   width: 100%;
-  
 }
 #root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; 
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.75;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
 }
 
+:root {
+  --title: "Poppins", monospace;
+  --content: "DM Sans", sans-serif;
+  --primary-color:#eaecee;
+  --card-color: #fff;
+}
 
+.titleFont {
+  font-family: var(--title);
+}
 
-
-
-
-
-
-
+.contentFont {
+  font-family: var(--content);
+}
 
 /* #root {
   max-width: 1280px;

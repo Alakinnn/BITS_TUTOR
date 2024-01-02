@@ -1,0 +1,12 @@
+.toolbar{
+    width: 25%;
+    font-size: medium !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-color);
+}
+
+
+
+

@@ -1,0 +1,60 @@
+.upcoming-event-content {
+  display: flex;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  background-color: #e8fdff;
+}
+
+.upcoming-vertical {
+  border-left: 0.5rem solid #21bdca;
+  height: 100%;
+  margin-left: 2%;
+  position: absolute;
+  top: 0;
+  left: -1.8%;
+  border-radius: 3px 0 0 3px;
+}
+
+.upcoming-event-description {
+  margin-left: 17%;
+  color: #21bdca;
+  max-height: 100%;
+}
+
+.upcoming-event-description h5 {
+  font-weight: 600;
+  position: absolute;
+  top: 1rem;
+  margin: 0.1rem;
+  font-size: 50%;
+}
+
+.upcoming-event-description b h5 {
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+
+.upcoming-event-description h6 {
+  font-weight: 450;
+  position: absolute;
+  bottom: 0;
+  margin: 0.2rem;
+  font-size: 0.7rem;
+}
+
+.fc-v-event {
+  border: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .upcoming-event-description h6 {
+    font-weight: 450;
+    position: absolute;
+    bottom: 0;
+    margin: 0.2rem;
+    font-size: 40%;
+  }
+}
