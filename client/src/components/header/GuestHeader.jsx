@@ -34,6 +34,7 @@ export default function GuestHeader() {
                         <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
                             <MDBNavbarItem>
                                 <MDBNavbarLink
+                                    className="nav-link"
                                     active
                                     aria-current="page"
                                     href="/"
@@ -43,11 +44,15 @@ export default function GuestHeader() {
                             </MDBNavbarItem>
 
                             <MDBNavbarItem>
-                                <MDBNavbarLink href="/search">
+                                <MDBNavbarLink
+                                    className="nav-link"
+                                    href="/search"
+                                >
                                     Find Tutors
                                 </MDBNavbarLink>
                             </MDBNavbarItem>
                         </MDBNavbarNav>
+                        
 
                         <div className="d-flex input-group w-auto">
                             <MDBBtn
