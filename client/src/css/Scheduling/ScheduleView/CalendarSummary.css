@@ -50,6 +50,11 @@
   font-size: 80%;
 }
 
+.bookingSession:active{
+  background-color: #aaaa;
+  color: #332e2e;
+}
+
 @media screen and (max-width: 768px) {
   .dropdown_list {
     height: 40vh;
