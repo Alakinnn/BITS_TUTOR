@@ -28,7 +28,6 @@
 }
 
 #summary-filters {
-  display: flex;
   gap: 5%;
   position: absolute;
   right: 5%;
@@ -79,7 +78,7 @@
   }
 
   .bookingSession {
-    background-color: #d4d4d4;
+
     font-size: small;
     width: 70%;
     display: flex;

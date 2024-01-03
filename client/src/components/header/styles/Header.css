@@ -67,5 +67,6 @@ header .profilePicture {
 }
 
 .collapse.navbar-collapse ul li a.nav-link.active:hover{
+    background-color: #332e2e;
     color: #fafafa;
 }
