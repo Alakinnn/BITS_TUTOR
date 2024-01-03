@@ -26,10 +26,10 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
           <div className="left_column">
             <img
               src={
-                // role == "student"
-                //   ? request.tutor.profilePicUrl
-                //   : request.student.profilePicUrl
-                request.student.profilePicUrl
+                role == "student"
+                  ? request.tutor.profilePicUrl
+                  : request.student.profilePicUrl
+                // request.student.profilePicUrl
               }
               alt=""
             ></img>
@@ -61,10 +61,10 @@ const UpperToolbar = ({ setSelectedRequest, role, requestList }) => {
           <div className="left_column">
             <img
               src={
-                // role == "student"
-                //   ? request.tutor.profilePicUrl
-                //   : request.student.profilePicUrl
-                request.student.profilePicUrl
+                role == "student"
+                  ? request.tutor.profilePicUrl
+                  : request.student.profilePicUrl
+                // request.student.profilePicUrl
               }
               alt=""
             ></img>

@@ -1,13 +1,13 @@
 #footer {
   height: 20.5rem;
   flex-shrink: 0;
-  background: #505050;
-  color: white;
+  background: #332d2d;
+  color: #fff;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  font-family: Open Sans;
+  font-family: var(--font-family);
   padding: 1rem;
   overflow: hidden;
 }
@@ -34,6 +34,7 @@
   margin-right: 2%;
   height: 10%;
   width: 10%;
+  
 }
 
 .rightContentFooter {
@@ -78,6 +79,10 @@
   width: 10rem;
   flex-direction: row;
   justify-content: space-between;
+  fill: #fff ;
+}
+.footerLink img{
+  fill: #fff ;
 }
 
 .copyRight {

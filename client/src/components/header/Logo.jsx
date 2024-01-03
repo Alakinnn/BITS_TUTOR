@@ -1,6 +1,7 @@
 import { MDBNavbarBrand } from "mdb-react-ui-kit";
 import logo from "/images/mam_logo.png";
 // import logo from "/images/mam_logo_words.svg";
+import "../header/styles/Header.css"
 function Logo() {
     return (
         <MDBNavbarBrand href="/">
@@ -13,6 +14,7 @@ function Logo() {
                 src={logo}
                 alt="logo"
             />
+            <p className="name">Meet a Mentor</p>
         </MDBNavbarBrand>
     );
 }
