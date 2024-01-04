@@ -27,8 +27,8 @@ function MeetingSessionContainer({
   handleCancelSession,
 }) {
   return (
-    <div className="meetingSession">
-      <div className="meetingInfo">
+    <div className="meetingSession ">
+      <div className="meetingInfo .btn-outline-dark">
         <div className="line title">
           {/* <img className="pictureTitle" src={heading} alt="circle" /> */}
           <p className="heading">{renderData.title}</p>
@@ -90,7 +90,7 @@ function MeetingSessionContainer({
           )}
         </div>
       </div>
-      <div className="meetingParticipants">
+      <div className="meetingParticipants .btn-outline-dark">
         <p className="participants">Participants:</p>
         {renderData && renderData.tutor && (
           <div className="participant student">

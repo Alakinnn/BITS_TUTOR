@@ -7,7 +7,7 @@ function Logo() {
         <MDBNavbarBrand href="/">
             <img
                 style={{
-                    width: "30px",
+                    width: "25px",
                     // height: "40px",
                     marginLeft: "10px",
                 }}

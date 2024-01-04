@@ -2,12 +2,12 @@
   height: 20.5rem;
   flex-shrink: 0;
   background: #332d2d;
-  color: #fff;
+  color: #fbfbfb;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  font-family: var(--font-family);
+  font-family: var(--content);
   padding: 1rem;
   overflow: hidden;
 }
@@ -38,7 +38,7 @@
 }
 
 .rightContentFooter {
-  margin-top: 1.5rem;
+ 
   display: flex;
   justify-content: center;
   font-size: 1rem;
@@ -70,8 +70,10 @@
 }
 
 .footerLink {
-  color: white;
+  color: #fbfbfb;
   text-decoration: none;
+  font-weight: 500;
+  line-height: 1.8;
 }
 
 .iconFooter {
@@ -79,10 +81,10 @@
   width: 10rem;
   flex-direction: row;
   justify-content: space-between;
-  fill: #fff ;
+  fill: #fafafa;
 }
 .footerLink img{
-  fill: #fff ;
+  fill: #fafafa;
 }
 
 .copyRight {
