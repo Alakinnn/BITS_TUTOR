@@ -90,7 +90,7 @@ function MeetingSessionContainer({
           )}
         </div>
       </div>
-      <div className="meetingParticipants .btn-outline-dark">
+      <div className="meetingParticipants">
         <p className="participants">Participants:</p>
         {renderData && renderData.tutor && (
           <div className="participant student">
