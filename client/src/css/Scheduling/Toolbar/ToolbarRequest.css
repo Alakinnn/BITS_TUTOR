@@ -1,0 +1,85 @@
+.toolbar-description {
+  width: 100%;
+  background-color: #f8f8f8;
+  margin-top: 15px;
+}
+
+.addingTitle {
+  margin-top: 3.5%;
+  margin-left: 5%;
+}
+
+.addingTitle input {
+  height: 80%;
+  border: solid 1px #e4e4e4;
+  border-radius: 3px;
+  width: 90%;
+}
+
+.addingTitle input::placeholder {
+  padding-left: 5%;
+}
+
+.settingTime {
+  height: fit-content;
+  font-size: medium;
+}
+
+.from {
+  display: flex;
+  font-weight: 500;
+}
+
+.to {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.settingTime input {
+  width: 70%;
+  height: 80%;
+  border: solid 0.5px #e4e4e4;
+  margin-left: 5%;
+  border-radius: 3px;
+}
+
+
+
+.inputContent input {
+  border-radius: 3px;
+  background-color: #ffff;
+}
+
+.inputContent input::placeholder{
+  padding-left: 10px;
+  font-size: medium;
+}
+
+.bookingSession {
+  background-color: #332e2e;
+  color: #f4f4f4;
+  font-size: small;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3% 10%;
+}
+
+.bookingSession:hover {
+  background-color: #332e2e ;
+  color: #f4f4f4
+}
+
+.invisible {
+  display: none;
+}
+
+.buttonRequest {
+  width: 100%;
+  display: grid;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}

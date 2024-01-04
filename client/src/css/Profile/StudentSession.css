@@ -1,0 +1,50 @@
+.small-text {
+  font-size: x-small;
+  margin-bottom: 0 !important;
+  color: #999;
+  
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 376px){
+    .fas.fa-chalkboard-teacher.fa-lg{
+        font-size: larger;  
+    }
+
+    .style-title{
+        font-size:0.9rem;
+    }
+
+    .button-session{
+        width: 6rem;
+        font-size: xx-small;
+    }
+
+    .small-text{
+        font-size: x-small;
+    }
+
+  }
+
+  @media only screen and (min-width: 767px) and (max-width: 1200px){
+
+    .fas.fa-chalkboard-teacher.fa-lg{
+        font-size: large;  
+        margin-right: 0.5rem;
+    }
+
+    .style-title{
+        font-size:0.9rem;
+    }
+
+    .button-session{
+        width: 6.5rem;
+        font-size: x-small;
+    }
+
+    .small-text{
+        font-size: x-small;
+    }
+
+
+  }

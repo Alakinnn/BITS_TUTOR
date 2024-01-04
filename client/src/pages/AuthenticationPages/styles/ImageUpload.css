@@ -1,0 +1,27 @@
+.profilePicture {
+  max-height: 20vh;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin: 0 50%;
+}
+
+.cv {
+  max-height: 20vh;
+  width: 100%;
+  object-fit: cover;
+  margin: 0 50%;
+}
+
+[type="button"]:hover {
+  background-color: #979695;
+  color: #ffffff;
+}
+
+button {
+  background-color: #ffffff;
+}
+
+main img {
+  object-fit: cover;
+}
