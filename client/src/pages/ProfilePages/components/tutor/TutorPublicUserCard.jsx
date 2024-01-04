@@ -32,7 +32,7 @@ const TutorPublicUserCard = ({ tutor }) => {
         ) : (
           <div className="d-flex justify-content-center mb-2">
             <MDBBtn
-              className="btn-dark"
+              className="bg-secondary"
               onClick={() =>
                 window.alert("You cannot book another tutor's session")
               }

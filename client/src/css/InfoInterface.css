@@ -12,8 +12,7 @@ p {
 .meetingInfo {
   padding: 5%;
   width: 55%;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
-    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   border-radius: calc(0.5rem - 1px);
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.175);
@@ -105,8 +104,7 @@ button {
   margin-left: 5%;
   padding: 3%;
   width: 25%;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
-    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   border-radius: calc(0.5rem - 1px);
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.175);
@@ -147,11 +145,11 @@ button {
 }
 
 .meetingInfo:hover {
-  background-color: #93545400;
+  background-color: #f8f8f8;
 }
 
 .meetingParticipants:hover {
-  background-color: #93545400;
+  background-color: #f8f8f8;
 }
 
 @media only screen and (max-width: 459px) {
@@ -164,12 +162,11 @@ button {
     margin-left: 3.5%;
     padding: 4%;
     width: 50%;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
-      rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    border-radius: calc(0.5rem - 1px);
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.175);
-
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: calc(0.5rem - 1px);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.175);
+  background-color: #ffff;
     line-height: 1;
     font-size: smaller;
   }
@@ -177,11 +174,11 @@ button {
     margin-left: 2.5%;
     padding: 3%;
     width: 40%;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
-      rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    border-radius: calc(0.5rem - 1px);
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.175);
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: calc(0.5rem - 1px);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.175);
+  background-color: #ffff;
   }
   .participant img {
     width: 12%;
@@ -277,12 +274,11 @@ button {
     margin-left: 3.5%;
     padding: 4%;
     width: 55%;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
-      rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    border-radius: calc(0.5rem - 1px);
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.175);
-
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: calc(0.5rem - 1px);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.175);
+  background-color: #ffff;
     line-height: 1;
     font-size: smaller;
   }
@@ -290,11 +286,11 @@ button {
     margin-left: 2.5%;
     padding: 3%;
     width: 35%;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
-      rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    border-radius: calc(0.5rem - 1px);
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.175);
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: calc(0.5rem - 1px);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.175);
+  background-color: #ffff;
   }
   .meetingInfo .pictureTitle {
     width: 5.5%;
@@ -362,22 +358,20 @@ button {
     margin-left: 5.5%;
     padding: 4%;
     width: 55%;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
-      rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    border-radius: calc(0.5rem - 1px);
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.175);
-
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: calc(0.5rem - 1px);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.175);
+  background-color: #ffff;
     line-height: 1;
     font-size: smaller;
   }
   .meetingParticipants {
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
-      rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    border-radius: calc(0.5rem - 1px);
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.175);
-
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: calc(0.5rem - 1px);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.175);
+  background-color: #ffff;
     width: 30%;
   }
 

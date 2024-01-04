@@ -58,7 +58,7 @@ function SchedulingContainer() {
     <>
     <Header />
     <div className="scheduling-container">
-      <Toolbar 
+      <Toolbar
         role={role}
         tutorId={tutorId}
         studentId={userId}
