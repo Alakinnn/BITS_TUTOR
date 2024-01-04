@@ -1,5 +1,12 @@
-
-
+.card-body.text-center img{
+    margin-bottom: 10px;
+}
+.mb-3{
+    margin: 9px !important;
+}
+.d-flex.justify-content-center.mb-2 button{
+    margin-top: 15px;
+}
 @media only screen and (min-width: 319px) {
     .card-body.text-center img{
         width: 50%;
