@@ -1,0 +1,213 @@
+#footer {
+  height: 20.5rem;
+  flex-shrink: 0;
+  background: #332d2d;
+  color: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--content);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.containerContentFooter {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerTextFooter {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 4rem;
+  margin-right: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.headerTextFooter img {
+  margin-right: 2%;
+  height: 10%;
+  width: 10%;
+  
+}
+
+.rightContentFooter {
+ 
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170.533%;
+  letter-spacing: 0.03125rem;
+  align-items: center;
+}
+
+.rightContentFooter > * {
+  margin-right: 3rem;
+  height: 10rem;
+  list-style-type: none;
+}
+
+.homeFooter,
+.aboutUsFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.homeTextFooter,
+.aboutUsTextFooter {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.footerLink {
+  color: #fbfbfb;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.iconFooter {
+  display: flex;
+  width: 10rem;
+  flex-direction: row;
+  justify-content: space-between;
+  fill: #fafafa;
+}
+.footerLink img{
+  fill: #fafafa;
+}
+
+.copyRight {
+  font-weight: bold;
+  display: flex;
+  height: 2.5rem;
+  align-items: flex-end;
+}
+
+/* Set responsive for Iphone 14 Pro Max */
+@media only screen and (max-width: 525px) {
+  .containerContentFooter {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .headerTextFooter {
+    margin: 1rem 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rightContentFooter {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0;
+    width: 80%;
+  }
+
+  .rightContentFooter > * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .iconFooter {
+    width: 40%;
+    justify-content: space-between;
+  }
+
+  .iconFooter div a img {
+    width: 80%;
+    height: 100%;
+  }
+
+  .homeFooter a li {
+    font-size: small;
+  }
+  .aboutUsFooter a li {
+    font-size: small;
+  }
+
+  .copyRight {
+    font-size: small;
+  }
+}
+
+@media only screen and (min-width: 526px) and (max-width: 769px) {
+  #footer{
+    width: 100%;
+  }
+  .footerLink {
+    width: 100%;
+    height: 4rem;
+  }
+
+  .headerTextFooter {
+    width: 100%;
+  }
+
+  .headerTextFooter.titleFont img {
+    width: 40px;
+  }
+  .headerTextFooter.titleFont h2 {
+    font-size: 27px;
+    padding-left: 10px;
+    padding-top: 7px;
+  }
+  .iconFooter div a img {
+    width: 80%;
+    height: 100%;
+  }
+
+  .homeFooter {
+    height: 100px;
+  }
+
+  .aboutUsFooter {
+    height: 100px;
+  }
+
+  .aboutUsFooter a {
+    width: 200%;
+  }
+  .homeFooter a {
+    width: 200%;
+  }
+
+  .homeFooter a li {
+    font-size: 15px;
+  }
+  .aboutUsFooter a li {
+    font-size: 15px;
+  }
+
+  .copyRight {
+    font-size: small;
+  }
+}
+
+@media only screen and (min-width: 770px){
+
+  .homeFooter a li {
+    font-size: 17px;
+  }
+  .aboutUsFooter a li {
+    font-size: 17px;
+  }
+  .copyRight {
+    font-size: small;
+  }
+  .iconFooter div a img {
+    width: 90%;
+    height: 100%;
+  }
+}

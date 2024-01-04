@@ -1,0 +1,117 @@
+.toolbar-description {
+  width: 100%;
+  /* margin-top: 35%; */
+  background-color: #fafafa;
+}
+
+.toolbar-description .description-user-profile {
+  width: 100%;
+  height: 14.7%;
+  display: flex;
+}
+
+.description-user-profile img {
+  width: 100%;
+}
+
+.description-user-profile a {
+  width: 8%;
+  margin-top: 6%;
+  left: 5%;
+  margin-left: 10%;
+}
+
+.student-info {
+  margin-left: 5%;
+  width: 90%;
+}
+
+.student-info .subject {
+  margin-top: 2%;
+  margin-left: 5%;
+}
+.student-info .status {
+  display: flex;
+  border-top: 1px solid rgb(61, 55, 55);
+  width: 93%;
+  color: #5a5a5a;
+}
+
+.status .user-name {
+  width: 70%;
+  margin-left: 5%;
+  font-size: 80%;
+}
+.status .current-time {
+  width: 30%;
+  font-size: 60%;
+  margin-top: 2%;
+  margin-left: 7%;
+}
+
+.description-time {
+  width: 95%;
+  height: 30%;
+  margin-left: 6%;
+  margin-top: 2%;
+}
+
+.description-time .time {
+  display: flex;
+}
+
+.description-time .request-date {
+  font-weight: 500;
+}
+
+.time .from {
+  display: flex;
+  font-size: 70%;
+}
+
+.time .to {
+  display: flex;
+  margin-left: 27%;
+  font-size: 70%;
+}
+
+.text {
+  color: #cac2fc;
+  margin-left: 10%;
+}
+
+.input-content {
+  width: 90%;
+  height: 80px;
+  margin-left: 5%;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+}
+
+.input-content::placeholder {
+  font-size: x-small;
+  margin-left: 20px;
+}
+
+.toolbar-buttons {
+  display: flex;
+  padding: 5% 5%;
+  place-items: center;
+  justify-content: space-between;
+}
+
+.approve {
+  background-color: #cac2fc;
+}
+
+.approve:hover {
+  background-color: #dbd8ee;
+}
+
+.decline {
+  background-color: #d7d5d5;
+}
+
+.decline:hover {
+  background-color: #ffffff;
+}

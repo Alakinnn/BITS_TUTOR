@@ -1,0 +1,60 @@
+.cancelled-event-content {
+  display: flex;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  background-color: #ffeded;
+}
+
+.cancelled-vertical {
+  border-left: 0.5rem solid #ff6a6a;
+  height: 100%;
+  margin-left: 2%;
+  position: absolute;
+  top: 0;
+  left: -1.8%;
+  border-radius: 3px 0 0 3px;
+}
+
+.cancelled-event-description {
+  margin-left: 17%;
+  max-height: 100%;
+  color: #ff6a6a;
+}
+
+.cancelled-event-description h5 {
+  font-weight: 600;
+  position: absolute;
+  top: 1rem;
+  margin: 0.1rem;
+  font-size: 50%;
+}
+
+.cancelled-event-description b h5 {
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+
+.cancelled-event-description h6 {
+  font-weight: 450;
+  position: absolute;
+  bottom: 0;
+  margin: 0.2rem;
+  font-size: 0.7rem;
+}
+
+.fc-v-event {
+  border: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .cancelled-event-description h6 {
+    font-weight: 450;
+    position: absolute;
+    bottom: 0;
+    margin-top: 0.2rem;
+    font-size: 40%;
+  }
+}
