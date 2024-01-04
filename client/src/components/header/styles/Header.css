@@ -27,7 +27,10 @@ header .profilePicture {
     height: 40px;
 }
 
-
+.nav-link:hover {
+    background-color: rgb(159, 171, 189);
+    color: white ;
+}
 
 .name{
     margin-top: 0;

@@ -37,7 +37,20 @@
 .summary-filter-checker {
   display: flex;
   align-items: center;
+
+  .cb1 {
+    accent-color: #ff6a6a;
+  }
+  
+  .cb2 {
+    accent-color: #5372e7;
+  }
+  
+  .cb3 {
+    accent-color: #21bdca;
+  }
 }
+
 
 #summary-details {
   font-size: large;
