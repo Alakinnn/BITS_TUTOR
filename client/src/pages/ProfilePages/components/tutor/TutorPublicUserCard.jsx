@@ -26,7 +26,7 @@ const TutorPublicUserCard = ({ tutor }) => {
         {user.role == "student" ? (
           <Link to={`/schedule/${tutor._id}`}>
             <div className="d-flex justify-content-center mb-2">
-              <MDBBtn className="bg-secondary">Book A Session</MDBBtn>
+              <MDBBtn className="btn-dark">Book A Session</MDBBtn>
             </div>
           </Link>
         ) : (
