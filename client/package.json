@@ -23,6 +23,7 @@
         "@react-login-page/page11": "^1.0.2",
         "@react-login-page/page8": "^1.0.2",
         "@reduxjs/toolkit": "^2.0.1",
+        "@vercel/analytics": "^1.1.1",
         "@vercel/speed-insights": "^1.0.2",
         "@zoomus/websdk": "^2.18.2",
         "axios": "^1.6.2",

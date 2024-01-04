@@ -21,7 +21,8 @@ import TutorRegisterPage from "./pages/AuthenticationPages/Register/TutorRegiste
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import HomePage from "./pages/HomePages/HomePage";
-
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 import SearchResults from "./pages/SearchResults/SearchResult";
 
 import Header from "./components/header/Header";
@@ -103,6 +104,8 @@ function App() {
           </Routes>
         </UserContext.Provider>
       </AuthProvider>
+      <SpeedInsights />
+      <Analytics />
     </BrowserRouter>
   );
 }
