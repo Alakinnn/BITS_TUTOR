@@ -48,7 +48,7 @@ header .profilePicture {
 }
 
 .collapse.navbar-collapse ul {
-  height: 58px;
+  height: max-content;
 }
 
 .collapse.navbar-collapse ul li a {

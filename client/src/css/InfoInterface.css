@@ -147,11 +147,11 @@ button {
 }
 
 .meetingInfo:hover {
-  background-color: #93545400;
+  background-color: #83818124;
 }
 
 .meetingParticipants:hover {
-  background-color: #93545400;
+  background-color: #83818124;
 }
 
 @media only screen and (max-width: 459px) {
