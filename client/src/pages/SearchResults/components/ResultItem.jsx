@@ -6,7 +6,7 @@ function ResultItem({ user }) {
   // console.log(user._id);
   return (
     <Link to={`/tutor/${user._id}`}>
-      <section className="search-result-item">
+      <section className="search-result-item btn-outline-layout">
         <div className="image-link">
           <img className="image" src={user.profilePicUrl} />
         </div>
