@@ -17,7 +17,7 @@ p {
   border-radius: calc(0.5rem - 1px);
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.175);
-  background-color: #fafafa;
+  background-color: #ffff;
   line-height: 1.5;
 }
 
@@ -110,7 +110,7 @@ button {
   border-radius: calc(0.5rem - 1px);
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.175);
-  background-color: #fafafa;
+  background-color: #ffff;
 }
 
 .participant {
@@ -147,11 +147,11 @@ button {
 }
 
 .meetingInfo:hover {
-  background-color: #f8f8f8;
+  background-color: #93545400;
 }
 
 .meetingParticipants:hover {
-  background-color: #f8f8f8;
+  background-color: #93545400;
 }
 
 @media only screen and (max-width: 459px) {

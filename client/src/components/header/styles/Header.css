@@ -8,10 +8,14 @@ header .profilePicture {
 }
 
 .navbar-light.navbar.navbar-expand-lg.bg-light{
-    background-color: #fafafa !important;
+    background-color: #ffff !important;
 }
 
-
+.d-flex.input-group.w-auto img{
+    margin-top: 4.5px;
+    width: 35px;
+    height: 35px;
+}
 
 
 
