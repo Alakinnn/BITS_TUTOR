@@ -1,79 +1,77 @@
 header .profilePicture {
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    margin-left: 0;
-    margin-right: 15px;
-    border: 1px solid rgb(210, 210, 210);
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  margin-left: 0;
+  margin-right: 15px;
+  border: 1px solid rgb(210, 210, 210);
 }
 
-.navbar-light.navbar.navbar-expand-lg.bg-light{
-    background-color: #ffff !important;
+.navbar-light.navbar.navbar-expand-lg.bg-light {
+  background-color: #ffff !important;
 }
 
-.d-flex.input-group.w-auto img{
-    margin-top: 4.5px;
-    width: 35px;
-    height: 35px;
+.d-flex.input-group.w-auto img {
+  margin-top: 4.5px;
+  width: 35px;
+  height: 35px;
 }
-
-
 
 .nav-link {
-    color: #fafafa;
-    transition: background-color 0.3s, color 0.3s; 
-    font-weight: 500;
-    font-family: var(--content);
-    height: 40px;
+  color: #fafafa;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
+  font-family: var(--content);
+  height: 40px;
 }
 
 .nav-link:hover {
-    background-color: rgb(159, 171, 189);
-    color: white ;
+  background-color: rgb(159, 171, 189);
+  color: white;
 }
 
-.name{
-    margin-top: 0;
-    margin-left: 5px;
-    color: #332e2e;
-    font-weight: 600;
-    font-family: var(--content);
+.name {
+  margin-top: 0;
+  margin-left: 5px;
+  color: #332e2e;
+  font-weight: 600;
+  font-family: var(--content);
 }
 
-.navbar-brand{
-    transition: transform .2s;
-    color: #332e2e;
+.navbar-brand {
+  transition: transform 0.2s;
+  color: #332e2e;
 }
 
-.navbar-brand:hover{
-    transform: scale(1.1);
+.navbar-brand:hover {
+  transform: scale(1.1);
 }
 
 .collapse.navbar-collapse ul {
-    height: 58px;
+  height: 58px;
 }
 
-.collapse.navbar-collapse ul li a{
-    color: #332e2e;
-    width: 120px;
-    text-align: center;
-    padding-top: 15px;
-    height: 58px;
+.collapse.navbar-collapse ul li a {
+  color: #332e2e;
+  width: 120px;
+  text-align: center;
+  padding-top: 15px;
+  height: 58px;
 }
 
 .collapse.navbar-collapse ul li a:hover {
-    background-color: #332e2e;
-    color: #fafafa;
-    height: 58px;
-    border-bottom-left-radius: 0.5px solid #ffff;
+  background-color: #332e2e;
+  color: #fafafa;
+  height: 58px;
+  border-bottom-left-radius: 0.5px solid #ffff;
 }
 
-.collapse.navbar-collapse ul li a.nav-link.active{
-    background-color: #332e2e;
-    color: #fafafa;
+.collapse.navbar-collapse ul li a .nav-link.active {
+  background-color: #332e2e;
+  color: #fafafa;
 }
 
-.collapse.navbar-collapse ul li a.nav-link.active:hover{
-    background-color: #332e2e;
-    color: #fafafa;
+.collapse.navbar-collapse ul li a.nav-link.active:hover {
+  background-color: #332e2e;
+  color: #fafafa;
 }

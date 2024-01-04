@@ -37,20 +37,23 @@
 .summary-filter-checker {
   display: flex;
   align-items: center;
-
-  .cb1 {
-    accent-color: #ff6a6a;
-  }
-  
-  .cb2 {
-    accent-color: #5372e7;
-  }
-  
-  .cb3 {
-    accent-color: #21bdca;
-  }
 }
 
+.cancelled {
+  accent-color: #ff6a6a;
+}
+
+.completed {
+  accent-color: #5372e7;
+}
+
+.upcoming {
+  accent-color: #21bdca;
+}
+
+input[type="checkbox"] {
+  color: #ffffff;
+}
 
 #summary-details {
   font-size: large;
@@ -63,7 +66,7 @@
   font-size: 80%;
 }
 
-.bookingSession:active{
+.bookingSession:active {
   background-color: #aaaa;
   color: #332e2e;
 }
@@ -96,7 +99,6 @@
   }
 
   .bookingSession {
-
     font-size: small;
     width: 70%;
     display: flex;
@@ -104,11 +106,10 @@
     align-items: center;
     margin-left: 17%;
   }
-  .summary-title .title{
+  .summary-title .title {
     font-size: 100px;
   }
-  .summary-title .content{
+  .summary-title .content {
     font-size: 100px;
   }
-
 }

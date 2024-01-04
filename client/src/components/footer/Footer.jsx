@@ -58,17 +58,17 @@ export default function Footer() {
       <div className="iconFooter">
         <div className="linkInFooter">
           <Link to={SOCIAL_URL} className="footerLink">
-            <img src={"/src/assets/footer/linkIn.svg"} alt="linkIn" />
+            <img src={"/public/assets/footer/linkIn.svg"} alt="linkIn" />
           </Link>
         </div>
         <div className="facebookFooter">
           <Link to={SOCIAL_URL} className="footerLink">
-            <img src={"/src/assets/footer/facebook.svg"} alt="facebook" />
+            <img src={"/public/assets/footer/facebook.svg"} alt="facebook" />
           </Link>
         </div>
         <div className="instaFooter">
           <Link to={SOCIAL_URL} className="footerLink">
-            <img src={"/src/assets/footer/insta.svg"} alt="insta" />
+            <img src={"/public/assets/footer/insta.svg"} alt="insta" />
           </Link>
         </div>
       </div>
