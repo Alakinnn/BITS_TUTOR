@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { MDBContainer, MDBRow } from "mdb-react-ui-kit";
-import { MDBCol } from "mdb-react-ui-kit";
-import { MDBBtn } from "mdb-react-ui-kit";
+import { MDBCol, MDBBtn } from "mdb-react-ui-kit";
+/*import { StudentRegister } from '../../../pages/AuthenticationPages/Register/StudentRegister';*/
+
 
 const GetStarted = () => {
   return (
@@ -14,20 +15,19 @@ const GetStarted = () => {
           </h6>
           <p>Looking for a private tutor? Contact Us!</p>
           <div>
-            <MDBBtn className='btn-outline-dark btn-light btn-lg mb-3'>Get Started</MDBBtn>
+          <a href="/StudentRegister">
+              <MDBBtn className='btn-outline-dark btn-light btn-lg mb-3'>Get Started</MDBBtn>
+            </a>
           </div>
-          
           <h6 className='badge badge-dark'>
             <p></p>
           </h6>
           <hr className="hr hr-blurry" />
           <hr className="hr" />
         </MDBCol>
-        
       </MDBRow>
-      
     </>
-  )
+  );
 }
 
-export default GetStarted
+export default GetStarted;
