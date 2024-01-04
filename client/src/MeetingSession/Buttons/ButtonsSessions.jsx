@@ -1,7 +1,8 @@
+import { MDBCard, MDBCardBody, MDBCardImage, MDBBtn } from "mdb-react-ui-kit";
 const ButtonsSessions = ({ joinSessionFunction, joinLiveCodingFunction }) => {
   return (
     <div className="buttons">
-      <button className="joinMeeting blueButton" onClick={joinSessionFunction}>
+      <button className="joinMeeting blueButton btn-dark" onClick={joinSessionFunction}>
         Join Meeting
       </button>
       <button
