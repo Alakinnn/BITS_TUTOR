@@ -22,6 +22,7 @@ function CalendarSummary({ filterCriteria, setFilterCriteria }) {
             <input
               type="checkbox"
               id="checker"
+              className="cb1"
               name="completed"
               data-label="completed"
               onChange={(event) => handleCheck({ event, setFilterCriteria })}
@@ -35,6 +36,7 @@ function CalendarSummary({ filterCriteria, setFilterCriteria }) {
             <input
               type="checkbox"
               id="checker"
+              className="cb2"
               name="enrolled"
               data-label="cancelled"
               onChange={(event) => handleCheck({ event, setFilterCriteria })}
@@ -48,6 +50,7 @@ function CalendarSummary({ filterCriteria, setFilterCriteria }) {
             <input
               type="checkbox"
               id="checker"
+              className="cb3"
               name="upcomming"
               data-label="upcoming"
               onChange={(event) => handleCheck({ event, setFilterCriteria })}
