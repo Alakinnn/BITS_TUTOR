@@ -28,7 +28,6 @@
 }
 
 #summary-filters {
-  display: flex;
   gap: 5%;
   position: absolute;
   right: 5%;
@@ -64,6 +63,11 @@
   font-size: 80%;
 }
 
+.bookingSession:active{
+  background-color: #aaaa;
+  color: #332e2e;
+}
+
 @media screen and (max-width: 768px) {
   .dropdown_list {
     height: 40vh;
@@ -92,7 +96,7 @@
   }
 
   .bookingSession {
-    background-color: #d4d4d4;
+
     font-size: small;
     width: 70%;
     display: flex;

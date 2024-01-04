@@ -1,5 +1,5 @@
 #root {
-  background-color: #eaecee ;
+  background-color: #eaecee;
 }
 
 .scheduling-container {
@@ -7,6 +7,17 @@
   gap: 1%;
   margin-top: 1%;
   margin-bottom: 1%;
+  color: #332e2e;
+}
+
+.fc-toolbar-chunk .fc-today-button.fc-button.fc-button-primary{
+  background-color: #332e2e !important;
+  opacity: 0.8 !important;
+ 
+}
+
+.fc-toolbar-chunk .fc-button-group button {
+  background-color: #332e2e !important;
 }
 
 
@@ -27,10 +38,10 @@
   .schedule-view {
     width: 100%;
     float: left;
+    margin-top: 20px;
   }
 
   .bookingSession {
-    background-color: #d4d4d4;
     font-size: small;
     width: 70%;
     display: flex;
@@ -39,11 +50,12 @@
     margin-left: 17%;
   }
   #summary-title {
-    width:40%;
+    width: 40px;
+    font-weight: 500;
   }
  
   #summary-title .title{
-    font-size: 28px;
+    font-size: 30px;
   }
   #summary-title .content{
     margin-top: 17px;
@@ -52,7 +64,7 @@
   #summary-filters{
     font-size: small;
     display:grid;
-    width: 15%;
+    width: 70px;
     padding-bottom: 20px;
     height: 50px;
   }
@@ -74,10 +86,10 @@
   .schedule-view {
     width: 100%;
     float: left;
+    margin-top: 20px;
   }
 
   .bookingSession {
-    background-color: #d4d4d4;
     font-size: 15px;
     width: 60%;
     display: flex;
@@ -86,20 +98,23 @@
     margin: auto;
   }
   #summary-title {
-    width:30%;
+    width: 50px;
+    font-weight: 500;
   }
  
   #summary-title .title{
-    font-size: 28px;
+    font-size: 35px;
   }
   #summary-title .content{
     margin-top: 18px;
     font-size: 10px;
   }
   #summary-filters{
+    display: flex;
     font-size: small;
-    width: 37%;
+    width: 180px;
     height: 60px;
+    margin-top: 5px;
   }
   .fc-toolbar-chunk{
     font-size: 0.85rem !important;
@@ -130,10 +145,10 @@
     display: flex;
     align-items: center;
   }
-  
  
   #summary-title .title{
-    font-size: 35px;
+    font-size: 40px;
+    font-weight: 500;
   }
   #summary-title .content{
     margin-top: 20px;

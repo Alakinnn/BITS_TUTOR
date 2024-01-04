@@ -1,6 +1,7 @@
 .toolbar-description {
   width: 100%;
-  background-color: #f4f4f4;
+  background-color: #f8f8f8;
+  margin-top: 15px;
 }
 
 .addingTitle {
@@ -21,34 +22,44 @@
 
 .settingTime {
   height: fit-content;
-  font-size: small;
+  font-size: medium;
 }
 
 .from {
   display: flex;
+  font-weight: 500;
 }
 
 .to {
   display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .settingTime input {
   width: 70%;
   height: 80%;
   border: solid 0.5px #e4e4e4;
-  margin-top: 1%;
   margin-left: 5%;
   border-radius: 3px;
 }
 
+
+
 .inputContent input {
-  border: solid 1px #e4e4e4;
   border-radius: 3px;
   background-color: #ffff;
 }
 
+.inputContent input::placeholder{
+  padding-left: 10px;
+  font-size: medium;
+}
+
 .bookingSession {
-  background-color: #d4d4d4;
+  background-color: #332e2e;
+  color: #f4f4f4;
   font-size: small;
   width: 70%;
   display: flex;
@@ -58,7 +69,8 @@
 }
 
 .bookingSession:hover {
-  background-color: #b4b4b4;
+  background-color: #332e2e ;
+  color: #f4f4f4
 }
 
 .invisible {

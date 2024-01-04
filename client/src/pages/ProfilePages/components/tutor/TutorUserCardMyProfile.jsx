@@ -19,7 +19,7 @@ function TutorUserCardMyProfile({ tutor }) {
                 <TagList tags={tutor.tags} />
 
                 <div className="d-flex justify-content-center mb-2">
-                    <MDBBtn className="bg-secondary">Edit Profile</MDBBtn>
+                    <MDBBtn className="btn-dark">Edit Profile</MDBBtn>
                 </div>
             </MDBCardBody>
         </MDBCard>
