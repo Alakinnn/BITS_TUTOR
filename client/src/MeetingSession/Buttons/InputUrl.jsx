@@ -9,7 +9,7 @@ function InputUrl({handleChangeFunction , startSessionFunction}) {
             placeholder="Live Share URL"
             onChange={handleChangeFunction}
         />
-        <button className="blueButton" onClick={startSessionFunction}>Start Session</button>
+        <button className="blueButton btn-dark" onClick={startSessionFunction}>Start Session</button>
     </div> 
   )
 }
