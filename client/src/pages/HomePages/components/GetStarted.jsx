@@ -1,8 +1,7 @@
 import React from 'react';
 import { MDBContainer, MDBRow } from "mdb-react-ui-kit";
 import { MDBCol, MDBBtn } from "mdb-react-ui-kit";
-/*import { StudentRegister } from '../../../pages/AuthenticationPages/Register/StudentRegister';*/
-
+import  Login   from '../../../pages/AuthenticationPages/Login/LoginPage';
 
 const GetStarted = () => {
   return (
@@ -15,9 +14,12 @@ const GetStarted = () => {
           </h6>
           <p>Looking for a private tutor? Contact Us!</p>
           <div>
-          <a href="/StudentRegister">
-              <MDBBtn className='btn-outline-dark btn-light btn-lg mb-3'>Get Started</MDBBtn>
-            </a>
+            
+              <MDBBtn className='btn-outline-dark btn-light btn-lg mb-3'
+              href="/login">Get Started
+              
+              </MDBBtn>
+                
           </div>
           <h6 className='badge badge-dark'>
             <p></p>
