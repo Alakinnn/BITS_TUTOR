@@ -6,10 +6,12 @@ import LoginPage, {
   Title,
   Banner,
   Input,
+  Logo,
   Textarea,
 } from "@react-login-page/page11";
 import "react-image-upload/dist/index.css";
 import "../styles/ImageUpload.css";
+import LogoComponent from "../../../components/header/Logo";
 import ProfilePicUpload from "../components/ProfilePicUpload";
 import SocialLinksList from "../components/SocialLinksList";
 import CVUpload from "../components/CVUpload";
@@ -82,7 +84,7 @@ const TutorRegisterPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="register-form" onSubmit={handleSubmit}>
       <LoginPage>
         <ProfilePicUpload index={0} />
         <CVUpload index={3} />
@@ -172,6 +174,9 @@ const TutorRegisterPage = () => {
         </Banner>
 
         <Title visible={false} />
+        <Logo>
+          <LogoComponent></LogoComponent>
+        </Logo>
       </LoginPage>
     </form>
   );

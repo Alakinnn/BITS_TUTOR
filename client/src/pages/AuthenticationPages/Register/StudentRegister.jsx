@@ -6,7 +6,9 @@ import LoginPage, {
   Title,
   Banner,
   Input,
+  Logo,
 } from "@react-login-page/page11";
+import LogoComponent from "../../../components/header/Logo";
 import "react-image-upload/dist/index.css";
 import "../styles/ImageUpload.css";
 import { registerUser } from "../services/auth";
@@ -70,7 +72,7 @@ const StudentRegisterPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="register-form" onSubmit={handleSubmit}>
       <LoginPage>
         <ProfilePicUpload index={0} />
         <Username
@@ -114,6 +116,9 @@ const StudentRegisterPage = () => {
         </Banner>
 
         <Title visible={false} />
+        <Logo>
+          <LogoComponent></LogoComponent>
+        </Logo>
       </LoginPage>
     </form>
   );
