@@ -40,18 +40,8 @@ export default function Footer() {
             <li className="freeTrialFooter">Free trial</li>
             <li className="freeSourceFooter">Free source</li>
           </ul> */}
-          <ul className="aboutUsFooter">
-            <Link to={ABOUT_URL} className="footerLink">
-              <li className="aboutUsTextFooter">About us</li>
-            </Link>
-            <Link to={ABOUT_URL} className="footerLink">
-              <li className="aboutFooter">About</li>
-            </Link>
-            <Link to={CONTACT_URL} className="footerLink">
-              <li>Contact</li>
-            </Link>
-            {/* <li className="carrerFooter">Career</li> */}
-          </ul>
+          
+          
         </div>
       </div>
 
