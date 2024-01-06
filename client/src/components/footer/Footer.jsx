@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   // List of URLs
   const HOME_URL = "/ ";
-  const SEARCH_URL = "/FooterTest";
+  const SEARCH_URL = "/login";
   const SCHEDULE_URL = "/schedule/me";
-  const TUTOR_REGISTER_URL = "/FooterTest";
+  const TUTOR_REGISTER_URL = "/register/tutor";
   const ABOUT_URL = "/FooterTest";
   const CONTACT_URL = "/FooterTest";
   const SOCIAL_URL = "/FooterTest";
@@ -40,36 +40,8 @@ export default function Footer() {
             <li className="freeTrialFooter">Free trial</li>
             <li className="freeSourceFooter">Free source</li>
           </ul> */}
-          <ul className="aboutUsFooter">
-            <Link to={ABOUT_URL} className="footerLink">
-              <li className="aboutUsTextFooter">About us</li>
-            </Link>
-            <Link to={ABOUT_URL} className="footerLink">
-              <li className="aboutFooter">About</li>
-            </Link>
-            <Link to={CONTACT_URL} className="footerLink">
-              <li>Contact</li>
-            </Link>
-            {/* <li className="carrerFooter">Career</li> */}
-          </ul>
-        </div>
-      </div>
-
-      <div className="iconFooter">
-        <div className="linkInFooter">
-          <Link to={SOCIAL_URL} className="footerLink">
-            <img src={"/public/assets/footer/linkIn.svg"} alt="linkIn" />
-          </Link>
-        </div>
-        <div className="facebookFooter">
-          <Link to={SOCIAL_URL} className="footerLink">
-            <img src={"/public/assets/footer/facebook.svg"} alt="facebook" />
-          </Link>
-        </div>
-        <div className="instaFooter">
-          <Link to={SOCIAL_URL} className="footerLink">
-            <img src={"/public/assets/footer/insta.svg"} alt="insta" />
-          </Link>
+          
+          
         </div>
       </div>
 

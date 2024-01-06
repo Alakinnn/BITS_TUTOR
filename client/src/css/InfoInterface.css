@@ -52,12 +52,14 @@ button {
   text-align: center;
 }
 
-.blueButton {
-  background-color: #6ab3e8;
+.blueButton{
+  background-color: #332d2d;
+  color: #fff
 }
 
 .blueButton:hover {
-  background-color: #5a9cd6;
+  background-color: rgba(61, 137, 238, 0.958);
+  color: #fff;
 }
 
 .buttons input {
@@ -77,6 +79,11 @@ button {
 .accessToURLs p {
   width: 100%;
 }
+
+.buttons .endSession{
+  font-size: 10px ;
+}
+
 
 /* Start Buttons */
 
@@ -147,11 +154,11 @@ button {
 }
 
 .meetingInfo:hover {
-  background-color: #93545400;
+  background-color: #83818124;
 }
 
 .meetingParticipants:hover {
-  background-color: #93545400;
+  background-color: #83818124;
 }
 
 @media only screen and (max-width: 459px) {
@@ -254,12 +261,13 @@ button {
 
   .line.accessToURLs .buttons .blueButton {
     width: 90%;
-    font-size: 70%;
+    font-size: 60%;
   }
   .buttons .endSession {
     width: 90%;
-    font-size: 70%;
+    font-size: 60%;
   }
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -352,8 +360,11 @@ button {
   .line.accessToURLs .buttons .blueButton {
     width: 35%;
     height: 95%;
-    font-size: 60%;
+    font-size: 10px;
   }
+  /* .buttons .endSession{
+    font-size: 10px ;
+  } */
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -450,9 +461,14 @@ button {
   }
 
   .line.accessToURLs .buttons .blueButton {
-    width: 35%;
+    width: 25%;
     height: 100%;
-    font-size: 100%;
+    font-size: 80%;
+  }
+  .buttons .endSession{
+    width: 25%;
+    height: 100%;
+    font-size: 80%;
   }
 }
 
@@ -523,5 +539,9 @@ button {
     width: 35%;
     height: 100%;
     font-size: 100%;
+  }
+  .buttons .endSession{
+    width: 30%;
+    font-size: 15px ;
   }
 }
