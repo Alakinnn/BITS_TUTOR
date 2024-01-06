@@ -83,3 +83,38 @@
   margin-top: 3%;
   margin-bottom: 5%;
 }
+
+.from input{
+  color: #767676;
+}
+.to input{
+  color: #767676;
+}
+
+.inputContent input{
+  padding-bottom: 25px;
+  padding-left: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .addingTitle{
+    padding-top: 3%;
+    height: 60%;
+    width: 70%;
+  }
+  .description-user-profile a img{
+    border-radius: 50%;
+  }
+  .from input{
+    font-size: small;
+  }
+  .to input{
+    font-size: small;
+  }
+  
+
+
+}
+
+@media only screen and (max-width: 600px)
+
