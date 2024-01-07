@@ -18,7 +18,7 @@ import CVUpload from "../components/CVUpload";
 import TagList from "../../ProfilePages/components/TagList";
 import { registerUser } from "../services/auth";
 import { useAuth } from "../../../contexts/AuthContext";
-import background from "/public/images/registerbackground.jpg";
+import background from "/images/registerbackground.jpg";
 
 const TutorRegisterPage = () => {
   const [tags, setTags] = React.useState([]);
