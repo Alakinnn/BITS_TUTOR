@@ -21,3 +21,5 @@ services:
   load-balancer:
     ports:
       - "3000:80"
+    volumes:
+      - ./nginx/dev.conf:/etc/nginx/conf.d/dev.conf:ro

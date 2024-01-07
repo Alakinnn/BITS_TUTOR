@@ -48,3 +48,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - ./nginx/prod.conf:/etc/nginx/conf.d/prod.conf:ro
+      - /root/secrets/.certificate/meet-a-mentor.live.crt:/etc/nginx/ssl/meet-a-mentor.live.crt:ro
+      - /root/secrets/.certificate/meet-a-mentor.live.key:/etc/nginx/ssl/meet-a-mentor.live.key:ro
