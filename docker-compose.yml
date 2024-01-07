@@ -23,7 +23,8 @@ services:
       - "3000:443"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./etc/letsencrypt/live/meet-a-mentor.social:/etc/letsencrypt/live/meet-a-mentor.social:ro
+      - /root/secrets/.certificate/meet-a-mentor.live.crt:/root/secrets/.certificate/meet-a-mentor.live.crt
+      - /root/secrets/.certificate/meet-a-mentor.live.key:/root/secrets/.certificate/meet-a-mentor.live.key
       
 volumes:
   mongo-db:
