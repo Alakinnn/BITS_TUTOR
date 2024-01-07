@@ -1,6 +1,6 @@
 import React from "react";
 import ImageUpload from "./ImageUpload";
-import defaultImage from "/public/images/cv.png";
+import defaultImage from "/images/cv.png";
 
 function CVUpload({ index }) {
   return (

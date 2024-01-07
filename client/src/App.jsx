@@ -27,7 +27,7 @@ import SearchResults from "./pages/SearchResults/SearchResult";
 
 import Header from "./components/header/Header";
 const UserContext = createContext();
-export const BASE_URL = "http://139.59.105.114/api/v1";
+export const BASE_URL = "https://www.meet-a-mentor.live/api/v1";
 
 function App() {
   return (

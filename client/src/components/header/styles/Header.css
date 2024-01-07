@@ -75,3 +75,15 @@ header .profilePicture {
   background-color: #332e2e;
   color: #fafafa;
 }
+@media only screen and (max-width: 991px){
+  .navbar-nav.w-100.mr-auto.mb-2.mb-lg-0 li a {
+    text-align: left;
+    width: 100%;
+    padding-left: 45px;
+    
+  }
+  .navbar-nav.w-100.mr-auto.mb-2.mb-lg-0 li a:hover{
+    background-color: #332e2e;
+    color: #ffff;
+  }
+}

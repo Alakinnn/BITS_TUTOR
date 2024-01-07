@@ -15,7 +15,7 @@ import { registerUser } from "../services/auth";
 import { useAuth } from "../../../contexts/AuthContext";
 import ProfilePicUpload from "../components/ProfilePicUpload";
 import SocialLinksList from "../components/SocialLinksList";
-import background from "/public/images/registerbackground.jpg";
+import background from "/images/registerbackground.jpg";
 
 const StudentRegisterPage = () => {
   const { storeAuth } = useAuth();

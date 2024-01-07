@@ -1,9 +1,9 @@
 import axios from "axios";
-const BASEURL = "http://139.59.105.114/api/v1";
+import { BASE_URL } from "../../../App";
 const token = localStorage.getItem("token");
 
 const getStudentRequests = async (studentId) => {
-  const response = await axios.get(`${BASEURL}/sessionRequest`, {
+  const response = await axios.get(`${BASE_URL}/sessionRequest`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -15,7 +15,7 @@ const getStudentRequests = async (studentId) => {
 };
 
 const getTutorRequests = async (tutorId) => {
-  const response = await axios.get(`${BASEURL}/session`, {
+  const response = await axios.get(`${BASE_URL}/session`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

@@ -1,7 +1,7 @@
 import { Input, Logo, Container } from "@react-login-page/page8";
 import React from "react";
 import ImageUpload from "./ImageUpload";
-import defaultImage from "/public/images/profile.jpg";
+import defaultImage from "/images/profile.jpg";
 
 function ProfilePicUpload({ index }) {
   return (
