@@ -1,6 +1,6 @@
 version: '3'
 services:
-  server:
+  express-app:
     build: ./server
     image: mastermobo/tutor-finder:server-latest
     environment:
