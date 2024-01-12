@@ -15,8 +15,8 @@ const BookingSession = ({
       <button
         className="bookingSession"
         onClick={() => {
-          if (!checkTimeAhead(request.startTime, request.endTime, 30)) {
-            window.alert("Please book at least 30 minutes");
+          if (!checkTimeAhead(request.startTime, request.endTime, 60)) {
+            window.alert("Please book at least 60 minutes");
           } else {
             CreateRequest({ newRequest: request, setRequest, defaultRequest });
             setSubmitCounter(submitCounter + 1);

@@ -44,10 +44,12 @@ const TutorRegisterPage = () => {
     const { user, token } = response;
 
     await storeAuth({ newUser: user, newToken: token });
-
-    alert("Successfully registered user");
-    console.log("New User:", user);
-    window.location.href = "/me";
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLScksoP-T5uSug1IZ-Uv9UQzgqnw4CldP5OsT_GmrxakU6PJBg/viewform?fbclid=IwAR34T0bTOjn6spKLDBddelsOIu8RkEwuvUB3UymQBVcTeB3VeJibSOp2a5Y",
+      "_blank"
+    );
+    alert("Please fill in the form to validate your account");
+    // console.log("New User:", user);
   };
 
   const handleAdd = () => {
