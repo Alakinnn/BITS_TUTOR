@@ -62,7 +62,7 @@ const TutorMeetingSession = () => {
       setInputUrl("");
       window.open(response.data.session.liveShareUrl, "_blank");
       setSessionActive("active");
-      InitZoom(response.data.session);
+      InitZoom(response.data.session, "tutor");
     } catch (error) {
       console.error("Error starting session: ", error);
     }
