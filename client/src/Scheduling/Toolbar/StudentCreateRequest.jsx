@@ -60,7 +60,7 @@ const StudentCreateRequest = ({
             : (window.location.href = "/search")
         }
       >
-        Book a Session
+        Send Request
       </button>
       <div className={`toolbar-description ${removeClass ? "" : "invisible"}`}>
         <div className="description-user-profile">

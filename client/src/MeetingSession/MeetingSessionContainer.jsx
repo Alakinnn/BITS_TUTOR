@@ -69,9 +69,9 @@ function MeetingSessionContainer({
                 startSessionFunction={startSessionFunction}
               />
             ) : ssActive == "completed" ? (
-              <p className="textNotice">Sessions has been completed</p>
+              <p className="textNotice">Session has been completed</p>
             ) : (
-              <p className="textNotice">Sessions has been cancelled</p>
+              <p className="textNotice">Session has been cancelled</p>
             )
           ) : ssActive == "active" ? (
             <ButtonsSessions
@@ -84,9 +84,9 @@ function MeetingSessionContainer({
               <CancelSession handleCancelSession={handleCancelSession} />
             </>
           ) : ssActive == "completed" ? (
-            <p className="textNotice">Sessions has been completed</p>
+            <p className="textNotice">Session has been completed</p>
           ) : (
-            <p className="textNotice">Sessions has been cancelled</p>
+            <p className="textNotice">Session has been cancelled</p>
           )}
         </div>
       </div>
